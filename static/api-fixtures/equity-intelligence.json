@@ -1,0 +1,889 @@
+{
+  "caveats": [
+    "Equity Intelligence is read-only research context with explicit provider gaps.",
+    "Options/gamma and financial-statement panels remain provider-gated when data is unavailable.",
+    "No broker execution, order routing, or directional market advice is provided."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "caveat": "Equity Intelligence is research context with source labels and explicit provider gaps.",
+    "chart_specs": [
+      {
+        "caveat": "Price chart is research context with visible source status.",
+        "chart_id": "AAPL.price",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "line",
+        "data_gap": "Fixture mode is not live market data.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "series": [
+          {
+            "name": "close",
+            "points": [
+              {
+                "x": "2026-01-15",
+                "y": 171.2
+              },
+              {
+                "x": "2026-02-15",
+                "y": 173.8
+              },
+              {
+                "x": "2026-03-15",
+                "y": 176.4
+              },
+              {
+                "x": "2026-04-15",
+                "y": 174.9
+              },
+              {
+                "x": "2026-05-15",
+                "y": 179.1
+              },
+              {
+                "x": "2026-06-15",
+                "y": 182.6
+              },
+              {
+                "x": "2026-07-15",
+                "y": 181.3
+              },
+              {
+                "x": "2026-08-15",
+                "y": 185.8
+              },
+              {
+                "x": "2026-09-15",
+                "y": 188.4
+              },
+              {
+                "x": "2026-10-15",
+                "y": 186.5
+              },
+              {
+                "x": "2026-11-15",
+                "y": 190.2
+              },
+              {
+                "x": "2026-12-15",
+                "y": 193.6
+              }
+            ]
+          }
+        ],
+        "source_status": "fixture",
+        "title": "AAPL Price History",
+        "unit": "price",
+        "x_axis": "time",
+        "y_axis": "value"
+      },
+      {
+        "caveat": "Volume chart is provider-dependent and may be delayed.",
+        "chart_id": "AAPL.volume",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "bar",
+        "data_gap": "Fixture mode is not live volume.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "series": [
+          {
+            "name": "volume",
+            "points": [
+              {
+                "x": "2026-01-15",
+                "y": 53100000.0
+              },
+              {
+                "x": "2026-02-15",
+                "y": 54200000.0
+              },
+              {
+                "x": "2026-03-15",
+                "y": 55300000.0
+              },
+              {
+                "x": "2026-04-15",
+                "y": 56400000.0
+              },
+              {
+                "x": "2026-05-15",
+                "y": 57500000.0
+              },
+              {
+                "x": "2026-06-15",
+                "y": 58600000.0
+              },
+              {
+                "x": "2026-07-15",
+                "y": 59700000.0
+              },
+              {
+                "x": "2026-08-15",
+                "y": 60800000.0
+              },
+              {
+                "x": "2026-09-15",
+                "y": 61900000.0
+              },
+              {
+                "x": "2026-10-15",
+                "y": 63000000.0
+              },
+              {
+                "x": "2026-11-15",
+                "y": 64100000.0
+              },
+              {
+                "x": "2026-12-15",
+                "y": 65200000.0
+              }
+            ]
+          }
+        ],
+        "source_status": "fixture",
+        "title": "AAPL Volume Context",
+        "unit": "shares",
+        "x_axis": "time",
+        "y_axis": "value"
+      },
+      {
+        "caveat": "Evidence weights are transparent scenario context, not forecasts.",
+        "chart_id": "AAPL.scenario_weights",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "bar",
+        "data_gap": "Options and fundamental rows can be unavailable.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "provider": "equity_scenarios",
+        "series": [
+          {
+            "name": "evidence weight",
+            "points": [
+              {
+                "x": "Constructive continuation",
+                "y": 64.0
+              },
+              {
+                "x": "Range digestion",
+                "y": 50.0
+              },
+              {
+                "x": "Downside deterioration",
+                "y": 36.0
+              },
+              {
+                "x": "Event volatility",
+                "y": 45.0
+              }
+            ]
+          }
+        ],
+        "source_status": "inferred/proxy",
+        "title": "Scenario Evidence Weights",
+        "unit": "score",
+        "x_axis": "scenario",
+        "y_axis": "evidence_weight"
+      },
+      {
+        "caveat": "Readiness chart shows data availability, not valuation advice.",
+        "chart_id": "AAPL.valuation_quality",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "heat",
+        "data_gap": "Provider-backed statements may be unavailable.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "financial_terminal",
+        "series": [
+          {
+            "name": "coverage",
+            "points": [
+              {
+                "x": "statement coverage",
+                "y": 62.0
+              },
+              {
+                "x": "ratio availability",
+                "y": 48.0
+              }
+            ]
+          }
+        ],
+        "source_status": "fixture",
+        "title": "Financial Data Readiness",
+        "unit": "score",
+        "x_axis": "metric",
+        "y_axis": "score"
+      }
+    ],
+    "command_routes": [
+      {
+        "not_financial_advice": true,
+        "raw": "AAPL FA",
+        "source_status": "schema-ready",
+        "target_view": "equity-intelligence"
+      },
+      {
+        "not_financial_advice": true,
+        "raw": "AAPL DES",
+        "source_status": "schema-ready",
+        "target_view": "financial-fundamentals"
+      },
+      {
+        "not_financial_advice": true,
+        "raw": "AAPL OMON",
+        "source_status": "provider-required",
+        "target_view": "options-quant"
+      }
+    ],
+    "data_gaps": [
+      "Fixture evidence; live scenario matrix requires provider history.",
+      "Fixture mode does not include provider-backed statements.",
+      "Fixture mode is not live market data.",
+      "Fixture mode is not live volume.",
+      "Full statements, estimates, and segment tables remain provider-gated.",
+      "Live company news is provider-gated.",
+      "Live yfinance history not requested for fixture export.",
+      "No options chain rows in deterministic fixture mode.",
+      "Not live market data; use runtime provider status for live claims.",
+      "Optional fundamentals provider rows are not bundled.",
+      "Options and fundamental rows can be unavailable.",
+      "Options chain provider is not called during deterministic fixture export.",
+      "Provider-backed statements may be unavailable.",
+      "Runtime yfinance/fundamental/options providers are not called during fixture export."
+    ],
+    "equity_intelligence_version": "equity_intelligence.v1",
+    "financial_overview": {
+      "caveat": "Financial overview is fixture-safe profile context until a fundamentals provider is live or cached.",
+      "company_name": "Apple Inc. fixture profile",
+      "data_gap": "Full statements, estimates, and segment tables remain provider-gated.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "free_cashflow_margin_proxy": 0.27,
+      "freshness": "fixture",
+      "gross_margin_proxy": 0.46,
+      "market_cap": 2950000000000,
+      "not_financial_advice": true,
+      "provider": "fixture",
+      "revenue_growth_proxy": 0.061,
+      "sector": "Technology",
+      "source_status": "fixture",
+      "symbol": "AAPL"
+    },
+    "news_events": [
+      {
+        "caveat": "Fixture event row demonstrates news-to-asset linkage only.",
+        "data_gap": "Live company news is provider-gated.",
+        "event_id": "equity-fixture-supply-chain",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "region": "Asia",
+        "related_assets": [
+          "AAPL",
+          "QQQ",
+          "SOXX"
+        ],
+        "severity": "watch",
+        "source_status": "fixture",
+        "title": "AAPL supply-chain watch context"
+      }
+    ],
+    "options_gamma_proxy": {
+      "caveat": "Options/gamma is an explicit readiness surface; no dealer positioning is claimed.",
+      "data_gap": "Options chain provider is not called during deterministic fixture export.",
+      "expiry_concentration": [],
+      "fetched_at": null,
+      "freshness": "provider-gated",
+      "largest_oi_strikes": [],
+      "not_financial_advice": true,
+      "provider": "yfinance options",
+      "put_call_open_interest_ratio": null,
+      "put_call_volume_ratio": null,
+      "source_status": "provider-required",
+      "symbol": "AAPL"
+    },
+    "price_history": [
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 171.2,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-01-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 174.28,
+        "low": 168.12,
+        "not_financial_advice": true,
+        "open": 169.83,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 53100000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 173.8,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-02-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 176.93,
+        "low": 170.67,
+        "not_financial_advice": true,
+        "open": 172.41,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 54200000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 176.4,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-03-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 179.58,
+        "low": 173.22,
+        "not_financial_advice": true,
+        "open": 174.99,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 55300000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 174.9,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-04-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 178.05,
+        "low": 171.75,
+        "not_financial_advice": true,
+        "open": 173.5,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 56400000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 179.1,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-05-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 182.32,
+        "low": 175.88,
+        "not_financial_advice": true,
+        "open": 177.67,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 57500000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 182.6,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-06-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 185.89,
+        "low": 179.31,
+        "not_financial_advice": true,
+        "open": 181.14,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 58600000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 181.3,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-07-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 184.56,
+        "low": 178.04,
+        "not_financial_advice": true,
+        "open": 179.85,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 59700000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 185.8,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-08-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 189.14,
+        "low": 182.46,
+        "not_financial_advice": true,
+        "open": 184.31,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 60800000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 188.4,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-09-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 191.79,
+        "low": 185.01,
+        "not_financial_advice": true,
+        "open": 186.89,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 61900000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 186.5,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-10-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 189.86,
+        "low": 183.14,
+        "not_financial_advice": true,
+        "open": 185.01,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 63000000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 190.2,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-11-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 193.62,
+        "low": 186.78,
+        "not_financial_advice": true,
+        "open": 188.68,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 64100000
+      },
+      {
+        "caveat": "Deterministic price-history fixture for web workstation rendering.",
+        "close": 193.6,
+        "data_gap": "Not live market data; use runtime provider status for live claims.",
+        "date": "2026-12-15",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "high": 197.08,
+        "low": 190.12,
+        "not_financial_advice": true,
+        "open": 192.05,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "AAPL",
+        "volume": 65200000
+      }
+    ],
+    "provider_status": [
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Deterministic fixture used for static web export.",
+        "data_gap": "Runtime yfinance/fundamental/options providers are not called during fixture export.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 12,
+        "source": "Phase 5A equity fixture:AAPL",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Technical diagnostics mirror Stock Analyzer fields but are deterministic in fixture mode.",
+        "data_gap": "Live yfinance history not requested for fixture export.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 1,
+        "source": "AAPL",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Options/gamma is an explicit readiness surface; no dealer positioning is claimed.",
+        "data_gap": "Options chain provider is not called during deterministic fixture export.",
+        "estimated": false,
+        "fetched_at": null,
+        "freshness": "provider-required",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "yfinance options",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 1,
+        "source": "AAPL",
+        "source_status": "provider-required",
+        "status": "provider-required"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Price chart is research context with visible source status.",
+        "data_gap": "Fixture mode is not live market data.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 12,
+        "source": "AAPL.price",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Volume chart is provider-dependent and may be delayed.",
+        "data_gap": "Fixture mode is not live volume.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 12,
+        "source": "AAPL.volume",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Evidence weights are transparent scenario context, not forecasts.",
+        "data_gap": "Options and fundamental rows can be unavailable.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "equity_scenarios",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 4,
+        "source": "AAPL.scenario_weights",
+        "source_status": "inferred/proxy",
+        "status": "inferred/proxy"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Readiness chart shows data availability, not valuation advice.",
+        "data_gap": "Provider-backed statements may be unavailable.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "financial_terminal",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 2,
+        "source": "AAPL.valuation_quality",
+        "source_status": "fixture",
+        "status": "fixture"
+      }
+    ],
+    "scenario_matrix": [
+      {
+        "caveat": "Evidence weight is not prediction certainty.",
+        "data_gap": "Fixture evidence; live scenario matrix requires provider history.",
+        "evidence_summary": "Trend, relative strength, and participation evidence are reviewed for continuation context.",
+        "evidence_weight": 64,
+        "not_financial_advice": true,
+        "provider": "equity_scenarios",
+        "scenario": "Constructive continuation",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Scenario is research context only.",
+        "data_gap": "Fixture evidence; live scenario matrix requires provider history.",
+        "evidence_summary": "Mixed momentum can support range behavior while provider evidence is incomplete.",
+        "evidence_weight": 50,
+        "not_financial_advice": true,
+        "provider": "equity_scenarios",
+        "scenario": "Range digestion",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Scenario is not a market action instruction.",
+        "data_gap": "Fixture evidence; live scenario matrix requires provider history.",
+        "evidence_summary": "Weak trend or breadth deterioration can elevate downside risk context.",
+        "evidence_weight": 36,
+        "not_financial_advice": true,
+        "provider": "equity_scenarios",
+        "scenario": "Downside deterioration",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Options data is provider-gated and may be delayed or unavailable.",
+        "data_gap": "No options chain rows in deterministic fixture mode.",
+        "evidence_summary": "Catalyst calendars and options readiness can raise volatility context.",
+        "evidence_weight": 45,
+        "not_financial_advice": true,
+        "provider": "equity_options",
+        "scenario": "Event volatility",
+        "source_status": "provider-required"
+      }
+    ],
+    "summary": {
+      "broker_execution_added": false,
+      "chart_count": 4,
+      "latest_price": 193.6,
+      "non_advisory": true,
+      "price_row_count": 12,
+      "runtime_requested": false,
+      "scenario_count": 4,
+      "source_status": "fixture",
+      "symbol": "AAPL",
+      "workspace": "equity-intelligence"
+    },
+    "symbol": "AAPL",
+    "technical_diagnostics": {
+      "caveat": "Technical diagnostics mirror Stock Analyzer fields but are deterministic in fixture mode.",
+      "data_gap": "Live yfinance history not requested for fixture export.",
+      "drawdown_from_52w_high": -0.041,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "latest_price": 193.6,
+      "macd_regime": "Constructive technical backdrop",
+      "not_financial_advice": true,
+      "price_vs_200dma": 0.092,
+      "price_vs_50dma": 0.038,
+      "provider": "fixture",
+      "range_52w_position": 0.74,
+      "realized_volatility": 0.21,
+      "resistance": 198.8,
+      "rsi": 58.4,
+      "rsi_bucket": "Neutral / mixed evidence",
+      "source_status": "fixture",
+      "support": 184.2,
+      "symbol": "AAPL"
+    },
+    "valuation_quality": [
+      {
+        "caveat": "Coverage score indicates which statement sections can be rendered when provider rows exist.",
+        "data_gap": "Fixture mode does not include provider-backed statements.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "metric": "statement coverage",
+        "not_financial_advice": true,
+        "provider": "financial_terminal",
+        "score": 62,
+        "source_status": "fixture",
+        "status": "schema-ready"
+      },
+      {
+        "caveat": "Ratio availability is a readiness signal, not a valuation opinion.",
+        "data_gap": "Optional fundamentals provider rows are not bundled.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "metric": "ratio availability",
+        "not_financial_advice": true,
+        "provider": "financial_terminal",
+        "score": 48,
+        "source_status": "fixture",
+        "status": "partial"
+      }
+    ],
+    "workspace": "equity-intelligence"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "equity_intelligence",
+  "source_status": [
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Deterministic fixture used for static web export.",
+      "data_gap": "Runtime yfinance/fundamental/options providers are not called during fixture export.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 12,
+      "source": "Phase 5A equity fixture:AAPL",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Technical diagnostics mirror Stock Analyzer fields but are deterministic in fixture mode.",
+      "data_gap": "Live yfinance history not requested for fixture export.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "AAPL",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Options/gamma is an explicit readiness surface; no dealer positioning is claimed.",
+      "data_gap": "Options chain provider is not called during deterministic fixture export.",
+      "estimated": false,
+      "fetched_at": null,
+      "freshness": "provider-required",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "yfinance options",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "AAPL",
+      "source_status": "provider-required",
+      "status": "provider-required"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Price chart is research context with visible source status.",
+      "data_gap": "Fixture mode is not live market data.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 12,
+      "source": "AAPL.price",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Volume chart is provider-dependent and may be delayed.",
+      "data_gap": "Fixture mode is not live volume.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 12,
+      "source": "AAPL.volume",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Evidence weights are transparent scenario context, not forecasts.",
+      "data_gap": "Options and fundamental rows can be unavailable.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "inferred/proxy",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "equity_scenarios",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 4,
+      "source": "AAPL.scenario_weights",
+      "source_status": "inferred/proxy",
+      "status": "inferred/proxy"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Readiness chart shows data availability, not valuation advice.",
+      "data_gap": "Provider-backed statements may be unavailable.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "financial_terminal",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 2,
+      "source": "AAPL.valuation_quality",
+      "source_status": "fixture",
+      "status": "fixture"
+    }
+  ],
+  "summary": {
+    "broker_execution_added": false,
+    "chart_count": 4,
+    "latest_price": 193.6,
+    "non_advisory": true,
+    "price_row_count": 12,
+    "runtime_requested": false,
+    "scenario_count": 4,
+    "source_status": "fixture",
+    "symbol": "AAPL",
+    "workspace": "equity-intelligence"
+  },
+  "unavailable": [
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Options/gamma is an explicit readiness surface; no dealer positioning is claimed.",
+      "data_gap": "Options chain provider is not called during deterministic fixture export.",
+      "estimated": false,
+      "fetched_at": null,
+      "freshness": "provider-required",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "yfinance options",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "AAPL",
+      "source_status": "provider-required",
+      "status": "provider-required"
+    }
+  ]
+}

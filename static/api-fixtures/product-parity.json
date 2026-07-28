@@ -1,0 +1,769 @@
+{
+  "caveats": [
+    "Product parity inventory is source-backed from local repository files and does not imply runtime provider availability.",
+    "External references are behavior evidence only unless a compatible license review allows direct use."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "caveat": "Inventory is source-backed from repository files; runtime provider availability is reported by each workspace payload.",
+    "external_reference_map": [
+      {
+        "adopted_behavior": "source/caveat/layer status discipline",
+        "copied_source": false,
+        "external_project": "WorldMonitor",
+        "license_stance": "behavior-only/agpl-boundary"
+      },
+      {
+        "adopted_behavior": "timeline and compare-window interaction model",
+        "copied_source": false,
+        "external_project": "worldview",
+        "license_stance": "behavior-only/nasa-license-caution"
+      },
+      {
+        "adopted_behavior": "OSINT layer/provider gating patterns",
+        "copied_source": false,
+        "external_project": "osiris",
+        "license_stance": "mit-behavior-reference"
+      },
+      {
+        "adopted_behavior": "provider contract hierarchy and optional backend stance",
+        "copied_source": false,
+        "external_project": "OpenBB",
+        "license_stance": "behavior-only/agpl-boundary"
+      },
+      {
+        "adopted_behavior": "command grammar and workstation routing behavior",
+        "copied_source": false,
+        "external_project": "BB-Terminal",
+        "license_stance": "blocked/direct-copy-not-used"
+      },
+      {
+        "adopted_behavior": "dense chart/workstation ergonomics only",
+        "copied_source": false,
+        "external_project": "TradingView/Koyfin/Bloomberg/Refinitiv",
+        "license_stance": "product-behavior-reference-only"
+      }
+    ],
+    "generated_at": "2026-06-16T00:00:00+00:00",
+    "lib_engines": [
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "yfinance-backed market history and latest-price snapshots",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/market_data.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used",
+        "capability": "global proxy taxonomy for overview panels",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/global_markets.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "technical diagnostics, flow proxy, equity scenario matrix",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/equity_scenarios.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "company header, financial overview, valuation, availability matrix",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/financial_terminal.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "referenced-shape-only",
+        "capability": "financial chart intent source",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/financial_charts.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-readiness-only",
+        "capability": "options dashboard and gamma proxy",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/options_flow.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "Binance public derivatives snapshot and time series",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/crypto_derivatives.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "CoinGecko and Binance public price overview",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/crypto_prices.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "crypto regime and scenario matrix",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/crypto_scenarios.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-used-live-optional",
+        "capability": "cross-asset and crypto radar cards",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/market_radar.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-upgraded",
+        "capability": "source-aware markers, layers, timeline, compare readiness",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/war_room_map.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      },
+      {
+        "api_readiness": "phase5a-upgraded",
+        "capability": "provider-gated terminal command routing",
+        "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+        "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+        "engine": "lib/command_workspace.py",
+        "freshness": "repo-static",
+        "provider": "first-party lib",
+        "source_status": "local/source-backed"
+      }
+    ],
+    "missing_web_surfaces": [
+      {
+        "data_gap": "Streamlit screener filters and heatmaps are not migrated.",
+        "priority": "P1",
+        "source_status": "missing",
+        "surface": "Dedicated screener workspace"
+      },
+      {
+        "data_gap": "Portfolio backtest, attribution, and factor labs remain Streamlit-only.",
+        "priority": "P1",
+        "source_status": "missing",
+        "surface": "Portfolio quant workspace"
+      },
+      {
+        "data_gap": "Phase 5A shows overview and readiness; complete statement tables remain partial.",
+        "priority": "P1",
+        "source_status": "partial",
+        "surface": "Full financial statement drilldowns"
+      },
+      {
+        "data_gap": "Phase 5A exposes readiness/proxy only; full option-book UX stays deferred.",
+        "priority": "P2",
+        "source_status": "partial",
+        "surface": "Full options book and volatility surface workflow"
+      },
+      {
+        "data_gap": "Native map-like SVG is interactive enough for this slice; MapLibre/deck.gl remains future review.",
+        "priority": "P2",
+        "source_status": "partial",
+        "surface": "Production-grade map renderer"
+      }
+    ],
+    "priority_migration_queue": [
+      {
+        "next_step": "Wire optional runtime mode and deeper financial statements.",
+        "rank": 1,
+        "status": "phase5a-added",
+        "surface": "Equity Intelligence"
+      },
+      {
+        "next_step": "Expand live CoinGecko/Binance coverage with cache-status controls.",
+        "rank": 2,
+        "status": "phase5a-added",
+        "surface": "Crypto Intelligence"
+      },
+      {
+        "next_step": "Add cross-asset screener and macro regime panels.",
+        "rank": 3,
+        "status": "phase5a-added",
+        "surface": "Market Intelligence"
+      },
+      {
+        "next_step": "Evaluate licensed map dependency or first-party map projection data.",
+        "rank": 4,
+        "status": "phase5a-upgraded",
+        "surface": "War Map"
+      },
+      {
+        "next_step": "Move portfolio diagnostics behind JSON-safe contracts.",
+        "rank": 5,
+        "status": "missing",
+        "surface": "Portfolio Quant"
+      }
+    ],
+    "product_parity_inventory_version": "product_parity_inventory.v1",
+    "streamlit_pages": [
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Needs richer live/cached provider tape beyond fixture mode.",
+        "freshness": "repo-static",
+        "label": "Market Pulse",
+        "page": "pages/1_Market_Pulse.py",
+        "primary_lib_engines": [
+          "lib/market_data.py",
+          "lib/ai_analysis.py"
+        ],
+        "priority": "P0",
+        "product_surface": "Market Intelligence",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "phase5a-added"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Live yfinance/options availability depends on provider runtime.",
+        "freshness": "repo-static",
+        "label": "Stock Analyzer",
+        "page": "pages/2_Stock_Analyzer.py",
+        "primary_lib_engines": [
+          "lib/equity_scenarios.py",
+          "lib/fundamentals.py",
+          "lib/options_flow.py"
+        ],
+        "priority": "P0",
+        "product_surface": "Equity Intelligence",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "phase5a-added"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Fixture mode does not claim live Binance/CoinGecko rows.",
+        "freshness": "repo-static",
+        "label": "Crypto Intelligence",
+        "page": "pages/8_Crypto_Intelligence.py",
+        "primary_lib_engines": [
+          "lib/crypto_derivatives.py",
+          "lib/crypto_prices.py",
+          "lib/crypto_scenarios.py",
+          "lib/crypto_onchain.py"
+        ],
+        "priority": "P0",
+        "product_surface": "Crypto Intelligence",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "phase5a-added"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Financial panels are exposed through equity-intelligence; full statement drilldowns remain partial.",
+        "freshness": "repo-static",
+        "label": "Financial Terminal",
+        "page": "pages/15_Financial_Terminal.py",
+        "primary_lib_engines": [
+          "lib/financial_terminal.py",
+          "lib/financial_charts.py"
+        ],
+        "priority": "P0",
+        "product_surface": "Financial / Fundamentals",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "phase5a-partial"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Options/quant readiness is visible; full option book workflows remain Streamlit-only.",
+        "freshness": "repo-static",
+        "label": "Options Quant Model Lab",
+        "page": "pages/24_Options_Quant_Model_Lab.py",
+        "primary_lib_engines": [
+          "lib/options_lab_page_layout.py",
+          "lib/options_chain_iv.py",
+          "lib/options_vol_surface.py"
+        ],
+        "priority": "P1",
+        "product_surface": "Options / Quant",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "phase5a-partial"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Dedicated web screener tables and filters are not yet migrated.",
+        "freshness": "repo-static",
+        "label": "Screener",
+        "page": "pages/13_Screener.py",
+        "primary_lib_engines": [
+          "lib/screeners.py",
+          "lib/openbb_screener_backend.py"
+        ],
+        "priority": "P1",
+        "product_surface": "Screeners",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "missing"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Portfolio diagnostics remain Streamlit-only.",
+        "freshness": "repo-static",
+        "label": "Portfolio Quant Lab",
+        "page": "pages/16_Portfolio_Quant_Lab.py",
+        "primary_lib_engines": [
+          "lib/portfolio_quant_lab.py",
+          "lib/portfolio_backtester.py",
+          "lib/performance_attribution.py"
+        ],
+        "priority": "P1",
+        "product_surface": "Portfolio Quant",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "missing"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "News fixture exists; richer impact visuals remain partial.",
+        "freshness": "repo-static",
+        "label": "News",
+        "page": "pages/6_News.py",
+        "primary_lib_engines": [
+          "lib/news_intelligence.py",
+          "lib/market_impact_engine.py",
+          "lib/catalyst_graph.py"
+        ],
+        "priority": "P1",
+        "product_surface": "News Intelligence",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "covered/partial"
+      },
+      {
+        "caveat": "Inventory row is based on repository source, not runtime provider success.",
+        "data_gap": "Production map renderer, live AIS, live flight, and sanctions markers remain unavailable.",
+        "freshness": "repo-static",
+        "label": "War Room",
+        "page": "pages/14_War_Room.py",
+        "primary_lib_engines": [
+          "lib/war_room.py",
+          "lib/war_room_map.py",
+          "lib/layer_registry.py"
+        ],
+        "priority": "P0",
+        "product_surface": "Map-First War Room",
+        "provider": "first-party Streamlit source",
+        "source_status": "local/source-backed",
+        "web_status": "covered/phase5a-upgraded"
+      }
+    ],
+    "summary": {
+      "auth_billing_persistence_added": false,
+      "broker_execution_added": false,
+      "external_source_copied": false,
+      "lib_engine_count": 12,
+      "missing_or_partial_surface_count": 5,
+      "non_advisory": true,
+      "phase5a_added_workspace_count": 3,
+      "streamlit_page_count": 9,
+      "web_workspace_count": 8
+    },
+    "web_workspaces": [
+      {
+        "key": "market-intelligence",
+        "route": "/api/market-intelligence",
+        "source_status": "fixture/live-optional",
+        "status": "phase5a-added"
+      },
+      {
+        "key": "war-room-map",
+        "route": "/api/war-room-map",
+        "source_status": "fixture/proxy/static",
+        "status": "phase5a-upgraded"
+      },
+      {
+        "key": "equity-intelligence",
+        "route": "/api/equity-intelligence",
+        "source_status": "fixture/live-optional",
+        "status": "phase5a-added"
+      },
+      {
+        "key": "crypto-intelligence",
+        "route": "/api/crypto-intelligence",
+        "source_status": "fixture/live-optional",
+        "status": "phase5a-added"
+      },
+      {
+        "key": "event-graph",
+        "route": "/api/event-asset-graph",
+        "source_status": "fixture/inferred/proxy",
+        "status": "covered"
+      },
+      {
+        "key": "command-workspace",
+        "route": "/api/command-workspace",
+        "source_status": "provider-gated",
+        "status": "phase5a-rerouted"
+      },
+      {
+        "key": "provider-health",
+        "route": "/api/provider-health",
+        "source_status": "fixture/missing-key",
+        "status": "covered"
+      },
+      {
+        "key": "news",
+        "route": "/api/news",
+        "source_status": "fixture/live-optional",
+        "status": "covered/partial"
+      }
+    ]
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "product_parity_inventory",
+  "source_status": [
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Needs richer live/cached provider tape beyond fixture mode.",
+      "freshness": "repo-static",
+      "label": "Market Pulse",
+      "page": "pages/1_Market_Pulse.py",
+      "primary_lib_engines": [
+        "lib/market_data.py",
+        "lib/ai_analysis.py"
+      ],
+      "priority": "P0",
+      "product_surface": "Market Intelligence",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "phase5a-added"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Live yfinance/options availability depends on provider runtime.",
+      "freshness": "repo-static",
+      "label": "Stock Analyzer",
+      "page": "pages/2_Stock_Analyzer.py",
+      "primary_lib_engines": [
+        "lib/equity_scenarios.py",
+        "lib/fundamentals.py",
+        "lib/options_flow.py"
+      ],
+      "priority": "P0",
+      "product_surface": "Equity Intelligence",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "phase5a-added"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Fixture mode does not claim live Binance/CoinGecko rows.",
+      "freshness": "repo-static",
+      "label": "Crypto Intelligence",
+      "page": "pages/8_Crypto_Intelligence.py",
+      "primary_lib_engines": [
+        "lib/crypto_derivatives.py",
+        "lib/crypto_prices.py",
+        "lib/crypto_scenarios.py",
+        "lib/crypto_onchain.py"
+      ],
+      "priority": "P0",
+      "product_surface": "Crypto Intelligence",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "phase5a-added"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Financial panels are exposed through equity-intelligence; full statement drilldowns remain partial.",
+      "freshness": "repo-static",
+      "label": "Financial Terminal",
+      "page": "pages/15_Financial_Terminal.py",
+      "primary_lib_engines": [
+        "lib/financial_terminal.py",
+        "lib/financial_charts.py"
+      ],
+      "priority": "P0",
+      "product_surface": "Financial / Fundamentals",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "phase5a-partial"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Options/quant readiness is visible; full option book workflows remain Streamlit-only.",
+      "freshness": "repo-static",
+      "label": "Options Quant Model Lab",
+      "page": "pages/24_Options_Quant_Model_Lab.py",
+      "primary_lib_engines": [
+        "lib/options_lab_page_layout.py",
+        "lib/options_chain_iv.py",
+        "lib/options_vol_surface.py"
+      ],
+      "priority": "P1",
+      "product_surface": "Options / Quant",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "phase5a-partial"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Dedicated web screener tables and filters are not yet migrated.",
+      "freshness": "repo-static",
+      "label": "Screener",
+      "page": "pages/13_Screener.py",
+      "primary_lib_engines": [
+        "lib/screeners.py",
+        "lib/openbb_screener_backend.py"
+      ],
+      "priority": "P1",
+      "product_surface": "Screeners",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "missing"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Portfolio diagnostics remain Streamlit-only.",
+      "freshness": "repo-static",
+      "label": "Portfolio Quant Lab",
+      "page": "pages/16_Portfolio_Quant_Lab.py",
+      "primary_lib_engines": [
+        "lib/portfolio_quant_lab.py",
+        "lib/portfolio_backtester.py",
+        "lib/performance_attribution.py"
+      ],
+      "priority": "P1",
+      "product_surface": "Portfolio Quant",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "missing"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "News fixture exists; richer impact visuals remain partial.",
+      "freshness": "repo-static",
+      "label": "News",
+      "page": "pages/6_News.py",
+      "primary_lib_engines": [
+        "lib/news_intelligence.py",
+        "lib/market_impact_engine.py",
+        "lib/catalyst_graph.py"
+      ],
+      "priority": "P1",
+      "product_surface": "News Intelligence",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "covered/partial"
+    },
+    {
+      "caveat": "Inventory row is based on repository source, not runtime provider success.",
+      "data_gap": "Production map renderer, live AIS, live flight, and sanctions markers remain unavailable.",
+      "freshness": "repo-static",
+      "label": "War Room",
+      "page": "pages/14_War_Room.py",
+      "primary_lib_engines": [
+        "lib/war_room.py",
+        "lib/war_room_map.py",
+        "lib/layer_registry.py"
+      ],
+      "priority": "P0",
+      "product_surface": "Map-First War Room",
+      "provider": "first-party Streamlit source",
+      "source_status": "local/source-backed",
+      "web_status": "covered/phase5a-upgraded"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "yfinance-backed market history and latest-price snapshots",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/market_data.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used",
+      "capability": "global proxy taxonomy for overview panels",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/global_markets.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "technical diagnostics, flow proxy, equity scenario matrix",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/equity_scenarios.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "company header, financial overview, valuation, availability matrix",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/financial_terminal.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "referenced-shape-only",
+      "capability": "financial chart intent source",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/financial_charts.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-readiness-only",
+      "capability": "options dashboard and gamma proxy",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/options_flow.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "Binance public derivatives snapshot and time series",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/crypto_derivatives.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "CoinGecko and Binance public price overview",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/crypto_prices.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "crypto regime and scenario matrix",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/crypto_scenarios.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-used-live-optional",
+      "capability": "cross-asset and crypto radar cards",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/market_radar.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-upgraded",
+      "capability": "source-aware markers, layers, timeline, compare readiness",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/war_room_map.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    },
+    {
+      "api_readiness": "phase5a-upgraded",
+      "capability": "provider-gated terminal command routing",
+      "caveat": "Reusable engine still requires JSON-safe boundary checks before web exposure.",
+      "data_gap": "Provider runtime may still be unavailable, stale, cached, fixture, or proxy depending on source evidence.",
+      "engine": "lib/command_workspace.py",
+      "freshness": "repo-static",
+      "provider": "first-party lib",
+      "source_status": "local/source-backed"
+    }
+  ],
+  "summary": {
+    "auth_billing_persistence_added": false,
+    "broker_execution_added": false,
+    "external_source_copied": false,
+    "lib_engine_count": 12,
+    "missing_or_partial_surface_count": 5,
+    "non_advisory": true,
+    "phase5a_added_workspace_count": 3,
+    "streamlit_page_count": 9,
+    "web_workspace_count": 8
+  },
+  "unavailable": [
+    {
+      "data_gap": "Streamlit screener filters and heatmaps are not migrated.",
+      "priority": "P1",
+      "source_status": "missing",
+      "surface": "Dedicated screener workspace"
+    },
+    {
+      "data_gap": "Portfolio backtest, attribution, and factor labs remain Streamlit-only.",
+      "priority": "P1",
+      "source_status": "missing",
+      "surface": "Portfolio quant workspace"
+    },
+    {
+      "data_gap": "Phase 5A shows overview and readiness; complete statement tables remain partial.",
+      "priority": "P1",
+      "source_status": "partial",
+      "surface": "Full financial statement drilldowns"
+    },
+    {
+      "data_gap": "Phase 5A exposes readiness/proxy only; full option-book UX stays deferred.",
+      "priority": "P2",
+      "source_status": "partial",
+      "surface": "Full options book and volatility surface workflow"
+    },
+    {
+      "data_gap": "Native map-like SVG is interactive enough for this slice; MapLibre/deck.gl remains future review.",
+      "priority": "P2",
+      "source_status": "partial",
+      "surface": "Production-grade map renderer"
+    }
+  ]
+}

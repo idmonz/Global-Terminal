@@ -1,0 +1,62 @@
+{
+  "evidence_version": "phase6q.hosted.handoff.v1",
+  "captured_at": "",
+  "passed": false,
+  "hosted_scheduler_verified": false,
+  "runner": {
+    "kind": "github-actions-python",
+    "deployed": false,
+    "default_branch_workflow": false,
+    "invocation_observed": false,
+    "job_history_observed": false,
+    "concurrency_limit": 1,
+    "deadline_seconds": 240,
+    "workflow_version": ""
+  },
+  "assertions": {
+    "deployed_invocation": false,
+    "job_history_observed": false,
+    "tenant_source_backed_result": false,
+    "explainable_trigger": false,
+    "account_isolation": false,
+    "cross_tenant_write_blocked": false,
+    "overlap_suppressed": false,
+    "idempotent_replay": false,
+    "quota_bounded": false,
+    "provider_failure_preserved_lkg": false,
+    "kill_switch": false,
+    "lease_recovery": false,
+    "cleanup": false,
+    "audit_retained": false,
+    "zero_read_provider_calls": false
+  },
+  "counts": {
+    "page_read_provider_calls": 0,
+    "overlap_additional_provider_calls": 0,
+    "duplicate_runs": 0,
+    "duplicate_evaluations": 0,
+    "duplicate_triggers": 0,
+    "duplicate_audit_effects": 0,
+    "cross_tenant_visible_rows": 0,
+    "cross_tenant_mutable_rows": 0,
+    "cleanup_remaining_temp_rows": 0,
+    "source_backed_results": 0,
+    "provider_calls": 0,
+    "trigger_count": 0,
+    "job_history_rows": 0
+  },
+  "source": {
+    "source_backed": false,
+    "provider": "",
+    "source_url": "",
+    "source_status": "unavailable",
+    "retrieved_at": "",
+    "observed_at": ""
+  },
+  "final_schedule_state": "disabled",
+  "privacy": {
+    "identifiers_redacted": true,
+    "secrets_printed": false,
+    "private_payloads_printed": false
+  }
+}

@@ -1,0 +1,1625 @@
+{
+  "caveats": [
+    "Watchlist names, symbols, order, and private reasons are stored locally; private reasons are excluded from this payload.",
+    "Materialization is manual, bounded, and overlap-protected. No installed background service is claimed.",
+    "Quotes may be delayed and all outputs are read-only research context."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "active_list": {
+      "active": true,
+      "created_at": "2026-06-16T00:00:00+00:00",
+      "item_count": 5,
+      "list_id": "fixture-daily",
+      "name": "Daily Radar",
+      "position": 0,
+      "updated_at": "2026-07-02T00:00:00+00:00"
+    },
+    "alert_readiness": {
+      "acknowledged_count": 0,
+      "alert_version": "watchlist_change_alert.v1",
+      "candidate_count": 4,
+      "candidates": [
+        {
+          "acknowledgement_status": "unacknowledged",
+          "change_id": "change_261a301722573bc3",
+          "change_type": "event",
+          "event_id": null,
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "fingerprint": "e51492fe06d37b1a134b8de60354e6298fd2fd922e354722991fb1b8979dce6c",
+          "observation": "AAPL scheduled-earnings changed from 2026-07-28 to 2026-07-29.",
+          "severity": "material",
+          "status": "preview-ready",
+          "symbol": "AAPL"
+        },
+        {
+          "acknowledgement_status": "unacknowledged",
+          "change_id": "change_658ceda7e91f8c5b",
+          "change_type": "price",
+          "event_id": null,
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "fingerprint": "331c93a46612548b06619edbbd15fcc28d5618455b5f1082065b101aba43aa32",
+          "observation": "AAPL saved price changed +2.56% between snapshots.",
+          "severity": "material",
+          "status": "preview-ready",
+          "symbol": "AAPL"
+        },
+        {
+          "acknowledgement_status": "unacknowledged",
+          "change_id": "change_07973211143a04f0",
+          "change_type": "event",
+          "event_id": null,
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "fingerprint": "6b6bfdcd4cb1f2e22e29beb243e76e0ec8bdd6cca64dbce0cb3ead8be97384af",
+          "observation": "TSLA scheduled-earnings changed from 2026-07-21 to 2026-07-23.",
+          "severity": "material",
+          "status": "preview-ready",
+          "symbol": "TSLA"
+        },
+        {
+          "acknowledgement_status": "unacknowledged",
+          "change_id": "change_65e30b97c009c380",
+          "change_type": "price",
+          "event_id": null,
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "fingerprint": "3c4fd9aebba58671624e736c799415edd3dbbcf22d01d1efcd6dca616ed6e2d2",
+          "observation": "TSLA saved price changed +2.77% between snapshots.",
+          "severity": "material",
+          "status": "preview-ready",
+          "symbol": "TSLA"
+        }
+      ],
+      "cooldown_minutes": 60,
+      "data_gap": null,
+      "delivery": "preview-only",
+      "duplicate_count": 0,
+      "eligible_count": 4,
+      "expires_at": null,
+      "fictional": true,
+      "generated_at": "2026-06-16T00:00:00+00:00",
+      "hosted_delivery": "unavailable",
+      "kill_switch_engaged": false,
+      "not_financial_advice": true,
+      "opt_in": true,
+      "source_status": "fixture",
+      "status": "ready"
+    },
+    "caveat": "Fictional deterministic watchlist for network-free UI development. No current quote is claimed.",
+    "change_inbox": {
+      "caveat": "Changes compare two saved observations. They do not establish causality, investment significance, or a recommended action.",
+      "changes": [
+        {
+          "after": "2026-07-29",
+          "before": "2026-07-28",
+          "change_id": "change_261a301722573bc3",
+          "change_type": "event",
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "field": "scheduled-earnings",
+          "interpretation": "observation-only",
+          "magnitude": {},
+          "not_financial_advice": true,
+          "observation": "AAPL scheduled-earnings changed from 2026-07-28 to 2026-07-29.",
+          "severity": "material",
+          "symbol": "AAPL",
+          "transition": "rescheduled",
+          "unit": "date"
+        },
+        {
+          "after": 214.35,
+          "before": 208.9912,
+          "change_id": "change_658ceda7e91f8c5b",
+          "change_type": "price",
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "field": "last_price",
+          "interpretation": "observation-only",
+          "magnitude": {
+            "relative_pct": 2.564127
+          },
+          "not_financial_advice": true,
+          "observation": "AAPL saved price changed +2.56% between snapshots.",
+          "severity": "material",
+          "symbol": "AAPL",
+          "transition": "increased",
+          "unit": "quote-currency"
+        },
+        {
+          "after": "2026-07-23",
+          "before": "2026-07-21",
+          "change_id": "change_07973211143a04f0",
+          "change_type": "event",
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "field": "scheduled-earnings",
+          "interpretation": "observation-only",
+          "magnitude": {},
+          "not_financial_advice": true,
+          "observation": "TSLA scheduled-earnings changed from 2026-07-21 to 2026-07-23.",
+          "severity": "material",
+          "symbol": "TSLA",
+          "transition": "rescheduled",
+          "unit": "date"
+        },
+        {
+          "after": 393.45,
+          "before": 382.8268,
+          "change_id": "change_65e30b97c009c380",
+          "change_type": "price",
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": "Fictional deterministic snapshot; no live market claim.",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": null,
+              "source_status": "fixture",
+              "source_url": null
+            }
+          },
+          "field": "last_price",
+          "interpretation": "observation-only",
+          "magnitude": {
+            "relative_pct": 2.774936
+          },
+          "not_financial_advice": true,
+          "observation": "TSLA saved price changed +2.77% between snapshots.",
+          "severity": "material",
+          "symbol": "TSLA",
+          "transition": "increased",
+          "unit": "quote-currency"
+        },
+        {
+          "after": "AAPL deterministic catalyst fixture",
+          "before": null,
+          "change_id": "change_d7bc0d6e7ec2f330",
+          "change_type": "news",
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": null
+          },
+          "field": "exact_news",
+          "interpretation": "observation-only",
+          "magnitude": {},
+          "not_financial_advice": true,
+          "observation": "AAPL has a new exact-symbol headline: AAPL deterministic catalyst fixture",
+          "severity": "info",
+          "symbol": "AAPL",
+          "transition": "added",
+          "unit": "headline"
+        },
+        {
+          "after": "TSLA deterministic catalyst fixture",
+          "before": null,
+          "change_id": "change_be6ac57a74720230",
+          "change_type": "news",
+          "evidence": {
+            "after": {
+              "caveat": null,
+              "confidence": null,
+              "data_gap": null,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null
+            },
+            "before": null
+          },
+          "field": "exact_news",
+          "interpretation": "observation-only",
+          "magnitude": {},
+          "not_financial_advice": true,
+          "observation": "TSLA has a new exact-symbol headline: TSLA deterministic catalyst fixture",
+          "severity": "info",
+          "symbol": "TSLA",
+          "transition": "added",
+          "unit": "headline"
+        }
+      ],
+      "comparison_status": "ready",
+      "current_snapshot_at": "2026-07-03T00:00:00+00:00",
+      "current_snapshot_id": "fixture-phase6g-current",
+      "data_gap": null,
+      "diff_version": "research_snapshot_diff.v1",
+      "generated_at": "2026-06-16T00:00:00+00:00",
+      "list_id": "fixture-daily",
+      "not_financial_advice": true,
+      "previous_snapshot_at": "2026-07-02T00:00:00+00:00",
+      "previous_snapshot_id": "fixture-phase6g-previous",
+      "provider_call_count": 0,
+      "source_status": "fixture",
+      "summary": {
+        "by_severity": {
+          "info": 2,
+          "material": 4
+        },
+        "by_type": {
+          "event": 2,
+          "news": 2,
+          "price": 2
+        },
+        "change_count": 6,
+        "has_material_change": true,
+        "symbol_count": 2
+      },
+      "thresholds": {
+        "fundamental_relative_pct": 5.0,
+        "performance_percentage_points": 1.0,
+        "price_relative_pct": 1.0
+      }
+    },
+    "collections": [
+      {
+        "active": true,
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "item_count": 5,
+        "list_id": "fixture-daily",
+        "name": "Daily Radar",
+        "position": 0,
+        "updated_at": "2026-07-02T00:00:00+00:00"
+      }
+    ],
+    "items": [
+      {
+        "advanced": {
+          "annual_dividend_per_share": 0.93,
+          "average_volume_10": 1129000.0,
+          "calculation_source": "existing-symbol-history-cache",
+          "data_gap": null,
+          "dividend_yield": 0.009,
+          "eps": 7.12,
+          "financial_data_gap": null,
+          "financial_fetched_at": "2026-07-03T00:00:00+00:00",
+          "financial_source_status": "fixture",
+          "formula_version": "phase6e.watchlist.v1",
+          "market_cap": 3240000000000,
+          "not_financial_advice": true,
+          "observation_count": 70,
+          "pe_ratio": 31.4,
+          "provider_calls": 0,
+          "realized_volatility_1m_pct": 2.3075,
+          "return_1m_pct": 5.7175,
+          "return_1w_pct": 1.1781,
+          "return_3m_pct": 19.7673,
+          "revenue_ttm": 388800000000.0,
+          "rsi_14": 99.0147,
+          "sma_20": 209.0229,
+          "sma_50": 200.6442,
+          "status": "available",
+          "trend_state": "bullish"
+        },
+        "asset_class": "equity",
+        "capability": "workstation",
+        "catalysts": {
+          "availability": "fixture",
+          "caveat": "Fictional deterministic catalysts for network-free product QA.",
+          "data_gap": "No current provider event is claimed in fixture mode.",
+          "dividends": [
+            {
+              "amount": 0.93,
+              "event_type": "dividend",
+              "ex_dividend_date": "2026-08-10",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "payment_date": null,
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "AAPL",
+              "yield": 0.009
+            }
+          ],
+          "earnings": [
+            {
+              "estimated_eps": 1.78,
+              "event_date": "2026-07-29",
+              "event_type": "scheduled-earnings",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "reported_eps": null,
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "AAPL"
+            }
+          ],
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "news": [
+            {
+              "exact_symbol_scope": true,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "match_evidence": {
+                "exact": true,
+                "scope": "fictional-exact-symbol-fixture",
+                "symbol": "AAPL",
+                "terms": [
+                  "AAPL"
+                ]
+              },
+              "match_terms": [
+                "AAPL"
+              ],
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "published_at": "2026-06-16T00:00:00+00:00",
+              "source_status": "fixture",
+              "source_url": null,
+              "summary": "Fictional row for network-free interaction and layout QA.",
+              "title": "AAPL deterministic catalyst fixture"
+            }
+          ],
+          "next_event": {
+            "estimated_eps": 1.78,
+            "event_date": "2026-07-29",
+            "event_type": "scheduled-earnings",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "reported_eps": null,
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "AAPL"
+          },
+          "not_financial_advice": true,
+          "source_status": "fixture",
+          "symbol": "AAPL"
+        },
+        "change_pct": 1.1781,
+        "cik": null,
+        "exchange": "NASDAQ",
+        "freshness": "fixture",
+        "identity_origin": "phase6d-qa-fixture",
+        "identity_status": "exact",
+        "industry": "Consumer Electronics",
+        "item_id": "fixture-watch-aapl",
+        "last_price": 214.35,
+        "list_id": "fixture-daily",
+        "mic": "XNAS",
+        "name": "Apple Inc.",
+        "not_financial_advice": true,
+        "position": 0,
+        "refresh_data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+        "refresh_fetched_at": "2026-07-03T00:00:00+00:00",
+        "refresh_status": "fixture",
+        "research_snapshot_version": "research_snapshot.v1",
+        "sector": "Technology",
+        "source_register": [
+          {
+            "caveat": "Deterministic and non-current.",
+            "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "row_count": 1,
+            "source": "AAPL research snapshot",
+            "source_status": "fixture",
+            "source_url": null
+          }
+        ],
+        "source_status": "fixture",
+        "symbol": "AAPL"
+      },
+      {
+        "advanced": {
+          "annual_dividend_per_share": null,
+          "average_volume_10": 1329000.0,
+          "calculation_source": "existing-symbol-history-cache",
+          "data_gap": null,
+          "dividend_yield": null,
+          "eps": 2.09,
+          "financial_data_gap": null,
+          "financial_fetched_at": "2026-07-03T00:00:00+00:00",
+          "financial_source_status": "fixture",
+          "formula_version": "phase6e.watchlist.v1",
+          "market_cap": 1260000000000,
+          "not_financial_advice": true,
+          "observation_count": 70,
+          "pe_ratio": 188.2,
+          "provider_calls": 0,
+          "realized_volatility_1m_pct": 1.2577,
+          "return_1m_pct": 5.7531,
+          "return_1w_pct": 1.2434,
+          "return_3m_pct": 19.7217,
+          "revenue_ttm": 151200000000.0,
+          "rsi_14": 100.0,
+          "sma_20": 383.6843,
+          "sma_50": 368.2974,
+          "status": "available",
+          "trend_state": "bullish"
+        },
+        "asset_class": "equity",
+        "capability": "workstation",
+        "catalysts": {
+          "availability": "fixture",
+          "caveat": "Fictional deterministic catalysts for network-free product QA.",
+          "data_gap": "No current provider event is claimed in fixture mode.",
+          "dividends": [],
+          "earnings": [
+            {
+              "estimated_eps": 0.52,
+              "event_date": "2026-07-23",
+              "event_type": "scheduled-earnings",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "reported_eps": null,
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "TSLA"
+            }
+          ],
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "news": [
+            {
+              "exact_symbol_scope": true,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "match_evidence": {
+                "exact": true,
+                "scope": "fictional-exact-symbol-fixture",
+                "symbol": "TSLA",
+                "terms": [
+                  "TSLA"
+                ]
+              },
+              "match_terms": [
+                "TSLA"
+              ],
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "published_at": "2026-06-16T00:00:00+00:00",
+              "source_status": "fixture",
+              "source_url": null,
+              "summary": "Fictional row for network-free interaction and layout QA.",
+              "title": "TSLA deterministic catalyst fixture"
+            }
+          ],
+          "next_event": {
+            "estimated_eps": 0.52,
+            "event_date": "2026-07-23",
+            "event_type": "scheduled-earnings",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "reported_eps": null,
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "TSLA"
+          },
+          "not_financial_advice": true,
+          "source_status": "fixture",
+          "symbol": "TSLA"
+        },
+        "change_pct": 1.2434,
+        "cik": null,
+        "exchange": "NASDAQ",
+        "freshness": "fixture",
+        "identity_origin": "phase6d-qa-fixture",
+        "identity_status": "exact",
+        "industry": "Auto Manufacturers",
+        "item_id": "fixture-watch-tsla",
+        "last_price": 393.45,
+        "list_id": "fixture-daily",
+        "mic": "XNAS",
+        "name": "Tesla, Inc.",
+        "not_financial_advice": true,
+        "position": 1,
+        "refresh_data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+        "refresh_fetched_at": "2026-07-03T00:00:00+00:00",
+        "refresh_status": "fixture",
+        "research_snapshot_version": "research_snapshot.v1",
+        "sector": "Consumer Cyclical",
+        "source_register": [
+          {
+            "caveat": "Deterministic and non-current.",
+            "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "row_count": 1,
+            "source": "TSLA research snapshot",
+            "source_status": "fixture",
+            "source_url": null
+          }
+        ],
+        "source_status": "fixture",
+        "symbol": "TSLA"
+      },
+      {
+        "advanced": {
+          "annual_dividend_per_share": 0.87,
+          "average_volume_10": 1529000.0,
+          "calculation_source": "existing-symbol-history-cache",
+          "data_gap": null,
+          "dividend_yield": 0.017,
+          "eps": 6.7,
+          "financial_data_gap": null,
+          "financial_fetched_at": "2026-07-03T00:00:00+00:00",
+          "financial_source_status": "fixture",
+          "formula_version": "phase6e.watchlist.v1",
+          "market_cap": 400000000000,
+          "not_financial_advice": true,
+          "observation_count": 70,
+          "pe_ratio": 24.8,
+          "provider_calls": 0,
+          "realized_volatility_1m_pct": 2.9739,
+          "return_1m_pct": 5.6949,
+          "return_1w_pct": 1.1367,
+          "return_3m_pct": 19.7964,
+          "revenue_ttm": 48000000000.0,
+          "rsi_14": 95.2755,
+          "sma_20": 162.1441,
+          "sma_50": 155.6465,
+          "status": "available",
+          "trend_state": "bullish"
+        },
+        "asset_class": "equity",
+        "capability": "workstation",
+        "catalysts": {
+          "availability": "fixture",
+          "caveat": "Fictional deterministic catalysts for network-free product QA.",
+          "data_gap": "No current provider event is claimed in fixture mode.",
+          "dividends": [
+            {
+              "amount": 0.87,
+              "event_type": "dividend",
+              "ex_dividend_date": "2026-08-26",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "payment_date": null,
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "JNJ",
+              "yield": 0.017
+            }
+          ],
+          "earnings": [
+            {
+              "estimated_eps": 1.68,
+              "event_date": "2026-07-15",
+              "event_type": "scheduled-earnings",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "reported_eps": null,
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "JNJ"
+            }
+          ],
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "news": [
+            {
+              "exact_symbol_scope": true,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "match_evidence": {
+                "exact": true,
+                "scope": "fictional-exact-symbol-fixture",
+                "symbol": "JNJ",
+                "terms": [
+                  "JNJ"
+                ]
+              },
+              "match_terms": [
+                "JNJ"
+              ],
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "published_at": "2026-06-16T00:00:00+00:00",
+              "source_status": "fixture",
+              "source_url": null,
+              "summary": "Fictional row for network-free interaction and layout QA.",
+              "title": "JNJ deterministic catalyst fixture"
+            }
+          ],
+          "next_event": {
+            "estimated_eps": 1.68,
+            "event_date": "2026-07-15",
+            "event_type": "scheduled-earnings",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "reported_eps": null,
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "JNJ"
+          },
+          "not_financial_advice": true,
+          "source_status": "fixture",
+          "symbol": "JNJ"
+        },
+        "change_pct": 1.1367,
+        "cik": null,
+        "exchange": "NYSE",
+        "freshness": "fixture",
+        "identity_origin": "phase6d-qa-fixture",
+        "identity_status": "exact",
+        "industry": "Drug Manufacturers",
+        "item_id": "fixture-watch-jnj",
+        "last_price": 166.28,
+        "list_id": "fixture-daily",
+        "mic": "XNYS",
+        "name": "Johnson & Johnson",
+        "not_financial_advice": true,
+        "position": 2,
+        "refresh_data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+        "refresh_fetched_at": "2026-07-03T00:00:00+00:00",
+        "refresh_status": "fixture",
+        "research_snapshot_version": "research_snapshot.v1",
+        "sector": "Healthcare",
+        "source_register": [
+          {
+            "caveat": "Deterministic and non-current.",
+            "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "row_count": 1,
+            "source": "JNJ research snapshot",
+            "source_status": "fixture",
+            "source_url": null
+          }
+        ],
+        "source_status": "fixture",
+        "symbol": "JNJ"
+      },
+      {
+        "advanced": {
+          "annual_dividend_per_share": 0.93,
+          "average_volume_10": 1729000.0,
+          "calculation_source": "existing-symbol-history-cache",
+          "data_gap": null,
+          "dividend_yield": 0.020999999999999998,
+          "eps": 7.13,
+          "financial_data_gap": null,
+          "financial_fetched_at": "2026-07-03T00:00:00+00:00",
+          "financial_source_status": "fixture",
+          "formula_version": "phase6e.watchlist.v1",
+          "market_cap": 156000000000,
+          "not_financial_advice": true,
+          "observation_count": 70,
+          "pe_ratio": 9.6,
+          "provider_calls": 0,
+          "realized_volatility_1m_pct": 7.216,
+          "return_1m_pct": 5.5509,
+          "return_1w_pct": 0.8734,
+          "return_3m_pct": 19.9818,
+          "revenue_ttm": 18720000000.0,
+          "rsi_14": 81.2032,
+          "sma_20": 66.7094,
+          "sma_50": 64.0411,
+          "status": "available",
+          "trend_state": "bullish"
+        },
+        "asset_class": "equity",
+        "capability": "workstation",
+        "catalysts": {
+          "availability": "fixture",
+          "caveat": "Fictional deterministic catalysts for network-free product QA.",
+          "data_gap": "No current provider event is claimed in fixture mode.",
+          "dividends": [
+            {
+              "amount": 0.93,
+              "event_type": "dividend",
+              "ex_dividend_date": "2026-09-24",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "payment_date": null,
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "TTE",
+              "yield": 0.020999999999999998
+            }
+          ],
+          "earnings": [
+            {
+              "estimated_eps": 1.78,
+              "event_date": "2026-07-24",
+              "event_type": "scheduled-earnings",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "reported_eps": null,
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "TTE"
+            }
+          ],
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "news": [
+            {
+              "exact_symbol_scope": true,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "match_evidence": {
+                "exact": true,
+                "scope": "fictional-exact-symbol-fixture",
+                "symbol": "TTE",
+                "terms": [
+                  "TTE"
+                ]
+              },
+              "match_terms": [
+                "TTE"
+              ],
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "published_at": "2026-06-16T00:00:00+00:00",
+              "source_status": "fixture",
+              "source_url": null,
+              "summary": "Fictional row for network-free interaction and layout QA.",
+              "title": "TTE deterministic catalyst fixture"
+            }
+          ],
+          "next_event": {
+            "estimated_eps": 1.78,
+            "event_date": "2026-07-24",
+            "event_type": "scheduled-earnings",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "reported_eps": null,
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "TTE"
+          },
+          "not_financial_advice": true,
+          "source_status": "fixture",
+          "symbol": "TTE"
+        },
+        "change_pct": 0.8734,
+        "cik": null,
+        "exchange": "NYSE",
+        "freshness": "fixture",
+        "identity_origin": "phase6d-qa-fixture",
+        "identity_status": "exact",
+        "industry": "Integrated Oil & Gas",
+        "item_id": "fixture-watch-tte",
+        "last_price": 68.42,
+        "list_id": "fixture-daily",
+        "mic": "XNYS",
+        "name": "TotalEnergies SE",
+        "not_financial_advice": true,
+        "position": 3,
+        "refresh_data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+        "refresh_fetched_at": "2026-07-03T00:00:00+00:00",
+        "refresh_status": "fixture",
+        "research_snapshot_version": "research_snapshot.v1",
+        "sector": "Energy",
+        "source_register": [
+          {
+            "caveat": "Deterministic and non-current.",
+            "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "row_count": 1,
+            "source": "TTE research snapshot",
+            "source_status": "fixture",
+            "source_url": null
+          }
+        ],
+        "source_status": "fixture",
+        "symbol": "TTE"
+      },
+      {
+        "advanced": {
+          "annual_dividend_per_share": 1.35,
+          "average_volume_10": 1929000.0,
+          "calculation_source": "existing-symbol-history-cache",
+          "data_gap": null,
+          "dividend_yield": 0.025,
+          "eps": 10.4,
+          "financial_data_gap": null,
+          "financial_fetched_at": "2026-07-03T00:00:00+00:00",
+          "financial_source_status": "fixture",
+          "formula_version": "phase6e.watchlist.v1",
+          "market_cap": 270000000000,
+          "not_financial_advice": true,
+          "observation_count": 70,
+          "pe_ratio": 22.9,
+          "provider_calls": 0,
+          "realized_volatility_1m_pct": 2.0768,
+          "return_1m_pct": 5.7253,
+          "return_1w_pct": 1.1925,
+          "return_3m_pct": 19.7573,
+          "revenue_ttm": 32400000000.0,
+          "rsi_14": 100.0,
+          "sma_20": 232.2525,
+          "sma_50": 222.9418,
+          "status": "available",
+          "trend_state": "bullish"
+        },
+        "asset_class": "equity",
+        "capability": "workstation",
+        "catalysts": {
+          "availability": "fixture",
+          "caveat": "Fictional deterministic catalysts for network-free product QA.",
+          "data_gap": "No current provider event is claimed in fixture mode.",
+          "dividends": [
+            {
+              "amount": 1.35,
+              "event_type": "dividend",
+              "ex_dividend_date": "2026-08-29",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "payment_date": null,
+              "provider": "phase6f fictional fixture",
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "TMUS",
+              "yield": 0.025
+            }
+          ],
+          "earnings": [
+            {
+              "estimated_eps": 2.6,
+              "event_date": "2026-07-30",
+              "event_type": "scheduled-earnings",
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "reported_eps": null,
+              "source_status": "fixture",
+              "source_url": null,
+              "symbol": "TMUS"
+            }
+          ],
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "news": [
+            {
+              "exact_symbol_scope": true,
+              "fetched_at": "2026-06-16T00:00:00+00:00",
+              "match_evidence": {
+                "exact": true,
+                "scope": "fictional-exact-symbol-fixture",
+                "symbol": "TMUS",
+                "terms": [
+                  "TMUS"
+                ]
+              },
+              "match_terms": [
+                "TMUS"
+              ],
+              "not_financial_advice": true,
+              "provider": "phase6f fictional fixture",
+              "published_at": "2026-06-16T00:00:00+00:00",
+              "source_status": "fixture",
+              "source_url": null,
+              "summary": "Fictional row for network-free interaction and layout QA.",
+              "title": "TMUS deterministic catalyst fixture"
+            }
+          ],
+          "next_event": {
+            "estimated_eps": 2.6,
+            "event_date": "2026-07-30",
+            "event_type": "scheduled-earnings",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "reported_eps": null,
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "TMUS"
+          },
+          "not_financial_advice": true,
+          "source_status": "fixture",
+          "symbol": "TMUS"
+        },
+        "change_pct": 1.1925,
+        "cik": null,
+        "exchange": "NASDAQ",
+        "freshness": "fixture",
+        "identity_origin": "phase6d-qa-fixture",
+        "identity_status": "exact",
+        "industry": "Telecom Services",
+        "item_id": "fixture-watch-tmus",
+        "last_price": 238.17,
+        "list_id": "fixture-daily",
+        "mic": "XNAS",
+        "name": "T-Mobile US, Inc.",
+        "not_financial_advice": true,
+        "position": 4,
+        "refresh_data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+        "refresh_fetched_at": "2026-07-03T00:00:00+00:00",
+        "refresh_status": "fixture",
+        "research_snapshot_version": "research_snapshot.v1",
+        "sector": "Communication Services",
+        "source_register": [
+          {
+            "caveat": "Deterministic and non-current.",
+            "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "row_count": 1,
+            "source": "TMUS research snapshot",
+            "source_status": "fixture",
+            "source_url": null
+          }
+        ],
+        "source_status": "fixture",
+        "symbol": "TMUS"
+      }
+    ],
+    "materialization": {
+      "broad_universe_rebuild": false,
+      "installed_background_service": false,
+      "latest_job": {
+        "broad_universe_rebuild": false,
+        "completed_at": "2026-07-03T00:00:00+00:00",
+        "completed_count": 5,
+        "duration_ms": 0,
+        "failed_count": 0,
+        "installed_background_service": false,
+        "interval": "1d",
+        "job_id": "fixture-phase6f-research",
+        "last_error": null,
+        "list_id": "fixture-daily",
+        "provider_budget": {
+          "actual_calls": 0,
+          "actual_calls_by_operation": {
+            "alpha-vantage:overview": 0,
+            "finnhub:company-news": 0,
+            "finnhub:earnings-calendar": 0,
+            "yfinance:multi-history": 0
+          },
+          "blocked_calls": 0,
+          "cache_hits": 0,
+          "failed_calls": 0,
+          "maximum_calls": 16,
+          "maximum_concurrency": 1,
+          "maximum_symbols": 5,
+          "next_safe_refresh_at": null,
+          "planned_calls": {
+            "alpha-vantage:overview": 5,
+            "finnhub:company-news": 5,
+            "finnhub:earnings-calendar": 5,
+            "yfinance:multi-history": 1
+          },
+          "rate_limit_class": "free-first-bounded",
+          "skipped_calls": 0,
+          "stale_hits": 0,
+          "timeout_seconds": 15,
+          "ttl_seconds": 900
+        },
+        "provider_call_budget": 16,
+        "provider_call_count": 0,
+        "queue_depth": 0,
+        "range": "3mo",
+        "requested_count": 5,
+        "skipped_count": 0,
+        "started_at": "2026-07-03T00:00:00+00:00",
+        "status": "fixture"
+      },
+      "latest_success": {
+        "completed_at": "2026-07-03T00:00:00+00:00",
+        "completed_count": 5,
+        "duration_ms": 0,
+        "failed_count": 0,
+        "interval": "1d",
+        "job_id": "fixture-phase6g-current",
+        "last_error": null,
+        "list_id": "fixture-daily",
+        "provider_budget": {
+          "actual_calls": 0,
+          "actual_calls_by_operation": {
+            "alpha-vantage:overview": 0,
+            "finnhub:company-news": 0,
+            "finnhub:earnings-calendar": 0,
+            "yfinance:multi-history": 0
+          },
+          "blocked_calls": 0,
+          "cache_hits": 0,
+          "failed_calls": 0,
+          "maximum_calls": 16,
+          "maximum_concurrency": 1,
+          "maximum_symbols": 5,
+          "next_safe_refresh_at": null,
+          "planned_calls": {
+            "alpha-vantage:overview": 5,
+            "finnhub:company-news": 5,
+            "finnhub:earnings-calendar": 5,
+            "yfinance:multi-history": 1
+          },
+          "rate_limit_class": "free-first-bounded",
+          "skipped_calls": 0,
+          "stale_hits": 0,
+          "timeout_seconds": 15,
+          "ttl_seconds": 900
+        },
+        "provider_call_budget": 16,
+        "provider_call_count": 0,
+        "queue_depth": 0,
+        "range": "3mo",
+        "requested_count": 5,
+        "skipped_count": 0,
+        "started_at": "2026-07-03T00:00:00+00:00",
+        "status": "completed"
+      },
+      "limits": {
+        "maximum_concurrency": 2,
+        "maximum_provider_calls": 16,
+        "maximum_symbols_per_job": 5,
+        "ttl_seconds": 900
+      },
+      "manual_only": true,
+      "version": "watchlist_materialization.v1"
+    },
+    "privacy": {
+      "private_reason_in_external_ai": false,
+      "private_reason_in_fixture": false,
+      "private_reason_in_logs": false,
+      "private_reason_in_payload": false,
+      "private_reason_in_release": false,
+      "private_reason_in_url": false,
+      "private_reason_stored_locally": false,
+      "scope": "fictional-demo"
+    },
+    "privacy_scope": "fictional-demo",
+    "readiness": {
+      "exact_identity_required": true,
+      "hosted_auth": "unavailable",
+      "hosted_sync": "unavailable",
+      "local_persistence": false,
+      "materialization": "deterministic-fixture"
+    },
+    "refresh_operations": {
+      "background": {
+        "configured": false,
+        "enabled": false,
+        "installed": false,
+        "kill_switch_engaged": true,
+        "running": false,
+        "status": "disabled-by-default"
+      },
+      "bounded_event_history": [
+        {
+          "completed_at": "2026-07-03T00:00:00+00:00",
+          "completed_count": 5,
+          "duration_ms": 0,
+          "failed_count": 0,
+          "job_id": "fixture-phase6g-current",
+          "last_error": null,
+          "list_id": "fixture-daily",
+          "provider_call_budget": 16,
+          "provider_call_count": 0,
+          "queue_depth": 0,
+          "requested_count": 5,
+          "skipped_count": 0,
+          "started_at": "2026-07-03T00:00:00+00:00",
+          "status": "completed"
+        },
+        {
+          "completed_at": "2026-07-02T00:00:00+00:00",
+          "completed_count": 5,
+          "duration_ms": 0,
+          "failed_count": 0,
+          "job_id": "fixture-phase6g-previous",
+          "last_error": null,
+          "list_id": "fixture-daily",
+          "provider_call_budget": 16,
+          "provider_call_count": 0,
+          "queue_depth": 0,
+          "requested_count": 5,
+          "skipped_count": 0,
+          "started_at": "2026-07-02T00:00:00+00:00",
+          "status": "completed"
+        }
+      ],
+      "budget": {
+        "actual_calls": 0,
+        "actual_calls_by_operation": {
+          "alpha-vantage:overview": 0,
+          "finnhub:company-news": 0,
+          "finnhub:earnings-calendar": 0,
+          "yfinance:multi-history": 0
+        },
+        "blocked_calls": 0,
+        "cache_hits": 0,
+        "failed_calls": 0,
+        "maximum_calls": 16,
+        "skipped_calls": 0,
+        "stale_hits": 0
+      },
+      "caveat": "The background scheduler is not installed. Manual refresh is bounded and the latest failed attempt never replaces the last successful snapshot.",
+      "data_gap": null,
+      "generated_at": "2026-06-16T00:00:00+00:00",
+      "installed_background_service": false,
+      "last_attempt": {
+        "completed_at": "2026-07-03T00:00:00+00:00",
+        "completed_count": 5,
+        "duration_ms": 0,
+        "failed_count": 0,
+        "job_id": "fixture-phase6g-current",
+        "last_error": null,
+        "list_id": "fixture-daily",
+        "provider_call_budget": 16,
+        "provider_call_count": 0,
+        "queue_depth": 0,
+        "requested_count": 5,
+        "skipped_count": 0,
+        "started_at": "2026-07-03T00:00:00+00:00",
+        "status": "completed"
+      },
+      "last_success": {
+        "completed_at": "2026-07-03T00:00:00+00:00",
+        "completed_count": 5,
+        "duration_ms": 0,
+        "failed_count": 0,
+        "job_id": "fixture-phase6g-current",
+        "last_error": null,
+        "list_id": "fixture-daily",
+        "provider_call_budget": 16,
+        "provider_call_count": 0,
+        "queue_depth": 0,
+        "requested_count": 5,
+        "skipped_count": 0,
+        "started_at": "2026-07-03T00:00:00+00:00",
+        "status": "completed"
+      },
+      "manual_refresh": {
+        "action": "POST /api/watchlist-desk/lists/{list_id}/materialize",
+        "available": true,
+        "maximum_provider_calls": 16,
+        "maximum_symbols": 5
+      },
+      "mode": "manual-bounded",
+      "next_eligible_at": null,
+      "not_financial_advice": true,
+      "operations_version": "watchlist_refresh_operations.v1",
+      "overlap_status": "idle",
+      "previous_success": {
+        "completed_at": "2026-07-02T00:00:00+00:00",
+        "completed_count": 5,
+        "duration_ms": 0,
+        "failed_count": 0,
+        "job_id": "fixture-phase6g-previous",
+        "last_error": null,
+        "list_id": "fixture-daily",
+        "provider_call_budget": 16,
+        "provider_call_count": 0,
+        "queue_depth": 0,
+        "requested_count": 5,
+        "skipped_count": 0,
+        "started_at": "2026-07-02T00:00:00+00:00",
+        "status": "completed"
+      },
+      "queue_depth": 0,
+      "readiness": "ready",
+      "running": false,
+      "source_status": "fixture"
+    },
+    "selected": {
+      "advanced": {
+        "annual_dividend_per_share": 0.93,
+        "average_volume_10": 1129000.0,
+        "calculation_source": "existing-symbol-history-cache",
+        "data_gap": null,
+        "dividend_yield": 0.009,
+        "eps": 7.12,
+        "financial_data_gap": null,
+        "financial_fetched_at": "2026-07-03T00:00:00+00:00",
+        "financial_source_status": "fixture",
+        "formula_version": "phase6e.watchlist.v1",
+        "market_cap": 3240000000000,
+        "not_financial_advice": true,
+        "observation_count": 70,
+        "pe_ratio": 31.4,
+        "provider_calls": 0,
+        "realized_volatility_1m_pct": 2.3075,
+        "return_1m_pct": 5.7175,
+        "return_1w_pct": 1.1781,
+        "return_3m_pct": 19.7673,
+        "revenue_ttm": 388800000000.0,
+        "rsi_14": 99.0147,
+        "sma_20": 209.0229,
+        "sma_50": 200.6442,
+        "status": "available",
+        "trend_state": "bullish"
+      },
+      "asset_class": "equity",
+      "capability": "workstation",
+      "catalysts": {
+        "availability": "fixture",
+        "caveat": "Fictional deterministic catalysts for network-free product QA.",
+        "data_gap": "No current provider event is claimed in fixture mode.",
+        "dividends": [
+          {
+            "amount": 0.93,
+            "event_type": "dividend",
+            "ex_dividend_date": "2026-08-10",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "payment_date": null,
+            "provider": "phase6f fictional fixture",
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "AAPL",
+            "yield": 0.009
+          }
+        ],
+        "earnings": [
+          {
+            "estimated_eps": 1.78,
+            "event_date": "2026-07-29",
+            "event_type": "scheduled-earnings",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "reported_eps": null,
+            "source_status": "fixture",
+            "source_url": null,
+            "symbol": "AAPL"
+          }
+        ],
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "news": [
+          {
+            "exact_symbol_scope": true,
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "match_evidence": {
+              "exact": true,
+              "scope": "fictional-exact-symbol-fixture",
+              "symbol": "AAPL",
+              "terms": [
+                "AAPL"
+              ]
+            },
+            "match_terms": [
+              "AAPL"
+            ],
+            "not_financial_advice": true,
+            "provider": "phase6f fictional fixture",
+            "published_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": null,
+            "summary": "Fictional row for network-free interaction and layout QA.",
+            "title": "AAPL deterministic catalyst fixture"
+          }
+        ],
+        "next_event": {
+          "estimated_eps": 1.78,
+          "event_date": "2026-07-29",
+          "event_type": "scheduled-earnings",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "not_financial_advice": true,
+          "provider": "phase6f fictional fixture",
+          "reported_eps": null,
+          "source_status": "fixture",
+          "source_url": null,
+          "symbol": "AAPL"
+        },
+        "not_financial_advice": true,
+        "source_status": "fixture",
+        "symbol": "AAPL"
+      },
+      "change_pct": 1.1781,
+      "cik": null,
+      "exchange": "NASDAQ",
+      "freshness": "fixture",
+      "identity_origin": "phase6d-qa-fixture",
+      "identity_status": "exact",
+      "industry": "Consumer Electronics",
+      "item_id": "fixture-watch-aapl",
+      "last_price": 214.35,
+      "list_id": "fixture-daily",
+      "mic": "XNAS",
+      "name": "Apple Inc.",
+      "not_financial_advice": true,
+      "position": 0,
+      "refresh_data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+      "refresh_fetched_at": "2026-07-03T00:00:00+00:00",
+      "refresh_status": "fixture",
+      "research_snapshot_version": "research_snapshot.v1",
+      "sector": "Technology",
+      "source_register": [
+        {
+          "caveat": "Deterministic and non-current.",
+          "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "not_financial_advice": true,
+          "provider": "phase6f fictional fixture",
+          "row_count": 1,
+          "source": "AAPL research snapshot",
+          "source_status": "fixture",
+          "source_url": null
+        }
+      ],
+      "source_status": "fixture",
+      "symbol": "AAPL"
+    },
+    "summary": {
+      "failed_count": 0,
+      "fresh_count": 0,
+      "item_count": 5,
+      "list_count": 1,
+      "non_advisory": true,
+      "research_enriched_count": 5,
+      "selected_symbol": "AAPL",
+      "source_status": "fixture",
+      "stale_count": 0
+    },
+    "watchlist_desk_version": "watchlist_desk.v1",
+    "workspace": "watchlist-desk"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "watchlist_desk",
+  "source_status": [
+    {
+      "caveat": "Watchlist quote context can be delayed; exact workstation panels load independently.",
+      "data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "provider": "watchlist-identity-store",
+      "row_count": 1,
+      "source": "AAPL",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Deterministic and non-current.",
+      "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "not_financial_advice": true,
+      "provider": "phase6f fictional fixture",
+      "row_count": 1,
+      "source": "AAPL research snapshot",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Watchlist quote context can be delayed; exact workstation panels load independently.",
+      "data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "provider": "watchlist-identity-store",
+      "row_count": 1,
+      "source": "TSLA",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Deterministic and non-current.",
+      "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "not_financial_advice": true,
+      "provider": "phase6f fictional fixture",
+      "row_count": 1,
+      "source": "TSLA research snapshot",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Watchlist quote context can be delayed; exact workstation panels load independently.",
+      "data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "provider": "watchlist-identity-store",
+      "row_count": 1,
+      "source": "JNJ",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Deterministic and non-current.",
+      "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "not_financial_advice": true,
+      "provider": "phase6f fictional fixture",
+      "row_count": 1,
+      "source": "JNJ research snapshot",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Watchlist quote context can be delayed; exact workstation panels load independently.",
+      "data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "provider": "watchlist-identity-store",
+      "row_count": 1,
+      "source": "TTE",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Deterministic and non-current.",
+      "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "not_financial_advice": true,
+      "provider": "phase6f fictional fixture",
+      "row_count": 1,
+      "source": "TTE research snapshot",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Watchlist quote context can be delayed; exact workstation panels load independently.",
+      "data_gap": "Fictional deterministic snapshot; no current market observation is claimed.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "provider": "watchlist-identity-store",
+      "row_count": 1,
+      "source": "TMUS",
+      "source_status": "fixture",
+      "source_url": null
+    },
+    {
+      "caveat": "Deterministic and non-current.",
+      "data_gap": "Use local mode and run a bounded refresh for provider-backed values.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "not_financial_advice": true,
+      "provider": "phase6f fictional fixture",
+      "row_count": 1,
+      "source": "TMUS research snapshot",
+      "source_status": "fixture",
+      "source_url": null
+    }
+  ],
+  "summary": {
+    "failed_count": 0,
+    "fresh_count": 0,
+    "item_count": 5,
+    "list_count": 1,
+    "non_advisory": true,
+    "research_enriched_count": 5,
+    "selected_symbol": "AAPL",
+    "source_status": "fixture",
+    "stale_count": 0
+  },
+  "unavailable": []
+}

@@ -1,0 +1,381 @@
+{
+  "caveats": [
+    "Feed registry is network-free metadata; live availability is reported by provider health payloads.",
+    "Optional paid/keyed feeds remain disabled until explicitly configured and probed."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": [
+    {
+      "cadence_seconds": 3600,
+      "category": "energy",
+      "caveat": "Official EIA RSS feed; publication cadence is not intraday market data.",
+      "credibility": "official",
+      "default_enabled": true,
+      "feed_id": "rss.eia_today_energy",
+      "label": "EIA Today in Energy",
+      "provider": "rss",
+      "region": "US / Global",
+      "requires_key": false,
+      "source_risk": "low",
+      "source_type": "rss",
+      "source_url": "https://www.eia.gov/rss/todayinenergy.xml",
+      "tags": [
+        "energy",
+        "oil",
+        "gas",
+        "inventories",
+        "official"
+      ],
+      "tier": "official"
+    },
+    {
+      "cadence_seconds": 3600,
+      "category": "macro",
+      "caveat": "Official Federal Reserve RSS feed; rows are policy context, not trading signals.",
+      "credibility": "official",
+      "default_enabled": true,
+      "feed_id": "rss.fed_press_all",
+      "label": "Federal Reserve Press Releases",
+      "provider": "rss",
+      "region": "US",
+      "requires_key": false,
+      "source_risk": "low",
+      "source_type": "rss",
+      "source_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "tags": [
+        "macro",
+        "rates",
+        "policy",
+        "official"
+      ],
+      "tier": "official"
+    },
+    {
+      "cadence_seconds": 7200,
+      "category": "energy",
+      "caveat": "IEA feed availability can vary by public access controls.",
+      "credibility": "official",
+      "default_enabled": true,
+      "feed_id": "rss.iea_news",
+      "label": "IEA News",
+      "provider": "rss",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "medium",
+      "source_type": "rss",
+      "source_url": "https://www.iea.org/rss/news",
+      "tags": [
+        "energy",
+        "oil",
+        "gas",
+        "transition",
+        "official"
+      ],
+      "tier": "official"
+    },
+    {
+      "cadence_seconds": 7200,
+      "category": "energy",
+      "caveat": "OPEC RSS availability can be blocked or intermittent from some networks.",
+      "credibility": "official",
+      "default_enabled": true,
+      "feed_id": "rss.opec_news",
+      "label": "OPEC News",
+      "provider": "rss",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "medium",
+      "source_type": "rss",
+      "source_url": "https://www.opec.org/opec_web/en/rss.xml",
+      "tags": [
+        "oil",
+        "opec",
+        "supply",
+        "official"
+      ],
+      "tier": "official"
+    },
+    {
+      "cadence_seconds": 900,
+      "category": "news_osint",
+      "caveat": "GDELT is public and noisy; verify original source URLs and timestamps.",
+      "credibility": "secondary",
+      "default_enabled": true,
+      "feed_id": "gdelt.geopolitical_public",
+      "label": "GDELT Geopolitical Public Search",
+      "provider": "gdelt",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "rate-limited/noisy",
+      "source_type": "json_api",
+      "source_url": "https://api.gdeltproject.org/api/v2/doc/doc",
+      "tags": [
+        "gdelt",
+        "news",
+        "geopolitics",
+        "osint"
+      ],
+      "tier": "public"
+    },
+    {
+      "cadence_seconds": 600,
+      "category": "natural",
+      "caveat": "USGS events can revise after initial publication.",
+      "credibility": "official",
+      "default_enabled": true,
+      "feed_id": "usgs.earthquakes_m25",
+      "label": "USGS Earthquakes M2.5+",
+      "provider": "usgs_earthquake",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "low",
+      "source_type": "geojson_api",
+      "source_url": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+      "tags": [
+        "earthquake",
+        "natural",
+        "hazard",
+        "official"
+      ],
+      "tier": "official"
+    },
+    {
+      "cadence_seconds": 120,
+      "category": "crypto",
+      "caveat": "Keyless CoinGecko requests are rate-limited and can be delayed.",
+      "credibility": "secondary",
+      "default_enabled": true,
+      "feed_id": "coingecko.public_markets",
+      "label": "CoinGecko Public Markets",
+      "provider": "coingecko_public",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "rate-limited",
+      "source_type": "json_api",
+      "source_url": "https://api.coingecko.com/api/v3/coins/markets",
+      "tags": [
+        "crypto",
+        "spot",
+        "market",
+        "public"
+      ],
+      "tier": "public"
+    },
+    {
+      "cadence_seconds": 60,
+      "category": "crypto",
+      "caveat": "Exchange-specific public endpoint; regional access and terms must be verified.",
+      "credibility": "secondary",
+      "default_enabled": true,
+      "feed_id": "binance.futures_premium_index",
+      "label": "Binance Futures Premium Index",
+      "provider": "binance_futures",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "exchange-specific/rate-limited",
+      "source_type": "json_api",
+      "source_url": "https://fapi.binance.com/fapi/v1/premiumIndex",
+      "tags": [
+        "crypto",
+        "futures",
+        "funding",
+        "exchange"
+      ],
+      "tier": "public"
+    },
+    {
+      "cadence_seconds": 86400,
+      "category": "shipping_energy",
+      "caveat": "Static context only; no live AIS or vessel-flow telemetry is claimed.",
+      "credibility": "context",
+      "default_enabled": true,
+      "feed_id": "chokepoints.static_registry",
+      "label": "Energy Chokepoints Static Registry",
+      "provider": "local",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "proxy/static",
+      "source_type": "static_registry",
+      "source_url": "local://static-chokepoints",
+      "tags": [
+        "shipping",
+        "energy",
+        "chokepoint",
+        "proxy"
+      ],
+      "tier": "local"
+    },
+    {
+      "cadence_seconds": 86400,
+      "category": "sanctions",
+      "caveat": "Registry-only in this slice; no sanctions rows are fetched or displayed as live.",
+      "credibility": "primary/compiled",
+      "default_enabled": false,
+      "feed_id": "sanctions.opensanctions_registry_only",
+      "label": "OpenSanctions Registry Slot",
+      "provider": "opensanctions",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "not-implemented",
+      "source_type": "registry_only",
+      "source_url": "https://www.opensanctions.org/",
+      "tags": [
+        "sanctions",
+        "compliance",
+        "registry"
+      ],
+      "tier": "future_optional"
+    },
+    {
+      "cadence_seconds": 30,
+      "category": "shipping_ais",
+      "caveat": "Unavailable unless a real AIS provider key is configured and successfully probed.",
+      "credibility": "provider",
+      "default_enabled": false,
+      "feed_id": "ais.aisstream_optional",
+      "label": "AISStream Optional AIS Unavailable",
+      "provider": "aisstream",
+      "region": "Global",
+      "requires_key": true,
+      "source_risk": "missing-key",
+      "source_type": "stream_optional",
+      "source_url": "wss://stream.aisstream.io",
+      "tags": [
+        "ais",
+        "shipping",
+        "vessels",
+        "optional"
+      ],
+      "tier": "optional"
+    },
+    {
+      "cadence_seconds": 60,
+      "category": "flight_tracking",
+      "caveat": "Unavailable unless a real flight provider is configured and successfully probed.",
+      "credibility": "provider",
+      "default_enabled": false,
+      "feed_id": "flight.opensky_optional",
+      "label": "OpenSky Optional Flight Tracking",
+      "provider": "opensky",
+      "region": "Global",
+      "requires_key": true,
+      "source_risk": "missing-key",
+      "source_type": "api_optional",
+      "source_url": "https://opensky-network.org",
+      "tags": [
+        "flight",
+        "aviation",
+        "adsb",
+        "optional"
+      ],
+      "tier": "optional"
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "feed_registry",
+  "source_status": [],
+  "summary": {
+    "categories": [
+      "crypto",
+      "energy",
+      "flight_tracking",
+      "macro",
+      "natural",
+      "news_osint",
+      "sanctions",
+      "shipping_ais",
+      "shipping_energy"
+    ],
+    "default_enabled_count": 9,
+    "feed_count": 12,
+    "providers": [
+      "aisstream",
+      "binance_futures",
+      "coingecko_public",
+      "gdelt",
+      "local",
+      "opensanctions",
+      "opensky",
+      "rss",
+      "usgs_earthquake"
+    ],
+    "requires_key_count": 2,
+    "source_types": [
+      "api_optional",
+      "geojson_api",
+      "json_api",
+      "registry_only",
+      "rss",
+      "static_registry",
+      "stream_optional"
+    ]
+  },
+  "unavailable": [
+    {
+      "cadence_seconds": 86400,
+      "category": "sanctions",
+      "caveat": "Registry-only in this slice; no sanctions rows are fetched or displayed as live.",
+      "credibility": "primary/compiled",
+      "default_enabled": false,
+      "feed_id": "sanctions.opensanctions_registry_only",
+      "label": "OpenSanctions Registry Slot",
+      "provider": "opensanctions",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "not-implemented",
+      "source_type": "registry_only",
+      "source_url": "https://www.opensanctions.org/",
+      "tags": [
+        "sanctions",
+        "compliance",
+        "registry"
+      ],
+      "tier": "future_optional"
+    },
+    {
+      "cadence_seconds": 30,
+      "category": "shipping_ais",
+      "caveat": "Unavailable unless a real AIS provider key is configured and successfully probed.",
+      "credibility": "provider",
+      "default_enabled": false,
+      "feed_id": "ais.aisstream_optional",
+      "label": "AISStream Optional AIS Unavailable",
+      "provider": "aisstream",
+      "region": "Global",
+      "requires_key": true,
+      "source_risk": "missing-key",
+      "source_type": "stream_optional",
+      "source_url": "wss://stream.aisstream.io",
+      "tags": [
+        "ais",
+        "shipping",
+        "vessels",
+        "optional"
+      ],
+      "tier": "optional"
+    },
+    {
+      "cadence_seconds": 60,
+      "category": "flight_tracking",
+      "caveat": "Unavailable unless a real flight provider is configured and successfully probed.",
+      "credibility": "provider",
+      "default_enabled": false,
+      "feed_id": "flight.opensky_optional",
+      "label": "OpenSky Optional Flight Tracking",
+      "provider": "opensky",
+      "region": "Global",
+      "requires_key": true,
+      "source_risk": "missing-key",
+      "source_type": "api_optional",
+      "source_url": "https://opensky-network.org",
+      "tags": [
+        "flight",
+        "aviation",
+        "adsb",
+        "optional"
+      ],
+      "tier": "optional"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "caveats": [
+    "Provider health is evidence-led; partial failures stay visible beside successful providers.",
+    "Missing optional paid keys are represented as unavailable or missing-key states, not failures of free mode."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": [
+    {
+      "age_seconds": 0,
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Fixture rows never imply live coverage.",
+      "coverage": "1 fixture row",
+      "error": null,
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "ok": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Use fixture for UI development only.",
+      "row_count": 1,
+      "source": "static api fixture",
+      "stale_after_seconds": null,
+      "status": "proxy/static",
+      "warning": "Static fixture only; not live provider telemetry."
+    },
+    {
+      "age_seconds": null,
+      "availability": "unavailable",
+      "cached": false,
+      "caveat": "No fake flight tracking is exported.",
+      "coverage": "missing key",
+      "error": "Missing optional environment variable: OPENSKY_CLIENT_ID or OPENSKY_CLIENT_SECRET",
+      "estimated": false,
+      "fetched_at": null,
+      "ok": false,
+      "paid_required": true,
+      "provider": "opensky",
+      "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+      "row_count": 0,
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "stale_after_seconds": null,
+      "status": "missing-key",
+      "warning": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed."
+    }
+  ],
+  "errors": [
+    {
+      "age_seconds": null,
+      "availability": "unavailable",
+      "cached": false,
+      "caveat": "No fake flight tracking is exported.",
+      "coverage": "missing key",
+      "error": "Missing optional environment variable: OPENSKY_CLIENT_ID or OPENSKY_CLIENT_SECRET",
+      "estimated": false,
+      "fetched_at": null,
+      "ok": false,
+      "paid_required": true,
+      "provider": "opensky",
+      "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+      "row_count": 0,
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "stale_after_seconds": null,
+      "status": "missing-key",
+      "warning": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed."
+    }
+  ],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "provider_health",
+  "source_status": [
+    {
+      "age_seconds": 0,
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Fixture rows never imply live coverage.",
+      "coverage": "1 fixture row",
+      "error": null,
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "ok": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Use fixture for UI development only.",
+      "row_count": 1,
+      "source": "static api fixture",
+      "stale_after_seconds": null,
+      "status": "proxy/static",
+      "warning": "Static fixture only; not live provider telemetry."
+    },
+    {
+      "age_seconds": null,
+      "availability": "unavailable",
+      "cached": false,
+      "caveat": "No fake flight tracking is exported.",
+      "coverage": "missing key",
+      "error": "Missing optional environment variable: OPENSKY_CLIENT_ID or OPENSKY_CLIENT_SECRET",
+      "estimated": false,
+      "fetched_at": null,
+      "ok": false,
+      "paid_required": true,
+      "provider": "opensky",
+      "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+      "row_count": 0,
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "stale_after_seconds": null,
+      "status": "missing-key",
+      "warning": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed."
+    }
+  ],
+  "summary": {
+    "available_count": 0,
+    "blocked_count": 1,
+    "caveat": "Partial success keeps successful providers visible while blocked/rate-limited feeds remain explicit.",
+    "configured_only_count": 0,
+    "ledger_status": "partial_success",
+    "limited_count": 1,
+    "provider_count": 2,
+    "status_counts": {
+      "cached": 0,
+      "configured": 0,
+      "contacted": 0,
+      "forbidden/subscription-blocked": 0,
+      "live/fresh": 0,
+      "missing-key": 1,
+      "proxy/static": 1,
+      "rate-limited": 0,
+      "stale": 0,
+      "successful": 0,
+      "unavailable": 0
+    }
+  },
+  "unavailable": [
+    {
+      "age_seconds": null,
+      "availability": "unavailable",
+      "cached": false,
+      "caveat": "No fake flight tracking is exported.",
+      "coverage": "missing key",
+      "error": "Missing optional environment variable: OPENSKY_CLIENT_ID or OPENSKY_CLIENT_SECRET",
+      "estimated": false,
+      "fetched_at": null,
+      "ok": false,
+      "paid_required": true,
+      "provider": "opensky",
+      "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+      "row_count": 0,
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "stale_after_seconds": null,
+      "status": "missing-key",
+      "warning": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed."
+    }
+  ]
+}

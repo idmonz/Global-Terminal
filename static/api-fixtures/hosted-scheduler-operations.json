@@ -1,0 +1,108 @@
+{
+  "caveats": [
+    "Page reads and schedule controls make zero market-provider calls; only a successfully leased due run may spend its bounded quota.",
+    "The runner is at-least-once with idempotent effects, not an exactly-once delivery claim.",
+    "Hosted scheduling remains disabled and unverified until deployment evidence, A/B isolation, failure, recovery, and cleanup gates pass.",
+    "This surface provides research monitoring only, with no external delivery, recommendation, broker action, or autonomous trade execution."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "audit": [],
+    "caveat": "Deterministic fixture; no hosted runner or provider was contacted.",
+    "contract_version": "hosted_scheduler_operations.v1",
+    "data_gap": "Hosted deployment evidence is unavailable.",
+    "generated_at": "2026-06-16T00:00:00+00:00",
+    "last_known_good": null,
+    "latest_run": null,
+    "not_financial_advice": true,
+    "provider_call_count": 0,
+    "readiness": {
+      "configured_is_not_verified": true,
+      "global_kill_switch": true,
+      "hosted_scheduler_verified": false,
+      "operator_enabled": false,
+      "status": "hosted-unverified"
+    },
+    "runner": {
+      "at_least_once": true,
+      "cadence_floor_minutes": 60,
+      "exactly_once_claimed": false,
+      "kind": "github-actions-python",
+      "maximum_concurrency": 1
+    },
+    "runs": [],
+    "schedules": [
+      {
+        "alert_rule_id": "fixture-alert-rule-aapl",
+        "bounds": {
+          "max_attempts": 2,
+          "max_provider_calls": 4,
+          "max_symbols": 1,
+          "timeout_seconds": 90
+        },
+        "cadence_minutes": 60,
+        "consented_at": "2026-07-27T05:30:00+00:00",
+        "enabled_at": null,
+        "killed_at": null,
+        "last_attempted_at": null,
+        "last_completed_at": null,
+        "last_lkg_run_id": null,
+        "last_run_id": null,
+        "next_due_at": null,
+        "next_due_local": null,
+        "paused_at": null,
+        "schedule_id": "fixture-hosted-schedule",
+        "state": "disabled",
+        "timezone": "Asia/Seoul",
+        "updated_at": "2026-07-27T06:17:42+00:00",
+        "version": 2,
+        "watchlist_id": "fixture-daily"
+      }
+    ],
+    "state_catalog": [
+      "disabled",
+      "hosted-unverified",
+      "enabled",
+      "no-due",
+      "leased",
+      "running",
+      "completed",
+      "idempotent-replay",
+      "quota-blocked",
+      "provider-unavailable",
+      "partial-lkg",
+      "killed",
+      "lease-expired",
+      "recovered",
+      "conflict",
+      "session-expired"
+    ],
+    "summary": {
+      "active_run_count": 0,
+      "completed_run_count": 0,
+      "enabled_count": 0,
+      "provider_call_count": 0,
+      "schedule_count": 1,
+      "status": "hosted-unverified"
+    }
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "hosted_scheduler_operations",
+  "source_status": [],
+  "summary": {
+    "active_run_count": 0,
+    "completed_run_count": 0,
+    "enabled_count": 0,
+    "provider_call_count": 0,
+    "schedule_count": 1,
+    "status": "hosted-unverified"
+  },
+  "unavailable": [
+    {
+      "capability": "verified_hosted_recurring_observation",
+      "caveat": "A configured or fixture schedule is not hosted proof. A real deployed invocation and owner handoff must pass first.",
+      "source_status": "unavailable"
+    }
+  ]
+}

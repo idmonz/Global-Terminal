@@ -1,0 +1,1340 @@
+{
+  "caveats": [
+    "Crypto Intelligence uses public/free-first or fixture rows with visible source status.",
+    "No exchange account action, broker execution, order routing, or directional market advice is provided."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "caveat": "Crypto Intelligence is read-only source/status context; no exchange account action is added.",
+    "chart_specs": [
+      {
+        "caveat": "Price proxy uses public/fixture crypto rows and remains non-advisory.",
+        "chart_id": "BTCUSDT.price",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "line",
+        "data_gap": "Fixture mode is not live exchange data.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "series": [
+          {
+            "name": "close",
+            "points": [
+              {
+                "x": "2026-06-10T00:00:00+00:00",
+                "y": 63300.0
+              },
+              {
+                "x": "2026-06-11T00:00:00+00:00",
+                "y": 64150.0
+              },
+              {
+                "x": "2026-06-12T00:00:00+00:00",
+                "y": 63820.0
+              },
+              {
+                "x": "2026-06-13T00:00:00+00:00",
+                "y": 64980.0
+              },
+              {
+                "x": "2026-06-14T00:00:00+00:00",
+                "y": 65840.0
+              },
+              {
+                "x": "2026-06-15T00:00:00+00:00",
+                "y": 65260.0
+              },
+              {
+                "x": "2026-06-16T00:00:00+00:00",
+                "y": 66400.0
+              }
+            ]
+          }
+        ],
+        "source_status": "fixture",
+        "title": "BTCUSDT Price Proxy",
+        "unit": "price",
+        "x_axis": "timestamp",
+        "y_axis": "close"
+      },
+      {
+        "caveat": "Open-interest rows depend on public derivatives provider availability.",
+        "chart_id": "BTCUSDT.open_interest",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "line",
+        "data_gap": "Fixture mode is not live Binance data.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "series": [
+          {
+            "name": "open interest",
+            "points": [
+              {
+                "x": "2026-06-10T00:00:00+00:00",
+                "y": 18.2
+              },
+              {
+                "x": "2026-06-11T00:00:00+00:00",
+                "y": 18.6
+              },
+              {
+                "x": "2026-06-12T00:00:00+00:00",
+                "y": 18.4
+              },
+              {
+                "x": "2026-06-13T00:00:00+00:00",
+                "y": 19.1
+              },
+              {
+                "x": "2026-06-14T00:00:00+00:00",
+                "y": 19.7
+              },
+              {
+                "x": "2026-06-15T00:00:00+00:00",
+                "y": 19.4
+              },
+              {
+                "x": "2026-06-16T00:00:00+00:00",
+                "y": 20.2
+              }
+            ]
+          }
+        ],
+        "source_status": "fixture",
+        "title": "Open Interest Proxy",
+        "unit": "USD billions",
+        "x_axis": "timestamp",
+        "y_axis": "open_interest_billions"
+      },
+      {
+        "caveat": "Taker flow is market-structure context, not direction advice.",
+        "chart_id": "BTCUSDT.funding_taker",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "multi_line",
+        "data_gap": "Fixture mode is not live derivatives data.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "series": [
+          {
+            "name": "funding bps",
+            "points": [
+              {
+                "x": "2026-06-10T00:00:00+00:00",
+                "y": 40.0
+              },
+              {
+                "x": "2026-06-11T00:00:00+00:00",
+                "y": 60.0
+              },
+              {
+                "x": "2026-06-12T00:00:00+00:00",
+                "y": 20.0
+              },
+              {
+                "x": "2026-06-13T00:00:00+00:00",
+                "y": 80.0
+              },
+              {
+                "x": "2026-06-14T00:00:00+00:00",
+                "y": 100.0
+              },
+              {
+                "x": "2026-06-15T00:00:00+00:00",
+                "y": 70.0
+              },
+              {
+                "x": "2026-06-16T00:00:00+00:00",
+                "y": 90.0
+              }
+            ]
+          },
+          {
+            "name": "taker ratio",
+            "points": [
+              {
+                "x": "2026-06-10T00:00:00+00:00",
+                "y": 1.02
+              },
+              {
+                "x": "2026-06-11T00:00:00+00:00",
+                "y": 0.98
+              },
+              {
+                "x": "2026-06-12T00:00:00+00:00",
+                "y": 1.05
+              },
+              {
+                "x": "2026-06-13T00:00:00+00:00",
+                "y": 1.12
+              },
+              {
+                "x": "2026-06-14T00:00:00+00:00",
+                "y": 1.08
+              },
+              {
+                "x": "2026-06-15T00:00:00+00:00",
+                "y": 1.01
+              },
+              {
+                "x": "2026-06-16T00:00:00+00:00",
+                "y": 1.16
+              }
+            ]
+          }
+        ],
+        "source_status": "fixture",
+        "title": "Funding And Taker Flow",
+        "unit": "mixed",
+        "x_axis": "timestamp",
+        "y_axis": "mixed"
+      },
+      {
+        "caveat": "Scenario evidence is transparent context and not prediction certainty.",
+        "chart_id": "BTCUSDT.scenario_weights",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "bar",
+        "data_gap": "Liquidation/order-book feeds are unavailable unless separately wired.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "provider": "crypto_scenarios",
+        "series": [
+          {
+            "name": "evidence weight",
+            "points": [
+              {
+                "x": "Liquidity continuation",
+                "y": 61.0
+              },
+              {
+                "x": "Leverage reset",
+                "y": 47.0
+              },
+              {
+                "x": "Range compression",
+                "y": 52.0
+              }
+            ]
+          }
+        ],
+        "source_status": "inferred/proxy",
+        "title": "Crypto Scenario Evidence",
+        "unit": "score",
+        "x_axis": "scenario",
+        "y_axis": "evidence_weight"
+      },
+      {
+        "caveat": "Pressure map is proxy context only.",
+        "chart_id": "BTCUSDT.liquidity_pressure",
+        "chart_spec_version": "chart_spec.v1",
+        "chart_type": "bar",
+        "data_gap": "No liquidation order-book feed is bundled.",
+        "dimensions": {},
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "provider": "crypto_scenarios",
+        "series": [
+          {
+            "name": "pressure",
+            "points": [
+              {
+                "x": "lower liquidity pocket",
+                "y": 42.0
+              },
+              {
+                "x": "upper liquidity pocket",
+                "y": 57.0
+              }
+            ]
+          }
+        ],
+        "source_status": "inferred/proxy",
+        "title": "Liquidity Pressure Proxy",
+        "unit": "score",
+        "x_axis": "band",
+        "y_axis": "pressure_score"
+      }
+    ],
+    "command_routes": [
+      {
+        "not_financial_advice": true,
+        "raw": "BTCUSDT CRYPTO",
+        "source_status": "schema-ready",
+        "target_view": "crypto-intelligence"
+      },
+      {
+        "not_financial_advice": true,
+        "raw": "NI",
+        "source_status": "schema-ready",
+        "target_view": "market-intelligence"
+      }
+    ],
+    "crypto_intelligence_version": "crypto_intelligence.v1",
+    "data_gaps": [
+      "Fixture evidence; live provider rows are not requested.",
+      "Fixture evidence; live vol/order-book feeds are unavailable.",
+      "Fixture mode is not live Binance data.",
+      "Fixture mode is not live derivatives data.",
+      "Fixture mode is not live exchange data.",
+      "Liquidation/order-book feeds are unavailable unless separately wired.",
+      "Live Binance futures endpoints are not called during fixture export.",
+      "Live CoinGecko markets are not called during fixture export.",
+      "No liquidation feed is bundled.",
+      "No liquidation order-book feed is bundled.",
+      "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+      "Runtime CoinGecko/Binance providers are not called during fixture export."
+    ],
+    "derivatives_snapshot": {
+      "caveat": "Derivatives snapshot is fixture-safe and non-advisory.",
+      "data_gap": "Live Binance futures endpoints are not called during fixture export.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "funding_rate_bps": 90.0,
+      "global_long_short_ratio": 1.27,
+      "mark_price": 66400,
+      "not_financial_advice": true,
+      "open_interest_billions": 20.2,
+      "premium_pct": 0.08,
+      "provider": "fixture",
+      "source_status": "fixture",
+      "symbol": "BTCUSDT",
+      "taker_buy_sell_ratio": 1.16
+    },
+    "derivatives_timeseries": [
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63300,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 40.0,
+        "long_short_ratio": 1.18,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.02,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64150,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 60.0,
+        "long_short_ratio": 1.2,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.6,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 0.98,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63820,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 20.0,
+        "long_short_ratio": 1.17,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.05,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64980,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 80.0,
+        "long_short_ratio": 1.25,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.1,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.12,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65840,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 100.0,
+        "long_short_ratio": 1.29,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.7,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.08,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65260,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 70.0,
+        "long_short_ratio": 1.22,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.01,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 66400,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 90.0,
+        "long_short_ratio": 1.27,
+        "not_financial_advice": true,
+        "open_interest_billions": 20.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.16,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      }
+    ],
+    "funding": [
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63300,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 40.0,
+        "long_short_ratio": 1.18,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.02,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64150,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 60.0,
+        "long_short_ratio": 1.2,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.6,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 0.98,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63820,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 20.0,
+        "long_short_ratio": 1.17,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.05,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64980,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 80.0,
+        "long_short_ratio": 1.25,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.1,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.12,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65840,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 100.0,
+        "long_short_ratio": 1.29,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.7,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.08,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65260,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 70.0,
+        "long_short_ratio": 1.22,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.01,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 66400,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 90.0,
+        "long_short_ratio": 1.27,
+        "not_financial_advice": true,
+        "open_interest_billions": 20.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.16,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      }
+    ],
+    "liquidation_pressure_proxy": [
+      {
+        "band": "lower liquidity pocket",
+        "caveat": "Pressure score is a transparent proxy, not exchange account data.",
+        "data_gap": "No liquidation order-book feed is bundled.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "pressure_score": 42,
+        "price_level": 62000,
+        "provider": "crypto_scenarios",
+        "side": "downside exposure context",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "band": "upper liquidity pocket",
+        "caveat": "Pressure score is a transparent proxy, not exchange account data.",
+        "data_gap": "No liquidation order-book feed is bundled.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "pressure_score": 57,
+        "price_level": 69000,
+        "provider": "crypto_scenarios",
+        "side": "upside exposure context",
+        "source_status": "inferred/proxy"
+      }
+    ],
+    "long_short_bias": [
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63300,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 40.0,
+        "long_short_ratio": 1.18,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.02,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64150,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 60.0,
+        "long_short_ratio": 1.2,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.6,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 0.98,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63820,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 20.0,
+        "long_short_ratio": 1.17,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.05,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64980,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 80.0,
+        "long_short_ratio": 1.25,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.1,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.12,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65840,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 100.0,
+        "long_short_ratio": 1.29,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.7,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.08,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65260,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 70.0,
+        "long_short_ratio": 1.22,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.01,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 66400,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 90.0,
+        "long_short_ratio": 1.27,
+        "not_financial_advice": true,
+        "open_interest_billions": 20.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.16,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      }
+    ],
+    "market_overview": {
+      "asset_rank_proxy": 1,
+      "caveat": "Fixture market overview mirrors CoinGecko-style fields without live claims.",
+      "current_price": 66400,
+      "data_gap": "Live CoinGecko markets are not called during fixture export.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "market_cap_proxy": 1310000000000,
+      "not_financial_advice": true,
+      "provider": "fixture",
+      "source_status": "fixture",
+      "symbol": "BTCUSDT",
+      "total_volume_proxy": 38000000000
+    },
+    "open_interest": [
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63300,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 40.0,
+        "long_short_ratio": 1.18,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.02,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64150,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 60.0,
+        "long_short_ratio": 1.2,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.6,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 0.98,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63820,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 20.0,
+        "long_short_ratio": 1.17,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.05,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64980,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 80.0,
+        "long_short_ratio": 1.25,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.1,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.12,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65840,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 100.0,
+        "long_short_ratio": 1.29,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.7,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.08,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65260,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 70.0,
+        "long_short_ratio": 1.22,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.01,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 66400,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 90.0,
+        "long_short_ratio": 1.27,
+        "not_financial_advice": true,
+        "open_interest_billions": 20.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.16,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      }
+    ],
+    "provider_status": [
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Deterministic fixture used for static web export.",
+        "data_gap": "Runtime CoinGecko/Binance providers are not called during fixture export.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 7,
+        "source": "Phase 5A crypto fixture:BTCUSDT",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Fixture market overview mirrors CoinGecko-style fields without live claims.",
+        "data_gap": "Live CoinGecko markets are not called during fixture export.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 1,
+        "source": "BTCUSDT",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Derivatives snapshot is fixture-safe and non-advisory.",
+        "data_gap": "Live Binance futures endpoints are not called during fixture export.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 1,
+        "source": "BTCUSDT",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Pressure score is a transparent proxy, not exchange account data.",
+        "data_gap": "No liquidation order-book feed is bundled.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "crypto_scenarios",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 1,
+        "source": "BTCUSDT",
+        "source_status": "inferred/proxy",
+        "status": "inferred/proxy"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Pressure score is a transparent proxy, not exchange account data.",
+        "data_gap": "No liquidation order-book feed is bundled.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "crypto_scenarios",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 1,
+        "source": "BTCUSDT",
+        "source_status": "inferred/proxy",
+        "status": "inferred/proxy"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Price proxy uses public/fixture crypto rows and remains non-advisory.",
+        "data_gap": "Fixture mode is not live exchange data.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 7,
+        "source": "BTCUSDT.price",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Open-interest rows depend on public derivatives provider availability.",
+        "data_gap": "Fixture mode is not live Binance data.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 7,
+        "source": "BTCUSDT.open_interest",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Taker flow is market-structure context, not direction advice.",
+        "data_gap": "Fixture mode is not live derivatives data.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "fixture",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 14,
+        "source": "BTCUSDT.funding_taker",
+        "source_status": "fixture",
+        "status": "fixture"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Scenario evidence is transparent context and not prediction certainty.",
+        "data_gap": "Liquidation/order-book feeds are unavailable unless separately wired.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "crypto_scenarios",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 3,
+        "source": "BTCUSDT.scenario_weights",
+        "source_status": "inferred/proxy",
+        "status": "inferred/proxy"
+      },
+      {
+        "availability": "limited",
+        "cached": false,
+        "caveat": "Pressure map is proxy context only.",
+        "data_gap": "No liquidation order-book feed is bundled.",
+        "estimated": true,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "inferred/proxy",
+        "not_financial_advice": true,
+        "paid_required": false,
+        "provider": "crypto_scenarios",
+        "recommended_action": "Inspect source status before using this panel.",
+        "row_count": 2,
+        "source": "BTCUSDT.liquidity_pressure",
+        "source_status": "inferred/proxy",
+        "status": "inferred/proxy"
+      }
+    ],
+    "scenario_matrix": [
+      {
+        "caveat": "Scenario is research context only.",
+        "data_gap": "Fixture evidence; live provider rows are not requested.",
+        "evidence_summary": "Open interest, funding, and taker flow are reviewed as transparent context.",
+        "evidence_weight": 61,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "crypto_scenarios",
+        "scenario": "Liquidity continuation",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Scenario is not an instruction.",
+        "data_gap": "No liquidation feed is bundled.",
+        "evidence_summary": "Funding and open-interest concentration can indicate reset risk context.",
+        "evidence_weight": 47,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "crypto_scenarios",
+        "scenario": "Leverage reset",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Scenario is non-advisory context.",
+        "data_gap": "Fixture evidence; live vol/order-book feeds are unavailable.",
+        "evidence_summary": "Mixed derivatives evidence can support range context.",
+        "evidence_weight": 52,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "provider": "crypto_scenarios",
+        "scenario": "Range compression",
+        "source_status": "fixture"
+      }
+    ],
+    "summary": {
+      "broker_execution_added": false,
+      "chart_count": 5,
+      "exchange_account_dependency_added": false,
+      "non_advisory": true,
+      "price": 66400,
+      "runtime_requested": false,
+      "scenario_count": 3,
+      "source_status": "fixture",
+      "symbol": "BTCUSDT",
+      "timeseries_row_count": 7,
+      "workspace": "crypto-intelligence"
+    },
+    "symbol": "BTCUSDT",
+    "taker_flow": [
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63300,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 40.0,
+        "long_short_ratio": 1.18,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.02,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64150,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 60.0,
+        "long_short_ratio": 1.2,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.6,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 0.98,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 63820,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 20.0,
+        "long_short_ratio": 1.17,
+        "not_financial_advice": true,
+        "open_interest_billions": 18.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.05,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 64980,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 80.0,
+        "long_short_ratio": 1.25,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.1,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.12,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65840,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 100.0,
+        "long_short_ratio": 1.29,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.7,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.08,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 65260,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 70.0,
+        "long_short_ratio": 1.22,
+        "not_financial_advice": true,
+        "open_interest_billions": 19.4,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.01,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      },
+      {
+        "caveat": "Deterministic crypto derivatives fixture for web workstation rendering.",
+        "close": 66400,
+        "data_gap": "Not live Binance/CoinGecko data; use runtime provider status for live claims.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "funding_rate_bps": 90.0,
+        "long_short_ratio": 1.27,
+        "not_financial_advice": true,
+        "open_interest_billions": 20.2,
+        "provider": "fixture",
+        "source_status": "fixture",
+        "symbol": "BTCUSDT",
+        "taker_buy_sell_ratio": 1.16,
+        "timestamp": "2026-06-16T00:00:00+00:00"
+      }
+    ],
+    "workspace": "crypto-intelligence"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "crypto_intelligence",
+  "source_status": [
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Deterministic fixture used for static web export.",
+      "data_gap": "Runtime CoinGecko/Binance providers are not called during fixture export.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 7,
+      "source": "Phase 5A crypto fixture:BTCUSDT",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Fixture market overview mirrors CoinGecko-style fields without live claims.",
+      "data_gap": "Live CoinGecko markets are not called during fixture export.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "BTCUSDT",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Derivatives snapshot is fixture-safe and non-advisory.",
+      "data_gap": "Live Binance futures endpoints are not called during fixture export.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "BTCUSDT",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Pressure score is a transparent proxy, not exchange account data.",
+      "data_gap": "No liquidation order-book feed is bundled.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "inferred/proxy",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "crypto_scenarios",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "BTCUSDT",
+      "source_status": "inferred/proxy",
+      "status": "inferred/proxy"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Pressure score is a transparent proxy, not exchange account data.",
+      "data_gap": "No liquidation order-book feed is bundled.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "inferred/proxy",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "crypto_scenarios",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 1,
+      "source": "BTCUSDT",
+      "source_status": "inferred/proxy",
+      "status": "inferred/proxy"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Price proxy uses public/fixture crypto rows and remains non-advisory.",
+      "data_gap": "Fixture mode is not live exchange data.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 7,
+      "source": "BTCUSDT.price",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Open-interest rows depend on public derivatives provider availability.",
+      "data_gap": "Fixture mode is not live Binance data.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 7,
+      "source": "BTCUSDT.open_interest",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Taker flow is market-structure context, not direction advice.",
+      "data_gap": "Fixture mode is not live derivatives data.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "fixture",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 14,
+      "source": "BTCUSDT.funding_taker",
+      "source_status": "fixture",
+      "status": "fixture"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Scenario evidence is transparent context and not prediction certainty.",
+      "data_gap": "Liquidation/order-book feeds are unavailable unless separately wired.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "inferred/proxy",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "crypto_scenarios",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 3,
+      "source": "BTCUSDT.scenario_weights",
+      "source_status": "inferred/proxy",
+      "status": "inferred/proxy"
+    },
+    {
+      "availability": "limited",
+      "cached": false,
+      "caveat": "Pressure map is proxy context only.",
+      "data_gap": "No liquidation order-book feed is bundled.",
+      "estimated": true,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "inferred/proxy",
+      "not_financial_advice": true,
+      "paid_required": false,
+      "provider": "crypto_scenarios",
+      "recommended_action": "Inspect source status before using this panel.",
+      "row_count": 2,
+      "source": "BTCUSDT.liquidity_pressure",
+      "source_status": "inferred/proxy",
+      "status": "inferred/proxy"
+    }
+  ],
+  "summary": {
+    "broker_execution_added": false,
+    "chart_count": 5,
+    "exchange_account_dependency_added": false,
+    "non_advisory": true,
+    "price": 66400,
+    "runtime_requested": false,
+    "scenario_count": 3,
+    "source_status": "fixture",
+    "symbol": "BTCUSDT",
+    "timeseries_row_count": 7,
+    "workspace": "crypto-intelligence"
+  },
+  "unavailable": []
+}

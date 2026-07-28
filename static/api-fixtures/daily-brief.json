@@ -1,0 +1,841 @@
+{
+  "caveats": [
+    "The rule-based brief is composed only from source-bound claims; missing inputs become explicit gaps.",
+    "Changed-since-prior compares captured normalized claims and does not establish causality or real-world resolution.",
+    "Private watchlist context and local review notes are excluded from external-AI-safe payloads and deterministic fixtures.",
+    "Outputs are research information only, not investment advice, trade approval, order routing, or autonomous action."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "ai": {
+      "default_mode": "deterministic-rule-based",
+      "external_ai_enabled": false,
+      "google_search_grounding": "explicit-opt-in-only",
+      "optional_provider": "gemini",
+      "public_sanitized_evidence_only": true
+    },
+    "caveat": "Observations and calculations are research context only; temporal co-occurrence does not establish causality.",
+    "chart_panels": [],
+    "claims": [
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "claim_id": "claim_b21cd99783c845118a71",
+        "claim_kind": "market_observation",
+        "confidence": 0.35,
+        "data_gap": "Not live market evidence.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "linked_events": [],
+        "linked_regions": [],
+        "linked_symbols": [
+          "SPY"
+        ],
+        "not_financial_advice": true,
+        "observed_at": null,
+        "privacy_scope": "public",
+        "provider": "fictional-demo",
+        "section_id": "cross_asset",
+        "severity": "context",
+        "source_ids": [
+          "source_80dec3cde60707ec37c6"
+        ],
+        "source_status": "fixture",
+        "statement": "SPY recorded a +0.80% supplied-window change; the supplied one-month change is +1.40%."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "claim_id": "claim_5c7dc1f1bb96908323e7",
+        "claim_kind": "gap",
+        "confidence": 0.35,
+        "data_gap": "Fictional flight coverage is unavailable.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "linked_events": [],
+        "linked_regions": [],
+        "linked_symbols": [],
+        "not_financial_advice": true,
+        "observed_at": null,
+        "privacy_scope": "public",
+        "provider": "fictional-flight-provider",
+        "section_id": "data_quality",
+        "severity": "gap",
+        "source_ids": [
+          "source_744fa4cea69fcdbb0c6c"
+        ],
+        "source_status": "unavailable",
+        "statement": "fictional-flight-provider coverage is unavailable; the brief does not substitute synthetic live data."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "claim_id": "claim_0c5de00e8ef73c1195f4",
+        "claim_kind": "global_risk_observation",
+        "confidence": 0.35,
+        "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "linked_events": [
+          "demo-global-event-one"
+        ],
+        "linked_regions": [
+          "Demo Strait"
+        ],
+        "linked_symbols": [
+          "BRENT"
+        ],
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "privacy_scope": "public",
+        "provider": "fictional-demo",
+        "section_id": "global_risk",
+        "severity": "elevated",
+        "source_ids": [
+          "source_80dec3cde60707ec37c6"
+        ],
+        "source_status": "fixture",
+        "statement": "Fictional logistics watch is recorded for Demo Strait with elevated severity."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "claim_id": "claim_b066295067548e8ccb2b",
+        "claim_kind": "news_observation",
+        "confidence": 0.35,
+        "data_gap": "Not live market evidence.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "linked_events": [],
+        "linked_regions": [
+          "Demo Europe"
+        ],
+        "linked_symbols": [
+          "EURUSD"
+        ],
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "privacy_scope": "public",
+        "provider": "fictional-demo",
+        "section_id": "news_flow",
+        "severity": "context",
+        "source_ids": [
+          "source_80dec3cde60707ec37c6"
+        ],
+        "source_status": "fixture",
+        "statement": "A source report records: Fictional policy briefing published."
+      }
+    ],
+    "comparison": {
+      "added": [],
+      "after_brief_id": null,
+      "before_brief_id": null,
+      "caveat": "Changes compare captured normalized claims only; temporal co-occurrence does not establish causality or real-world resolution.",
+      "changed": [
+        {
+          "after": {
+            "caveat": "Fictional deterministic fixture.",
+            "claim_id": "claim_0c5de00e8ef73c1195f4",
+            "claim_kind": "global_risk_observation",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "freshness": "fixture",
+            "linked_events": [
+              "demo-global-event-one"
+            ],
+            "linked_regions": [
+              "Demo Strait"
+            ],
+            "linked_symbols": [
+              "BRENT"
+            ],
+            "not_financial_advice": true,
+            "observed_at": "2026-06-23T00:30:00+00:00",
+            "privacy_scope": "public",
+            "provider": "fictional-demo",
+            "section_id": "global_risk",
+            "severity": "elevated",
+            "source_ids": [
+              "source_80dec3cde60707ec37c6"
+            ],
+            "source_status": "fixture",
+            "statement": "Fictional logistics watch is recorded for Demo Strait with elevated severity."
+          },
+          "before": {
+            "caveat": "Fictional deterministic fixture.",
+            "claim_id": "claim_0c5de00e8ef73c1195f4",
+            "claim_kind": "global_risk_observation",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "freshness": "fixture",
+            "linked_events": [
+              "demo-global-event-one"
+            ],
+            "linked_regions": [
+              "Demo Strait"
+            ],
+            "linked_symbols": [
+              "BRENT"
+            ],
+            "not_financial_advice": true,
+            "observed_at": "2026-06-22T00:30:00+00:00",
+            "privacy_scope": "public",
+            "provider": "fictional-demo",
+            "section_id": "global_risk",
+            "severity": "watch",
+            "source_ids": [
+              "source_80dec3cde60707ec37c6"
+            ],
+            "source_status": "fixture",
+            "statement": "Fictional logistics watch is recorded for Demo Strait with watch severity."
+          },
+          "changed_fields": [
+            "observed_at",
+            "severity",
+            "statement"
+          ],
+          "claim_id": "claim_0c5de00e8ef73c1195f4"
+        },
+        {
+          "after": {
+            "caveat": "Fictional deterministic fixture.",
+            "claim_id": "claim_b066295067548e8ccb2b",
+            "claim_kind": "news_observation",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "freshness": "fixture",
+            "linked_events": [],
+            "linked_regions": [
+              "Demo Europe"
+            ],
+            "linked_symbols": [
+              "EURUSD"
+            ],
+            "not_financial_advice": true,
+            "observed_at": "2026-06-23T00:30:00+00:00",
+            "privacy_scope": "public",
+            "provider": "fictional-demo",
+            "section_id": "news_flow",
+            "severity": "context",
+            "source_ids": [
+              "source_80dec3cde60707ec37c6"
+            ],
+            "source_status": "fixture",
+            "statement": "A source report records: Fictional policy briefing published."
+          },
+          "before": {
+            "caveat": "Fictional deterministic fixture.",
+            "claim_id": "claim_b066295067548e8ccb2b",
+            "claim_kind": "news_observation",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "freshness": "fixture",
+            "linked_events": [],
+            "linked_regions": [
+              "Demo Europe"
+            ],
+            "linked_symbols": [
+              "EURUSD"
+            ],
+            "not_financial_advice": true,
+            "observed_at": "2026-06-22T00:30:00+00:00",
+            "privacy_scope": "public",
+            "provider": "fictional-demo",
+            "section_id": "news_flow",
+            "severity": "context",
+            "source_ids": [
+              "source_80dec3cde60707ec37c6"
+            ],
+            "source_status": "fixture",
+            "statement": "A source report records: Fictional policy briefing published."
+          },
+          "changed_fields": [
+            "observed_at"
+          ],
+          "claim_id": "claim_b066295067548e8ccb2b"
+        },
+        {
+          "after": {
+            "caveat": "Fictional deterministic fixture.",
+            "claim_id": "claim_b21cd99783c845118a71",
+            "claim_kind": "market_observation",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "freshness": "fixture",
+            "linked_events": [],
+            "linked_regions": [],
+            "linked_symbols": [
+              "SPY"
+            ],
+            "not_financial_advice": true,
+            "observed_at": null,
+            "privacy_scope": "public",
+            "provider": "fictional-demo",
+            "section_id": "cross_asset",
+            "severity": "context",
+            "source_ids": [
+              "source_80dec3cde60707ec37c6"
+            ],
+            "source_status": "fixture",
+            "statement": "SPY recorded a +0.80% supplied-window change; the supplied one-month change is +1.40%."
+          },
+          "before": {
+            "caveat": "Fictional deterministic fixture.",
+            "claim_id": "claim_b21cd99783c845118a71",
+            "claim_kind": "market_observation",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "fetched_at": "2026-06-16T00:00:00+00:00",
+            "freshness": "fixture",
+            "linked_events": [],
+            "linked_regions": [],
+            "linked_symbols": [
+              "SPY"
+            ],
+            "not_financial_advice": true,
+            "observed_at": null,
+            "privacy_scope": "public",
+            "provider": "fictional-demo",
+            "section_id": "cross_asset",
+            "severity": "context",
+            "source_ids": [
+              "source_80dec3cde60707ec37c6"
+            ],
+            "source_status": "fixture",
+            "statement": "SPY recorded a +0.20% supplied-window change; the supplied one-month change is +1.40%."
+          },
+          "changed_fields": [
+            "statement"
+          ],
+          "claim_id": "claim_b21cd99783c845118a71"
+        }
+      ],
+      "refreshed": [
+        {
+          "after_fetched_at": "2026-06-23T00:30:00+00:00",
+          "before_fetched_at": "2026-06-22T00:30:00+00:00",
+          "claim_id": "claim_5c7dc1f1bb96908323e7"
+        }
+      ],
+      "removed": [],
+      "source_preserved": true,
+      "summary": {
+        "added": 0,
+        "changed": 3,
+        "refreshed": 1,
+        "removed": 0,
+        "unchanged": 1
+      }
+    },
+    "coverage": {
+      "chart_panel_count": 0,
+      "claim_count": 4,
+      "gap_count": 1,
+      "private_source_count": 0,
+      "public_source_count": 2,
+      "research_perspective_count": 4,
+      "source_count": 2,
+      "source_status": "mixed",
+      "status_counts": {
+        "fixture": 1,
+        "unavailable": 1
+      }
+    },
+    "daily_brief_version": "daily_brief.v1",
+    "demo_prior_brief": {
+      "claims": [
+        {
+          "caveat": "Fictional deterministic fixture.",
+          "claim_id": "claim_b21cd99783c845118a71",
+          "claim_kind": "market_observation",
+          "confidence": 0.35,
+          "data_gap": "Not live market evidence.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "linked_events": [],
+          "linked_regions": [],
+          "linked_symbols": [
+            "SPY"
+          ],
+          "not_financial_advice": true,
+          "observed_at": null,
+          "privacy_scope": "public",
+          "provider": "fictional-demo",
+          "section_id": "cross_asset",
+          "severity": "context",
+          "source_ids": [
+            "source_80dec3cde60707ec37c6"
+          ],
+          "source_status": "fixture",
+          "statement": "SPY recorded a +0.20% supplied-window change; the supplied one-month change is +1.40%."
+        },
+        {
+          "caveat": "Fictional deterministic fixture.",
+          "claim_id": "claim_5c7dc1f1bb96908323e7",
+          "claim_kind": "gap",
+          "confidence": 0.35,
+          "data_gap": "Fictional flight coverage is unavailable.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "linked_events": [],
+          "linked_regions": [],
+          "linked_symbols": [],
+          "not_financial_advice": true,
+          "observed_at": null,
+          "privacy_scope": "public",
+          "provider": "fictional-flight-provider",
+          "section_id": "data_quality",
+          "severity": "gap",
+          "source_ids": [
+            "source_744fa4cea69fcdbb0c6c"
+          ],
+          "source_status": "unavailable",
+          "statement": "fictional-flight-provider coverage is unavailable; the brief does not substitute synthetic live data."
+        },
+        {
+          "caveat": "Fictional deterministic fixture.",
+          "claim_id": "claim_0c5de00e8ef73c1195f4",
+          "claim_kind": "global_risk_observation",
+          "confidence": 0.35,
+          "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "linked_events": [
+            "demo-global-event-one"
+          ],
+          "linked_regions": [
+            "Demo Strait"
+          ],
+          "linked_symbols": [
+            "BRENT"
+          ],
+          "not_financial_advice": true,
+          "observed_at": "2026-06-22T00:30:00+00:00",
+          "privacy_scope": "public",
+          "provider": "fictional-demo",
+          "section_id": "global_risk",
+          "severity": "watch",
+          "source_ids": [
+            "source_80dec3cde60707ec37c6"
+          ],
+          "source_status": "fixture",
+          "statement": "Fictional logistics watch is recorded for Demo Strait with watch severity."
+        },
+        {
+          "caveat": "Fictional deterministic fixture.",
+          "claim_id": "claim_b066295067548e8ccb2b",
+          "claim_kind": "news_observation",
+          "confidence": 0.35,
+          "data_gap": "Not live market evidence.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "linked_events": [],
+          "linked_regions": [
+            "Demo Europe"
+          ],
+          "linked_symbols": [
+            "EURUSD"
+          ],
+          "not_financial_advice": true,
+          "observed_at": "2026-06-22T00:30:00+00:00",
+          "privacy_scope": "public",
+          "provider": "fictional-demo",
+          "section_id": "news_flow",
+          "severity": "context",
+          "source_ids": [
+            "source_80dec3cde60707ec37c6"
+          ],
+          "source_status": "fixture",
+          "statement": "A source report records: Fictional policy briefing published."
+        }
+      ],
+      "generated_at": "2026-06-16T00:00:00+00:00",
+      "headline": {
+        "claim_ids": [
+          "claim_b21cd99783c845118a71",
+          "claim_0c5de00e8ef73c1195f4",
+          "claim_b066295067548e8ccb2b",
+          "claim_5c7dc1f1bb96908323e7"
+        ],
+        "text": "3 public observations and 1 explicit data gaps are ready for review."
+      },
+      "source_register": [
+        {
+          "caveat": "Fictional deterministic fixture.",
+          "confidence": 0.35,
+          "data_gap": "Fictional flight coverage is unavailable.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "not_financial_advice": true,
+          "observed_at": null,
+          "privacy_scope": "public",
+          "provider": "fictional-flight-provider",
+          "source": "Phase 5Q fictional fixture",
+          "source_id": "source_744fa4cea69fcdbb0c6c",
+          "source_status": "unavailable",
+          "source_url": "https://example.test/phase-5q"
+        },
+        {
+          "caveat": "Fictional deterministic fixture.",
+          "confidence": 0.35,
+          "data_gap": "Not live market evidence.",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "not_financial_advice": true,
+          "observed_at": "2026-06-22T00:30:00+00:00",
+          "privacy_scope": "public",
+          "provider": "fictional-demo",
+          "source": "Phase 5Q fictional fixture",
+          "source_id": "source_80dec3cde60707ec37c6",
+          "source_status": "fixture",
+          "source_url": "https://example.test/phase-5q"
+        }
+      ]
+    },
+    "generated_at": "2026-06-16T00:00:00+00:00",
+    "headline": {
+      "claim_ids": [
+        "claim_b21cd99783c845118a71",
+        "claim_0c5de00e8ef73c1195f4",
+        "claim_b066295067548e8ccb2b",
+        "claim_5c7dc1f1bb96908323e7"
+      ],
+      "text": "3 public observations and 1 explicit data gaps are ready for review."
+    },
+    "historical_truth": "fictional-demo",
+    "linked_regions": [
+      "Demo Europe",
+      "Demo Strait"
+    ],
+    "linked_symbols": [
+      "BRENT",
+      "EURUSD",
+      "SPY"
+    ],
+    "not_financial_advice": true,
+    "observation_window": {
+      "ended_at": "2026-06-23T00:30:00+00:00",
+      "started_at": "2026-06-23T00:30:00+00:00"
+    },
+    "period": "morning",
+    "privacy_scope": "deterministic-public-fixture",
+    "research_perspectives": [
+      {
+        "caveat": "Perspective is a deterministic research lens, not a directional recommendation or account-action instruction.",
+        "claim_ids": [
+          "claim_b21cd99783c845118a71"
+        ],
+        "clean_room_reference": "TradingAgents analyst-role pattern, behavior-only clean-room reconstruction; no external source copied.",
+        "confidence": 0.35,
+        "data_gap": "Perspective uses only the referenced claim and source IDs.",
+        "evidence_mode": "supporting and contrary evidence review",
+        "not_financial_advice": true,
+        "perspective_id": "perspective_cross_asset",
+        "role": "cross_asset_researcher",
+        "source_ids": [
+          "source_80dec3cde60707ec37c6"
+        ],
+        "source_status_counts": {
+          "fixture": 1
+        },
+        "stance": "evidence-light",
+        "summary": "1 source-bound observations reviewed by the cross_asset_researcher; stance is evidence-light.",
+        "supporting_claim_ids": [
+          "claim_b21cd99783c845118a71"
+        ],
+        "title": "Cross-Asset Evidence Lens",
+        "weakening_claim_ids": []
+      },
+      {
+        "caveat": "Perspective is a deterministic research lens, not a directional recommendation or account-action instruction.",
+        "claim_ids": [
+          "claim_0c5de00e8ef73c1195f4"
+        ],
+        "clean_room_reference": "TradingAgents analyst-role pattern, behavior-only clean-room reconstruction; no external source copied.",
+        "confidence": 0.35,
+        "data_gap": "Perspective uses only the referenced claim and source IDs.",
+        "evidence_mode": "supporting and contrary evidence review",
+        "not_financial_advice": true,
+        "perspective_id": "perspective_global_risk",
+        "role": "global_risk_researcher",
+        "source_ids": [
+          "source_80dec3cde60707ec37c6"
+        ],
+        "source_status_counts": {
+          "fixture": 1
+        },
+        "stance": "evidence-light",
+        "summary": "1 source-bound observations reviewed by the global_risk_researcher; stance is evidence-light.",
+        "supporting_claim_ids": [
+          "claim_0c5de00e8ef73c1195f4"
+        ],
+        "title": "Global Risk And Map Lens",
+        "weakening_claim_ids": []
+      },
+      {
+        "caveat": "Perspective is a deterministic research lens, not a directional recommendation or account-action instruction.",
+        "claim_ids": [
+          "claim_b066295067548e8ccb2b"
+        ],
+        "clean_room_reference": "TradingAgents analyst-role pattern, behavior-only clean-room reconstruction; no external source copied.",
+        "confidence": 0.35,
+        "data_gap": "Perspective uses only the referenced claim and source IDs.",
+        "evidence_mode": "supporting and contrary evidence review",
+        "not_financial_advice": true,
+        "perspective_id": "perspective_news_flow",
+        "role": "news_flow_researcher",
+        "source_ids": [
+          "source_80dec3cde60707ec37c6"
+        ],
+        "source_status_counts": {
+          "fixture": 1
+        },
+        "stance": "evidence-light",
+        "summary": "1 source-bound observations reviewed by the news_flow_researcher; stance is evidence-light.",
+        "supporting_claim_ids": [
+          "claim_b066295067548e8ccb2b"
+        ],
+        "title": "News Flow Lens",
+        "weakening_claim_ids": []
+      },
+      {
+        "caveat": "Perspective is a deterministic research lens, not a directional recommendation or account-action instruction.",
+        "claim_ids": [
+          "claim_5c7dc1f1bb96908323e7"
+        ],
+        "clean_room_reference": "TradingAgents analyst-role pattern, behavior-only clean-room reconstruction; no external source copied.",
+        "confidence": 0.35,
+        "data_gap": "Perspective uses only the referenced claim and source IDs.",
+        "evidence_mode": "weakening evidence review",
+        "not_financial_advice": true,
+        "perspective_id": "perspective_data_quality",
+        "role": "data_quality_reviewer",
+        "source_ids": [
+          "source_744fa4cea69fcdbb0c6c"
+        ],
+        "source_status_counts": {
+          "unavailable": 1
+        },
+        "stance": "coverage-limited",
+        "summary": "1 source-bound observations reviewed by the data_quality_reviewer; stance is coverage-limited.",
+        "supporting_claim_ids": [],
+        "title": "Source Coverage Lens",
+        "weakening_claim_ids": [
+          "claim_5c7dc1f1bb96908323e7"
+        ]
+      }
+    ],
+    "review": {
+      "brief_id": null,
+      "memory_link_available": true,
+      "reviewed_at": null,
+      "status": "unread"
+    },
+    "runtime_mode": "fixture",
+    "sections": [
+      {
+        "caveat": "Section text is deterministically composed from the listed claim IDs.",
+        "claim_ids": [
+          "claim_b21cd99783c845118a71"
+        ],
+        "confidence": 0.35,
+        "material_sentences": [
+          {
+            "claim_ids": [
+              "claim_b21cd99783c845118a71"
+            ],
+            "text": "1 source-bound observations are available in cross-asset pulse."
+          }
+        ],
+        "not_financial_advice": true,
+        "section_id": "cross_asset",
+        "source_status_counts": {
+          "fixture": 1
+        },
+        "title": "Cross-asset pulse"
+      },
+      {
+        "caveat": "Section text is deterministically composed from the listed claim IDs.",
+        "claim_ids": [
+          "claim_0c5de00e8ef73c1195f4"
+        ],
+        "confidence": 0.35,
+        "material_sentences": [
+          {
+            "claim_ids": [
+              "claim_0c5de00e8ef73c1195f4"
+            ],
+            "text": "1 source-bound observations are available in global risk."
+          }
+        ],
+        "not_financial_advice": true,
+        "section_id": "global_risk",
+        "source_status_counts": {
+          "fixture": 1
+        },
+        "title": "Global risk"
+      },
+      {
+        "caveat": "Section text is deterministically composed from the listed claim IDs.",
+        "claim_ids": [
+          "claim_b066295067548e8ccb2b"
+        ],
+        "confidence": 0.35,
+        "material_sentences": [
+          {
+            "claim_ids": [
+              "claim_b066295067548e8ccb2b"
+            ],
+            "text": "1 source-bound observations are available in news flow."
+          }
+        ],
+        "not_financial_advice": true,
+        "section_id": "news_flow",
+        "source_status_counts": {
+          "fixture": 1
+        },
+        "title": "News flow"
+      },
+      {
+        "caveat": "Section text is deterministically composed from the listed claim IDs.",
+        "claim_ids": [],
+        "confidence": 0.0,
+        "material_sentences": [
+          {
+            "claim_ids": [],
+            "text": "No source-bound claims are available for this section."
+          }
+        ],
+        "not_financial_advice": true,
+        "section_id": "watchlist",
+        "source_status_counts": {},
+        "title": "Watchlist context"
+      },
+      {
+        "caveat": "Section text is deterministically composed from the listed claim IDs.",
+        "claim_ids": [
+          "claim_5c7dc1f1bb96908323e7"
+        ],
+        "confidence": 0.35,
+        "material_sentences": [
+          {
+            "claim_ids": [
+              "claim_5c7dc1f1bb96908323e7"
+            ],
+            "text": "1 provider or freshness gaps require explicit review."
+          }
+        ],
+        "not_financial_advice": true,
+        "section_id": "data_quality",
+        "source_status_counts": {
+          "unavailable": 1
+        },
+        "title": "Source coverage and gaps"
+      }
+    ],
+    "source_register": [
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "confidence": 0.35,
+        "data_gap": "Fictional flight coverage is unavailable.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "observed_at": null,
+        "privacy_scope": "public",
+        "provider": "fictional-flight-provider",
+        "source": "Phase 5Q fictional fixture",
+        "source_id": "source_744fa4cea69fcdbb0c6c",
+        "source_status": "unavailable",
+        "source_url": "https://example.test/phase-5q"
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "confidence": 0.35,
+        "data_gap": "Not live market evidence.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "privacy_scope": "public",
+        "provider": "fictional-demo",
+        "source": "Phase 5Q fictional fixture",
+        "source_id": "source_80dec3cde60707ec37c6",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-5q"
+      }
+    ],
+    "validation": {
+      "claim_count": 4,
+      "issues": [],
+      "source_count": 2,
+      "valid": true
+    }
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "daily_brief",
+  "source_status": [
+    {
+      "caveat": "Fictional deterministic fixture.",
+      "confidence": 0.35,
+      "data_gap": "Fictional flight coverage is unavailable.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "observed_at": null,
+      "privacy_scope": "public",
+      "provider": "fictional-flight-provider",
+      "source": "Phase 5Q fictional fixture",
+      "source_id": "source_744fa4cea69fcdbb0c6c",
+      "source_status": "unavailable",
+      "source_url": "https://example.test/phase-5q"
+    },
+    {
+      "caveat": "Fictional deterministic fixture.",
+      "confidence": 0.35,
+      "data_gap": "Not live market evidence.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "not_financial_advice": true,
+      "observed_at": "2026-06-23T00:30:00+00:00",
+      "privacy_scope": "public",
+      "provider": "fictional-demo",
+      "source": "Phase 5Q fictional fixture",
+      "source_id": "source_80dec3cde60707ec37c6",
+      "source_status": "fixture",
+      "source_url": "https://example.test/phase-5q"
+    }
+  ],
+  "summary": {
+    "chart_panel_count": 0,
+    "claim_count": 4,
+    "claim_validation_passed": true,
+    "comparison_summary": {
+      "added": 0,
+      "changed": 3,
+      "refreshed": 1,
+      "removed": 0,
+      "unchanged": 1
+    },
+    "gap_count": 1,
+    "historical_truth": "fictional-demo",
+    "non_advisory": true,
+    "period": "morning",
+    "privacy_scope": "deterministic-public-fixture",
+    "research_perspective_count": 4,
+    "runtime_mode": "fixture",
+    "source_count": 2,
+    "source_status": "mixed"
+  },
+  "unavailable": [
+    {
+      "caveat": "Fictional deterministic fixture.",
+      "claim_id": "claim_5c7dc1f1bb96908323e7",
+      "data_gap": "Fictional flight coverage is unavailable.",
+      "provider": "fictional-flight-provider",
+      "source_status": "unavailable"
+    }
+  ]
+}

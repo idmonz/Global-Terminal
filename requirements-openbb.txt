@@ -1,0 +1,6 @@
+# Optional OpenBB backend bridge.
+# Install only when you want OpenBB-backed datasets:
+#   pip install -r requirements-openbb.txt
+#
+# OpenBB is not required for base app launch.
+openbb>=4.0

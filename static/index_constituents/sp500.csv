@@ -1,0 +1,61 @@
+ticker,company,sector,industry,market_cap
+MSFT,Microsoft,Information Technology,Software,3200000000000
+AAPL,Apple,Information Technology,Technology Hardware,2900000000000
+NVDA,NVIDIA,Information Technology,Semiconductors,2800000000000
+AMZN,Amazon,Consumer Discretionary,Broadline Retail,1900000000000
+META,Meta Platforms,Communication Services,Interactive Media,1300000000000
+GOOGL,Alphabet Class A,Communication Services,Interactive Media,2100000000000
+GOOG,Alphabet Class C,Communication Services,Interactive Media,2100000000000
+BRK-B,Berkshire Hathaway,Financials,Multi-Sector Holdings,900000000000
+LLY,Eli Lilly,Health Care,Pharmaceuticals,850000000000
+AVGO,Broadcom,Information Technology,Semiconductors,750000000000
+JPM,JPMorgan Chase,Financials,Banks,580000000000
+XOM,Exxon Mobil,Energy,Integrated Oil,500000000000
+UNH,UnitedHealth Group,Health Care,Managed Health Care,460000000000
+V,Visa,Financials,Payments,560000000000
+PG,Procter & Gamble,Consumer Staples,Household Products,390000000000
+MA,Mastercard,Financials,Payments,440000000000
+COST,Costco,Consumer Staples,Consumer Staples Retail,380000000000
+HD,Home Depot,Consumer Discretionary,Home Improvement Retail,350000000000
+MRK,Merck,Health Care,Pharmaceuticals,300000000000
+ABBV,AbbVie,Health Care,Biotechnology,300000000000
+CVX,Chevron,Energy,Integrated Oil,290000000000
+CRM,Salesforce,Information Technology,Application Software,260000000000
+AMD,Advanced Micro Devices,Information Technology,Semiconductors,260000000000
+NFLX,Netflix,Communication Services,Entertainment,280000000000
+KO,Coca-Cola,Consumer Staples,Beverages,270000000000
+PEP,PepsiCo,Consumer Staples,Beverages,240000000000
+ADBE,Adobe,Information Technology,Application Software,240000000000
+WMT,Walmart,Consumer Staples,Consumer Staples Retail,520000000000
+BAC,Bank of America,Financials,Banks,300000000000
+TMO,Thermo Fisher,Health Care,Life Sciences Tools,210000000000
+CSCO,Cisco,Information Technology,Communications Equipment,190000000000
+ACN,Accenture,Information Technology,IT Consulting,190000000000
+MCD,McDonald's,Consumer Discretionary,Restaurants,200000000000
+LIN,Linde,Materials,Industrial Gases,210000000000
+ABT,Abbott,Health Care,Health Care Equipment,180000000000
+DIS,Walt Disney,Communication Services,Entertainment,180000000000
+INTU,Intuit,Information Technology,Application Software,180000000000
+WFC,Wells Fargo,Financials,Banks,210000000000
+QCOM,Qualcomm,Information Technology,Semiconductors,190000000000
+TXN,Texas Instruments,Information Technology,Semiconductors,170000000000
+AMAT,Applied Materials,Information Technology,Semiconductor Equipment,170000000000
+NEE,NextEra Energy,Utilities,Electric Utilities,150000000000
+GE,GE Aerospace,Industrials,Aerospace,180000000000
+CAT,Caterpillar,Industrials,Construction Machinery,160000000000
+BA,Boeing,Industrials,Aerospace,110000000000
+GS,Goldman Sachs,Financials,Capital Markets,150000000000
+BLK,BlackRock,Financials,Capital Markets,120000000000
+SPGI,S&P Global,Financials,Financial Exchanges & Data,140000000000
+LOW,Lowe's,Consumer Discretionary,Home Improvement Retail,130000000000
+HON,Honeywell,Industrials,Industrial Conglomerates,130000000000
+AMGN,Amgen,Health Care,Biotechnology,160000000000
+PFE,Pfizer,Health Care,Pharmaceuticals,160000000000
+COP,ConocoPhillips,Energy,Oil & Gas Exploration,130000000000
+SLB,Schlumberger,Energy,Oil & Gas Services,70000000000
+DE,Deere,Industrials,Agricultural Machinery,110000000000
+UBER,Uber,Industrials,Ground Transportation,150000000000
+PANW,Palo Alto Networks,Information Technology,Security Software,110000000000
+NOW,ServiceNow,Information Technology,Systems Software,150000000000
+LRCX,Lam Research,Information Technology,Semiconductor Equipment,120000000000
+MU,Micron,Information Technology,Semiconductors,120000000000

@@ -1,0 +1,319 @@
+{
+  "caveats": [
+    "Alert Manager reads, filters, evaluates, and reviews validated stored observations with zero market-provider calls.",
+    "Stale or unavailable evidence never creates a live market-condition trigger; source-degradation rules retain their degraded source label.",
+    "The manager is research monitoring only and provides no recommendation, external delivery, broker action, or autonomous execution."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "bounds": {
+      "maximum_observation_provider_calls": 16,
+      "maximum_observation_symbols": 5,
+      "maximum_provider_concurrency": 2,
+      "maximum_rules": 50,
+      "maximum_trigger_history": 250
+    },
+    "clock_legend": {
+      "evaluation": "Rule evaluation clock.",
+      "observation": "Saved source clock.",
+      "retrieval": "Provider retrieval clock.",
+      "review": "User review clock.",
+      "trigger": "Persisted trigger clock."
+    },
+    "contract_version": "watchlist_alert_manager.v1",
+    "delivery_channels": {
+      "email": "unavailable",
+      "in_app": "available",
+      "push": "unavailable",
+      "sms": "unavailable",
+      "webhook": "unavailable"
+    },
+    "due_plan": {
+      "bounded_count": 2,
+      "due": [],
+      "due_count": 0,
+      "maximum_rules": 50,
+      "not_due": [],
+      "planned_at": "2026-07-15T14:00:00+00:00",
+      "provider_call_count": 0
+    },
+    "evaluations": [
+      {
+        "completed_at": "2026-07-15T14:00:00+00:00",
+        "data_gap_count": 0,
+        "deduped_count": 0,
+        "detail": {
+          "market_provider_calls": 0
+        },
+        "due_count": 1,
+        "duration_ms": 4,
+        "evaluated_count": 1,
+        "idempotent_replay": false,
+        "mode": "manual",
+        "provider_call_count": 0,
+        "quota_blocked_count": 0,
+        "run_id": "fixture-alert-run",
+        "source_clock": {
+          "evaluated_at": "2026-07-15T14:00:00+00:00",
+          "observed_at": "2026-07-15T14:00:00+00:00",
+          "retrieved_at": "2026-07-15T14:00:00+00:00"
+        },
+        "started_at": "2026-07-15T14:00:00+00:00",
+        "status": "completed",
+        "triggered_count": 1
+      }
+    ],
+    "generated_at": "2026-06-16T00:00:00+00:00",
+    "hosted_readiness": {
+      "caveat": "Fictional local fixture; no hosted claim.",
+      "hosted_scheduler": "unavailable",
+      "migration": "phase6o-required",
+      "recovery_conformance": "not-run",
+      "rls_ab_conformance": "not-run",
+      "status": "unavailable"
+    },
+    "legacy_preview": {
+      "replacement": "/api/account/alert-manager",
+      "routes_retained": true,
+      "status": "deprecated-compatibility"
+    },
+    "not_financial_advice": true,
+    "research_only": true,
+    "rules": [
+      {
+        "asset_class": "equity",
+        "cooldown_minutes": 60,
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "delivery": "in-app-only",
+        "expires_at": "2026-07-22T14:00:00+00:00",
+        "last_evaluated_at": "2026-07-15T14:00:00+00:00",
+        "last_snapshot_id": "fixture-snapshot-aapl",
+        "last_triggered_at": "2026-07-15T14:00:00+00:00",
+        "metric": "last_price",
+        "operator": "above",
+        "resource_id": "fixture-alert-rule-aapl",
+        "rule_type": "price_above",
+        "schedule": {
+          "calendar_status": "proxy-unverified",
+          "frequency": "15m",
+          "frequency_minutes": 15,
+          "next_due_at": "2026-07-15T14:15:00+00:00",
+          "session_policy": "market-aware"
+        },
+        "severity": "high",
+        "state": "active",
+        "state_reason": "scheduled",
+        "symbol": "AAPL",
+        "threshold": 200,
+        "threshold_unit": "USD",
+        "updated_at": "2026-07-15T14:00:00+00:00",
+        "version": 1,
+        "watchlist_id": "fixture-daily"
+      },
+      {
+        "asset_class": "crypto",
+        "cooldown_minutes": 120,
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "delivery": "in-app-only",
+        "expires_at": null,
+        "last_evaluated_at": null,
+        "last_snapshot_id": null,
+        "last_triggered_at": null,
+        "metric": "source_status",
+        "operator": "degrades_to_or_below",
+        "resource_id": "fixture-alert-rule-source",
+        "rule_type": "source_degradation",
+        "schedule": {
+          "calendar_status": "continuous",
+          "frequency": "1h",
+          "frequency_minutes": 60,
+          "next_due_at": null,
+          "session_policy": "continuous"
+        },
+        "severity": "watch",
+        "state": "paused",
+        "state_reason": "stopped-manually",
+        "symbol": "BTCUSDT",
+        "threshold": "stale",
+        "threshold_unit": "status",
+        "updated_at": "2026-07-15T14:00:00+00:00",
+        "version": 2,
+        "watchlist_id": "fixture-daily"
+      }
+    ],
+    "state_catalog": [
+      "no-rules",
+      "active-due",
+      "active-not-due",
+      "triggered",
+      "cooldown-deduped",
+      "paused",
+      "expired",
+      "cancelled",
+      "deleted",
+      "quota-blocked",
+      "partial-lkg",
+      "provider-unavailable",
+      "worker-stopped",
+      "worker-offline",
+      "worker-restarted",
+      "conflict",
+      "hosted-unavailable"
+    ],
+    "summary": {
+      "active_count": 1,
+      "due_count": 0,
+      "new_trigger_count": 1,
+      "provider_call_count": 0,
+      "rule_count": 2,
+      "status": "ready",
+      "trigger_count": 1
+    },
+    "triggers": [
+      {
+        "caveat": "Fictional fixture for deterministic product review.",
+        "clocks": {
+          "evaluated_at": "2026-07-15T14:00:00+00:00",
+          "observed_at": "2026-07-15T14:00:00+00:00",
+          "retrieved_at": "2026-07-15T14:00:00+00:00",
+          "reviewed_at": null,
+          "triggered_at": "2026-07-15T14:00:00+00:00"
+        },
+        "data_gap": "Not live market data.",
+        "evaluation_run_id": "fixture-alert-run",
+        "evidence": {
+          "confidence": 0.8,
+          "snapshot_id": "fixture-snapshot-aapl",
+          "snapshot_status": "fixture"
+        },
+        "evidence_links": [
+          {
+            "href": "/?view=analyst-workspace&symbol=AAPL&assetClass=equity&panel=catalysts&originView=alert-manager&originState=view%3Dalert-manager%26tab%3Dhistory%26selected%3Dfixture-alert-trigger-aapl&originId=fixture-alert-trigger-aapl",
+            "kind": "analyst",
+            "label": "Analyst"
+          },
+          {
+            "href": "/?view=news&topic=AAPL&originView=alert-manager&originState=view%3Dalert-manager%26tab%3Dhistory%26selected%3Dfixture-alert-trigger-aapl&originId=fixture-alert-trigger-aapl",
+            "kind": "news",
+            "label": "News"
+          },
+          {
+            "href": "/?view=daily-brief&period=morning&section=markets&originView=alert-manager&originState=view%3Dalert-manager%26tab%3Dhistory%26selected%3Dfixture-alert-trigger-aapl&originId=fixture-alert-trigger-aapl",
+            "kind": "brief",
+            "label": "Brief"
+          },
+          {
+            "href": "/?view=war-room-map&selected=&originView=alert-manager&originState=view%3Dalert-manager%26tab%3Dhistory%26selected%3Dfixture-alert-trigger-aapl&originId=fixture-alert-trigger-aapl",
+            "kind": "map",
+            "label": "Map"
+          }
+        ],
+        "live_intelligence_claimed": false,
+        "message": "AAPL price above matched the stored fictional observation.",
+        "metric": "last_price",
+        "not_financial_advice": true,
+        "observed_value": 212.5,
+        "operator": "above",
+        "provider": "phase6o.fixture",
+        "review_state": "new",
+        "rule_id": "fixture-alert-rule-aapl",
+        "severity": "high",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase6o/aapl",
+        "status": "triggered",
+        "symbol": "AAPL",
+        "threshold": 200,
+        "trigger_id": "fixture-alert-trigger-aapl",
+        "version": 1,
+        "watchlist_id": "fixture-daily"
+      }
+    ],
+    "watchlists": [
+      {
+        "items": [
+          {
+            "asset_class": "equity",
+            "display_name": "Apple Inc.",
+            "exchange": "NASDAQ",
+            "source_status": "fixture",
+            "symbol": "AAPL"
+          },
+          {
+            "asset_class": "crypto",
+            "display_name": "Bitcoin",
+            "exchange": "Binance",
+            "source_status": "fixture",
+            "symbol": "BTCUSDT"
+          }
+        ],
+        "name": "Daily Radar",
+        "watchlist_id": "fixture-daily"
+      }
+    ],
+    "worker": {
+      "caveat": "Fixture; no worker or provider was contacted.",
+      "enabled": false,
+      "evaluation_source": "stored-phase6n-observations",
+      "last_evaluation_run_id": null,
+      "last_heartbeat_at": null,
+      "manual_run_available": true,
+      "observation_jobs_enabled": false,
+      "provider_call_count": 0,
+      "reason": "explicit-opt-in-required",
+      "restart_count": 0,
+      "state": "stopped",
+      "view_starts_worker": false
+    }
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "watchlist_alert_manager",
+  "source_status": [
+    {
+      "caveat": "Fictional fixture for deterministic product review.",
+      "data_gap": "Not live market data.",
+      "observed_at": "2026-07-15T14:00:00+00:00",
+      "provider": "phase6o.fixture",
+      "retrieved_at": "2026-07-15T14:00:00+00:00",
+      "source_status": "fixture",
+      "source_url": "https://example.test/phase6o/aapl",
+      "trigger_id": "fixture-alert-trigger-aapl"
+    }
+  ],
+  "summary": {
+    "active_count": 1,
+    "due_count": 0,
+    "new_trigger_count": 1,
+    "provider_call_count": 0,
+    "rule_count": 2,
+    "status": "ready",
+    "trigger_count": 1
+  },
+  "unavailable": [
+    {
+      "capability": "hosted_alert_scheduling",
+      "caveat": "Fictional local fixture; no hosted claim.",
+      "source_status": "unavailable"
+    },
+    {
+      "capability": "alert_delivery_email",
+      "caveat": "Phase 6O supports in-app delivery only.",
+      "source_status": "unavailable"
+    },
+    {
+      "capability": "alert_delivery_sms",
+      "caveat": "Phase 6O supports in-app delivery only.",
+      "source_status": "unavailable"
+    },
+    {
+      "capability": "alert_delivery_push",
+      "caveat": "Phase 6O supports in-app delivery only.",
+      "source_status": "unavailable"
+    },
+    {
+      "capability": "alert_delivery_webhook",
+      "caveat": "Phase 6O supports in-app delivery only.",
+      "source_status": "unavailable"
+    }
+  ]
+}

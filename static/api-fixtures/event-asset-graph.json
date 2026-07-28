@@ -1,0 +1,3122 @@
+{
+  "caveats": [
+    "Event-to-asset links are source-backed where event/provider fields exist and inferred/proxy where rule-based market mapping is used.",
+    "Graph persistence, live graph storage, user-specific graph state, hosted Supabase, and graph databases are unavailable in Phase 2F.",
+    "External references inform behavior and product patterns only; blocked AGPL/NASA/missing-license source is not copied."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "asset_universe_readiness": {
+      "default_mode": "reference-schema",
+      "external_rows_copied": false,
+      "live_rows_claimed": false,
+      "provider_required_for_live_universe": true,
+      "schema_ready": true
+    },
+    "clusters": [
+      {
+        "caveat": "Phase 2E asset-universe schema does not yet include a commodity universe; commodity nodes are first-party proxy classifications.",
+        "cluster_id": "cluster:asset_class:commodity",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "Commodities",
+        "node_id": "asset_class:commodity",
+        "source_status": "schema-gap/proxy",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+        "cluster_id": "cluster:asset_class:crypto_pair",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "Crypto Pairs",
+        "node_id": "asset_class:crypto_pair",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+        "cluster_id": "cluster:asset_class:etf",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "ETFs",
+        "node_id": "asset_class:etf",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+        "cluster_id": "cluster:asset_class:equity",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "Equities",
+        "node_id": "asset_class:equity",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+        "cluster_id": "cluster:asset_class:fx_pair",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "FX Pairs",
+        "node_id": "asset_class:fx_pair",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+        "cluster_id": "cluster:asset_class:fund",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "Funds",
+        "node_id": "asset_class:fund",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+        "cluster_id": "cluster:asset_class:index",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "Indices",
+        "node_id": "asset_class:index",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+        "cluster_id": "cluster:asset_class:money_market",
+        "event_count": 0,
+        "event_node_ids": [],
+        "label": "Money Markets",
+        "node_id": "asset_class:money_market",
+        "source_status": "reference-schema",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Region comes from source row, normalized event metadata, or approximate centroid logic.",
+        "cluster_id": "cluster:region:red-sea",
+        "event_count": 2,
+        "event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "label": "Red Sea",
+        "node_id": "region:red-sea",
+        "source_status": "fixture",
+        "type": "region"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "cluster_id": "cluster:risk_theme:energy_chokepoint",
+        "event_count": 2,
+        "event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "label": "Energy Chokepoint",
+        "node_id": "risk_theme:energy_chokepoint",
+        "source_status": "inferred/proxy",
+        "type": "risk_theme"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "cluster_id": "cluster:risk_theme:global_trade",
+        "event_count": 2,
+        "event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "label": "Global Trade",
+        "node_id": "risk_theme:global_trade",
+        "source_status": "inferred/proxy",
+        "type": "risk_theme"
+      }
+    ],
+    "command_suggestions": [
+      {
+        "caveat": "Crypto routing can use CoinGecko/Binance states when available.",
+        "command": "CRYPTO",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Crypto Market",
+        "related_event_node_ids": [],
+        "relationship_count": 1,
+        "source_status": "reference-schema",
+        "target_node_id": "command:CRYPTO"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "CURV",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready",
+        "label": "CURV",
+        "related_event_node_ids": [],
+        "relationship_count": 2,
+        "source_status": "reference-schema",
+        "target_node_id": "command:CURV"
+      },
+      {
+        "caveat": "Security descriptions require provider-backed asset rows before live claims.",
+        "command": "DES",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Description",
+        "related_event_node_ids": [],
+        "relationship_count": 4,
+        "source_status": "reference-schema",
+        "target_node_id": "command:DES"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "FA",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready",
+        "label": "FA",
+        "related_event_node_ids": [],
+        "relationship_count": 1,
+        "source_status": "reference-schema",
+        "target_node_id": "command:FA"
+      },
+      {
+        "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+        "command": "FXC",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready/provider-required",
+        "label": "FX Crosses",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "relationship_count": 3,
+        "source_status": "reference-schema",
+        "target_node_id": "command:FXC"
+      },
+      {
+        "caveat": "Price graphs require market data freshness and source labels.",
+        "command": "GP",
+        "confidence": 0.7,
+        "implementation_status": "provider-required",
+        "label": "Graph / Price",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "relationship_count": 8,
+        "source_status": "provider-required",
+        "target_node_id": "command:GP"
+      },
+      {
+        "caveat": "Historical price context requires a configured or keyless market provider.",
+        "command": "HP",
+        "confidence": 0.7,
+        "implementation_status": "provider-required",
+        "label": "Historical Price",
+        "related_event_node_ids": [
+          "event:fdc6095c511e6b33"
+        ],
+        "relationship_count": 7,
+        "source_status": "provider-required",
+        "target_node_id": "command:HP"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "INTEL",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready",
+        "label": "INTEL",
+        "related_event_node_ids": [],
+        "relationship_count": 1,
+        "source_status": "reference-schema",
+        "target_node_id": "command:INTEL"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "KEY",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready",
+        "label": "KEY",
+        "related_event_node_ids": [],
+        "relationship_count": 1,
+        "source_status": "reference-schema",
+        "target_node_id": "command:KEY"
+      },
+      {
+        "caveat": "Map context may include approximate centroids and static chokepoints.",
+        "command": "MAP",
+        "confidence": 0.5,
+        "implementation_status": "schema-ready/proxy-layer-aware",
+        "label": "War Room Map",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "relationship_count": 2,
+        "source_status": "proxy/static",
+        "target_node_id": "command:MAP"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "MOV",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready",
+        "label": "MOV",
+        "related_event_node_ids": [],
+        "relationship_count": 1,
+        "source_status": "reference-schema",
+        "target_node_id": "command:MOV"
+      },
+      {
+        "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+        "command": "NI",
+        "confidence": 0.7,
+        "implementation_status": "schema-ready/source-backed-news-required",
+        "label": "News Intelligence",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "relationship_count": 9,
+        "source_status": "reference-schema",
+        "target_node_id": "command:NI"
+      },
+      {
+        "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+        "command": "WEI",
+        "confidence": 0.7,
+        "implementation_status": "future-provider-required",
+        "label": "Weights / Exposure",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "relationship_count": 4,
+        "source_status": "provider-required",
+        "target_node_id": "command:WEI"
+      }
+    ],
+    "edges": [
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fx_pair to FXC.",
+        "fetched_at": null,
+        "id": "edge:01daef9630c482",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fx_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:FXC"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.5,
+        "evidence": "USD/JPY uses the Phase 2E FX-pair schema.",
+        "fetched_at": null,
+        "id": "edge:03bd943e078970",
+        "provider": "phase2f_rule_map",
+        "relationship": "proxy_for",
+        "source": "fx_pair:usdjpy",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "asset_class:fx_pair"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to KEY.",
+        "fetched_at": null,
+        "id": "edge:0482e195fdee4c",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:KEY"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps index to NI.",
+        "fetched_at": null,
+        "id": "edge:0d42c1c4f2ee3f",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:index",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Map context may include approximate centroids and static chokepoints.",
+        "confidence": 0.5,
+        "evidence": "Command MAP suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:0d8fbea16bd72c",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:MAP"
+      },
+      {
+        "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+        "confidence": 0.15,
+        "evidence": "Command WEI suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:0dcb2986a39517",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:WEI"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "confidence": 0.15,
+        "evidence": "Event region field: Red Sea.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "edge:14696e4ad8e1bc",
+        "provider": "local",
+        "relationship": "located_in",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "static/proxy",
+        "source_url": "https://example.test/phase-2c/chokepoint",
+        "target": "region:red-sea"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fund to HP.",
+        "fetched_at": null,
+        "id": "edge:16fad1907aad36",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fund",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fund to DES.",
+        "fetched_at": null,
+        "id": "edge:1a143dc6c7db5e",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fund",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:DES"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps crypto_pair to HP.",
+        "fetched_at": null,
+        "id": "edge:1c4090c408fc2f",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:crypto_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fx_pair to GP.",
+        "fetched_at": null,
+        "id": "edge:1d77846e7c4fff",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fx_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fx_pair to NI.",
+        "fetched_at": null,
+        "id": "edge:1e23924c8437ca",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fx_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint maps event to sector Energy.",
+        "fetched_at": null,
+        "id": "edge:2302e7f547bbf9",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "sector:energy"
+      },
+      {
+        "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+        "confidence": 0.5,
+        "evidence": "Command NI suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:2f38c05b9ab6f2",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:6d73974fca315298",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.48,
+        "evidence": "Rule shipping_energy_chokepoint maps event to crypto pair BTC/USD.",
+        "fetched_at": null,
+        "id": "edge:334432c967a574",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "crypto_pair:btcusd"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps index to MOV.",
+        "fetched_at": null,
+        "id": "edge:3600a9c93e4c3c",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:index",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:MOV"
+      },
+      {
+        "caveat": "Map context may include approximate centroids and static chokepoints.",
+        "confidence": 0.15,
+        "evidence": "Command MAP suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:38d9a6b4513e8f",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:MAP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to DES.",
+        "fetched_at": null,
+        "id": "edge:39d53230d58a2f",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:DES"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to GP.",
+        "fetched_at": null,
+        "id": "edge:3ab94d51cae93f",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps etf to GP.",
+        "fetched_at": null,
+        "id": "edge:3ac772f115a157",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:etf",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Provider status must be read with freshness and caveats.",
+        "confidence": 0.5,
+        "evidence": "Event provider/source: fixture.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "edge:3f2fad99f00d68",
+        "provider": "fixture",
+        "relationship": "reported_by",
+        "source": "event:6d73974fca315298",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "target": "provider:fixture"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint maps event to FX pair USD/JPY.",
+        "fetched_at": null,
+        "id": "edge:429fea5afe60f2",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "fx_pair:usdjpy"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint matched event text: Phase 2C fixture chokepoint",
+        "fetched_at": null,
+        "id": "edge:4513cb2bd685a7",
+        "provider": "phase2f_rule_map",
+        "relationship": "mentions",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "risk_theme:global_trade"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps index to WEI.",
+        "fetched_at": null,
+        "id": "edge:46cc4e3ea7494d",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:index",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:WEI"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to commodity WTI Crude.",
+        "fetched_at": null,
+        "id": "edge:477ce5b8aeef2f",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "commodity:wti-crude"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to INTEL.",
+        "fetched_at": null,
+        "id": "edge:484c3b54b5e601",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:INTEL"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint maps event to commodity WTI Crude.",
+        "fetched_at": null,
+        "id": "edge:4a62c1b499d6da",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "commodity:wti-crude"
+      },
+      {
+        "caveat": "Provider status must be read with freshness and caveats.",
+        "confidence": 0.15,
+        "evidence": "Event provider/source: local.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "edge:50d273f0b72c22",
+        "provider": "local",
+        "relationship": "reported_by",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "static/proxy",
+        "source_url": "https://example.test/phase-2c/chokepoint",
+        "target": "provider:local"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps index to HP.",
+        "fetched_at": null,
+        "id": "edge:51160d1022f46c",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:index",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fund to NI.",
+        "fetched_at": null,
+        "id": "edge:5734bcd66faef8",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fund",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.5,
+        "evidence": "WTI Crude is grouped under the Phase 2F commodity proxy asset class.",
+        "fetched_at": null,
+        "id": "edge:5d259c1e927ea4",
+        "provider": "phase2f_rule_map",
+        "relationship": "proxy_for",
+        "source": "commodity:wti-crude",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "asset_class:commodity"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.5,
+        "evidence": "BTC/USD uses the Phase 2E crypto-pair schema.",
+        "fetched_at": null,
+        "id": "edge:60d850069f9f2b",
+        "provider": "phase2f_rule_map",
+        "relationship": "proxy_for",
+        "source": "crypto_pair:btcusd",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "asset_class:crypto_pair"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps index to GP.",
+        "fetched_at": null,
+        "id": "edge:77a55c62aae815",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:index",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps crypto_pair to NI.",
+        "fetched_at": null,
+        "id": "edge:7830984025d44c",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:crypto_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fx_pair to CURV.",
+        "fetched_at": null,
+        "id": "edge:783e92a12bbf31",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fx_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:CURV"
+      },
+      {
+        "caveat": "Price graphs require market data freshness and source labels.",
+        "confidence": 0.5,
+        "evidence": "Command GP suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:7c3f3c3eedee37",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps etf to NI.",
+        "fetched_at": null,
+        "id": "edge:8275ea0a482f33",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:etf",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps etf to DES.",
+        "fetched_at": null,
+        "id": "edge:8319ba5c304655",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:etf",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:DES"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint maps event to sector Shipping / Logistics.",
+        "fetched_at": null,
+        "id": "edge:832135b1f48b5b",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "sector:shipping_logistics"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint maps event to FX pair EUR/USD.",
+        "fetched_at": null,
+        "id": "edge:8686131e7d8af5",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "fx_pair:eurusd"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps money_market to NI.",
+        "fetched_at": null,
+        "id": "edge:90afb06178f762",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:money_market",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps crypto_pair to GP.",
+        "fetched_at": null,
+        "id": "edge:956fd2fbf4a8fc",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:crypto_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps money_market to CURV.",
+        "fetched_at": null,
+        "id": "edge:9b82128aadf49d",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:money_market",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:CURV"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.15,
+        "evidence": "Event related_tickers includes BZ=F.",
+        "fetched_at": null,
+        "id": "edge:a3e815c1b1f7b9",
+        "provider": "phase2f_rule_map",
+        "relationship": "mentions",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "commodity:brent-crude"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to FA.",
+        "fetched_at": null,
+        "id": "edge:a5a50b47cf6996",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:FA"
+      },
+      {
+        "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+        "confidence": 0.5,
+        "evidence": "Command WEI suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:a84e2c44c1604b",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:WEI"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to commodity Brent Crude.",
+        "fetched_at": null,
+        "id": "edge:a91e5cc6ff31c6",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "commodity:brent-crude"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to NI.",
+        "fetched_at": null,
+        "id": "edge:aacb50c57acd88",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fx_pair to HP.",
+        "fetched_at": null,
+        "id": "edge:acb41d11602959",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fx_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to FX pair EUR/USD.",
+        "fetched_at": null,
+        "id": "edge:b57a9a2235b9be",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "fx_pair:eurusd"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to crypto pair BTC/USD.",
+        "fetched_at": null,
+        "id": "edge:b841e872702ccd",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "crypto_pair:btcusd"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint matched event text: Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "fetched_at": null,
+        "id": "edge:b8c237d338e623",
+        "provider": "phase2f_rule_map",
+        "relationship": "mentions",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "risk_theme:global_trade"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps crypto_pair to CRYPTO.",
+        "fetched_at": null,
+        "id": "edge:bb49e68f67dd46",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:crypto_pair",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:CRYPTO"
+      },
+      {
+        "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+        "confidence": 0.15,
+        "evidence": "Command FXC suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:c2c4f1a85c3b6f",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:FXC"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps money_market to DES.",
+        "fetched_at": null,
+        "id": "edge:c3008f83ca1df9",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:money_market",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:DES"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps etf to HP.",
+        "fetched_at": null,
+        "id": "edge:cad66f5acfb609",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:etf",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to sector Shipping / Logistics.",
+        "fetched_at": null,
+        "id": "edge:cc805e08388aa3",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "sector:shipping_logistics"
+      },
+      {
+        "caveat": "Price graphs require market data freshness and source labels.",
+        "confidence": 0.15,
+        "evidence": "Command GP suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:d3b778c12bfc65",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.15,
+        "evidence": "Event related_tickers includes CL=F.",
+        "fetched_at": null,
+        "id": "edge:d49723f0aac843",
+        "provider": "phase2f_rule_map",
+        "relationship": "mentions",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "commodity:wti-crude"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to sector Energy.",
+        "fetched_at": null,
+        "id": "edge:d4d8c65a9d890e",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "sector:energy"
+      },
+      {
+        "caveat": "Historical price context requires a configured or keyless market provider.",
+        "confidence": 0.15,
+        "evidence": "Command HP suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:d6a18b999b8bbb",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "confidence": 0.5,
+        "evidence": "Event region field: Red Sea.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "edge:d79b12836a42fa",
+        "provider": "fixture",
+        "relationship": "located_in",
+        "source": "event:6d73974fca315298",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "target": "region:red-sea"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.5,
+        "evidence": "EUR/USD uses the Phase 2E FX-pair schema.",
+        "fetched_at": null,
+        "id": "edge:de1a616c9cb168",
+        "provider": "phase2f_rule_map",
+        "relationship": "proxy_for",
+        "source": "fx_pair:eurusd",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "asset_class:fx_pair"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint matched event text: Phase 2C fixture chokepoint",
+        "fetched_at": null,
+        "id": "edge:df0f3ac8a3c91f",
+        "provider": "phase2f_rule_map",
+        "relationship": "mentions",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "risk_theme:energy_chokepoint"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint matched event text: Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "fetched_at": null,
+        "id": "edge:e28810756cf718",
+        "provider": "phase2f_rule_map",
+        "relationship": "mentions",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "risk_theme:energy_chokepoint"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps equity to HP.",
+        "fetched_at": null,
+        "id": "edge:e3ee6084d366ec",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:equity",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:HP"
+      },
+      {
+        "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+        "confidence": 0.5,
+        "evidence": "Command FXC suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:e58081ff268138",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "command:FXC"
+      },
+      {
+        "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+        "confidence": 0.5,
+        "evidence": "Brent Crude is grouped under the Phase 2F commodity proxy asset class.",
+        "fetched_at": null,
+        "id": "edge:ed310f2dcfd11a",
+        "provider": "phase2f_rule_map",
+        "relationship": "proxy_for",
+        "source": "commodity:brent-crude",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "asset_class:commodity"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.15,
+        "evidence": "Rule shipping_energy_chokepoint maps event to FX pair USD/JPY.",
+        "fetched_at": null,
+        "id": "edge:f2103d629b4af9",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "fx_pair:usdjpy"
+      },
+      {
+        "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+        "confidence": 0.15,
+        "evidence": "Command NI suggested from event graph context.",
+        "fetched_at": null,
+        "id": "edge:f7bf32cfe9e718",
+        "provider": "phase2f_native_contract",
+        "relationship": "routes_to",
+        "source": "event:fdc6095c511e6b33",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:NI"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps fund to GP.",
+        "fetched_at": null,
+        "id": "edge:fc3434c378b3a7",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:fund",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:GP"
+      },
+      {
+        "caveat": "Routing readiness does not imply live provider data.",
+        "confidence": 0.7,
+        "evidence": "Phase 2E command matrix maps etf to WEI.",
+        "fetched_at": null,
+        "id": "edge:fcbce94e8d0573",
+        "provider": "phase2e_native_contract",
+        "relationship": "routes_to",
+        "source": "asset_class:etf",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "target": "command:WEI"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "evidence": "Rule shipping_energy_chokepoint maps event to commodity Brent Crude.",
+        "fetched_at": null,
+        "id": "edge:feac9f39d1cf59",
+        "provider": "phase2f_rule_map",
+        "relationship": "affects",
+        "source": "event:6d73974fca315298",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "target": "commodity:brent-crude"
+      }
+    ],
+    "evidence_refs": [
+      {
+        "caveat": "No HelixDB source or query syntax is copied; this contract is first-party JSON.",
+        "copied_source": false,
+        "evidence_ref": "helix-db-main/README.md:5-9",
+        "external_project": "HelixDB",
+        "license_stance": "needs-review/mixed",
+        "usage": "Graph/query mental model only."
+      },
+      {
+        "caveat": "No hosted Supabase auth, database, billing, or client dependency is added in Phase 2F.",
+        "copied_source": false,
+        "evidence_ref": "supabase-master/README.md:9-16",
+        "external_project": "Supabase",
+        "license_stance": "direct-use-allowed",
+        "usage": "Future persistence/readiness architecture reference only."
+      },
+      {
+        "caveat": "AGPL source stays out of this repository; only the source-status discipline is reused.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E WorldMonitor provider-health evidence card",
+        "external_project": "WorldMonitor",
+        "license_stance": "behavior-only",
+        "usage": "Provider truth/health behavior reference."
+      },
+      {
+        "caveat": "OpenBB remains optional and user-installed/API-backed; no AGPL source is vendored.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E OpenBB router/provider evidence card",
+        "external_project": "OpenBB",
+        "license_stance": "behavior-only",
+        "usage": "Optional provider/API route mental model."
+      },
+      {
+        "caveat": "External CSV rows are not copied; only schema evidence and taxonomy behavior inform local contracts.",
+        "copied_source": false,
+        "evidence_ref": "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+        "external_project": "FinanceDatabase",
+        "license_stance": "direct-use-allowed",
+        "usage": "Asset-universe schema/taxonomy behavior already adopted in Phase 2E."
+      },
+      {
+        "caveat": "Direct copying remains blocked because refreshed audit did not find a reviewed permissive license file.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E BB-Terminal command-workstation evidence card",
+        "external_project": "BB-Terminal",
+        "license_stance": "blocked",
+        "usage": "Clean-room command-workstation behavior reference."
+      }
+    ],
+    "graph_contract_version": "event_asset_graph.v1",
+    "nodes": [
+      {
+        "caveat": "Phase 2E asset-universe schema does not yet include a commodity universe; commodity nodes are first-party proxy classifications.",
+        "confidence": 0.45,
+        "data_gap": "Provider-backed commodity reference rows remain future work.",
+        "fetched_at": null,
+        "id": "asset_class:commodity",
+        "label": "Commodities",
+        "metadata": {
+          "asset_class": "commodity",
+          "live_rows_claimed": false
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "schema-gap/proxy",
+        "source_url": "",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:crypto_pair",
+        "label": "Crypto Pairs",
+        "metadata": {
+          "asset_class": "crypto_pair",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "CRYPTO",
+            "GP",
+            "HP",
+            "NI"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/cryptos.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:equity",
+        "label": "Equities",
+        "metadata": {
+          "asset_class": "equity",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "DES",
+            "FA",
+            "GP",
+            "HP",
+            "KEY",
+            "NI",
+            "INTEL"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:etf",
+        "label": "ETFs",
+        "metadata": {
+          "asset_class": "etf",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "DES",
+            "GP",
+            "HP",
+            "WEI",
+            "NI"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/etfs/NYQ.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:fund",
+        "label": "Funds",
+        "metadata": {
+          "asset_class": "fund",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "DES",
+            "GP",
+            "HP",
+            "NI"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/funds/NAS.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:fx_pair",
+        "label": "FX Pairs",
+        "metadata": {
+          "asset_class": "fx_pair",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "FXC",
+            "CURV",
+            "GP",
+            "HP",
+            "NI"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/currencies.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:index",
+        "label": "Indices",
+        "metadata": {
+          "asset_class": "index",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "GP",
+            "HP",
+            "MOV",
+            "WEI",
+            "NI"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/indices.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+        "confidence": 0.72,
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "id": "asset_class:money_market",
+        "label": "Money Markets",
+        "metadata": {
+          "asset_class": "money_market",
+          "license_stance": "direct-use-allowed",
+          "live_rows_claimed": false,
+          "primary_identifier": "symbol",
+          "routing_commands": [
+            "DES",
+            "CURV",
+            "NI"
+          ]
+        },
+        "provider": "phase2e_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "FinanceDatabase-main/database/moneymarkets.csv:1-1",
+        "type": "asset_class"
+      },
+      {
+        "caveat": "Crypto routing can use CoinGecko/Binance states when available.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:CRYPTO",
+        "label": "Crypto Market",
+        "metadata": {
+          "command": "CRYPTO",
+          "implementation_status": "schema-ready/provider-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:CURV",
+        "label": "CURV",
+        "metadata": {
+          "command": "CURV",
+          "implementation_status": "schema-ready"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Security descriptions require provider-backed asset rows before live claims.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:DES",
+        "label": "Description",
+        "metadata": {
+          "command": "DES",
+          "implementation_status": "schema-ready/provider-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:FA",
+        "label": "FA",
+        "metadata": {
+          "command": "FA",
+          "implementation_status": "schema-ready"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:FXC",
+        "label": "FX Crosses",
+        "metadata": {
+          "command": "FXC",
+          "implementation_status": "schema-ready/provider-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Price graphs require market data freshness and source labels.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:GP",
+        "label": "Graph / Price",
+        "metadata": {
+          "command": "GP",
+          "implementation_status": "provider-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "provider-required",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Historical price context requires a configured or keyless market provider.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:HP",
+        "label": "Historical Price",
+        "metadata": {
+          "command": "HP",
+          "implementation_status": "provider-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "provider-required",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:INTEL",
+        "label": "INTEL",
+        "metadata": {
+          "command": "INTEL",
+          "implementation_status": "schema-ready"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:KEY",
+        "label": "KEY",
+        "metadata": {
+          "command": "KEY",
+          "implementation_status": "schema-ready"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Map context may include approximate centroids and static chokepoints.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:MAP",
+        "label": "War Room Map",
+        "metadata": {
+          "command": "MAP",
+          "implementation_status": "schema-ready/proxy-layer-aware"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "proxy/static",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:MOV",
+        "label": "MOV",
+        "metadata": {
+          "command": "MOV",
+          "implementation_status": "schema-ready"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:NI",
+        "label": "News Intelligence",
+        "metadata": {
+          "command": "NI",
+          "implementation_status": "schema-ready/source-backed-news-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "reference-schema",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+        "confidence": 0.66,
+        "data_gap": "Live command execution depends on the destination provider and payload freshness.",
+        "fetched_at": null,
+        "id": "command:WEI",
+        "label": "Weights / Exposure",
+        "metadata": {
+          "command": "WEI",
+          "implementation_status": "future-provider-required"
+        },
+        "provider": "phase2f_native_contract",
+        "source_status": "provider-required",
+        "source_url": "",
+        "type": "command"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "commodity:brent-crude",
+        "label": "Brent Crude",
+        "metadata": {
+          "asset_class_node": "asset_class:commodity"
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "commodity"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "commodity:wti-crude",
+        "label": "WTI Crude",
+        "metadata": {
+          "asset_class_node": "asset_class:commodity"
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "commodity"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.48,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "crypto_pair:btcusd",
+        "label": "BTC/USD",
+        "metadata": {
+          "asset_class_node": "asset_class:crypto_pair"
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "crypto_pair"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "confidence": 0.5,
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "event:6d73974fca315298",
+        "label": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "metadata": {
+          "domain": "news",
+          "event_id": "6d73974fca315298",
+          "region": "Red Sea",
+          "related_tickers": [],
+          "severity": "watch",
+          "source": "phase2c.fixture",
+          "timestamp": "2026-06-16T00:00:00+00:00"
+        },
+        "provider": "fixture",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "type": "event"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "confidence": 0.15,
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "event:fdc6095c511e6b33",
+        "label": "Phase 2C fixture chokepoint",
+        "metadata": {
+          "domain": "chokepoints",
+          "event_id": "fdc6095c511e6b33",
+          "region": "Red Sea",
+          "related_tickers": [
+            "CL=F",
+            "BZ=F"
+          ],
+          "severity": "watch",
+          "source": "static fixture",
+          "timestamp": "2026-06-16T00:00:00+00:00"
+        },
+        "provider": "local",
+        "source_status": "static/proxy",
+        "source_url": "https://example.test/phase-2c/chokepoint",
+        "type": "event"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "fx_pair:eurusd",
+        "label": "EUR/USD",
+        "metadata": {
+          "asset_class_node": "asset_class:fx_pair"
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "fx_pair"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "fx_pair:usdjpy",
+        "label": "USD/JPY",
+        "metadata": {
+          "asset_class_node": "asset_class:fx_pair"
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "fx_pair"
+      },
+      {
+        "caveat": "Fixture rows never imply live coverage.",
+        "confidence": 0.5,
+        "data_gap": "",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "provider:fixture",
+        "label": "fixture",
+        "metadata": {
+          "availability": "limited",
+          "recommended_action": "Use fixture for UI development only.",
+          "row_count": 1
+        },
+        "provider": "fixture",
+        "source_status": "proxy/static",
+        "source_url": "static api fixture",
+        "type": "provider"
+      },
+      {
+        "caveat": "Provider attached to the source event row.",
+        "confidence": 0.15,
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "provider:local",
+        "label": "local",
+        "metadata": {},
+        "provider": "local",
+        "source_status": "static/proxy",
+        "source_url": "https://example.test/phase-2c/chokepoint",
+        "type": "provider"
+      },
+      {
+        "caveat": "No fake flight tracking is exported.",
+        "confidence": 0.5,
+        "data_gap": "Missing optional environment variable: OPENSKY_CLIENT_ID or OPENSKY_CLIENT_SECRET",
+        "fetched_at": null,
+        "id": "provider:opensky",
+        "label": "opensky",
+        "metadata": {
+          "availability": "unavailable",
+          "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+          "row_count": 0
+        },
+        "provider": "opensky",
+        "source_status": "missing-key",
+        "source_url": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+        "type": "provider"
+      },
+      {
+        "caveat": "Region comes from source row, normalized event metadata, or approximate centroid logic.",
+        "confidence": 0.5,
+        "data_gap": "Precise coordinates may be absent or approximate.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "id": "region:red-sea",
+        "label": "Red Sea",
+        "metadata": {},
+        "provider": "fixture",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "type": "region"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "risk_theme:energy_chokepoint",
+        "label": "Energy Chokepoint",
+        "metadata": {
+          "asset_class_node": null
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "risk_theme"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "risk_theme:global_trade",
+        "label": "Global Trade",
+        "metadata": {
+          "asset_class_node": null
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "risk_theme"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "sector:energy",
+        "label": "Energy",
+        "metadata": {
+          "asset_class_node": null
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "sector"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "confidence": 0.5,
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "id": "sector:shipping_logistics",
+        "label": "Shipping / Logistics",
+        "metadata": {
+          "asset_class_node": null
+        },
+        "provider": "phase2f_rule_map",
+        "source_status": "inferred/proxy",
+        "source_url": "",
+        "type": "sector"
+      }
+    ],
+    "readiness": {
+      "graph_database_dependency_added": false,
+      "graph_persistence": {
+        "capability": "live_graph_persistence",
+        "caveat": "Live graph persistence is unavailable until a reviewed provider-backed graph or relational store exists.",
+        "provider": "none",
+        "recommended_action": "Review and wire a provider-backed graph or relational store before enabling persistence.",
+        "source_status": "unavailable",
+        "status": "unavailable"
+      },
+      "hosted_supabase_dependency_added": false,
+      "live_store": {
+        "caveat": "Live graph persistence is unavailable until a reviewed provider-backed graph or relational store exists.",
+        "provider": "none",
+        "source_status": "unavailable",
+        "status": "unavailable"
+      },
+      "provider_requirements": [
+        "Reviewed provider-backed graph or relational store.",
+        "Source-level provenance and freshness metadata for every persisted row.",
+        "Explicit retention, auth, and privacy review before user-specific graph state."
+      ],
+      "unavailable_capabilities": [
+        {
+          "capability": "live_graph_persistence",
+          "caveat": "Live graph persistence is unavailable until a reviewed provider-backed graph or relational store exists.",
+          "provider": "none",
+          "recommended_action": "Review and wire a provider-backed graph or relational store before enabling persistence.",
+          "source_status": "unavailable",
+          "status": "unavailable"
+        },
+        {
+          "capability": "user_specific_watchlist_graph_state",
+          "caveat": "No accounts, auth, billing, or hosted database are added in Phase 2F.",
+          "provider": "none",
+          "recommended_action": "Add authenticated persistence in a later commercial slice.",
+          "source_status": "unavailable",
+          "status": "unavailable"
+        }
+      ]
+    },
+    "summary": {
+      "asset_schema_mode": "reference-schema",
+      "cluster_count": 11,
+      "command_count": 13,
+      "edge_count": 73,
+      "event_node_count": 2,
+      "external_rows_copied": false,
+      "inferred_edge_count": 34,
+      "live_graph_persistence": false,
+      "node_count": 36,
+      "persistence_status": "unavailable",
+      "source_backed_edge_count": 4
+    }
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "event_asset_graph",
+  "source_status": [
+    {
+      "caveat": "Phase 2E asset-universe schema does not yet include a commodity universe; commodity nodes are first-party proxy classifications.",
+      "confidence": 0.45,
+      "fetched_at": null,
+      "node_id": "asset_class:commodity",
+      "node_type": "asset_class",
+      "provider": "phase2f_native_contract",
+      "source": "asset_class:commodity",
+      "source_status": "schema-gap/proxy"
+    },
+    {
+      "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:crypto_pair",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/cryptos.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:equity",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:etf",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/etfs/NYQ.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:fund",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/funds/NAS.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:fx_pair",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/currencies.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:index",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/indices.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+      "confidence": 0.72,
+      "fetched_at": null,
+      "node_id": "asset_class:money_market",
+      "node_type": "asset_class",
+      "provider": "phase2e_native_contract",
+      "source": "FinanceDatabase-main/database/moneymarkets.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Crypto routing can use CoinGecko/Binance states when available.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:CRYPTO",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:CRYPTO",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Clean-room command routing only.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:CURV",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:CURV",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Security descriptions require provider-backed asset rows before live claims.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:DES",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:DES",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Clean-room command routing only.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:FA",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:FA",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:FXC",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:FXC",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Price graphs require market data freshness and source labels.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:GP",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:GP",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Historical price context requires a configured or keyless market provider.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:HP",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:HP",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Clean-room command routing only.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:INTEL",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:INTEL",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Clean-room command routing only.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:KEY",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:KEY",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Map context may include approximate centroids and static chokepoints.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:MAP",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:MAP",
+      "source_status": "proxy/static"
+    },
+    {
+      "caveat": "Clean-room command routing only.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:MOV",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:MOV",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:NI",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:NI",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+      "confidence": 0.66,
+      "fetched_at": null,
+      "node_id": "command:WEI",
+      "node_type": "command",
+      "provider": "phase2f_native_contract",
+      "source": "command:WEI",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "commodity:brent-crude",
+      "node_type": "commodity",
+      "provider": "phase2f_rule_map",
+      "source": "commodity:brent-crude",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "commodity:wti-crude",
+      "node_type": "commodity",
+      "provider": "phase2f_rule_map",
+      "source": "commodity:wti-crude",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.48,
+      "fetched_at": null,
+      "node_id": "crypto_pair:btcusd",
+      "node_type": "crypto_pair",
+      "provider": "phase2f_rule_map",
+      "source": "crypto_pair:btcusd",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Static fixture for web-shell development.",
+      "confidence": 0.5,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "node_id": "event:6d73974fca315298",
+      "node_type": "event",
+      "provider": "fixture",
+      "source": "https://example.test/phase-2c/news",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Static/proxy fixture row.",
+      "confidence": 0.15,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "node_id": "event:fdc6095c511e6b33",
+      "node_type": "event",
+      "provider": "local",
+      "source": "https://example.test/phase-2c/chokepoint",
+      "source_status": "static/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "fx_pair:eurusd",
+      "node_type": "fx_pair",
+      "provider": "phase2f_rule_map",
+      "source": "fx_pair:eurusd",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "fx_pair:usdjpy",
+      "node_type": "fx_pair",
+      "provider": "phase2f_rule_map",
+      "source": "fx_pair:usdjpy",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Fixture rows never imply live coverage.",
+      "confidence": 0.5,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "node_id": "provider:fixture",
+      "node_type": "provider",
+      "provider": "fixture",
+      "source": "static api fixture",
+      "source_status": "proxy/static"
+    },
+    {
+      "caveat": "Provider attached to the source event row.",
+      "confidence": 0.15,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "node_id": "provider:local",
+      "node_type": "provider",
+      "provider": "local",
+      "source": "https://example.test/phase-2c/chokepoint",
+      "source_status": "static/proxy"
+    },
+    {
+      "caveat": "No fake flight tracking is exported.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "provider:opensky",
+      "node_type": "provider",
+      "provider": "opensky",
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "Region comes from source row, normalized event metadata, or approximate centroid logic.",
+      "confidence": 0.5,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "node_id": "region:red-sea",
+      "node_type": "region",
+      "provider": "fixture",
+      "source": "https://example.test/phase-2c/news",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "risk_theme:energy_chokepoint",
+      "node_type": "risk_theme",
+      "provider": "phase2f_rule_map",
+      "source": "risk_theme:energy_chokepoint",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "risk_theme:global_trade",
+      "node_type": "risk_theme",
+      "provider": "phase2f_rule_map",
+      "source": "risk_theme:global_trade",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "sector:energy",
+      "node_type": "sector",
+      "provider": "phase2f_rule_map",
+      "source": "sector:energy",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "fetched_at": null,
+      "node_id": "sector:shipping_logistics",
+      "node_type": "sector",
+      "provider": "phase2f_rule_map",
+      "source": "sector:shipping_logistics",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:01daef9630c482",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:01daef9630c482",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.5,
+      "edge_id": "edge:03bd943e078970",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "proxy_for",
+      "source": "edge:03bd943e078970",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:0482e195fdee4c",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:0482e195fdee4c",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:0d42c1c4f2ee3f",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:0d42c1c4f2ee3f",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Map context may include approximate centroids and static chokepoints.",
+      "confidence": 0.5,
+      "edge_id": "edge:0d8fbea16bd72c",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:0d8fbea16bd72c",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+      "confidence": 0.15,
+      "edge_id": "edge:0dcb2986a39517",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:0dcb2986a39517",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Static/proxy fixture row.",
+      "confidence": 0.15,
+      "edge_id": "edge:14696e4ad8e1bc",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "local",
+      "relationship": "located_in",
+      "source": "https://example.test/phase-2c/chokepoint",
+      "source_status": "static/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:16fad1907aad36",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:16fad1907aad36",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:1a143dc6c7db5e",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:1a143dc6c7db5e",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:1c4090c408fc2f",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:1c4090c408fc2f",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:1d77846e7c4fff",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:1d77846e7c4fff",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:1e23924c8437ca",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:1e23924c8437ca",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:2302e7f547bbf9",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:2302e7f547bbf9",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+      "confidence": 0.5,
+      "edge_id": "edge:2f38c05b9ab6f2",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:2f38c05b9ab6f2",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.48,
+      "edge_id": "edge:334432c967a574",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:334432c967a574",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:3600a9c93e4c3c",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:3600a9c93e4c3c",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Map context may include approximate centroids and static chokepoints.",
+      "confidence": 0.15,
+      "edge_id": "edge:38d9a6b4513e8f",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:38d9a6b4513e8f",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:39d53230d58a2f",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:39d53230d58a2f",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:3ab94d51cae93f",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:3ab94d51cae93f",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:3ac772f115a157",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:3ac772f115a157",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Provider status must be read with freshness and caveats.",
+      "confidence": 0.5,
+      "edge_id": "edge:3f2fad99f00d68",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "fixture",
+      "relationship": "reported_by",
+      "source": "https://example.test/phase-2c/news",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:429fea5afe60f2",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:429fea5afe60f2",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:4513cb2bd685a7",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "mentions",
+      "source": "edge:4513cb2bd685a7",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:46cc4e3ea7494d",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:46cc4e3ea7494d",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:477ce5b8aeef2f",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:477ce5b8aeef2f",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:484c3b54b5e601",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:484c3b54b5e601",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:4a62c1b499d6da",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:4a62c1b499d6da",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Provider status must be read with freshness and caveats.",
+      "confidence": 0.15,
+      "edge_id": "edge:50d273f0b72c22",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "local",
+      "relationship": "reported_by",
+      "source": "https://example.test/phase-2c/chokepoint",
+      "source_status": "static/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:51160d1022f46c",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:51160d1022f46c",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:5734bcd66faef8",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:5734bcd66faef8",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.5,
+      "edge_id": "edge:5d259c1e927ea4",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "proxy_for",
+      "source": "edge:5d259c1e927ea4",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.5,
+      "edge_id": "edge:60d850069f9f2b",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "proxy_for",
+      "source": "edge:60d850069f9f2b",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:77a55c62aae815",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:77a55c62aae815",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:7830984025d44c",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:7830984025d44c",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:783e92a12bbf31",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:783e92a12bbf31",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Price graphs require market data freshness and source labels.",
+      "confidence": 0.5,
+      "edge_id": "edge:7c3f3c3eedee37",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:7c3f3c3eedee37",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:8275ea0a482f33",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:8275ea0a482f33",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:8319ba5c304655",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:8319ba5c304655",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:832135b1f48b5b",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:832135b1f48b5b",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:8686131e7d8af5",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:8686131e7d8af5",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:90afb06178f762",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:90afb06178f762",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:956fd2fbf4a8fc",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:956fd2fbf4a8fc",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:9b82128aadf49d",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:9b82128aadf49d",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.15,
+      "edge_id": "edge:a3e815c1b1f7b9",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "mentions",
+      "source": "edge:a3e815c1b1f7b9",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:a5a50b47cf6996",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:a5a50b47cf6996",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+      "confidence": 0.5,
+      "edge_id": "edge:a84e2c44c1604b",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:a84e2c44c1604b",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:a91e5cc6ff31c6",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:a91e5cc6ff31c6",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:aacb50c57acd88",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:aacb50c57acd88",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:acb41d11602959",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:acb41d11602959",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:b57a9a2235b9be",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:b57a9a2235b9be",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:b841e872702ccd",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:b841e872702ccd",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:b8c237d338e623",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "mentions",
+      "source": "edge:b8c237d338e623",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:bb49e68f67dd46",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:bb49e68f67dd46",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+      "confidence": 0.15,
+      "edge_id": "edge:c2c4f1a85c3b6f",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:c2c4f1a85c3b6f",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:c3008f83ca1df9",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:c3008f83ca1df9",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:cad66f5acfb609",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:cad66f5acfb609",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:cc805e08388aa3",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:cc805e08388aa3",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Price graphs require market data freshness and source labels.",
+      "confidence": 0.15,
+      "edge_id": "edge:d3b778c12bfc65",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:d3b778c12bfc65",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.15,
+      "edge_id": "edge:d49723f0aac843",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "mentions",
+      "source": "edge:d49723f0aac843",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:d4d8c65a9d890e",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:d4d8c65a9d890e",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Historical price context requires a configured or keyless market provider.",
+      "confidence": 0.15,
+      "edge_id": "edge:d6a18b999b8bbb",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:d6a18b999b8bbb",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Static fixture for web-shell development.",
+      "confidence": 0.5,
+      "edge_id": "edge:d79b12836a42fa",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "fixture",
+      "relationship": "located_in",
+      "source": "https://example.test/phase-2c/news",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.5,
+      "edge_id": "edge:de1a616c9cb168",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "proxy_for",
+      "source": "edge:de1a616c9cb168",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:df0f3ac8a3c91f",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "mentions",
+      "source": "edge:df0f3ac8a3c91f",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:e28810756cf718",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "mentions",
+      "source": "edge:e28810756cf718",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:e3ee6084d366ec",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:e3ee6084d366ec",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+      "confidence": 0.5,
+      "edge_id": "edge:e58081ff268138",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:e58081ff268138",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Rule-based clean-room inference; verify with provider-backed market data before relying on this link.",
+      "confidence": 0.5,
+      "edge_id": "edge:ed310f2dcfd11a",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "proxy_for",
+      "source": "edge:ed310f2dcfd11a",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.15,
+      "edge_id": "edge:f2103d629b4af9",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:f2103d629b4af9",
+      "source_status": "inferred/proxy"
+    },
+    {
+      "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+      "confidence": 0.15,
+      "edge_id": "edge:f7bf32cfe9e718",
+      "fetched_at": null,
+      "provider": "phase2f_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:f7bf32cfe9e718",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:fc3434c378b3a7",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:fc3434c378b3a7",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Routing readiness does not imply live provider data.",
+      "confidence": 0.7,
+      "edge_id": "edge:fcbce94e8d0573",
+      "fetched_at": null,
+      "provider": "phase2e_native_contract",
+      "relationship": "routes_to",
+      "source": "edge:fcbce94e8d0573",
+      "source_status": "reference-schema"
+    },
+    {
+      "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+      "confidence": 0.5,
+      "edge_id": "edge:feac9f39d1cf59",
+      "fetched_at": null,
+      "provider": "phase2f_rule_map",
+      "relationship": "affects",
+      "source": "edge:feac9f39d1cf59",
+      "source_status": "inferred/proxy"
+    }
+  ],
+  "summary": {
+    "asset_schema_mode": "reference-schema",
+    "cluster_count": 11,
+    "command_count": 13,
+    "edge_count": 73,
+    "event_node_count": 2,
+    "external_rows_copied": false,
+    "inferred_edge_count": 34,
+    "live_graph_persistence": false,
+    "node_count": 36,
+    "payload_mode": "deterministic-clean-room",
+    "persistence_status": "unavailable",
+    "source_backed_edge_count": 4
+  },
+  "unavailable": [
+    {
+      "capability": "live_graph_persistence",
+      "caveat": "Live graph persistence is unavailable until a reviewed provider-backed graph or relational store exists.",
+      "provider": "none",
+      "recommended_action": "Review and wire a provider-backed graph or relational store before enabling persistence.",
+      "source_status": "unavailable",
+      "status": "unavailable"
+    },
+    {
+      "capability": "user_specific_watchlist_graph_state",
+      "caveat": "No accounts, auth, billing, or hosted database are added in Phase 2F.",
+      "provider": "none",
+      "recommended_action": "Add authenticated persistence in a later commercial slice.",
+      "source_status": "unavailable",
+      "status": "unavailable"
+    }
+  ]
+}

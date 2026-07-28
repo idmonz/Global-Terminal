@@ -1,0 +1,1625 @@
+{
+  "caveats": [
+    "Attention composition reads stored observations and makes zero market-provider calls.",
+    "Retrieval-clock-only changes are not promoted as material attention rows.",
+    "The deterministic digest is source-linked research information, not a recommendation, target, urgency claim, or order action."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "all_items": [
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "change_kind": "new-evidence",
+        "confidence": 0.35,
+        "content_fingerprint": "bd7cce523cec52d32ac8be2a678384dfdf59486f6b113ee8e115d7f2b96c3319",
+        "coordinate_method": "",
+        "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=global_risk&originId=daily-brief%3Aclaim_0c5de00e8ef73c1195f4&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_0c5de00e8ef73c1195f4&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_0c5de00e8ef73c1195f4",
+        "fingerprint": "031f83c82dd2491613f92691754b730c9097d78cdc65311c72623f9c0b42529b",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "origin_id": "daily-brief:claim_0c5de00e8ef73c1195f4",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "fictional-demo",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:high+50",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 67
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "high",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Fictional deterministic fixture.",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+            "observed_at": "2026-06-23T00:30:00+00:00",
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "fictional-demo",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fictional-demo",
+          "label": "fictional-demo",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Changed fields: observed_at, severity, statement",
+        "title": "Fictional logistics watch is recorded for Demo Strait with elevated severity.",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "No fake flight tracking is exported.",
+        "change_kind": "source-degradation",
+        "confidence": null,
+        "content_fingerprint": "80cb36be1908282dc7b9ef5489372d446f0be649d504c4481f7bd970be33df08",
+        "coordinate_method": "",
+        "data_gap": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+        "drilldowns": {},
+        "evidence_identity": "provider-health:semantic:abc223721d7e256793a8771362af1919873026e1f447395094796dcf0644d6e1",
+        "fingerprint": "f57c6db2f2ec6bd121bef5f236fb3ee34792b284f0963b8f593d73c98905c3ac",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "provider-health:hash:6cd8cec706fa11110d83fb46",
+        "origin_kind": "provider-health",
+        "origins": [
+          "provider-health"
+        ],
+        "provider": "opensky",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "source-health+12",
+            "source-url-missing-3"
+          ],
+          "score": 59
+        },
+        "retrieved_at": null,
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "No fake flight tracking is exported.",
+            "confidence": null,
+            "data_gap": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+            "observed_at": null,
+            "origins": [
+              "provider-health"
+            ],
+            "provider": "opensky",
+            "retrieved_at": null,
+            "source_status": "missing-key",
+            "source_url": ""
+          }
+        ],
+        "source_status": "missing-key",
+        "source_url": "",
+        "subject": {
+          "id": "opensky",
+          "label": "opensky",
+          "region": "",
+          "symbol": "",
+          "type": "provider"
+        },
+        "summary": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+        "title": "opensky source state: missing-key",
+        "why_it_matters": "Evidence delivery degraded; last-known evidence remains visible with its observation and retrieval clocks."
+      },
+      {
+        "caveat": "",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "17e0c46ee23aa6d8c68295f77c8064bf88a22aadedd4f3f3c8ece7c3f2e47ec5",
+        "coordinate_method": "",
+        "data_gap": "",
+        "drilldowns": {
+          "analyst": "/?view=analyst-workspace&symbol=AAPL&assetClass=equity&mode=fixture&panel=catalysts&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "catalyst:semantic:e6ac131d03b3e251f2bb0897c06cbaa83b21303795ca3977d278101f0563a356",
+        "fingerprint": "189f520ab28cec2200a46679ba64e80175edba3ca465cd1def824536bcb419f3",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-08-10T00:00:00+00:00",
+        "origin_id": "catalyst:hash:0730aaec8722c845c79d7e6e",
+        "origin_kind": "catalyst",
+        "origins": [
+          "catalyst"
+        ],
+        "provider": "phase6f fictional fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:0h+10",
+            "source-url-missing-3"
+          ],
+          "score": 57
+        },
+        "retrieved_at": "2026-07-03T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "",
+            "confidence": null,
+            "data_gap": "",
+            "observed_at": "2026-07-29T00:00:00+00:00",
+            "origins": [
+              "catalyst"
+            ],
+            "provider": "phase6f fictional fixture",
+            "retrieved_at": "2026-07-03T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "AAPL",
+          "label": "AAPL",
+          "region": "",
+          "symbol": "AAPL",
+          "type": "asset"
+        },
+        "summary": "A source-linked catalyst record is available for exact review.",
+        "title": "AAPL scheduled earnings recorded",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "change_kind": "new-evidence",
+        "confidence": 0.5,
+        "content_fingerprint": "77e27a33227c45967d861f4e042913e050e26059997e8876f5446142ceb09494",
+        "coordinate_method": "fixture_coordinates",
+        "data_gap": "Fixture row only; not live news.",
+        "drilldowns": {
+          "map": "/?view=war-room-map&mode=fixture&region=Red+Sea&selected=&originId=news%3Aurl%3Ahttps%3A%2F%2Fexample.test%2Fphase-2c%2Fnews&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=Red+Sea&topic=Red+Sea&originId=news%3Aurl%3Ahttps%3A%2F%2Fexample.test%2Fphase-2c%2Fnews&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "url:https://example.test/phase-2c/news",
+        "fingerprint": "d8490acc6ed380f1f43f9a0a7a69b7bb6ea35c8bfd0af8a7b71eeff0ff0f2b78",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-06-16T00:00:00+00:00",
+        "origin_id": "news:url:https://example.test/phase-2c/news",
+        "origin_kind": "news",
+        "origins": [
+          "news"
+        ],
+        "provider": "fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:993h+0"
+          ],
+          "score": 50
+        },
+        "retrieved_at": "2026-06-16T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Static fixture for web-shell development.",
+            "confidence": 0.5,
+            "data_gap": "Fixture row only; not live news.",
+            "observed_at": "2026-06-16T00:00:00+00:00",
+            "origins": [
+              "news"
+            ],
+            "provider": "fixture",
+            "retrieved_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": "https://example.test/phase-2c/news"
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "subject": {
+          "id": "Red Sea",
+          "label": "Red Sea",
+          "region": "Red Sea",
+          "symbol": "",
+          "type": "region"
+        },
+        "summary": "Static fixture row for contract-driven UI development.",
+        "title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "21409d420dd562726daecd01f216d0506e97596e3e5a9f571e954e30bca41b53",
+        "coordinate_method": "",
+        "data_gap": "",
+        "drilldowns": {},
+        "evidence_identity": "catalyst:semantic:e80092b9ad9a827fd5e3d91c12c0bd97fe3f977cd0bcaef1429074ec08557239",
+        "fingerprint": "4b025497d1b6d164437c123a025f0fd4e31288d94767c45cfd220530d78433ff",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-07-02T18:00:00+00:00",
+        "origin_id": "catalyst:hash:c773ad29ef33ff453c846ca7",
+        "origin_kind": "catalyst",
+        "origins": [
+          "catalyst"
+        ],
+        "provider": "phase6f fictional fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:591h+0",
+            "source-url-missing-3"
+          ],
+          "score": 47
+        },
+        "retrieved_at": "2026-07-03T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "",
+            "confidence": null,
+            "data_gap": "",
+            "observed_at": "2026-07-02T18:00:00+00:00",
+            "origins": [
+              "catalyst"
+            ],
+            "provider": "phase6f fictional fixture",
+            "retrieved_at": "2026-07-03T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "phase6f fictional fixture",
+          "label": "phase6f fictional fixture",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Fictional row for network-free interaction and layout QA.",
+        "title": "AAPL deterministic catalyst fixture",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "146165a7e2cb22ffb27724eefa597325cc3c4d61870031ab9706217c3b498316",
+        "coordinate_method": "",
+        "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+        "drilldowns": {
+          "map": "/?view=war-room-map&mode=fixture&region=&selected=marker%3Afdc6095c511e6b33&originId=war-map%3Afdc6095c511e6b33&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=war-map%3Afdc6095c511e6b33&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "war-map:fdc6095c511e6b33",
+        "fingerprint": "7a725f47507e2f3157c5b371f0a18c24635b43bb579076ac655e720a54682768",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "war-map:fdc6095c511e6b33",
+        "origin_kind": "war-map",
+        "origins": [
+          "war-map"
+        ],
+        "provider": "local",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:993h+0",
+            "source-url-missing-3"
+          ],
+          "score": 47
+        },
+        "retrieved_at": "2026-06-16T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+            "confidence": null,
+            "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+            "observed_at": null,
+            "origins": [
+              "war-map"
+            ],
+            "provider": "local",
+            "retrieved_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "proxy/static",
+            "source_url": ""
+          }
+        ],
+        "source_status": "proxy/static",
+        "source_url": "",
+        "subject": {
+          "id": "local",
+          "label": "local",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "The map links source evidence to a region and transmission context.",
+        "title": "Map event evidence recorded",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "c92d3787cbe93bcb39ecba20603fa110303b05c97334df56262cb2ebb4992112",
+        "coordinate_method": "",
+        "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+        "drilldowns": {
+          "map": "/?view=war-room-map&mode=fixture&region=&selected=marker%3A6d73974fca315298&originId=war-map%3A6d73974fca315298&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=war-map%3A6d73974fca315298&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "war-map:6d73974fca315298",
+        "fingerprint": "dd14dfc89c105599b8a6a09e2720daaf009d8e8dcfeca00499e60c31973eea31",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "war-map:6d73974fca315298",
+        "origin_kind": "war-map",
+        "origins": [
+          "war-map"
+        ],
+        "provider": "fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:993h+0",
+            "source-url-missing-3"
+          ],
+          "score": 47
+        },
+        "retrieved_at": "2026-06-16T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+            "confidence": null,
+            "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+            "observed_at": null,
+            "origins": [
+              "war-map"
+            ],
+            "provider": "fixture",
+            "retrieved_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fixture",
+          "label": "fixture",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "The map links source evidence to a region and transmission context.",
+        "title": "Map event evidence recorded",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "change_kind": "new-evidence",
+        "confidence": 0.35,
+        "content_fingerprint": "c156bb04f743aefeac60e560892d16afc241a94467fb56bfe4677786933ca097",
+        "coordinate_method": "",
+        "data_gap": "Not live market evidence.",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=cross_asset&originId=daily-brief%3Aclaim_b21cd99783c845118a71&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_b21cd99783c845118a71&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_b21cd99783c845118a71",
+        "fingerprint": "16456117e1af29a69a58a02060c67cb55bf81313576d45687baf6434530ca928",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "daily-brief:claim_b21cd99783c845118a71",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "fictional-demo",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:info+10",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 27
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "info",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Fictional deterministic fixture.",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "observed_at": null,
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "fictional-demo",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fictional-demo",
+          "label": "fictional-demo",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Changed fields: statement",
+        "title": "SPY recorded a +0.80% supplied-window change; the supplied one-month change is +1.40%.",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "change_kind": "new-evidence",
+        "confidence": 0.35,
+        "content_fingerprint": "3c15874ca60dcb5a3bde2a5d28b346a99c60ac1a3a39123757c6e4ed0841a4ff",
+        "coordinate_method": "",
+        "data_gap": "Not live market evidence.",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=news_flow&originId=daily-brief%3Aclaim_b066295067548e8ccb2b&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_b066295067548e8ccb2b&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_b066295067548e8ccb2b",
+        "fingerprint": "531e7520b14f4ed60b3876498332ab6ae1e9440464dea9d0d403c4550f2bb2e1",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "origin_id": "daily-brief:claim_b066295067548e8ccb2b",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "fictional-demo",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:info+10",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 27
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "info",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Fictional deterministic fixture.",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "observed_at": "2026-06-23T00:30:00+00:00",
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "fictional-demo",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fictional-demo",
+          "label": "fictional-demo",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Changed fields: observed_at",
+        "title": "A source report records: Fictional policy briefing published.",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "",
+        "change_kind": "fetch-refresh",
+        "confidence": null,
+        "content_fingerprint": "64d90bf1760939f0241750e908b9802291bec947d3fd5f12d636065b928514c6",
+        "coordinate_method": "",
+        "data_gap": "",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=overview&originId=daily-brief%3Aclaim_5c7dc1f1bb96908323e7&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_5c7dc1f1bb96908323e7&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_5c7dc1f1bb96908323e7",
+        "fingerprint": "fa48acd7899141916f28bfe506f0ea2fa3fab0e9e2b4fb5a0ee8f88ae73399c1",
+        "material": false,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "daily-brief:claim_5c7dc1f1bb96908323e7",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "daily-brief",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:info+10",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 27
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "info",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "",
+            "confidence": null,
+            "data_gap": "",
+            "observed_at": null,
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "daily-brief",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "cached",
+            "source_url": ""
+          }
+        ],
+        "source_status": "cached",
+        "source_url": "",
+        "subject": {
+          "id": "daily-brief",
+          "label": "daily-brief",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Only the retrieval clock changed; no material claim change is promoted.",
+        "title": "Daily Brief source retrieval clock refreshed",
+        "why_it_matters": "Only the retrieval clock changed, so this row is not promoted as a material change."
+      }
+    ],
+    "attention_desk_version": "attention_desk.v1",
+    "caveat": "Attention rows prioritize stored evidence and source health. They are research information, not a recommendation or urgency claim.",
+    "checkpoint": {
+      "provider_clock_unchanged": true,
+      "reviewed_through_at": null,
+      "version": 0
+    },
+    "digest": {
+      "ai_used": false,
+      "bounded": true,
+      "caveat": "Deterministic source-linked digest; no unsupported narrative or recommendation is added.",
+      "degraded_source_count": 1,
+      "headline": "9 material attention rows across 5 named sources.",
+      "items": [
+        {
+          "drilldowns": {
+            "brief": "/?view=daily-brief&mode=fixture&period=morning&section=global_risk&originId=daily-brief%3Aclaim_0c5de00e8ef73c1195f4&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+            "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_0c5de00e8ef73c1195f4&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+          },
+          "fingerprint": "031f83c82dd2491613f92691754b730c9097d78cdc65311c72623f9c0b42529b",
+          "observed_at": "2026-06-23T00:30:00+00:00",
+          "provider": "fictional-demo",
+          "retrieved_at": "2026-06-23T00:30:00+00:00",
+          "severity": "high",
+          "source_status": "fixture",
+          "source_url": "",
+          "title": "Fictional logistics watch is recorded for Demo Strait with elevated severity.",
+          "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+        },
+        {
+          "drilldowns": {},
+          "fingerprint": "f57c6db2f2ec6bd121bef5f236fb3ee34792b284f0963b8f593d73c98905c3ac",
+          "observed_at": null,
+          "provider": "opensky",
+          "retrieved_at": null,
+          "severity": "material",
+          "source_status": "missing-key",
+          "source_url": "",
+          "title": "opensky source state: missing-key",
+          "why_it_matters": "Evidence delivery degraded; last-known evidence remains visible with its observation and retrieval clocks."
+        },
+        {
+          "drilldowns": {
+            "analyst": "/?view=analyst-workspace&symbol=AAPL&assetClass=equity&mode=fixture&panel=catalysts&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+          },
+          "fingerprint": "189f520ab28cec2200a46679ba64e80175edba3ca465cd1def824536bcb419f3",
+          "observed_at": "2026-08-10T00:00:00+00:00",
+          "provider": "phase6f fictional fixture",
+          "retrieved_at": "2026-07-03T00:00:00+00:00",
+          "severity": "material",
+          "source_status": "fixture",
+          "source_url": "",
+          "title": "AAPL scheduled earnings recorded",
+          "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+        },
+        {
+          "drilldowns": {
+            "map": "/?view=war-room-map&mode=fixture&region=Red+Sea&selected=&originId=news%3Aurl%3Ahttps%3A%2F%2Fexample.test%2Fphase-2c%2Fnews&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+            "news": "/?view=news&mode=fixture&region=Red+Sea&topic=Red+Sea&originId=news%3Aurl%3Ahttps%3A%2F%2Fexample.test%2Fphase-2c%2Fnews&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+          },
+          "fingerprint": "d8490acc6ed380f1f43f9a0a7a69b7bb6ea35c8bfd0af8a7b71eeff0ff0f2b78",
+          "observed_at": "2026-06-16T00:00:00+00:00",
+          "provider": "fixture",
+          "retrieved_at": "2026-06-16T00:00:00+00:00",
+          "severity": "material",
+          "source_status": "fixture",
+          "source_url": "https://example.test/phase-2c/news",
+          "title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+          "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+        },
+        {
+          "drilldowns": {},
+          "fingerprint": "4b025497d1b6d164437c123a025f0fd4e31288d94767c45cfd220530d78433ff",
+          "observed_at": "2026-07-02T18:00:00+00:00",
+          "provider": "phase6f fictional fixture",
+          "retrieved_at": "2026-07-03T00:00:00+00:00",
+          "severity": "material",
+          "source_status": "fixture",
+          "source_url": "",
+          "title": "AAPL deterministic catalyst fixture",
+          "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+        },
+        {
+          "drilldowns": {
+            "map": "/?view=war-room-map&mode=fixture&region=&selected=marker%3Afdc6095c511e6b33&originId=war-map%3Afdc6095c511e6b33&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+            "news": "/?view=news&mode=fixture&region=&topic=&originId=war-map%3Afdc6095c511e6b33&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+          },
+          "fingerprint": "7a725f47507e2f3157c5b371f0a18c24635b43bb579076ac655e720a54682768",
+          "observed_at": null,
+          "provider": "local",
+          "retrieved_at": "2026-06-16T00:00:00+00:00",
+          "severity": "material",
+          "source_status": "proxy/static",
+          "source_url": "",
+          "title": "Map event evidence recorded",
+          "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+        },
+        {
+          "drilldowns": {
+            "map": "/?view=war-room-map&mode=fixture&region=&selected=marker%3A6d73974fca315298&originId=war-map%3A6d73974fca315298&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+            "news": "/?view=news&mode=fixture&region=&topic=&originId=war-map%3A6d73974fca315298&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+          },
+          "fingerprint": "dd14dfc89c105599b8a6a09e2720daaf009d8e8dcfeca00499e60c31973eea31",
+          "observed_at": null,
+          "provider": "fixture",
+          "retrieved_at": "2026-06-16T00:00:00+00:00",
+          "severity": "material",
+          "source_status": "fixture",
+          "source_url": "",
+          "title": "Map event evidence recorded",
+          "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+        }
+      ],
+      "max_items": 7,
+      "provider_call_count": 0,
+      "source_count": 5
+    },
+    "filters": {
+      "change_kinds": [
+        "new-evidence",
+        "source-degradation"
+      ],
+      "regions": [
+        "Red Sea"
+      ],
+      "review_states": [
+        "new",
+        "reviewed",
+        "acknowledged",
+        "snoozed"
+      ],
+      "severities": [
+        "info",
+        "material",
+        "high",
+        "critical"
+      ],
+      "sources": [
+        "fictional-demo",
+        "fixture",
+        "local",
+        "opensky",
+        "phase6f fictional fixture"
+      ],
+      "watchlists": [
+        "AAPL"
+      ]
+    },
+    "generated_at": "2026-06-16T00:00:00+00:00",
+    "items": [
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "change_kind": "new-evidence",
+        "confidence": 0.35,
+        "content_fingerprint": "bd7cce523cec52d32ac8be2a678384dfdf59486f6b113ee8e115d7f2b96c3319",
+        "coordinate_method": "",
+        "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=global_risk&originId=daily-brief%3Aclaim_0c5de00e8ef73c1195f4&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_0c5de00e8ef73c1195f4&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_0c5de00e8ef73c1195f4",
+        "fingerprint": "031f83c82dd2491613f92691754b730c9097d78cdc65311c72623f9c0b42529b",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "origin_id": "daily-brief:claim_0c5de00e8ef73c1195f4",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "fictional-demo",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:high+50",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 67
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "high",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Fictional deterministic fixture.",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+            "observed_at": "2026-06-23T00:30:00+00:00",
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "fictional-demo",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fictional-demo",
+          "label": "fictional-demo",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Changed fields: observed_at, severity, statement",
+        "title": "Fictional logistics watch is recorded for Demo Strait with elevated severity.",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "No fake flight tracking is exported.",
+        "change_kind": "source-degradation",
+        "confidence": null,
+        "content_fingerprint": "80cb36be1908282dc7b9ef5489372d446f0be649d504c4481f7bd970be33df08",
+        "coordinate_method": "",
+        "data_gap": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+        "drilldowns": {},
+        "evidence_identity": "provider-health:semantic:abc223721d7e256793a8771362af1919873026e1f447395094796dcf0644d6e1",
+        "fingerprint": "f57c6db2f2ec6bd121bef5f236fb3ee34792b284f0963b8f593d73c98905c3ac",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "provider-health:hash:6cd8cec706fa11110d83fb46",
+        "origin_kind": "provider-health",
+        "origins": [
+          "provider-health"
+        ],
+        "provider": "opensky",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "source-health+12",
+            "source-url-missing-3"
+          ],
+          "score": 59
+        },
+        "retrieved_at": null,
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "No fake flight tracking is exported.",
+            "confidence": null,
+            "data_gap": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+            "observed_at": null,
+            "origins": [
+              "provider-health"
+            ],
+            "provider": "opensky",
+            "retrieved_at": null,
+            "source_status": "missing-key",
+            "source_url": ""
+          }
+        ],
+        "source_status": "missing-key",
+        "source_url": "",
+        "subject": {
+          "id": "opensky",
+          "label": "opensky",
+          "region": "",
+          "symbol": "",
+          "type": "provider"
+        },
+        "summary": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+        "title": "opensky source state: missing-key",
+        "why_it_matters": "Evidence delivery degraded; last-known evidence remains visible with its observation and retrieval clocks."
+      },
+      {
+        "caveat": "",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "17e0c46ee23aa6d8c68295f77c8064bf88a22aadedd4f3f3c8ece7c3f2e47ec5",
+        "coordinate_method": "",
+        "data_gap": "",
+        "drilldowns": {
+          "analyst": "/?view=analyst-workspace&symbol=AAPL&assetClass=equity&mode=fixture&panel=catalysts&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "catalyst:semantic:e6ac131d03b3e251f2bb0897c06cbaa83b21303795ca3977d278101f0563a356",
+        "fingerprint": "189f520ab28cec2200a46679ba64e80175edba3ca465cd1def824536bcb419f3",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-08-10T00:00:00+00:00",
+        "origin_id": "catalyst:hash:0730aaec8722c845c79d7e6e",
+        "origin_kind": "catalyst",
+        "origins": [
+          "catalyst"
+        ],
+        "provider": "phase6f fictional fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:0h+10",
+            "source-url-missing-3"
+          ],
+          "score": 57
+        },
+        "retrieved_at": "2026-07-03T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "",
+            "confidence": null,
+            "data_gap": "",
+            "observed_at": "2026-07-29T00:00:00+00:00",
+            "origins": [
+              "catalyst"
+            ],
+            "provider": "phase6f fictional fixture",
+            "retrieved_at": "2026-07-03T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "AAPL",
+          "label": "AAPL",
+          "region": "",
+          "symbol": "AAPL",
+          "type": "asset"
+        },
+        "summary": "A source-linked catalyst record is available for exact review.",
+        "title": "AAPL scheduled earnings recorded",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "change_kind": "new-evidence",
+        "confidence": 0.5,
+        "content_fingerprint": "77e27a33227c45967d861f4e042913e050e26059997e8876f5446142ceb09494",
+        "coordinate_method": "fixture_coordinates",
+        "data_gap": "Fixture row only; not live news.",
+        "drilldowns": {
+          "map": "/?view=war-room-map&mode=fixture&region=Red+Sea&selected=&originId=news%3Aurl%3Ahttps%3A%2F%2Fexample.test%2Fphase-2c%2Fnews&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=Red+Sea&topic=Red+Sea&originId=news%3Aurl%3Ahttps%3A%2F%2Fexample.test%2Fphase-2c%2Fnews&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "url:https://example.test/phase-2c/news",
+        "fingerprint": "d8490acc6ed380f1f43f9a0a7a69b7bb6ea35c8bfd0af8a7b71eeff0ff0f2b78",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-06-16T00:00:00+00:00",
+        "origin_id": "news:url:https://example.test/phase-2c/news",
+        "origin_kind": "news",
+        "origins": [
+          "news"
+        ],
+        "provider": "fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:993h+0"
+          ],
+          "score": 50
+        },
+        "retrieved_at": "2026-06-16T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Static fixture for web-shell development.",
+            "confidence": 0.5,
+            "data_gap": "Fixture row only; not live news.",
+            "observed_at": "2026-06-16T00:00:00+00:00",
+            "origins": [
+              "news"
+            ],
+            "provider": "fixture",
+            "retrieved_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": "https://example.test/phase-2c/news"
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "subject": {
+          "id": "Red Sea",
+          "label": "Red Sea",
+          "region": "Red Sea",
+          "symbol": "",
+          "type": "region"
+        },
+        "summary": "Static fixture row for contract-driven UI development.",
+        "title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "21409d420dd562726daecd01f216d0506e97596e3e5a9f571e954e30bca41b53",
+        "coordinate_method": "",
+        "data_gap": "",
+        "drilldowns": {},
+        "evidence_identity": "catalyst:semantic:e80092b9ad9a827fd5e3d91c12c0bd97fe3f977cd0bcaef1429074ec08557239",
+        "fingerprint": "4b025497d1b6d164437c123a025f0fd4e31288d94767c45cfd220530d78433ff",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-07-02T18:00:00+00:00",
+        "origin_id": "catalyst:hash:c773ad29ef33ff453c846ca7",
+        "origin_kind": "catalyst",
+        "origins": [
+          "catalyst"
+        ],
+        "provider": "phase6f fictional fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:591h+0",
+            "source-url-missing-3"
+          ],
+          "score": 47
+        },
+        "retrieved_at": "2026-07-03T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "",
+            "confidence": null,
+            "data_gap": "",
+            "observed_at": "2026-07-02T18:00:00+00:00",
+            "origins": [
+              "catalyst"
+            ],
+            "provider": "phase6f fictional fixture",
+            "retrieved_at": "2026-07-03T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "phase6f fictional fixture",
+          "label": "phase6f fictional fixture",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Fictional row for network-free interaction and layout QA.",
+        "title": "AAPL deterministic catalyst fixture",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "146165a7e2cb22ffb27724eefa597325cc3c4d61870031ab9706217c3b498316",
+        "coordinate_method": "",
+        "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+        "drilldowns": {
+          "map": "/?view=war-room-map&mode=fixture&region=&selected=marker%3Afdc6095c511e6b33&originId=war-map%3Afdc6095c511e6b33&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=war-map%3Afdc6095c511e6b33&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "war-map:fdc6095c511e6b33",
+        "fingerprint": "7a725f47507e2f3157c5b371f0a18c24635b43bb579076ac655e720a54682768",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "war-map:fdc6095c511e6b33",
+        "origin_kind": "war-map",
+        "origins": [
+          "war-map"
+        ],
+        "provider": "local",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:993h+0",
+            "source-url-missing-3"
+          ],
+          "score": 47
+        },
+        "retrieved_at": "2026-06-16T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+            "confidence": null,
+            "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+            "observed_at": null,
+            "origins": [
+              "war-map"
+            ],
+            "provider": "local",
+            "retrieved_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "proxy/static",
+            "source_url": ""
+          }
+        ],
+        "source_status": "proxy/static",
+        "source_url": "",
+        "subject": {
+          "id": "local",
+          "label": "local",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "The map links source evidence to a region and transmission context.",
+        "title": "Map event evidence recorded",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+        "change_kind": "new-evidence",
+        "confidence": null,
+        "content_fingerprint": "c92d3787cbe93bcb39ecba20603fa110303b05c97334df56262cb2ebb4992112",
+        "coordinate_method": "",
+        "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+        "drilldowns": {
+          "map": "/?view=war-room-map&mode=fixture&region=&selected=marker%3A6d73974fca315298&originId=war-map%3A6d73974fca315298&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=war-map%3A6d73974fca315298&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "war-map:6d73974fca315298",
+        "fingerprint": "dd14dfc89c105599b8a6a09e2720daaf009d8e8dcfeca00499e60c31973eea31",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "war-map:6d73974fca315298",
+        "origin_kind": "war-map",
+        "origins": [
+          "war-map"
+        ],
+        "provider": "fixture",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:material+30",
+            "review:new+20",
+            "recency:993h+0",
+            "source-url-missing-3"
+          ],
+          "score": 47
+        },
+        "retrieved_at": "2026-06-16T00:00:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "material",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+            "confidence": null,
+            "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+            "observed_at": null,
+            "origins": [
+              "war-map"
+            ],
+            "provider": "fixture",
+            "retrieved_at": "2026-06-16T00:00:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fixture",
+          "label": "fixture",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "The map links source evidence to a region and transmission context.",
+        "title": "Map event evidence recorded",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "change_kind": "new-evidence",
+        "confidence": 0.35,
+        "content_fingerprint": "3c15874ca60dcb5a3bde2a5d28b346a99c60ac1a3a39123757c6e4ed0841a4ff",
+        "coordinate_method": "",
+        "data_gap": "Not live market evidence.",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=news_flow&originId=daily-brief%3Aclaim_b066295067548e8ccb2b&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_b066295067548e8ccb2b&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_b066295067548e8ccb2b",
+        "fingerprint": "531e7520b14f4ed60b3876498332ab6ae1e9440464dea9d0d403c4550f2bb2e1",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": "2026-06-23T00:30:00+00:00",
+        "origin_id": "daily-brief:claim_b066295067548e8ccb2b",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "fictional-demo",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:info+10",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 27
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "info",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Fictional deterministic fixture.",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "observed_at": "2026-06-23T00:30:00+00:00",
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "fictional-demo",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fictional-demo",
+          "label": "fictional-demo",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Changed fields: observed_at",
+        "title": "A source report records: Fictional policy briefing published.",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      },
+      {
+        "caveat": "Fictional deterministic fixture.",
+        "change_kind": "new-evidence",
+        "confidence": 0.35,
+        "content_fingerprint": "c156bb04f743aefeac60e560892d16afc241a94467fb56bfe4677786933ca097",
+        "coordinate_method": "",
+        "data_gap": "Not live market evidence.",
+        "drilldowns": {
+          "brief": "/?view=daily-brief&mode=fixture&period=morning&section=cross_asset&originId=daily-brief%3Aclaim_b21cd99783c845118a71&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review",
+          "news": "/?view=news&mode=fixture&region=&topic=&originId=daily-brief%3Aclaim_b21cd99783c845118a71&originView=attention-desk&originState=mode%3Dfixture%26review%3Dneeds-review"
+        },
+        "evidence_identity": "daily-brief:claim_b21cd99783c845118a71",
+        "fingerprint": "16456117e1af29a69a58a02060c67cb55bf81313576d45687baf6434530ca928",
+        "material": true,
+        "not_financial_advice": true,
+        "observed_at": null,
+        "origin_id": "daily-brief:claim_b21cd99783c845118a71",
+        "origin_kind": "daily-brief",
+        "origins": [
+          "daily-brief"
+        ],
+        "provider": "fictional-demo",
+        "provider_call_count": 0,
+        "rank": {
+          "factors": [
+            "severity:info+10",
+            "review:new+20",
+            "recency:824h+0",
+            "source-url-missing-3"
+          ],
+          "score": 27
+        },
+        "retrieved_at": "2026-06-23T00:30:00+00:00",
+        "return_url": "/?view=attention-desk&mode=fixture&review=needs-review",
+        "review_state": "new",
+        "review_version": 0,
+        "severity": "info",
+        "snooze_expired": false,
+        "snoozed_until": null,
+        "source_register": [
+          {
+            "caveat": "Fictional deterministic fixture.",
+            "confidence": 0.35,
+            "data_gap": "Not live market evidence.",
+            "observed_at": null,
+            "origins": [
+              "daily-brief"
+            ],
+            "provider": "fictional-demo",
+            "retrieved_at": "2026-06-23T00:30:00+00:00",
+            "source_status": "fixture",
+            "source_url": ""
+          }
+        ],
+        "source_status": "fixture",
+        "source_url": "",
+        "subject": {
+          "id": "fictional-demo",
+          "label": "fictional-demo",
+          "region": "",
+          "symbol": "",
+          "type": "evidence"
+        },
+        "summary": "Changed fields: statement",
+        "title": "SPY recorded a +0.80% supplied-window change; the supplied one-month change is +1.40%.",
+        "why_it_matters": "New source-linked evidence is available for the named subject and exact origin."
+      }
+    ],
+    "mode": "fixture",
+    "not_financial_advice": true,
+    "observation_run": {
+      "active_run": null,
+      "available_watchlist": {
+        "item_count": 5,
+        "name": "Daily Radar",
+        "resource_id": "fixture-daily-radar"
+      },
+      "caveat": "Deterministic; no provider contact.",
+      "changes": [],
+      "generated_at": "2026-06-16T00:00:00+00:00",
+      "latest_run": {
+        "completed_at": "2026-07-03T12:00:02+00:00",
+        "completed_count": 5,
+        "mode": "fixture",
+        "provider_budget": {
+          "actual_calls": 0,
+          "maximum_calls": 16
+        },
+        "provider_call_count": 0,
+        "requested_count": 5,
+        "run_id": "fixture-observation-run",
+        "session": {
+          "calendar_status": "fixture",
+          "market_open_claimed": false,
+          "policy": "fixture"
+        },
+        "status": "completed",
+        "watchlist_name": "Daily Radar"
+      },
+      "material_change_count": 0,
+      "mode": "fixture",
+      "not_financial_advice": true,
+      "observation_run_version": "watchlist_observation_run.v1",
+      "provider_call_count": 0,
+      "refresh_action": {
+        "enabled": false,
+        "maximum_provider_calls": 16,
+        "maximum_symbols": 5,
+        "reason": "fixture-does-not-contact-providers"
+      },
+      "source_health": []
+    },
+    "policy": {
+      "included_change_kinds": [
+        "market-change",
+        "new-evidence",
+        "resolved",
+        "source-degradation",
+        "stale-evidence"
+      ],
+      "minimum_severity": "info",
+      "source_health_handling": "include",
+      "updated_at": null,
+      "version": 0
+    },
+    "provider_call_count": 0,
+    "readiness": {
+      "account_review": "available-when-signed-in",
+      "external_delivery": "unavailable",
+      "gemini_digest": "explicit-opt-in-only",
+      "hosted_persistence": "unavailable",
+      "local_review": "available"
+    },
+    "since_last_review": {
+      "changed": 9,
+      "material": 9,
+      "new": 9,
+      "resolved": 0
+    },
+    "summary": {
+      "acknowledged_count": 0,
+      "degraded_source_count": 1,
+      "external_delivery": "unavailable",
+      "fetch_refresh_count": 1,
+      "new_count": 9,
+      "not_financial_advice": true,
+      "provider_call_count": 0,
+      "reviewed_count": 0,
+      "snoozed_count": 0,
+      "unfiltered_material_count": 9,
+      "visible_count": 9
+    }
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "attention_desk",
+  "source_status": [
+    {
+      "caveat": "Fictional deterministic fixture.",
+      "confidence": 0.35,
+      "data_gap": "Not live market evidence.; Temporal proximity does not establish market causality.",
+      "observed_at": "2026-06-23T00:30:00+00:00",
+      "origins": [
+        "daily-brief"
+      ],
+      "provider": "fictional-demo",
+      "retrieved_at": "2026-06-23T00:30:00+00:00",
+      "source_status": "fixture",
+      "source_url": ""
+    },
+    {
+      "caveat": "No fake flight tracking is exported.",
+      "confidence": null,
+      "data_gap": "OpenSky remains unavailable until OAuth credentials and /states/all fetch succeed.",
+      "observed_at": null,
+      "origins": [
+        "provider-health"
+      ],
+      "provider": "opensky",
+      "retrieved_at": null,
+      "source_status": "missing-key",
+      "source_url": ""
+    },
+    {
+      "caveat": "",
+      "confidence": null,
+      "data_gap": "",
+      "observed_at": "2026-07-29T00:00:00+00:00",
+      "origins": [
+        "catalyst"
+      ],
+      "provider": "phase6f fictional fixture",
+      "retrieved_at": "2026-07-03T00:00:00+00:00",
+      "source_status": "fixture",
+      "source_url": ""
+    },
+    {
+      "caveat": "Static fixture for web-shell development.",
+      "confidence": 0.5,
+      "data_gap": "Fixture row only; not live news.",
+      "observed_at": "2026-06-16T00:00:00+00:00",
+      "origins": [
+        "news"
+      ],
+      "provider": "fixture",
+      "retrieved_at": "2026-06-16T00:00:00+00:00",
+      "source_status": "fixture",
+      "source_url": "https://example.test/phase-2c/news"
+    },
+    {
+      "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+      "confidence": null,
+      "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+      "observed_at": null,
+      "origins": [
+        "war-map"
+      ],
+      "provider": "local",
+      "retrieved_at": "2026-06-16T00:00:00+00:00",
+      "source_status": "proxy/static",
+      "source_url": ""
+    },
+    {
+      "caveat": "News matches are contextual; taxonomy links are inferred/proxy unless their own row says otherwise.",
+      "confidence": null,
+      "data_gap": "No relationship is promoted to causal evidence without a direct source match.",
+      "observed_at": null,
+      "origins": [
+        "war-map"
+      ],
+      "provider": "fixture",
+      "retrieved_at": "2026-06-16T00:00:00+00:00",
+      "source_status": "fixture",
+      "source_url": ""
+    },
+    {
+      "caveat": "",
+      "confidence": null,
+      "data_gap": "",
+      "observed_at": null,
+      "origins": [
+        "daily-brief"
+      ],
+      "provider": "daily-brief",
+      "retrieved_at": "2026-06-23T00:30:00+00:00",
+      "source_status": "cached",
+      "source_url": ""
+    }
+  ],
+  "summary": {
+    "acknowledged_count": 0,
+    "degraded_source_count": 1,
+    "external_delivery": "unavailable",
+    "fetch_refresh_count": 1,
+    "new_count": 9,
+    "not_financial_advice": true,
+    "provider_call_count": 0,
+    "reviewed_count": 0,
+    "snoozed_count": 0,
+    "unfiltered_material_count": 9,
+    "visible_count": 9
+  },
+  "unavailable": [
+    {
+      "capability": "hosted_persistence",
+      "data_gap": "Hosted Persistence is unavailable or unverified.",
+      "source_status": "unavailable"
+    },
+    {
+      "capability": "external_delivery",
+      "data_gap": "External Delivery is unavailable or unverified.",
+      "source_status": "unavailable"
+    }
+  ]
+}

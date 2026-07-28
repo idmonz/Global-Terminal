@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Terminal Clean Room"
+  short_description: "Adopt external behavior without unsafe source copying."
+  default_prompt: "Evaluate an external reference and produce a clean-room adoption decision and implementation boundary."

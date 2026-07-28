@@ -1,0 +1,124 @@
+{
+  "required_files": [
+    "app.py",
+    "lib/config.py",
+    "lib/data_status.py",
+    "lib/cache.py",
+    "lib/compliance.py",
+    "lib/market_data.py",
+    "lib/global_markets.py",
+    "lib/heatmaps.py",
+    "lib/charts.py",
+    "lib/technical_analysis.py",
+    "lib/ui.py",
+    "lib/crypto_derivatives.py",
+    "lib/crypto_prices.py",
+    "lib/crypto_onchain.py",
+    "lib/crypto_scenarios.py",
+    "pages/8_Crypto_Intelligence.py",
+    "lib/equity_breadth.py",
+    "lib/equity_scenarios.py",
+    "lib/energy_data.py",
+    "lib/oil_flows.py",
+    "lib/geopolitical_news.py",
+    "lib/worldmonitor_adapter.py",
+    "pages/9_Energy_Geopolitics.py",
+    "lib/risk.py",
+    "lib/stress_tests.py",
+    "lib/scenario_engine.py",
+    "pages/10_Scenario_Lab.py",
+    "pages/11_Risk_Lab.py"
+  ],
+  "required_functions": {
+    "lib/market_data.py": [
+      "empty_frame",
+      "fetch_history",
+      "fetch_multi_history",
+      "latest_close"
+    ],
+    "lib/heatmaps.py": [
+      "load_static_constituents",
+      "enrich_with_yfinance_rows",
+      "build_sp500_heatmap",
+      "build_nasdaq100_heatmap",
+      "build_korea_heatmap",
+      "build_sector_heatmap",
+      "build_g7_heatmap",
+      "build_cross_asset_heatmap",
+      "build_crypto_heatmap",
+      "pct_from_offset"
+    ],
+    "lib/crypto_derivatives.py": [
+      "normalize_symbol",
+      "validate_binance_symbol",
+      "get_binance_exchange_info",
+      "get_binance_klines",
+      "get_open_interest",
+      "get_open_interest_history",
+      "get_funding_rate_history",
+      "get_premium_index",
+      "get_taker_buy_sell_ratio",
+      "get_global_long_short_ratio",
+      "get_top_trader_account_ratio",
+      "get_top_trader_position_ratio",
+      "get_recent_trades",
+      "build_derivatives_snapshot",
+      "build_derivatives_timeseries"
+    ],
+    "lib/crypto_scenarios.py": [
+      "compute_crypto_market_regime",
+      "compute_derivatives_pressure",
+      "estimate_liquidation_pressure_map",
+      "crypto_scenario_matrix"
+    ]
+  },
+  "required_constants": {
+    "lib/global_markets.py": [
+      "SECTOR_ETFS",
+      "G7_MARKETS",
+      "CROSS_ASSET_TICKERS",
+      "CRYPTO_MARKETS"
+    ]
+  },
+  "minimum_static_rows": {
+    "static/index_constituents/sp500.csv": 60,
+    "static/index_constituents/nasdaq100.csv": 30,
+    "static/index_constituents/korea_watchlist.csv": 24
+  },
+  "minimum_line_counts": {
+    "lib/market_data.py": 50,
+    "lib/heatmaps.py": 120,
+    "lib/crypto_derivatives.py": 250,
+    "lib/crypto_scenarios.py": 150,
+    "pages/8_Crypto_Intelligence.py": 250,
+    "lib/equity_breadth.py": 120,
+    "lib/energy_data.py": 100,
+    "lib/risk.py": 100,
+    "lib/scenario_engine.py": 80
+  },
+  "no_placeholder_patterns": [
+    "TODO placeholder",
+    "placeholder-only",
+    "stub-only"
+  ],
+  "forbidden_recommendation_language": [
+    "Buy",
+    "Sell",
+    "Hold",
+    "Strong Buy",
+    "Strong Sell",
+    "Recommendation",
+    "Recommended",
+    "Should buy",
+    "Should sell",
+    "Time to enter",
+    "Time to exit",
+    "Go long",
+    "Go short",
+    "Long this",
+    "Short this",
+    "Entry signal",
+    "Exit signal",
+    "Trade now"
+  ]
+}

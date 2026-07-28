@@ -1,0 +1,1000 @@
+{
+  "caveats": [
+    "FastAPI is optional and belongs in requirements-api.txt, not the base requirements file.",
+    "Research/data routes are read-only; explicit local-private POST/PATCH/DELETE routes are bounded persistence actions and never broker execution."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": [
+    {
+      "description": "Streamlit-to-web parity inventory and migration queue.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/product-parity",
+      "payload_type": "product_parity_inventory",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Compose a zero-provider-call daily attention queue from stored source evidence.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/attention-desk",
+      "payload_type": "attention_desk",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Cross-asset market overview with source-labeled chart specs.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-intelligence",
+      "payload_type": "market_intelligence",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Equity, fundamentals, options-readiness, scenarios, and chart specs.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/equity-intelligence",
+      "payload_type": "equity_intelligence",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Dedicated financial profile, metrics, valuation quality, and source register.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/financial-fundamentals",
+      "payload_type": "financial_fundamentals",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Provider-backed option chain, quality, implied volatility, Greeks, exposure assumptions, and scenarios.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/options-quant",
+      "payload_type": "options_quant",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Privacy-safe valuation, performance, drawdown, risk, correlation, factor, attribution, and stress research.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/portfolio-risk",
+      "payload_type": "portfolio_risk",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Heatmap tile drilldown targets, sector summaries, and provider-gated screener state.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/screener-drilldown",
+      "payload_type": "screener_drilldown",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Provider-backed market heatmap, ranked screener rows, sectors, and risk versus return comparison.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-map-screener",
+      "payload_type": "market_map_screener",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read-optimized materialized Market Map snapshot with conditional HTTP caching.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-map-snapshot",
+      "payload_type": "market_map_screener",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Exact-symbol detail from the materialized Market Map snapshot.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-map-snapshot/{symbol}",
+      "payload_type": "market_snapshot_detail",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local materialization refresh status, duration, row count, last success, and stale/error state.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-refresh-health",
+      "payload_type": "market_refresh_health",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Bounded local operational history for materialized Market Map refresh jobs.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-refresh-history",
+      "payload_type": "market_refresh_history",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local-private saved market screen definitions and readiness.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/market-map-screens",
+      "payload_type": "saved_market_screens",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Create a validated local-private market screen from a request body.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/market-map-screens",
+      "payload_type": "saved_market_screen",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Rename a local-private saved market screen.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/market-map-screens/{screen_id}",
+      "payload_type": "saved_market_screen",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Archive a local-private saved market screen.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/market-map-screens/{screen_id}",
+      "payload_type": "saved_market_screen_archive",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Crypto market, derivatives, scenarios, and chart specs.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/crypto-intelligence",
+      "payload_type": "crypto_intelligence",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Bounded source-labeled equity, ETF, and crypto identity search.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/symbol-directory",
+      "payload_type": "symbol_directory",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Universal source-aware symbol OHLCV, technical, financial/news, comparison, and asset-specific context.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/symbol-workstation",
+      "payload_type": "symbol_workstation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Exact materialized-identity workstation with symbol-scoped cache/LKG and conditional HTTP caching.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/symbol-workstation/{symbol}",
+      "payload_type": "symbol_workstation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Compact exact identity/quote summary with no provider refresh.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/symbol-workstation/{symbol}/summary",
+      "payload_type": "symbol_workstation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Exact compact chart-core, technicals, financials, news, sources, or comparison panel delivered on demand.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/symbol-workstation/{symbol}/panels/{panel}",
+      "payload_type": "symbol_workstation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Compact synchronized exact-symbol workspace manifest with progressive panel references and local-only layout state.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/analyst-workspace/{symbol}",
+      "payload_type": "analyst_workspace",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Exact-symbol panel freshness SLO, observed provider health, bounded queue, LKG, and retry truth.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/analyst-workspace/{symbol}/operations",
+      "payload_type": "research_operations",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Queue one bounded exact-symbol refresh with a precomputed provider-call ceiling.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/analyst-workspace/{symbol}/refresh",
+      "payload_type": "research_refresh_job",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read one bounded process-local exact research refresh job.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/research-operations/jobs/{job_id}",
+      "payload_type": "research_refresh_job",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Anonymous/local or process-local test identity, tenant, entitlement, and persistence truth.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/session",
+      "payload_type": "account_workspace",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Create an explicitly enabled Supabase password session behind opaque HttpOnly and CSRF cookies, then restore the server-derived tenant workspace.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/hosted-session",
+      "payload_type": "account_workspace",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Create an explicitly enabled process-local test session; never hosted auth.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/local-session",
+      "payload_type": "account_workspace",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Revoke the current hosted or process-local session and return to local mode.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/signout",
+      "payload_type": "account_workspace",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read one server-tenant-scoped workspace preference.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/preferences/{key}",
+      "payload_type": "account_preference",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Save one CSRF-protected, versioned, tenant-scoped preference.",
+      "live_fetch_default": false,
+      "method": "PUT",
+      "notes": [],
+      "path": "/api/account/preferences/{key}",
+      "payload_type": "account_preference",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Delete one CSRF-protected, versioned, tenant-scoped preference.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/account/preferences/{key}",
+      "payload_type": "account_preference",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Bounded export of preferences owned by the current tenant.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/export",
+      "payload_type": "account_export",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read hosted repository, pending recovery, conflict, and last-known-good continuity truth for the current server-derived tenant.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/continuity",
+      "payload_type": "account_continuity_status",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Replay a bounded current-tenant offline queue through the verified user JWT and optimistic repository version.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/continuity/replay",
+      "payload_type": "account_continuity_replay",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Explicitly resolve one local/hosted divergence by keeping local or restoring hosted state.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/continuity/resolve",
+      "payload_type": "account_continuity_resolution",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Export a bounded credential-free, identity-free current-tenant account bundle.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/continuity/export",
+      "payload_type": "account_continuity_export",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Validate and explicitly merge or replace one bounded account backup into the current server-derived tenant, then reconcile hosted state.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/continuity/import",
+      "payload_type": "account_continuity_import",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Soft-delete the hosted account document with optimistic versioning while retaining local state and immutable audit evidence.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/account/continuity",
+      "payload_type": "account_continuity_delete",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read the current session tenant's account-owned watchlists, rules, and in-app inbox.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk",
+      "payload_type": "tenant_research_desk",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Bounded read-only preview of a local saved watchlist; no provider call or private note copy.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk/imports/preview",
+      "payload_type": "tenant_research_import_preview",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Explicitly consent to an idempotent, CSRF-protected account watchlist import.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/research-desk/imports",
+      "payload_type": "tenant_research_import",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read one session-tenant-owned account watchlist.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk/watchlists/{resource_id}",
+      "payload_type": "tenant_research_watchlist",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Delete one versioned account watchlist and its tenant-owned children.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/account/research-desk/watchlists/{resource_id}",
+      "payload_type": "tenant_research_watchlist",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Configure an opt-in versioned in-app saved-change rule.",
+      "live_fetch_default": false,
+      "method": "PUT",
+      "notes": [],
+      "path": "/api/account/research-desk/watchlists/{resource_id}/rule",
+      "payload_type": "tenant_research_rule",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Evaluate saved local observations without provider calls and store deduplicated tenant inbox rows.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/research-desk/watchlists/{resource_id}/inbox",
+      "payload_type": "tenant_research_scan",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read one session-tenant-owned in-app research item.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk/inbox/{resource_id}",
+      "payload_type": "tenant_research_inbox_item",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Review or acknowledge one versioned in-app research item.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/account/research-desk/inbox/{resource_id}",
+      "payload_type": "tenant_research_inbox_item",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Bounded tenant-owned account research export without local private notes or secrets.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk/export",
+      "payload_type": "tenant_research_export",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read the tenant-qualified local queue and hosted-verification truth state.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk/sync",
+      "payload_type": "tenant_research_sync_status",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Preview a bounded private-field-free reconciliation plan without automatic upload.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/research-desk/sync/preview",
+      "payload_type": "tenant_research_sync_preview",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Explicitly consent to queue one bounded idempotent account research snapshot.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/research-desk/sync/queue",
+      "payload_type": "tenant_research_sync_mutation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Replay bounded queued mutations only when a hosted adapter has passed verification.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/research-desk/sync/replay",
+      "payload_type": "tenant_research_sync_replay",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Cancel one current-tenant pending, retrying, or conflicting sync mutation.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/account/research-desk/sync/queue/{mutation_id}",
+      "payload_type": "tenant_research_sync_mutation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Compose stored evidence with current-session private review state and policy.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/attention-desk",
+      "payload_type": "attention_desk",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read current-tenant saved-Watchlist observation runs without provider calls.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/observation-runs",
+      "payload_type": "observation_runs",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Explicitly start one bounded, quota-aware saved-Watchlist observation run.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/observation-runs",
+      "payload_type": "observation_run",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read one current-tenant observation run and its source clocks.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/observation-runs/{run_id}",
+      "payload_type": "observation_run",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Request cancellation for one current-tenant observation run.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/observation-runs/{run_id}/cancel",
+      "payload_type": "observation_run",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read tenant-owned alert rules, due state, stored-observation evaluations, and in-app trigger history with zero provider calls.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/alert-manager",
+      "payload_type": "watchlist_alert_manager",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read tenant-owned hosted schedule, run, quota, source, lease, and recovery truth with zero market-provider calls.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/alert-manager/scheduler",
+      "payload_type": "hosted_scheduler_operations",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Create one disabled bounded hosted schedule for an exact saved Watchlist and alert policy.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/alert-manager/scheduler/schedules",
+      "payload_type": "hosted_scheduler_schedule",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Enable, pause, resume, kill, recover, retry, or delete one optimistic-versioned tenant schedule.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/account/alert-manager/scheduler/schedules/{schedule_id}",
+      "payload_type": "hosted_scheduler_schedule",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read bounded immutable scheduler control and run transition evidence for the current tenant.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/alert-manager/scheduler/audit",
+      "payload_type": "hosted_scheduler_audit",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Create one bounded deterministic rule for an exact saved-Watchlist symbol.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/alert-manager/rules",
+      "payload_type": "watchlist_alert_rule",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Pause, resume, or cancel one optimistic-versioned tenant alert rule.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/account/alert-manager/rules/{resource_id}",
+      "payload_type": "watchlist_alert_rule",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Soft-delete one tenant alert rule while retaining bounded audit evidence.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/account/alert-manager/rules/{resource_id}",
+      "payload_type": "watchlist_alert_rule",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Manually evaluate due rules from validated Phase 6N stored observations without market-provider calls.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/alert-manager/evaluations",
+      "payload_type": "watchlist_alert_evaluation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Review or acknowledge one optimistic-versioned in-app trigger.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/account/alert-manager/triggers/{trigger_id}",
+      "payload_type": "watchlist_alert_trigger",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Export bounded tenant-owned alert rules, trigger history, runs, and audit without private fields.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/alert-manager/export",
+      "payload_type": "watchlist_alert_export",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Review, acknowledge, snooze, or undo snooze for one current-tenant attention fingerprint.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/account/attention-desk/items/{fingerprint}",
+      "payload_type": "attention_review_state",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Save one optimistic-versioned current-tenant in-app attention policy.",
+      "live_fetch_default": false,
+      "method": "PUT",
+      "notes": [],
+      "path": "/api/account/attention-desk/policy",
+      "payload_type": "attention_policy",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Advance the current-tenant review checkpoint without changing provider clocks.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/account/attention-desk/checkpoint",
+      "payload_type": "attention_checkpoint",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Read bounded generic current-tenant Attention mutation audit rows.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/account/attention-desk/audit",
+      "payload_type": "attention_audit",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Alias for the Phase 5N source-backed multi-panel symbol workstation.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/symbol-intelligence",
+      "payload_type": "symbol_workstation",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local-private named watchlists, exact identities, delayed quote context, and bounded materialization health.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/watchlist-desk",
+      "payload_type": "watchlist_desk",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Source-preserving diff between the latest two completed same-list Research Snapshots.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/changes",
+      "payload_type": "watchlist_desk",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Create a named local-private watchlist.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists",
+      "payload_type": "watchlist_desk_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Rename a named local-private watchlist.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}",
+      "payload_type": "watchlist_desk_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Add an exact validated identity to a local-private watchlist.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/items",
+      "payload_type": "watchlist_desk_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Persist exact watchlist item order.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/order",
+      "payload_type": "watchlist_desk_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Archive one local-private watchlist item.",
+      "live_fetch_default": false,
+      "method": "DELETE",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/items/{item_id}",
+      "payload_type": "watchlist_desk_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Run a bounded manual selected-watchlist history materialization job.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/materialize",
+      "payload_type": "watchlist_materialization",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Opt into a local preview-only watchlist change rule.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/change-alert-rule",
+      "payload_type": "watchlist_change_alert_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Persist deduplicated local preview events without external delivery.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/watchlist-desk/lists/{list_id}/change-alert-previews",
+      "payload_type": "watchlist_change_alert_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Acknowledge one local preview event.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/watchlist-desk/change-alert-events/{event_id}/acknowledge",
+      "payload_type": "watchlist_change_alert_action",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Curated feed taxonomy and source caveats.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/feeds",
+      "payload_type": "feed_registry",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local Next/FastAPI/runtime orchestration health, launch guidance, and provider-route readiness.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/runtime-health",
+      "payload_type": "runtime_health",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Recent provider health ledger.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/provider-health",
+      "payload_type": "provider_health",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Map-layer runtime status and row counts.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/layers",
+      "payload_type": "layer_runtime",
+      "requires_fastapi": false
+    },
+    {
+      "description": "News dashboard rows, impact matrix, freshness, and notes.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/news",
+      "payload_type": "news_dashboard",
+      "requires_fastapi": false
+    },
+    {
+      "description": "War Room summary without Plotly/DataFrame objects.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/war-room",
+      "payload_type": "war_room",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Free-first AI provider status without secret values.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/ai-providers",
+      "payload_type": "ai_provider_status",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Reference-schema asset universe and command routing readiness.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/asset-universe",
+      "payload_type": "asset_universe",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Clean-room event-to-asset graph contract with provenance and unavailable persistence.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/event-asset-graph",
+      "payload_type": "event_asset_graph",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Provider-gated clean-room terminal actions from graph command suggestions.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/command-workspace",
+      "payload_type": "command_workspace",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Map-first War Room contract with source-backed markers, layer gates, timeline filters, and compare readiness.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/war-room-map",
+      "payload_type": "war_room_map",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Map-linked news, event graph, provider health, layer state, and heatmap context.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/map-news-event-fusion",
+      "payload_type": "map_news_event_fusion",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local-private project-captured War Map snapshot timeline.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/war-room-map-snapshots",
+      "payload_type": "war_room_map_replay",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Capture the current server-built War Map fusion payload with append-only deduplication.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/war-room-map-snapshots",
+      "payload_type": "war_room_map_replay",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Replay one captured War Map observation and optionally compare it with another.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/war-room-map-replay",
+      "payload_type": "war_room_map_replay",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Source-bound non-advisory research report contract inspired by Gold Quant structure.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/research-report",
+      "payload_type": "research_report",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local-first research inbox, watchlists, reports, immutable source history, and sanitized export readiness.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/research-memory",
+      "payload_type": "research_memory",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Source-bound deterministic daily briefing with captured-prior comparison.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/daily-brief",
+      "payload_type": "daily_brief",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Local-private append-only daily brief capture timeline.",
+      "live_fetch_default": false,
+      "method": "GET",
+      "notes": [],
+      "path": "/api/daily-brief/captures",
+      "payload_type": "daily_brief_history",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Capture the current server-composed daily brief with semantic deduplication.",
+      "live_fetch_default": false,
+      "method": "POST",
+      "notes": [],
+      "path": "/api/daily-brief/captures",
+      "payload_type": "daily_brief_capture",
+      "requires_fastapi": false
+    },
+    {
+      "description": "Update local review state without placing private notes in URLs or fixtures.",
+      "live_fetch_default": false,
+      "method": "PATCH",
+      "notes": [],
+      "path": "/api/daily-brief/captures/{brief_id}/review",
+      "payload_type": "daily_brief_capture",
+      "requires_fastapi": false
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "api_route_manifest",
+  "source_status": [],
+  "summary": {
+    "base_streamlit_ui_preserved": true,
+    "fastapi_available": false,
+    "route_count": 109
+  },
+  "unavailable": []
+}

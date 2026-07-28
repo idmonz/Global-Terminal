@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Terminal Visual QA"
+  short_description: "Inspect rendered desktop and mobile terminal views."
+  default_prompt: "Render and inspect Global Terminal UI states with nonblank chart and map checks."

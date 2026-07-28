@@ -1,0 +1,429 @@
+{
+  "caveats": [
+    "The initial workspace contains compact identity and panel references, not duplicated chart, financial, or news rows.",
+    "Desktop and mobile clients progressively request exact-symbol panels and must retain only same-identity last-known-good evidence.",
+    "Layout persistence is local-only; no hosted synchronization, broker execution, or autonomous AI action is provided."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "actions": [
+      {
+        "action_id": "open-single-panel",
+        "href": "/?view=asset&symbol=AAPL&asset=equity&interval=1d&range=3mo",
+        "kind": "internal-navigation",
+        "label": "Open single-panel asset view",
+        "verified": true
+      },
+      {
+        "action_id": "open-command-workspace",
+        "href": "/?view=command-workspace&symbol=AAPL",
+        "kind": "internal-navigation",
+        "label": "Open command workspace",
+        "verified": true
+      },
+      {
+        "action_id": "open-primary-source",
+        "href": "https://example.test/phase-5m/AAPL",
+        "kind": "external-source",
+        "label": "Open primary source",
+        "verified": true
+      }
+    ],
+    "change_context": {
+      "after": null,
+      "before": null,
+      "caveat": "No saved Change Inbox event was selected.",
+      "change_id": null,
+      "change_type": null,
+      "data_gap": null,
+      "focused_panel": null,
+      "source_url": null,
+      "status": "not-selected",
+      "symbol": "AAPL"
+    },
+    "context": {
+      "asset_class": "equity",
+      "compare": null,
+      "focused_panel": "chart-core",
+      "interval": "1d",
+      "layout_preset": "research",
+      "market_clock": "2026-06-21T00:00:00+00:00",
+      "market_data_status": "fixture",
+      "quote_clock": "2026-06-22T00:00:00+00:00",
+      "range": "3mo",
+      "return_state": {},
+      "source_clock": "2026-06-22T00:00:00+00:00",
+      "symbol": "AAPL"
+    },
+    "evidence_refs": [
+      "docs/PHASE_6H_WORKSPACE_CONTRACT.md",
+      "docs/PHASE_6H_PREFLIGHT_AND_BOTTLENECKS.md"
+    ],
+    "identity": {
+      "asset_class": "equity",
+      "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+      "compatibility": "exact",
+      "currency": "USD",
+      "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
+      "exchange": "US listed",
+      "industry": "Technology Hardware",
+      "name": "Apple",
+      "sector": "Information Technology",
+      "source_status": "static/proxy",
+      "symbol": "AAPL"
+    },
+    "layouts": {
+      "available_presets": [
+        "research",
+        "chart-focus",
+        "events-evidence"
+      ],
+      "focused_panel": "chart-core",
+      "hosted_sync": false,
+      "panel_order": [
+        "chart-core",
+        "technicals",
+        "financials",
+        "catalysts",
+        "news",
+        "sources",
+        "comparison"
+      ],
+      "persistence": "local-only",
+      "preset": "research",
+      "private_fields_allowed": false,
+      "split_bounds": {
+        "maximum": 72,
+        "minimum": 36
+      },
+      "split_percent": 58,
+      "storage_key": "global-terminal.analyst-layout.v1",
+      "visible_panels": [
+        "chart-core",
+        "financials",
+        "catalysts",
+        "sources"
+      ]
+    },
+    "not_financial_advice": true,
+    "panels": [
+      {
+        "cache_identity": "symbol-panel:AAPL:chart-core:1d:3mo:none:symbol_delivery.v1",
+        "caveat": "Exact OHLCV chart data loads on demand.",
+        "compatibility": "compatible",
+        "confidence": 0.4,
+        "data_gap": null,
+        "delivery_status": "on-demand",
+        "desktop_default_visible": true,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/chart-core",
+        "etag_identity": "084be4a588ae612e7cee",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "mobile_lazy": false,
+        "not_financial_advice": true,
+        "panel_id": "chart-core",
+        "provider": "phase5m.symbol_fixture",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": true,
+        "title": "Price chart"
+      },
+      {
+        "cache_identity": "symbol-panel:AAPL:technicals:1d:3mo:none:symbol_delivery.v1",
+        "caveat": "Project-native indicators are calculated from exact displayed history.",
+        "compatibility": "compatible",
+        "confidence": null,
+        "data_gap": "Technical rows have not been requested.",
+        "delivery_status": "on-demand",
+        "desktop_default_visible": false,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/technicals",
+        "etag_identity": "9ce3181908ca6cc0760c",
+        "fetched_at": null,
+        "mobile_lazy": true,
+        "not_financial_advice": true,
+        "panel_id": "technicals",
+        "provider": "on-demand-panel",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "not-loaded",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": true,
+        "title": "Technical evidence"
+      },
+      {
+        "cache_identity": "symbol-panel:AAPL:financials:identity:identity:none:symbol_delivery.v1",
+        "caveat": "Provider-backed metrics and SEC facts load only for the exact symbol.",
+        "compatibility": "compatible",
+        "confidence": null,
+        "data_gap": "Financial rows have not been requested.",
+        "delivery_status": "on-demand",
+        "desktop_default_visible": true,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/financials",
+        "etag_identity": "176f3b4106456e41cd07",
+        "fetched_at": null,
+        "mobile_lazy": true,
+        "not_financial_advice": true,
+        "panel_id": "financials",
+        "provider": "on-demand-panel",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "not-loaded",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": false,
+        "title": "Financials"
+      },
+      {
+        "cache_identity": "symbol-panel:AAPL:catalysts:identity:identity:none:symbol_delivery.v1",
+        "caveat": "Saved exact-symbol earnings, dividends, and news evidence loads on demand.",
+        "compatibility": "compatible",
+        "confidence": null,
+        "data_gap": "A completed Research Snapshot may be required.",
+        "delivery_status": "on-demand",
+        "desktop_default_visible": true,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/catalysts",
+        "etag_identity": "88eff50550d9373114bf",
+        "fetched_at": null,
+        "mobile_lazy": true,
+        "not_financial_advice": true,
+        "panel_id": "catalysts",
+        "provider": "on-demand-panel",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "not-loaded",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": false,
+        "title": "Catalysts"
+      },
+      {
+        "cache_identity": "symbol-panel:AAPL:news:identity:identity:none:symbol_delivery.v1",
+        "caveat": "Only exact symbol/name matches are eligible.",
+        "compatibility": "compatible",
+        "confidence": null,
+        "data_gap": "Exact news rows have not been requested.",
+        "delivery_status": "on-demand",
+        "desktop_default_visible": false,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/news",
+        "etag_identity": "c99db0508062d54e6a32",
+        "fetched_at": null,
+        "mobile_lazy": true,
+        "not_financial_advice": true,
+        "panel_id": "news",
+        "provider": "on-demand-panel",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "not-loaded",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": false,
+        "title": "Exact news"
+      },
+      {
+        "cache_identity": "symbol-panel:AAPL:sources:identity:identity:none:symbol_delivery.v1",
+        "caveat": "Source, freshness, caveat, and data-gap evidence for this symbol.",
+        "compatibility": "compatible",
+        "confidence": 0.4,
+        "data_gap": null,
+        "delivery_status": "ready-reference",
+        "desktop_default_visible": true,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/sources",
+        "etag_identity": "32e5cf9859ca8ac77f7b",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "mobile_lazy": true,
+        "not_financial_advice": true,
+        "panel_id": "sources",
+        "provider": "phase5m.symbol_fixture",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": false,
+        "title": "Sources"
+      },
+      {
+        "cache_identity": "symbol-panel:AAPL:comparison:1d:3mo:none:symbol_delivery.v1",
+        "caveat": "Comparison requires a second verified compatible history.",
+        "compatibility": "compatible",
+        "confidence": null,
+        "data_gap": "No comparison symbol is selected.",
+        "delivery_status": "on-demand",
+        "desktop_default_visible": false,
+        "endpoint": "/api/symbol-workstation/AAPL/panels/comparison",
+        "etag_identity": "c5be2f7f91df137f5d6b",
+        "fetched_at": null,
+        "mobile_lazy": true,
+        "not_financial_advice": true,
+        "panel_id": "comparison",
+        "provider": "on-demand-panel",
+        "request_params": {
+          "asset_class": "equity",
+          "compare": null,
+          "interval": "1d",
+          "range": "3mo"
+        },
+        "source_status": "not-loaded",
+        "source_url": "https://example.test/phase-5m/AAPL",
+        "symbol": "AAPL",
+        "timeframe_linked": true,
+        "title": "Comparison"
+      }
+    ],
+    "quote": {
+      "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",
+      "change": -1.4683,
+      "change_pct": -0.938822,
+      "currency": "USD",
+      "data_gap": null,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "last_price": 154.9299,
+      "provider": "phase5m.symbol_fixture",
+      "source_status": "fixture",
+      "source_url": "https://example.test/phase-5m/AAPL"
+    },
+    "readiness": {
+      "autonomous_ai_action": false,
+      "broker_execution": false,
+      "exact_identity": true,
+      "hosted_sync": false,
+      "layout_persistence": "local-only",
+      "progressive_delivery": true,
+      "status": "ready"
+    },
+    "request_plan": {
+      "broad_universe_fanout": false,
+      "concurrent_request_deduplication_required": true,
+      "desktop_default_panels": [
+        "chart-core",
+        "financials",
+        "catalysts",
+        "sources"
+      ],
+      "desktop_maximum_panel_requests": 4,
+      "etag_revalidation": true,
+      "hidden_mobile_panels_eagerly_fetched": false,
+      "initial_contract": "summary-and-panel-references-only",
+      "initial_document_useful_primary_panel": true,
+      "initial_heavy_panel_count": 0,
+      "initial_saved_primary_panel_count": 1,
+      "mobile_default_panel": "chart-core",
+      "mobile_initial_panel_requests": 1,
+      "same_symbol_lkg_required": true,
+      "watchlist_refresh_provider_call_ceiling": 16,
+      "workspace_composition_provider_calls": 0
+    },
+    "source_register": [
+      {
+        "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+        "confidence": null,
+        "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "provider": "phase5i.local_equity_registry",
+        "source": "static/index_constituents/sp500.csv",
+        "source_status": "static/proxy",
+        "source_url": null
+      },
+      {
+        "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",
+        "confidence": null,
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "provider": "phase5m.symbol_fixture",
+        "source": "AAPL 1d/3mo history",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-5m/AAPL"
+      },
+      {
+        "caveat": "No broad headline is relabeled as symbol-specific without an exact symbol/name match.",
+        "confidence": null,
+        "data_gap": "A verified symbol-scoped news match is unavailable in this slice.",
+        "fetched_at": null,
+        "provider": "symbol-scoped-news",
+        "source": "AAPL",
+        "source_status": "unavailable",
+        "source_url": null
+      }
+    ],
+    "summary": {
+      "focused_panel": "chart-core",
+      "panel_count": 7,
+      "status": "fixture",
+      "symbol": "AAPL",
+      "workspace": "analyst-workspace",
+      "workspace_count": 1
+    },
+    "workspace_version": "analyst_workspace.v1"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "analyst_workspace",
+  "source_status": [
+    {
+      "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+      "confidence": null,
+      "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "phase5i.local_equity_registry",
+      "source": "static/index_constituents/sp500.csv",
+      "source_status": "static/proxy",
+      "source_url": null
+    },
+    {
+      "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",
+      "confidence": null,
+      "data_gap": null,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "phase5m.symbol_fixture",
+      "source": "AAPL 1d/3mo history",
+      "source_status": "fixture",
+      "source_url": "https://example.test/phase-5m/AAPL"
+    },
+    {
+      "caveat": "No broad headline is relabeled as symbol-specific without an exact symbol/name match.",
+      "confidence": null,
+      "data_gap": "A verified symbol-scoped news match is unavailable in this slice.",
+      "fetched_at": null,
+      "provider": "symbol-scoped-news",
+      "source": "AAPL",
+      "source_status": "unavailable",
+      "source_url": null
+    }
+  ],
+  "summary": {
+    "focused_panel": "chart-core",
+    "panel_count": 7,
+    "status": "fixture",
+    "symbol": "AAPL",
+    "workspace": "analyst-workspace",
+    "workspace_count": 1
+  },
+  "unavailable": []
+}

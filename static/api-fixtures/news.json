@@ -1,0 +1,206 @@
+{
+  "caveats": [
+    "News rows are deterministic public-feed classifications and may contain approximate coordinates.",
+    "WorldMonitor remains a workflow reference only; no external runtime code is imported."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "event_rows": [
+      {
+        "asset_tags": [
+          "shipping"
+        ],
+        "caveat": "Static fixture for web-shell development.",
+        "classification_method": "heuristic",
+        "confidence": 0.5,
+        "coordinate_method": "fixture_coordinates",
+        "credibility": "secondary",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "impact_channels": [
+          "shipping"
+        ],
+        "lat": 18.0,
+        "location": "Red Sea",
+        "lon": 39.0,
+        "provider": "fixture",
+        "published_at": "2026-06-16T00:00:00+00:00",
+        "published_at_dt": "2026-06-16T00:00:00+00:00",
+        "region": "Red Sea",
+        "region_tags": [
+          "Red Sea"
+        ],
+        "related_assets": [],
+        "severity": "watch",
+        "severity_score": 30,
+        "source": "phase2c.fixture",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "summary": "Static fixture row for contract-driven UI development.",
+        "title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "url": ""
+      }
+    ],
+    "high_severity_feed": [
+      {
+        "asset_tags": [
+          "shipping"
+        ],
+        "caveat": "Static fixture for web-shell development.",
+        "classification_method": "heuristic",
+        "confidence": 0.5,
+        "coordinate_method": "fixture_coordinates",
+        "credibility": "secondary",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "impact_channels": [
+          "shipping"
+        ],
+        "lat": 18.0,
+        "location": "Red Sea",
+        "lon": 39.0,
+        "provider": "fixture",
+        "published_at": "2026-06-16T00:00:00+00:00",
+        "published_at_dt": "2026-06-16T00:00:00+00:00",
+        "region": "Red Sea",
+        "region_tags": [
+          "Red Sea"
+        ],
+        "related_assets": [],
+        "severity": "watch",
+        "severity_score": 30,
+        "source": "phase2c.fixture",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "summary": "Static fixture row for contract-driven UI development.",
+        "title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "url": ""
+      }
+    ],
+    "impact_matrix": [
+      {
+        "critical_count": 0,
+        "high_count": 0,
+        "impact_channel": "shipping",
+        "latest_title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "medium_count": 0,
+        "top_related_assets": "",
+        "total_count": 1,
+        "watch_count": 1
+      }
+    ],
+    "normalized_news": [
+      {
+        "asset_tags": [
+          "shipping"
+        ],
+        "caveat": "Static fixture for web-shell development.",
+        "classification_method": "heuristic",
+        "confidence": 0.5,
+        "coordinate_method": "fixture_coordinates",
+        "credibility": "secondary",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "impact_channels": [
+          "shipping"
+        ],
+        "lat": 18.0,
+        "location": "Red Sea",
+        "lon": 39.0,
+        "provider": "fixture",
+        "published_at": "2026-06-16T00:00:00+00:00",
+        "published_at_dt": "2026-06-16T00:00:00+00:00",
+        "region": "Red Sea",
+        "region_tags": [
+          "Red Sea"
+        ],
+        "related_assets": [],
+        "severity": "watch",
+        "severity_score": 30,
+        "source": "phase2c.fixture",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-2c/news",
+        "summary": "Static fixture row for contract-driven UI development.",
+        "title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "url": ""
+      }
+    ],
+    "notes": [
+      "Rows are source-labeled public feed records.",
+      "Classification is deterministic and heuristic.",
+      "WorldMonitor is used as a workflow reference only; no runtime code is imported from it.",
+      "Live AIS unavailable without a real provider; pro-gated route intelligence is optional."
+    ],
+    "regional_cards": [
+      {
+        "headline_count": 1,
+        "high_count": 0,
+        "impact_channels": "shipping",
+        "latest_title": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "method": "heuristic regional news proxy",
+        "region": "Red Sea",
+        "score": 30,
+        "severity": "watch"
+      }
+    ],
+    "risk_catalysts": [
+      "Phase 2C fixture: Red Sea shipping risk remains watch-listed"
+    ],
+    "source_freshness": [
+      {
+        "age_minutes": null,
+        "cached": false,
+        "coverage": "1 items",
+        "error": null,
+        "error_count": 0,
+        "estimated": false,
+        "feed_count": 1,
+        "paid_required": false,
+        "provider": "public feed",
+        "source": "phase2c.fixture",
+        "status": "stale",
+        "warning": null
+      }
+    ],
+    "timeline": [
+      {
+        "critical_count": 0,
+        "high_count": 0,
+        "medium_count": 0,
+        "period": "2026-06-16T00:00:00+00:00",
+        "total_count": 1,
+        "watch_count": 1
+      }
+    ]
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "news_dashboard",
+  "source_status": [
+    {
+      "age_minutes": null,
+      "cached": false,
+      "coverage": "1 items",
+      "error": null,
+      "error_count": 0,
+      "estimated": false,
+      "feed_count": 1,
+      "paid_required": false,
+      "provider": "public feed",
+      "source": "phase2c.fixture",
+      "status": "stale",
+      "warning": null
+    }
+  ],
+  "summary": {
+    "caveat": "Rows are source-labeled public feed records.",
+    "error_count": 0,
+    "row_count": 1,
+    "source_count": 1,
+    "status": "available"
+  },
+  "unavailable": []
+}

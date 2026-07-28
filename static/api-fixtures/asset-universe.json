@@ -1,0 +1,553 @@
+{
+  "caveats": [
+    "Phase 2E adopts FinanceDatabase asset-universe schema behavior under MIT evidence; external rows are not vendored.",
+    "This payload is a reference-schema contract, not a live security master.",
+    "Provider-backed symbol rows must carry their own source, freshness, and license metadata before being marked live."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "asset_classes": [
+      {
+        "asset_class": "equity",
+        "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+        "classification_fields": [
+          "sector",
+          "industry_group",
+          "industry",
+          "country",
+          "market_cap",
+          "exchange",
+          "mic"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "summary",
+          "currency",
+          "sector",
+          "industry_group",
+          "industry",
+          "exchange",
+          "mic",
+          "market",
+          "country",
+          "market_cap",
+          "isin",
+          "cusip",
+          "figi",
+          "delisted"
+        ],
+        "description": "Listed company and share-class reference metadata for terminal search, watchlists, and equity commands.",
+        "evidence_ref": "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+        "label": "Equities",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "DES",
+          "FA",
+          "GP",
+          "HP",
+          "KEY",
+          "NI",
+          "INTEL"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "isin",
+          "cusip",
+          "figi",
+          "sector",
+          "industry",
+          "country"
+        ],
+        "source_status": "reference-schema"
+      },
+      {
+        "asset_class": "etf",
+        "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+        "classification_fields": [
+          "category_group",
+          "category",
+          "family",
+          "exchange",
+          "mic"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "currency",
+          "summary",
+          "category_group",
+          "category",
+          "family",
+          "exchange",
+          "mic",
+          "isin"
+        ],
+        "description": "Exchange-traded fund metadata for category/family search and portfolio exposure grouping.",
+        "evidence_ref": "FinanceDatabase-main/database/etfs/NYQ.csv:1-1",
+        "label": "ETFs",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "DES",
+          "GP",
+          "HP",
+          "WEI",
+          "NI"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "isin",
+          "category_group",
+          "category",
+          "family"
+        ],
+        "source_status": "reference-schema"
+      },
+      {
+        "asset_class": "fund",
+        "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+        "classification_fields": [
+          "category_group",
+          "category",
+          "family",
+          "exchange",
+          "mic"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "currency",
+          "summary",
+          "category_group",
+          "category",
+          "family",
+          "exchange",
+          "mic"
+        ],
+        "description": "Fund reference metadata for family/category grouping and saved research lists.",
+        "evidence_ref": "FinanceDatabase-main/database/funds/NAS.csv:1-1",
+        "label": "Funds",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "DES",
+          "GP",
+          "HP",
+          "NI"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "category_group",
+          "category",
+          "family"
+        ],
+        "source_status": "reference-schema"
+      },
+      {
+        "asset_class": "index",
+        "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+        "classification_fields": [
+          "category_group",
+          "category",
+          "exchange",
+          "mic"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "currency",
+          "summary",
+          "category_group",
+          "category",
+          "exchange",
+          "mic"
+        ],
+        "description": "Index reference metadata for macro tape, chart commands, and benchmark selection.",
+        "evidence_ref": "FinanceDatabase-main/database/indices.csv:1-1",
+        "label": "Indices",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "GP",
+          "HP",
+          "MOV",
+          "WEI",
+          "NI"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "category_group",
+          "category"
+        ],
+        "source_status": "reference-schema"
+      },
+      {
+        "asset_class": "fx_pair",
+        "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+        "classification_fields": [
+          "base_currency",
+          "quote_currency",
+          "exchange"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "base_currency",
+          "quote_currency",
+          "summary",
+          "exchange"
+        ],
+        "description": "Currency pair metadata for FX command routing and macro exposure views.",
+        "evidence_ref": "FinanceDatabase-main/database/currencies.csv:1-1",
+        "label": "FX Pairs",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "FXC",
+          "CURV",
+          "GP",
+          "HP",
+          "NI"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "base_currency",
+          "quote_currency"
+        ],
+        "source_status": "reference-schema"
+      },
+      {
+        "asset_class": "crypto_pair",
+        "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+        "classification_fields": [
+          "cryptocurrency",
+          "currency",
+          "exchange"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "cryptocurrency",
+          "currency",
+          "summary",
+          "exchange"
+        ],
+        "description": "Crypto pair metadata for crypto command routing and cross-asset risk grouping.",
+        "evidence_ref": "FinanceDatabase-main/database/cryptos.csv:1-1",
+        "label": "Crypto Pairs",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "CRYPTO",
+          "GP",
+          "HP",
+          "NI"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "cryptocurrency",
+          "currency"
+        ],
+        "source_status": "reference-schema"
+      },
+      {
+        "asset_class": "money_market",
+        "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+        "classification_fields": [
+          "family",
+          "currency",
+          "exchange"
+        ],
+        "core_fields": [
+          "symbol",
+          "name",
+          "currency",
+          "summary",
+          "family",
+          "exchange"
+        ],
+        "description": "Money-market instrument metadata for cash/short-duration watchlists and macro liquidity views.",
+        "evidence_ref": "FinanceDatabase-main/database/moneymarkets.csv:1-1",
+        "label": "Money Markets",
+        "license_stance": "direct-use-allowed",
+        "live_rows_claimed": false,
+        "local_status": "schema-ready/no-live-universe",
+        "primary_identifier": "symbol",
+        "routing_commands": [
+          "DES",
+          "CURV",
+          "NI"
+        ],
+        "search_fields": [
+          "symbol",
+          "name",
+          "family",
+          "currency"
+        ],
+        "source_status": "reference-schema"
+      }
+    ],
+    "command_asset_matrix": [
+      {
+        "accepted_asset_classes": [
+          "equity",
+          "etf",
+          "fund",
+          "money_market"
+        ],
+        "caveat": "Can resolve asset type and target fields, but live descriptions depend on configured provider rows.",
+        "command": "DES",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Description"
+      },
+      {
+        "accepted_asset_classes": [
+          "equity"
+        ],
+        "caveat": "Requires financial statements provider; no external fundamentals are bundled.",
+        "command": "FA",
+        "implementation_status": "future-provider-required",
+        "label": "Fundamental Analysis"
+      },
+      {
+        "accepted_asset_classes": [
+          "fx_pair"
+        ],
+        "caveat": "FX pair parsing is schema-ready; quotes remain provider-status dependent.",
+        "command": "FXC",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "FX Crosses"
+      },
+      {
+        "accepted_asset_classes": [
+          "crypto_pair"
+        ],
+        "caveat": "Crypto pair routing can use existing CoinGecko/Binance provider states when available.",
+        "command": "CRYPTO",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Crypto Market"
+      },
+      {
+        "accepted_asset_classes": [
+          "etf",
+          "index"
+        ],
+        "caveat": "Constituent and holdings data must be provider-backed before shown as live.",
+        "command": "WEI",
+        "implementation_status": "future-provider-required",
+        "label": "Weights / Exposure"
+      },
+      {
+        "accepted_asset_classes": [
+          "equity",
+          "etf",
+          "fund",
+          "index",
+          "fx_pair",
+          "crypto_pair",
+          "money_market"
+        ],
+        "caveat": "Asset-to-news matching should expose source freshness and approximate matching caveats.",
+        "command": "NI",
+        "implementation_status": "schema-ready/source-backed-news-required",
+        "label": "News Intelligence"
+      }
+    ],
+    "readiness": {
+      "default_mode": "reference-schema",
+      "external_rows_copied": false,
+      "live_rows_claimed": false,
+      "provider_required_for_live_universe": true,
+      "schema_ready": true
+    },
+    "reference_sources": [
+      {
+        "adoption_boundary": "Schema/taxonomy behavior only; no external CSV row data is copied into first-party fixtures.",
+        "archive": "FinanceDatabase-main.zip",
+        "detected_license": "MIT",
+        "evidence_refs": [
+          "FinanceDatabase-main/pyproject.toml:1-5",
+          "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+          "FinanceDatabase-main/database/cryptos.csv:1-1",
+          "FinanceDatabase-main/database/currencies.csv:1-1",
+          "FinanceDatabase-main/database/indices.csv:1-1",
+          "FinanceDatabase-main/database/moneymarkets.csv:1-1"
+        ],
+        "license_stance": "direct-use-allowed",
+        "project": "FinanceDatabase"
+      }
+    ]
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "asset_universe",
+  "source_status": [
+    {
+      "availability": "limited",
+      "caveat": "MIT-licensed schema/taxonomy evidence; external CSV rows are not copied into fixtures.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "phase2e_native_contract",
+      "row_count": 0,
+      "source": "FinanceDatabase-main.zip schema evidence",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "equity",
+      "availability": "limited",
+      "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "etf",
+      "availability": "limited",
+      "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/etfs/NYQ.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "fund",
+      "availability": "limited",
+      "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/funds/NAS.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "index",
+      "availability": "limited",
+      "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/indices.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "fx_pair",
+      "availability": "limited",
+      "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/currencies.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "crypto_pair",
+      "availability": "limited",
+      "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/cryptos.csv:1-1",
+      "source_status": "reference-schema"
+    },
+    {
+      "asset_class": "money_market",
+      "availability": "limited",
+      "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+      "license_stance": "direct-use-allowed",
+      "live_rows_claimed": false,
+      "provider": "asset_universe",
+      "row_count": 0,
+      "source": "FinanceDatabase-main/database/moneymarkets.csv:1-1",
+      "source_status": "reference-schema"
+    }
+  ],
+  "summary": {
+    "asset_class_count": 7,
+    "command_count": 6,
+    "external_rows_copied": false,
+    "license_stance": "direct-use-allowed",
+    "live_rows_claimed": false,
+    "reference_project": "FinanceDatabase",
+    "schema_ready": true
+  },
+  "unavailable": [
+    {
+      "asset_class": "equity",
+      "availability": "limited",
+      "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    },
+    {
+      "asset_class": "etf",
+      "availability": "limited",
+      "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    },
+    {
+      "asset_class": "fund",
+      "availability": "limited",
+      "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    },
+    {
+      "asset_class": "index",
+      "availability": "limited",
+      "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    },
+    {
+      "asset_class": "fx_pair",
+      "availability": "limited",
+      "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    },
+    {
+      "asset_class": "crypto_pair",
+      "availability": "limited",
+      "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    },
+    {
+      "asset_class": "money_market",
+      "availability": "limited",
+      "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+      "recommended_action": "Configure or build a provider-backed symbol universe before claiming live coverage.",
+      "status": "schema-ready/no-live-universe"
+    }
+  ]
+}

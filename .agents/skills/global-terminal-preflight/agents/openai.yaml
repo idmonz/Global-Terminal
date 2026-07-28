@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Terminal Preflight"
+  short_description: "Run the repository preflight and record an honest baseline."
+  default_prompt: "Run the Global Terminal preflight before editing code and report every failing gate."

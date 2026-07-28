@@ -1,0 +1,2262 @@
+{
+  "caveats": [
+    "Command workspace actions are read-only workstation routes backed by source, provider status, caveat, and data-gap fields.",
+    "Provider-required commands stay unavailable unless fresh or cached provider evidence is present.",
+    "No market-action pathway, auth, billing, hosted persistence, graph database, or paid provider dependency is added in Phase 3."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "command_results": [
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "source-backed-preview",
+            "target": "market-intelligence"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Inspect provider evidence before displaying this payload.",
+            "enabled": true,
+            "provider_status": "fixture",
+            "status": "source-backed-preview",
+            "target": "news"
+          }
+        ],
+        "available": false,
+        "caveat": "Routes to source-labeled news/event rows; does not produce directional market advice.",
+        "command": "NI",
+        "data_gap": "Needs fresh or cached news/event provider evidence before being marked available.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "News Intelligence",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Routes to source-labeled news/event rows; does not produce directional market advice.",
+          "data_gap": "Needs fresh or cached news/event provider evidence before being marked available.",
+          "message": "NI has source-backed event context, but live-provider availability is not claimed.",
+          "source": "https://example.test/phase-2c/news",
+          "status": "source-backed-preview",
+          "title": "News Intelligence"
+        },
+        "provider": "fixture",
+        "provider_requirement": {
+          "caveat": "Static fixture for web-shell development.",
+          "command": "NI",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "provider": "fixture",
+          "provider_family": "news",
+          "recommended_action": "Inspect provider evidence before displaying this payload.",
+          "row_count": 1,
+          "source": "https://example.test/phase-2c/news",
+          "status": "fixture"
+        },
+        "result_status": "source-backed-preview",
+        "route": "/api/market-intelligence",
+        "source_status": "fixture",
+        "workspace_view": "market-intelligence"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "proxy/static",
+            "target": "war-room-map"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Inspect provider evidence before displaying this payload.",
+            "enabled": true,
+            "provider_status": "fixture",
+            "status": "proxy/static",
+            "target": "map_layers"
+          }
+        ],
+        "available": false,
+        "caveat": "Map context may use approximate coordinates, fixture rows, or static/proxy chokepoints unless live layers are present.",
+        "command": "MAP",
+        "data_gap": "Live AIS/flight/advanced map layers remain unavailable unless separately configured and probed.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "War Room Map",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Map context may use approximate coordinates, fixture rows, or static/proxy chokepoints unless live layers are present.",
+          "data_gap": "Live AIS/flight/advanced map layers remain unavailable unless separately configured and probed.",
+          "message": "MAP can open proxy/static context only; live layer coverage is not claimed.",
+          "source": "https://example.test/phase-2c/news",
+          "status": "proxy/static",
+          "title": "War Room Map"
+        },
+        "provider": "fixture",
+        "provider_requirement": {
+          "caveat": "Static fixture for web-shell development.",
+          "command": "MAP",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "provider": "fixture",
+          "provider_family": "map_layers",
+          "recommended_action": "Inspect provider evidence before displaying this payload.",
+          "row_count": 1,
+          "source": "https://example.test/phase-2c/news",
+          "status": "fixture"
+        },
+        "result_status": "proxy/static",
+        "route": "/api/war-room-map",
+        "source_status": "proxy/static",
+        "workspace_view": "war-room-map"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "missing-key",
+            "target": "financial-fundamentals"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+            "enabled": true,
+            "provider_status": "missing-key",
+            "status": "missing-key",
+            "target": "asset_profile"
+          }
+        ],
+        "available": false,
+        "caveat": "Asset description routing is schema-ready; live descriptions need provider-backed rows.",
+        "command": "DES",
+        "data_gap": "No bundled live security master or profile rows are claimed.",
+        "fetched_at": null,
+        "label": "Description",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Asset description routing is schema-ready; live descriptions need provider-backed rows.",
+          "data_gap": "No bundled live security master or profile rows are claimed.",
+          "message": "DES is schema-ready but unavailable until asset_profile provider evidence is fresh or cached.",
+          "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+          "status": "missing-key",
+          "title": "Description"
+        },
+        "provider": "opensky",
+        "provider_requirement": {
+          "caveat": "No fake flight tracking is exported.",
+          "command": "DES",
+          "fetched_at": null,
+          "provider": "opensky",
+          "provider_family": "asset_profile",
+          "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+          "row_count": 0,
+          "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+          "status": "missing-key"
+        },
+        "result_status": "missing-key",
+        "route": "/api/equity-intelligence",
+        "source_status": "missing-key",
+        "workspace_view": "financial-fundamentals"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "missing-key",
+            "target": "equity-intelligence"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+            "enabled": true,
+            "provider_status": "missing-key",
+            "status": "missing-key",
+            "target": "fundamentals"
+          }
+        ],
+        "available": false,
+        "caveat": "Financial statement commands require provider-backed fundamentals and remain non-advisory.",
+        "command": "FA",
+        "data_gap": "No live fundamentals provider evidence is bundled in deterministic fixtures.",
+        "fetched_at": null,
+        "label": "Fundamental Analysis",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Financial statement commands require provider-backed fundamentals and remain non-advisory.",
+          "data_gap": "No live fundamentals provider evidence is bundled in deterministic fixtures.",
+          "message": "FA is schema-ready but unavailable until fundamentals provider evidence is fresh or cached.",
+          "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+          "status": "missing-key",
+          "title": "Fundamental Analysis"
+        },
+        "provider": "opensky",
+        "provider_requirement": {
+          "caveat": "No fake flight tracking is exported.",
+          "command": "FA",
+          "fetched_at": null,
+          "provider": "opensky",
+          "provider_family": "fundamentals",
+          "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+          "row_count": 0,
+          "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+          "status": "missing-key"
+        },
+        "result_status": "missing-key",
+        "route": "/api/equity-intelligence",
+        "source_status": "missing-key",
+        "workspace_view": "equity-intelligence"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "equity-intelligence"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "price"
+          }
+        ],
+        "available": false,
+        "caveat": "Price graph commands require fresh or cached market data with source labels.",
+        "command": "GP",
+        "data_gap": "No price chart is marked available without market-data provider evidence.",
+        "fetched_at": null,
+        "label": "Graph / Price",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Price graph commands require fresh or cached market data with source labels.",
+          "data_gap": "No price chart is marked available without market-data provider evidence.",
+          "message": "GP is schema-ready but unavailable until price provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "Graph / Price"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "No price chart is marked available without market-data provider evidence.",
+          "command": "GP",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "price",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/equity-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "equity-intelligence"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "equity-intelligence"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "price_history"
+          }
+        ],
+        "available": false,
+        "caveat": "Historical price commands require provider-backed time series and source freshness.",
+        "command": "HP",
+        "data_gap": "No historical price series is emitted without provider evidence.",
+        "fetched_at": null,
+        "label": "Historical Price",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Historical price commands require provider-backed time series and source freshness.",
+          "data_gap": "No historical price series is emitted without provider evidence.",
+          "message": "HP is schema-ready but unavailable until price_history provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "Historical Price"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "No historical price series is emitted without provider evidence.",
+          "command": "HP",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "price_history",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/equity-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "equity-intelligence"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "provider-health"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "holdings"
+          }
+        ],
+        "available": false,
+        "caveat": "Exposure commands require provider-backed holdings or constituent rows.",
+        "command": "WEI",
+        "data_gap": "No ETF/index holdings or weights are bundled in this slice.",
+        "fetched_at": null,
+        "label": "Weights / Exposure",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Exposure commands require provider-backed holdings or constituent rows.",
+          "data_gap": "No ETF/index holdings or weights are bundled in this slice.",
+          "message": "WEI is schema-ready but unavailable until holdings provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "Weights / Exposure"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "No ETF/index holdings or weights are bundled in this slice.",
+          "command": "WEI",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "holdings",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/provider-health",
+        "source_status": "provider-required",
+        "workspace_view": "provider-health"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "provider-health"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "rates"
+          }
+        ],
+        "available": false,
+        "caveat": "Rates curve commands require source-labeled rates data and freshness metadata.",
+        "command": "CURV",
+        "data_gap": "No live rates curve provider evidence is bundled in deterministic fixtures.",
+        "fetched_at": null,
+        "label": "Rates Curve",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Rates curve commands require source-labeled rates data and freshness metadata.",
+          "data_gap": "No live rates curve provider evidence is bundled in deterministic fixtures.",
+          "message": "CURV is schema-ready but unavailable until rates provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "Rates Curve"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "No live rates curve provider evidence is bundled in deterministic fixtures.",
+          "command": "CURV",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "rates",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/provider-health",
+        "source_status": "provider-required",
+        "workspace_view": "provider-health"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "asset-universe"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "fx"
+          }
+        ],
+        "available": false,
+        "caveat": "FX routing is schema-ready; live FX quotes require provider evidence.",
+        "command": "FXC",
+        "data_gap": "No live FX quote provider is claimed by the command workspace fixture.",
+        "fetched_at": null,
+        "label": "FX Crosses",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "FX routing is schema-ready; live FX quotes require provider evidence.",
+          "data_gap": "No live FX quote provider is claimed by the command workspace fixture.",
+          "message": "FXC is schema-ready but unavailable until fx provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "FX Crosses"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "No live FX quote provider is claimed by the command workspace fixture.",
+          "command": "FXC",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "fx",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/asset-universe",
+        "source_status": "provider-required",
+        "workspace_view": "asset-universe"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "crypto-intelligence"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "crypto"
+          }
+        ],
+        "available": false,
+        "caveat": "Crypto commands can use public CoinGecko/Binance-style provider states when available; no account or exchange action is added.",
+        "command": "CRYPTO",
+        "data_gap": "No crypto result is marked available unless a public crypto provider is fresh or cached.",
+        "fetched_at": null,
+        "label": "Crypto Market",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Crypto commands can use public CoinGecko/Binance-style provider states when available; no account or exchange action is added.",
+          "data_gap": "No crypto result is marked available unless a public crypto provider is fresh or cached.",
+          "message": "CRYPTO is schema-ready but unavailable until crypto provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "Crypto Market"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "No crypto result is marked available unless a public crypto provider is fresh or cached.",
+          "command": "CRYPTO",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "crypto",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/crypto-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "crypto-intelligence"
+      },
+      {
+        "action_contract": {
+          "action_type": "open_workstation_context",
+          "auth_required": false,
+          "billing_required": false,
+          "broker_execution": false,
+          "enabled": true,
+          "hosted_persistence": false,
+          "market_action_routing": false,
+          "non_advisory": true
+        },
+        "allowed_actions": [
+          {
+            "action": "open_workspace_view",
+            "caveat": "Research workstation action only; source labels, provider status, caveats, and data gaps must be reviewed before use.",
+            "enabled": true,
+            "status": "provider-required",
+            "target": "options-quant"
+          },
+          {
+            "action": "inspect_provider_gap",
+            "caveat": "Configure or surface a source-backed provider before marking this command available.",
+            "enabled": true,
+            "provider_status": "provider-required",
+            "status": "provider-required",
+            "target": "options"
+          }
+        ],
+        "available": false,
+        "caveat": "Options monitor opens a provider-gated readiness surface; no dealer-position or execution path is implied.",
+        "command": "OMON",
+        "data_gap": "Options chain rows remain unavailable unless a fresh or cached options provider is present.",
+        "fetched_at": null,
+        "label": "Options Monitor",
+        "not_financial_advice": true,
+        "preview": {
+          "caveat": "Options monitor opens a provider-gated readiness surface; no dealer-position or execution path is implied.",
+          "data_gap": "Options chain rows remain unavailable unless a fresh or cached options provider is present.",
+          "message": "OMON is schema-ready but unavailable until options provider evidence is fresh or cached.",
+          "source": "phase3_command_workspace",
+          "status": "provider-required",
+          "title": "Options Monitor"
+        },
+        "provider": "none",
+        "provider_requirement": {
+          "caveat": "Options chain rows remain unavailable unless a fresh or cached options provider is present.",
+          "command": "OMON",
+          "fetched_at": null,
+          "provider": "none",
+          "provider_family": "options",
+          "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+          "row_count": 0,
+          "source": "",
+          "status": "provider-required"
+        },
+        "result_status": "provider-required",
+        "route": "/api/equity-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "options-quant"
+      }
+    ],
+    "command_workspace_version": "command_workspace.v1",
+    "commands": [
+      {
+        "accepted_context_types": [
+          "event",
+          "region",
+          "risk_theme",
+          "asset",
+          "provider",
+          "graph"
+        ],
+        "caveat": "Routes to source-labeled news/event rows; does not produce directional market advice.",
+        "command": "NI",
+        "data_gap": "Needs fresh or cached news/event provider evidence before being marked available.",
+        "description": "Inspect source-backed news and event context tied to the active graph node.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "provider-gated",
+        "implementation_status": "schema-ready/source-backed-news-required",
+        "label": "News Intelligence",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "provider_family": "news",
+        "requires_provider": true,
+        "result_status": "source-backed-preview",
+        "route": "/api/market-intelligence",
+        "source_status": "fixture",
+        "workspace_view": "market-intelligence"
+      },
+      {
+        "accepted_context_types": [
+          "event",
+          "region",
+          "risk_theme",
+          "provider",
+          "graph"
+        ],
+        "caveat": "Map context may use approximate coordinates, fixture rows, or static/proxy chokepoints unless live layers are present.",
+        "command": "MAP",
+        "data_gap": "Live AIS/flight/advanced map layers remain unavailable unless separately configured and probed.",
+        "description": "Open map/layer context for events, regions, and source-status-aware overlays.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "proxy/static",
+        "implementation_status": "schema-ready/proxy-layer-aware",
+        "label": "War Room Map",
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "provider_family": "map_layers",
+        "requires_provider": false,
+        "result_status": "proxy/static",
+        "route": "/api/war-room-map",
+        "source_status": "proxy/static",
+        "workspace_view": "war-room-map"
+      },
+      {
+        "accepted_context_types": [
+          "asset",
+          "asset_class",
+          "ticker",
+          "graph"
+        ],
+        "caveat": "Asset description routing is schema-ready; live descriptions need provider-backed rows.",
+        "command": "DES",
+        "data_gap": "No bundled live security master or profile rows are claimed.",
+        "description": "Resolve security or asset description fields for a selected asset context.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Description",
+        "not_financial_advice": true,
+        "provider": "opensky",
+        "provider_family": "asset_profile",
+        "requires_provider": true,
+        "result_status": "missing-key",
+        "route": "/api/equity-intelligence",
+        "source_status": "missing-key",
+        "workspace_view": "financial-fundamentals"
+      },
+      {
+        "accepted_context_types": [
+          "asset",
+          "equity",
+          "ticker",
+          "provider"
+        ],
+        "caveat": "Financial statement commands require provider-backed fundamentals and remain non-advisory.",
+        "command": "FA",
+        "data_gap": "No live fundamentals provider evidence is bundled in deterministic fixtures.",
+        "description": "Inspect provider-backed financial statement and ratio availability for equities.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "future-provider-required",
+        "label": "Fundamental Analysis",
+        "not_financial_advice": true,
+        "provider": "opensky",
+        "provider_family": "fundamentals",
+        "requires_provider": true,
+        "result_status": "missing-key",
+        "route": "/api/equity-intelligence",
+        "source_status": "missing-key",
+        "workspace_view": "equity-intelligence"
+      },
+      {
+        "accepted_context_types": [
+          "asset",
+          "commodity",
+          "fx_pair",
+          "crypto_pair",
+          "index",
+          "ticker"
+        ],
+        "caveat": "Price graph commands require fresh or cached market data with source labels.",
+        "command": "GP",
+        "data_gap": "No price chart is marked available without market-data provider evidence.",
+        "description": "Inspect price-chart readiness for the active market context.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "provider-required",
+        "label": "Graph / Price",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "price",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/equity-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "equity-intelligence"
+      },
+      {
+        "accepted_context_types": [
+          "asset",
+          "commodity",
+          "fx_pair",
+          "crypto_pair",
+          "index",
+          "ticker"
+        ],
+        "caveat": "Historical price commands require provider-backed time series and source freshness.",
+        "command": "HP",
+        "data_gap": "No historical price series is emitted without provider evidence.",
+        "description": "Inspect historical price readiness and freshness for the active market context.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "provider-required",
+        "label": "Historical Price",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "price_history",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/equity-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "equity-intelligence"
+      },
+      {
+        "accepted_context_types": [
+          "asset",
+          "etf",
+          "fund",
+          "index",
+          "sector"
+        ],
+        "caveat": "Exposure commands require provider-backed holdings or constituent rows.",
+        "command": "WEI",
+        "data_gap": "No ETF/index holdings or weights are bundled in this slice.",
+        "description": "Inspect holdings, constituent, and exposure-command readiness for funds or indices.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "future-provider-required",
+        "label": "Weights / Exposure",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "holdings",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/provider-health",
+        "source_status": "provider-required",
+        "workspace_view": "provider-health"
+      },
+      {
+        "accepted_context_types": [
+          "macro",
+          "rates",
+          "fx_pair",
+          "region",
+          "provider"
+        ],
+        "caveat": "Rates curve commands require source-labeled rates data and freshness metadata.",
+        "command": "CURV",
+        "data_gap": "No live rates curve provider evidence is bundled in deterministic fixtures.",
+        "description": "Inspect rates/yield-curve provider readiness for macro contexts.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Rates Curve",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "rates",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/provider-health",
+        "source_status": "provider-required",
+        "workspace_view": "provider-health"
+      },
+      {
+        "accepted_context_types": [
+          "fx_pair",
+          "currency",
+          "macro",
+          "region",
+          "provider"
+        ],
+        "caveat": "FX routing is schema-ready; live FX quotes require provider evidence.",
+        "command": "FXC",
+        "data_gap": "No live FX quote provider is claimed by the command workspace fixture.",
+        "description": "Inspect FX cross readiness for the active currency or macro context.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "FX Crosses",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "fx",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/asset-universe",
+        "source_status": "provider-required",
+        "workspace_view": "asset-universe"
+      },
+      {
+        "accepted_context_types": [
+          "crypto_pair",
+          "asset",
+          "provider",
+          "event"
+        ],
+        "caveat": "Crypto commands can use public CoinGecko/Binance-style provider states when available; no account or exchange action is added.",
+        "command": "CRYPTO",
+        "data_gap": "No crypto result is marked available unless a public crypto provider is fresh or cached.",
+        "description": "Inspect public crypto provider readiness for crypto pairs and liquidity context.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Crypto Market",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "crypto",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/crypto-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "crypto-intelligence"
+      },
+      {
+        "accepted_context_types": [
+          "asset",
+          "equity",
+          "ticker",
+          "provider"
+        ],
+        "caveat": "Options monitor opens a provider-gated readiness surface; no dealer-position or execution path is implied.",
+        "command": "OMON",
+        "data_gap": "Options chain rows remain unavailable unless a fresh or cached options provider is present.",
+        "description": "Inspect options chain, concentration, and gamma-proxy readiness for an equity context.",
+        "fetched_at": null,
+        "freshness": "provider-gated",
+        "implementation_status": "schema-ready/provider-required",
+        "label": "Options Monitor",
+        "not_financial_advice": true,
+        "provider": "none",
+        "provider_family": "options",
+        "requires_provider": true,
+        "result_status": "provider-required",
+        "route": "/api/equity-intelligence",
+        "source_status": "provider-required",
+        "workspace_view": "options-quant"
+      }
+    ],
+    "contexts": [
+      {
+        "caveat": "Phase 2E asset-universe schema does not yet include a commodity universe; commodity nodes are first-party proxy classifications.",
+        "command": "",
+        "context_id": "context:893913c3b3dc80",
+        "context_type": "asset_class",
+        "data_gap": "Provider-backed commodity reference rows remain future work.",
+        "fetched_at": null,
+        "label": "Commodities",
+        "node_id": "asset_class:commodity",
+        "provider": "phase2f_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "schema-gap/proxy"
+      },
+      {
+        "caveat": "Crypto schema is not a live exchange list; CoinGecko/Binance runtime status remains separate.",
+        "command": "",
+        "context_id": "context:6b3aa64352a492",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "Crypto Pairs",
+        "node_id": "asset_class:crypto_pair",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "ETF rows are not bundled; provider-backed holdings and flow data remain future work.",
+        "command": "",
+        "context_id": "context:a999af251d5a8b",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "ETFs",
+        "node_id": "asset_class:etf",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Equity universe schema is ready; live/security-master rows require a configured provider or separately reviewed import.",
+        "command": "",
+        "context_id": "context:e3635456f47fbc",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "Equities",
+        "node_id": "asset_class:equity",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "FX schema is available; live FX quotes require existing keyless or configured market providers.",
+        "command": "",
+        "context_id": "context:b75b2d3da0516b",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "FX Pairs",
+        "node_id": "asset_class:fx_pair",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Fund universe schema is present without live NAV, holdings, or provider claims.",
+        "command": "",
+        "context_id": "context:d9789ee1ba07c2",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "Funds",
+        "node_id": "asset_class:fund",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Index schema does not imply live constituent, weight, or price coverage.",
+        "command": "",
+        "context_id": "context:99b0949c7fe41a",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "Indices",
+        "node_id": "asset_class:index",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Money-market schema is reference-only in this slice; yields and holdings need provider validation.",
+        "command": "",
+        "context_id": "context:fd1ff318a30b23",
+        "context_type": "asset_class",
+        "data_gap": "No provider-backed live universe rows are bundled in this slice.",
+        "fetched_at": null,
+        "label": "Money Markets",
+        "node_id": "asset_class:money_market",
+        "provider": "phase2e_native_contract",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "CURV",
+        "confidence": 0.7,
+        "context_id": "context:d46194a3506125",
+        "context_type": "command_suggestion",
+        "label": "CURV",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Crypto routing can use CoinGecko/Binance states when available.",
+        "command": "CRYPTO",
+        "confidence": 0.7,
+        "context_id": "context:2272428a9818ae",
+        "context_type": "command_suggestion",
+        "label": "Crypto Market",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Security descriptions require provider-backed asset rows before live claims.",
+        "command": "DES",
+        "confidence": 0.7,
+        "context_id": "context:28d8d35d9a8fc5",
+        "context_type": "command_suggestion",
+        "label": "Description",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "FA",
+        "confidence": 0.7,
+        "context_id": "context:25450dac9cc806",
+        "context_type": "command_suggestion",
+        "label": "FA",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "FX pair routing is schema-ready; live quotes require provider freshness.",
+        "command": "FXC",
+        "confidence": 0.7,
+        "context_id": "context:0d99778b81f999",
+        "context_type": "command_suggestion",
+        "label": "FX Crosses",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Price graphs require market data freshness and source labels.",
+        "command": "GP",
+        "confidence": 0.7,
+        "context_id": "context:05d8582c4a4910",
+        "context_type": "command_suggestion",
+        "label": "Graph / Price",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "provider-required"
+      },
+      {
+        "caveat": "Historical price context requires a configured or keyless market provider.",
+        "command": "HP",
+        "confidence": 0.7,
+        "context_id": "context:c2f484f7a820da",
+        "context_type": "command_suggestion",
+        "label": "Historical Price",
+        "related_event_node_ids": [
+          "event:fdc6095c511e6b33"
+        ],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "provider-required"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "INTEL",
+        "confidence": 0.7,
+        "context_id": "context:6fbacbdb261794",
+        "context_type": "command_suggestion",
+        "label": "INTEL",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "KEY",
+        "confidence": 0.7,
+        "context_id": "context:1b601a588a3f1c",
+        "context_type": "command_suggestion",
+        "label": "KEY",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Clean-room command routing only.",
+        "command": "MOV",
+        "confidence": 0.7,
+        "context_id": "context:38f147b0806b9a",
+        "context_type": "command_suggestion",
+        "label": "MOV",
+        "related_event_node_ids": [],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Routes from event context to source-backed news rows; not a trading recommendation.",
+        "command": "NI",
+        "confidence": 0.7,
+        "context_id": "context:5b9d50a571080e",
+        "context_type": "command_suggestion",
+        "label": "News Intelligence",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "reference-schema"
+      },
+      {
+        "caveat": "Map context may include approximate centroids and static chokepoints.",
+        "command": "MAP",
+        "confidence": 0.5,
+        "context_id": "context:f05b95ee51e7db",
+        "context_type": "command_suggestion",
+        "label": "War Room Map",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "proxy/static"
+      },
+      {
+        "caveat": "Constituent, holdings, and exposure rows require provider-backed data.",
+        "command": "WEI",
+        "confidence": 0.7,
+        "context_id": "context:6ae96666b9ec35",
+        "context_type": "command_suggestion",
+        "label": "Weights / Exposure",
+        "related_event_node_ids": [
+          "event:6d73974fca315298",
+          "event:fdc6095c511e6b33"
+        ],
+        "source": "phase2f_event_asset_graph",
+        "source_status": "provider-required"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:724f9ff7ef94d7",
+        "context_type": "commodity",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "Brent Crude",
+        "node_id": "commodity:brent-crude",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:a380bd459ffb3b",
+        "context_type": "commodity",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "WTI Crude",
+        "node_id": "commodity:wti-crude",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:a90a86d6c45c92",
+        "context_type": "crypto_pair",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "BTC/USD",
+        "node_id": "crypto_pair:btcusd",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "command": "FXC",
+        "context_id": "context:50f5e1b6c60087",
+        "context_type": "event",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture chokepoint",
+        "node_id": "event:fdc6095c511e6b33",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "command": "GP",
+        "context_id": "context:deda1894e3a68a",
+        "context_type": "event",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture chokepoint",
+        "node_id": "event:fdc6095c511e6b33",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "command": "HP",
+        "context_id": "context:7ad83ca902e6e8",
+        "context_type": "event",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture chokepoint",
+        "node_id": "event:fdc6095c511e6b33",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "command": "MAP",
+        "context_id": "context:716fe2338d886d",
+        "context_type": "event",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture chokepoint",
+        "node_id": "event:fdc6095c511e6b33",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "command": "NI",
+        "context_id": "context:c109aae4a3d028",
+        "context_type": "event",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture chokepoint",
+        "node_id": "event:fdc6095c511e6b33",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "Static/proxy fixture row.",
+        "command": "WEI",
+        "context_id": "context:5a6586c4d00d60",
+        "context_type": "event",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture chokepoint",
+        "node_id": "event:fdc6095c511e6b33",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "command": "FXC",
+        "context_id": "context:7b5c91de153a49",
+        "context_type": "event",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "node_id": "event:6d73974fca315298",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "command": "GP",
+        "context_id": "context:be4b834677dd03",
+        "context_type": "event",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "node_id": "event:6d73974fca315298",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "command": "MAP",
+        "context_id": "context:28bb3d15758b59",
+        "context_type": "event",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "node_id": "event:6d73974fca315298",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "command": "NI",
+        "context_id": "context:9189d543560327",
+        "context_type": "event",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "node_id": "event:6d73974fca315298",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Static fixture for web-shell development.",
+        "command": "WEI",
+        "context_id": "context:e510d8275d59b8",
+        "context_type": "event",
+        "data_gap": "Fixture row only; not live news.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Phase 2C fixture: Red Sea shipping risk remains watch-listed",
+        "node_id": "event:6d73974fca315298",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:594b6c6ceeac04",
+        "context_type": "fx_pair",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "EUR/USD",
+        "node_id": "fx_pair:eurusd",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:e621de15adc7c5",
+        "context_type": "fx_pair",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "USD/JPY",
+        "node_id": "fx_pair:usdjpy",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "caveat": "Fixture rows never imply live coverage.",
+        "command": "",
+        "context_id": "context:705b7473aa56c2",
+        "context_type": "provider",
+        "data_gap": "",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "fixture",
+        "node_id": "provider:fixture",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "proxy/static"
+      },
+      {
+        "caveat": "Provider attached to the source event row.",
+        "command": "",
+        "context_id": "context:9d6492c0cbfcda",
+        "context_type": "provider",
+        "data_gap": "No live AIS or vessel flow in static fixtures.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "local",
+        "node_id": "provider:local",
+        "provider": "local",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "static/proxy"
+      },
+      {
+        "caveat": "No fake flight tracking is exported.",
+        "command": "",
+        "context_id": "context:abe869d929bea8",
+        "context_type": "provider",
+        "data_gap": "Missing optional environment variable: OPENSKY_CLIENT_ID or OPENSKY_CLIENT_SECRET",
+        "fetched_at": null,
+        "label": "opensky",
+        "node_id": "provider:opensky",
+        "provider": "opensky",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "missing-key"
+      },
+      {
+        "caveat": "Region comes from source row, normalized event metadata, or approximate centroid logic.",
+        "command": "",
+        "context_id": "context:228867bd71a88c",
+        "context_type": "region",
+        "data_gap": "Precise coordinates may be absent or approximate.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "label": "Red Sea",
+        "node_id": "region:red-sea",
+        "provider": "fixture",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "fixture"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:812ceba01664f4",
+        "context_type": "sector",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "Energy",
+        "node_id": "sector:energy",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      },
+      {
+        "caveat": "Shipping and energy links are macro transmission channels; no live vessel-flow telemetry is claimed.",
+        "command": "",
+        "context_id": "context:965f0b4cf8ae06",
+        "context_type": "sector",
+        "data_gap": "Relationship is inferred from event text and static taxonomy.",
+        "fetched_at": null,
+        "label": "Shipping / Logistics",
+        "node_id": "sector:shipping_logistics",
+        "provider": "phase2f_rule_map",
+        "source": "phase2f_event_asset_graph",
+        "source_status": "inferred/proxy"
+      }
+    ],
+    "evidence_refs": [
+      {
+        "caveat": "No source, component structure, or styling is copied.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E BB-Terminal command-workstation evidence card",
+        "external_project": "BB-Terminal",
+        "license_stance": "blocked/direct-copy-not-used",
+        "local_target": "lib/command_workspace.py and apps/web command-workspace view",
+        "product_value": "Terminal-style command suggestions become auditable provider-gated actions.",
+        "required_tests": [
+          "tests/test_command_workspace_contracts.py"
+        ],
+        "usage": "Dense command bar and workspace-state behavior reference only."
+      },
+      {
+        "caveat": "OpenBB remains optional and is not vendored or added as a dependency.",
+        "copied_source": false,
+        "evidence_ref": "OpenBB-develop/openbb_platform/core/openbb_core/api/router/commands.py",
+        "external_project": "OpenBB",
+        "license_stance": "behavior-only/agpl-boundary",
+        "local_target": "provider-gated command result envelopes",
+        "product_value": "Keeps command availability tied to provider status instead of UI claims.",
+        "required_tests": [
+          "tests/test_command_workspace_contracts.py"
+        ],
+        "usage": "Provider command-contract mental model only."
+      },
+      {
+        "caveat": "AGPL source is not copied.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E WorldMonitor provider-health evidence card",
+        "external_project": "WorldMonitor",
+        "license_stance": "behavior-only/agpl-boundary",
+        "local_target": "command source-status and caveat rail",
+        "product_value": "Unavailable and stale states remain visible beside available source context.",
+        "required_tests": [
+          "tests/test_command_workspace_contracts.py"
+        ],
+        "usage": "Source/provenance/status/caveat discipline for every command."
+      },
+      {
+        "caveat": "No hosted persistence, auth, account, billing, or database dependency is added.",
+        "copied_source": false,
+        "evidence_ref": "supabase-master/README.md:9-16",
+        "external_project": "Supabase",
+        "license_stance": "architecture-reference-only",
+        "local_target": "readiness.unavailable_capabilities",
+        "product_value": "Shows persistence/auth/billing as unavailable in this slice.",
+        "required_tests": [
+          "tests/test_command_workspace_contracts.py"
+        ],
+        "usage": "Future workspace persistence/readiness reference only."
+      },
+      {
+        "caveat": "No external CSV rows are copied.",
+        "copied_source": false,
+        "evidence_ref": "FinanceDatabase-main/database/equities/NMS.csv:1-1 and related Phase 2E schema evidence",
+        "external_project": "FinanceDatabase",
+        "license_stance": "direct-use-allowed/schema-only",
+        "local_target": "accepted_context_types and schema-ready command gaps",
+        "product_value": "Keeps DES/FA/WEI/FXC/CRYPTO routing tied to asset-class schemas.",
+        "required_tests": [
+          "tests/test_command_workspace_contracts.py"
+        ],
+        "usage": "Asset-class and command-routing taxonomy behavior."
+      },
+      {
+        "caveat": "No HelixDB source or query syntax is copied; this contract is first-party JSON.",
+        "copied_source": false,
+        "evidence_ref": "helix-db-main/README.md:5-9",
+        "external_project": "HelixDB",
+        "license_stance": "needs-review/mixed",
+        "usage": "Graph/query mental model only."
+      },
+      {
+        "caveat": "No hosted Supabase auth, database, billing, or client dependency is added in Phase 2F.",
+        "copied_source": false,
+        "evidence_ref": "supabase-master/README.md:9-16",
+        "external_project": "Supabase",
+        "license_stance": "direct-use-allowed",
+        "usage": "Future persistence/readiness architecture reference only."
+      },
+      {
+        "caveat": "AGPL source stays out of this repository; only the source-status discipline is reused.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E WorldMonitor provider-health evidence card",
+        "external_project": "WorldMonitor",
+        "license_stance": "behavior-only",
+        "usage": "Provider truth/health behavior reference."
+      },
+      {
+        "caveat": "OpenBB remains optional and user-installed/API-backed; no AGPL source is vendored.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E OpenBB router/provider evidence card",
+        "external_project": "OpenBB",
+        "license_stance": "behavior-only",
+        "usage": "Optional provider/API route mental model."
+      },
+      {
+        "caveat": "External CSV rows are not copied; only schema evidence and taxonomy behavior inform local contracts.",
+        "copied_source": false,
+        "evidence_ref": "FinanceDatabase-main/database/equities/NMS.csv:1-1",
+        "external_project": "FinanceDatabase",
+        "license_stance": "direct-use-allowed",
+        "usage": "Asset-universe schema/taxonomy behavior already adopted in Phase 2E."
+      },
+      {
+        "caveat": "Direct copying remains blocked because refreshed audit did not find a reviewed permissive license file.",
+        "copied_source": false,
+        "evidence_ref": "Phase 2E BB-Terminal command-workstation evidence card",
+        "external_project": "BB-Terminal",
+        "license_stance": "blocked",
+        "usage": "Clean-room command-workstation behavior reference."
+      }
+    ],
+    "history_seed": [
+      {
+        "command": "NI",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "raw": "NI",
+        "status": "source-backed-preview"
+      },
+      {
+        "command": "MAP",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "fixture",
+        "raw": "MAP",
+        "status": "proxy/static"
+      },
+      {
+        "command": "DES",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "opensky",
+        "raw": "DES",
+        "status": "missing-key"
+      },
+      {
+        "command": "FA",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "opensky",
+        "raw": "FA",
+        "status": "missing-key"
+      },
+      {
+        "command": "GP",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "none",
+        "raw": "GP",
+        "status": "provider-required"
+      },
+      {
+        "command": "HP",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "none",
+        "raw": "HP",
+        "status": "provider-required"
+      },
+      {
+        "command": "WEI",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "none",
+        "raw": "WEI",
+        "status": "provider-required"
+      },
+      {
+        "command": "CURV",
+        "fixture_safe": true,
+        "not_financial_advice": true,
+        "provider": "none",
+        "raw": "CURV",
+        "status": "provider-required"
+      }
+    ],
+    "provider_requirements": [
+      {
+        "available_for_live_result": false,
+        "caveat": "Static fixture for web-shell development.",
+        "command": "NI",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "provider": "fixture",
+        "provider_family": "news",
+        "recommended_action": "Inspect provider evidence before displaying this payload.",
+        "requires_provider": true,
+        "status": "fixture"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "Static fixture for web-shell development.",
+        "command": "MAP",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "provider": "fixture",
+        "provider_family": "map_layers",
+        "recommended_action": "Inspect provider evidence before displaying this payload.",
+        "requires_provider": false,
+        "status": "fixture"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No fake flight tracking is exported.",
+        "command": "DES",
+        "fetched_at": null,
+        "provider": "opensky",
+        "provider_family": "asset_profile",
+        "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+        "requires_provider": true,
+        "status": "missing-key"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No fake flight tracking is exported.",
+        "command": "FA",
+        "fetched_at": null,
+        "provider": "opensky",
+        "provider_family": "fundamentals",
+        "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+        "requires_provider": true,
+        "status": "missing-key"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No price chart is marked available without market-data provider evidence.",
+        "command": "GP",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "price",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No historical price series is emitted without provider evidence.",
+        "command": "HP",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "price_history",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No ETF/index holdings or weights are bundled in this slice.",
+        "command": "WEI",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "holdings",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No live rates curve provider evidence is bundled in deterministic fixtures.",
+        "command": "CURV",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "rates",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No live FX quote provider is claimed by the command workspace fixture.",
+        "command": "FXC",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "fx",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "No crypto result is marked available unless a public crypto provider is fresh or cached.",
+        "command": "CRYPTO",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "crypto",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      },
+      {
+        "available_for_live_result": false,
+        "caveat": "Options chain rows remain unavailable unless a fresh or cached options provider is present.",
+        "command": "OMON",
+        "fetched_at": null,
+        "provider": "none",
+        "provider_family": "options",
+        "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+        "requires_provider": true,
+        "status": "provider-required"
+      }
+    ],
+    "readiness": {
+      "auth_added": false,
+      "billing_added": false,
+      "broker_execution_added": false,
+      "command_execution_mode": "read-only-workstation-actions",
+      "graph_database_dependency_added": false,
+      "hosted_persistence_added": false,
+      "market_action_routing_added": false,
+      "paid_provider_dependency_added": false,
+      "unavailable_capabilities": [
+        {
+          "capability": "broker_execution",
+          "caveat": "Phase 3 workstation actions are inspection and routing actions only.",
+          "provider": "none",
+          "recommended_action": "Keep commands read-only research routes; add no market-action pathway in Phase 3.",
+          "source_status": "unavailable",
+          "status": "unavailable"
+        },
+        {
+          "capability": "market_action_routing",
+          "caveat": "Commands never place, approve, or route orders.",
+          "provider": "none",
+          "recommended_action": "Do not add order placement or market-action routing.",
+          "source_status": "unavailable",
+          "status": "unavailable"
+        },
+        {
+          "capability": "hosted_persistence",
+          "caveat": "No hosted database, account system, auth, billing, or user-specific command state is added.",
+          "provider": "none",
+          "recommended_action": "Review auth, retention, and storage contracts in a later commercial slice.",
+          "source_status": "unavailable",
+          "status": "unavailable"
+        }
+      ]
+    },
+    "summary": {
+      "available_command_count": 0,
+      "broker_execution_added": false,
+      "command_count": 11,
+      "command_result_count": 11,
+      "context_count": 43,
+      "hosted_persistence_added": false,
+      "market_action_routing_added": false,
+      "non_advisory": true,
+      "paid_provider_dependency_added": false,
+      "phase2f_command_suggestion_count": 13,
+      "provider_required_command_count": 9
+    }
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "command_workspace",
+  "source_status": [
+    {
+      "caveat": "Routes to source-labeled news/event rows; does not produce directional market advice.",
+      "command": "NI",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "implementation_status": "schema-ready/source-backed-news-required",
+      "provider": "fixture",
+      "source": "/api/market-intelligence",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Map context may use approximate coordinates, fixture rows, or static/proxy chokepoints unless live layers are present.",
+      "command": "MAP",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "implementation_status": "schema-ready/proxy-layer-aware",
+      "provider": "fixture",
+      "source": "/api/war-room-map",
+      "source_status": "proxy/static"
+    },
+    {
+      "caveat": "Asset description routing is schema-ready; live descriptions need provider-backed rows.",
+      "command": "DES",
+      "fetched_at": null,
+      "implementation_status": "schema-ready/provider-required",
+      "provider": "opensky",
+      "source": "/api/equity-intelligence",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "Financial statement commands require provider-backed fundamentals and remain non-advisory.",
+      "command": "FA",
+      "fetched_at": null,
+      "implementation_status": "future-provider-required",
+      "provider": "opensky",
+      "source": "/api/equity-intelligence",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "Price graph commands require fresh or cached market data with source labels.",
+      "command": "GP",
+      "fetched_at": null,
+      "implementation_status": "provider-required",
+      "provider": "none",
+      "source": "/api/equity-intelligence",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Historical price commands require provider-backed time series and source freshness.",
+      "command": "HP",
+      "fetched_at": null,
+      "implementation_status": "provider-required",
+      "provider": "none",
+      "source": "/api/equity-intelligence",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Exposure commands require provider-backed holdings or constituent rows.",
+      "command": "WEI",
+      "fetched_at": null,
+      "implementation_status": "future-provider-required",
+      "provider": "none",
+      "source": "/api/provider-health",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Rates curve commands require source-labeled rates data and freshness metadata.",
+      "command": "CURV",
+      "fetched_at": null,
+      "implementation_status": "schema-ready/provider-required",
+      "provider": "none",
+      "source": "/api/provider-health",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "FX routing is schema-ready; live FX quotes require provider evidence.",
+      "command": "FXC",
+      "fetched_at": null,
+      "implementation_status": "schema-ready/provider-required",
+      "provider": "none",
+      "source": "/api/asset-universe",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Crypto commands can use public CoinGecko/Binance-style provider states when available; no account or exchange action is added.",
+      "command": "CRYPTO",
+      "fetched_at": null,
+      "implementation_status": "schema-ready/provider-required",
+      "provider": "none",
+      "source": "/api/crypto-intelligence",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Options monitor opens a provider-gated readiness surface; no dealer-position or execution path is implied.",
+      "command": "OMON",
+      "fetched_at": null,
+      "implementation_status": "schema-ready/provider-required",
+      "provider": "none",
+      "source": "/api/equity-intelligence",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Routes to source-labeled news/event rows; does not produce directional market advice.",
+      "command": "NI",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "fixture",
+      "result_status": "source-backed-preview",
+      "source": "https://example.test/phase-2c/news",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Map context may use approximate coordinates, fixture rows, or static/proxy chokepoints unless live layers are present.",
+      "command": "MAP",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "fixture",
+      "result_status": "proxy/static",
+      "source": "https://example.test/phase-2c/news",
+      "source_status": "proxy/static"
+    },
+    {
+      "caveat": "Asset description routing is schema-ready; live descriptions need provider-backed rows.",
+      "command": "DES",
+      "fetched_at": null,
+      "provider": "opensky",
+      "result_status": "missing-key",
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "Financial statement commands require provider-backed fundamentals and remain non-advisory.",
+      "command": "FA",
+      "fetched_at": null,
+      "provider": "opensky",
+      "result_status": "missing-key",
+      "source": "OPENSKY_CLIENT_ID,OPENSKY_CLIENT_SECRET",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "Price graph commands require fresh or cached market data with source labels.",
+      "command": "GP",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Historical price commands require provider-backed time series and source freshness.",
+      "command": "HP",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Exposure commands require provider-backed holdings or constituent rows.",
+      "command": "WEI",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Rates curve commands require source-labeled rates data and freshness metadata.",
+      "command": "CURV",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "FX routing is schema-ready; live FX quotes require provider evidence.",
+      "command": "FXC",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Crypto commands can use public CoinGecko/Binance-style provider states when available; no account or exchange action is added.",
+      "command": "CRYPTO",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Options monitor opens a provider-gated readiness surface; no dealer-position or execution path is implied.",
+      "command": "OMON",
+      "fetched_at": null,
+      "provider": "none",
+      "result_status": "provider-required",
+      "source": "",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Static fixture for web-shell development.",
+      "command": "NI",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "fixture",
+      "source": "news",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "Static fixture for web-shell development.",
+      "command": "MAP",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "provider": "fixture",
+      "source": "map_layers",
+      "source_status": "fixture"
+    },
+    {
+      "caveat": "No fake flight tracking is exported.",
+      "command": "DES",
+      "fetched_at": null,
+      "provider": "opensky",
+      "source": "asset_profile",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "No fake flight tracking is exported.",
+      "command": "FA",
+      "fetched_at": null,
+      "provider": "opensky",
+      "source": "fundamentals",
+      "source_status": "missing-key"
+    },
+    {
+      "caveat": "No price chart is marked available without market-data provider evidence.",
+      "command": "GP",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "price",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "No historical price series is emitted without provider evidence.",
+      "command": "HP",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "price_history",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "No ETF/index holdings or weights are bundled in this slice.",
+      "command": "WEI",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "holdings",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "No live rates curve provider evidence is bundled in deterministic fixtures.",
+      "command": "CURV",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "rates",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "No live FX quote provider is claimed by the command workspace fixture.",
+      "command": "FXC",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "fx",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "No crypto result is marked available unless a public crypto provider is fresh or cached.",
+      "command": "CRYPTO",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "crypto",
+      "source_status": "provider-required"
+    },
+    {
+      "caveat": "Options chain rows remain unavailable unless a fresh or cached options provider is present.",
+      "command": "OMON",
+      "fetched_at": null,
+      "provider": "none",
+      "source": "options",
+      "source_status": "provider-required"
+    }
+  ],
+  "summary": {
+    "available_command_count": 0,
+    "broker_execution_added": false,
+    "command_count": 11,
+    "command_result_count": 11,
+    "context_count": 43,
+    "hosted_persistence_added": false,
+    "market_action_routing_added": false,
+    "non_advisory": true,
+    "paid_provider_dependency_added": false,
+    "payload_mode": "deterministic-clean-room",
+    "phase2f_command_suggestion_count": 13,
+    "provider_required_command_count": 9
+  },
+  "unavailable": [
+    {
+      "capability": "broker_execution",
+      "caveat": "Phase 3 workstation actions are inspection and routing actions only.",
+      "provider": "none",
+      "recommended_action": "Keep commands read-only research routes; add no market-action pathway in Phase 3.",
+      "source_status": "unavailable",
+      "status": "unavailable"
+    },
+    {
+      "capability": "market_action_routing",
+      "caveat": "Commands never place, approve, or route orders.",
+      "provider": "none",
+      "recommended_action": "Do not add order placement or market-action routing.",
+      "source_status": "unavailable",
+      "status": "unavailable"
+    },
+    {
+      "capability": "hosted_persistence",
+      "caveat": "No hosted database, account system, auth, billing, or user-specific command state is added.",
+      "provider": "none",
+      "recommended_action": "Review auth, retention, and storage contracts in a later commercial slice.",
+      "source_status": "unavailable",
+      "status": "unavailable"
+    },
+    {
+      "caveat": "Routes to source-labeled news/event rows; does not produce directional market advice.",
+      "command": "NI",
+      "provider": "fixture",
+      "recommended_action": "Inspect provider evidence before displaying this payload.",
+      "status": "source-backed-preview"
+    },
+    {
+      "caveat": "Map context may use approximate coordinates, fixture rows, or static/proxy chokepoints unless live layers are present.",
+      "command": "MAP",
+      "provider": "fixture",
+      "recommended_action": "Inspect provider evidence before displaying this payload.",
+      "status": "proxy/static"
+    },
+    {
+      "caveat": "Asset description routing is schema-ready; live descriptions need provider-backed rows.",
+      "command": "DES",
+      "provider": "opensky",
+      "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+      "status": "missing-key"
+    },
+    {
+      "caveat": "Financial statement commands require provider-backed fundamentals and remain non-advisory.",
+      "command": "FA",
+      "provider": "opensky",
+      "recommended_action": "Configure optional OpenSky credentials or keep flight layer unavailable.",
+      "status": "missing-key"
+    },
+    {
+      "caveat": "Price graph commands require fresh or cached market data with source labels.",
+      "command": "GP",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    },
+    {
+      "caveat": "Historical price commands require provider-backed time series and source freshness.",
+      "command": "HP",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    },
+    {
+      "caveat": "Exposure commands require provider-backed holdings or constituent rows.",
+      "command": "WEI",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    },
+    {
+      "caveat": "Rates curve commands require source-labeled rates data and freshness metadata.",
+      "command": "CURV",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    },
+    {
+      "caveat": "FX routing is schema-ready; live FX quotes require provider evidence.",
+      "command": "FXC",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    },
+    {
+      "caveat": "Crypto commands can use public CoinGecko/Binance-style provider states when available; no account or exchange action is added.",
+      "command": "CRYPTO",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    },
+    {
+      "caveat": "Options monitor opens a provider-gated readiness surface; no dealer-position or execution path is implied.",
+      "command": "OMON",
+      "provider": "none",
+      "recommended_action": "Configure or surface a source-backed provider before marking this command available.",
+      "status": "provider-required"
+    }
+  ]
+}

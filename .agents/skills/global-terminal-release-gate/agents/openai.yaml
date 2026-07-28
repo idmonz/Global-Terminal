@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Terminal Release Gate"
+  short_description: "Build and inspect the source release boundary."
+  default_prompt: "Run the Global Terminal release gate and verify required inclusions and sensitive exclusions."

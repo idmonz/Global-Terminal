@@ -1,0 +1,80 @@
+# Release Package Report
+
+- created_at_utc: 2026-07-28T09:41:17.223914+00:00
+- zip_path: `dist/global_market_terminal_20260728T094111Z.zip`
+- selected_file_count_before_manifest: 1845
+- manifest_entry_count: 1
+- expected_zip_entry_count_after_manifest: 1846
+- actual_zip_entry_count_after_manifest: 1846
+- legacy_file_count_alias: 1845
+- external_excluded: true
+- data_cache_excluded: true
+- secrets_excluded: true
+- generated_artifacts_excluded: true
+
+## Exclusions
+
+- `*.ckpt`
+- `*.db`
+- `*.duckdb`
+- `*.h5`
+- `*.joblib`
+- `*.log`
+- `*.onnx`
+- `*.pt`
+- `*.pth`
+- `*.pyc`
+- `*.pyo`
+- `*.safetensors`
+- `*.sqlite`
+- `*.sqlite3`
+- `.env`
+- `.git`
+- `.next`
+- `.pytest_cache`
+- `.turbo`
+- `.venv`
+- `BB-Terminal`
+- `Bloomberg-terminal`
+- `FinceptTerminal`
+- `Kronos`
+- `Kronos-master`
+- `OpenAlice`
+- `OpenBB-develop`
+- `OpenStock`
+- `QuantDinger`
+- `QuantDinger-main`
+- `__pycache__`
+- `_recovery`
+- `actionless_simulations`
+- `agent-skills`
+- `agent-skills-main`
+- `bloomberg-terminal`
+- `build`
+- `checkpoint`
+- `coverage`
+- `data`
+- `data/cache/`
+- `data/private/`
+- `data/private/actionless_simulations/`
+- `data/provider_probe_results.json`
+- `dist`
+- `external`
+- `finvizfinance`
+- `local_option_chain`
+- `model_weights`
+- `node_modules`
+- `option_chain_upload`
+- `options_chain_upload`
+- `optlib`
+- `osiris`
+- `provider_probe_results.json`
+- `quant-traderr-lab`
+- `secrets.toml`
+- `tensortrade`
+- `tensortrade-master`
+- `uploaded_option_chain`
+- `venv`
+- `worldmonitor-main`
+- `worldview`
+- `worldview-main`

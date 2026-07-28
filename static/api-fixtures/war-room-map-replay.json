@@ -1,0 +1,419 @@
+{
+  "caveats": [
+    "Historical replay contains only project-captured observations or an explicitly fictional deterministic fixture.",
+    "Removed rows do not prove real-world resolution, causality, or market impact.",
+    "Snapshot content is local-private and excluded from deterministic fixture export and source releases.",
+    "AIS, flight, sanctions, paid layers, broker execution, hosted sync, auth, and billing remain unavailable unless separately verified."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "active_snapshot": {
+      "assets": [],
+      "captured_at": "2026-06-21T00:00:00+00:00",
+      "caveat": "Fictional deterministic replay fixture; not observed history.",
+      "content_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+      "historical_truth": "fictional-demo",
+      "layer_summary": {
+        "fixture": 1
+      },
+      "layers": [
+        {
+          "availability": "limited",
+          "caveat": "Fictional demo layer.",
+          "label": "Earthquakes",
+          "layer_id": "earthquakes",
+          "provider": "demo_fixture",
+          "row_count": 1,
+          "source_status": "fixture"
+        }
+      ],
+      "markers": [
+        {
+          "caveat": "Fictional demo marker.",
+          "confidence": 0.5,
+          "coordinate_method": "fixture_coordinates",
+          "coordinate_status": "fixture",
+          "data_gap": "No live provider evidence.",
+          "event_id": "demo-alpha",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "lat": 35.0,
+          "layer_ids": [
+            "earthquakes"
+          ],
+          "lon": 139.0,
+          "marker_id": "demo:event:alpha",
+          "not_financial_advice": true,
+          "provider": "demo_fixture",
+          "region": "Demo Pacific",
+          "severity": "elevated",
+          "source": "fictional-demo",
+          "source_status": "fixture",
+          "source_url": "fixture",
+          "timestamp": "2026-06-16T00:00:00+00:00",
+          "title": "Fictional seismic watch"
+        },
+        {
+          "caveat": "Fictional demo marker.",
+          "confidence": 0.4,
+          "coordinate_method": "fixture_coordinates",
+          "coordinate_status": "fixture",
+          "data_gap": "No live provider evidence.",
+          "event_id": "demo-beta",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "lat": 29.0,
+          "layer_ids": [
+            "earthquakes"
+          ],
+          "lon": 32.0,
+          "marker_id": "demo:event:beta",
+          "not_financial_advice": true,
+          "provider": "demo_fixture",
+          "region": "Demo Canal",
+          "severity": "watch",
+          "source": "fictional-demo",
+          "source_status": "fixture",
+          "source_url": "fixture",
+          "timestamp": "2026-06-16T00:00:00+00:00",
+          "title": "Fictional logistics watch"
+        }
+      ],
+      "news": [],
+      "observed_at": "2026-06-21T00:00:00+00:00",
+      "privacy_scope": "deterministic-public-fixture",
+      "provider_summary": {
+        "fixture": 1
+      },
+      "providers": [
+        {
+          "availability": "limited",
+          "caveat": "Fictional demo provider.",
+          "provider": "demo_fixture",
+          "source_status": "fixture"
+        }
+      ],
+      "retention_days": null,
+      "retention_until": null,
+      "runtime_mode": "fixture",
+      "snapshot_id": "mapsnap_00000000000000000002",
+      "snapshot_version": "war_room_map_snapshot.v1",
+      "source_register": [
+        {
+          "caveat": "Not observed history.",
+          "provider": "demo_fixture",
+          "source": "fictional-demo",
+          "source_status": "fixture"
+        }
+      ],
+      "source_status": "fixture"
+    },
+    "caveat": "Fictional deterministic replay fixture. It is not project-captured or live historical evidence.",
+    "comparison_snapshot": {
+      "assets": [],
+      "captured_at": "2026-06-20T00:00:00+00:00",
+      "caveat": "Fictional deterministic replay fixture; not observed history.",
+      "content_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "historical_truth": "fictional-demo",
+      "layer_summary": {
+        "fixture": 1
+      },
+      "layers": [
+        {
+          "availability": "limited",
+          "caveat": "Fictional demo layer.",
+          "label": "Earthquakes",
+          "layer_id": "earthquakes",
+          "provider": "demo_fixture",
+          "row_count": 1,
+          "source_status": "fixture"
+        }
+      ],
+      "markers": [
+        {
+          "caveat": "Fictional demo marker.",
+          "confidence": 0.5,
+          "coordinate_method": "fixture_coordinates",
+          "coordinate_status": "fixture",
+          "data_gap": "No live provider evidence.",
+          "event_id": "demo-alpha",
+          "fetched_at": "2026-06-16T00:00:00+00:00",
+          "freshness": "fixture",
+          "lat": 35.0,
+          "layer_ids": [
+            "earthquakes"
+          ],
+          "lon": 139.0,
+          "marker_id": "demo:event:alpha",
+          "not_financial_advice": true,
+          "provider": "demo_fixture",
+          "region": "Demo Pacific",
+          "severity": "watch",
+          "source": "fictional-demo",
+          "source_status": "fixture",
+          "source_url": "fixture",
+          "timestamp": "2026-06-16T00:00:00+00:00",
+          "title": "Fictional seismic watch"
+        }
+      ],
+      "news": [],
+      "observed_at": "2026-06-20T00:00:00+00:00",
+      "privacy_scope": "deterministic-public-fixture",
+      "provider_summary": {
+        "fixture": 1
+      },
+      "providers": [
+        {
+          "availability": "limited",
+          "caveat": "Fictional demo provider.",
+          "provider": "demo_fixture",
+          "source_status": "fixture"
+        }
+      ],
+      "retention_days": null,
+      "retention_until": null,
+      "runtime_mode": "fixture",
+      "snapshot_id": "mapsnap_00000000000000000001",
+      "snapshot_version": "war_room_map_snapshot.v1",
+      "source_register": [
+        {
+          "caveat": "Not observed history.",
+          "provider": "demo_fixture",
+          "source": "fictional-demo",
+          "source_status": "fixture"
+        }
+      ],
+      "source_status": "fixture"
+    },
+    "diff": {
+      "after_snapshot_id": "mapsnap_00000000000000000002",
+      "before_snapshot_id": "mapsnap_00000000000000000001",
+      "caveat": "Diffs compare captured normalized rows; absence does not prove real-world resolution or causality.",
+      "collections": {
+        "assets": {
+          "added": [],
+          "changed": [],
+          "kind": "assets",
+          "refresh_only_count": 0,
+          "removed": [],
+          "summary": {
+            "added": 0,
+            "changed": 0,
+            "refreshed": 0,
+            "removed": 0,
+            "unchanged": 0
+          },
+          "unchanged_count": 0
+        },
+        "events": {
+          "added": [
+            {
+              "after": {
+                "caveat": "Fictional demo marker.",
+                "confidence": 0.4,
+                "coordinate_method": "fixture_coordinates",
+                "coordinate_status": "fixture",
+                "data_gap": "No live provider evidence.",
+                "event_id": "demo-beta",
+                "fetched_at": "2026-06-16T00:00:00+00:00",
+                "freshness": "fixture",
+                "lat": 29.0,
+                "layer_ids": [
+                  "earthquakes"
+                ],
+                "lon": 32.0,
+                "marker_id": "demo:event:beta",
+                "not_financial_advice": true,
+                "provider": "demo_fixture",
+                "region": "Demo Canal",
+                "severity": "watch",
+                "source": "fictional-demo",
+                "source_status": "fixture",
+                "source_url": "fixture",
+                "timestamp": "2026-06-16T00:00:00+00:00",
+                "title": "Fictional logistics watch"
+              },
+              "identity": "marker_id:demo:event:beta"
+            }
+          ],
+          "changed": [
+            {
+              "after": {
+                "caveat": "Fictional demo marker.",
+                "confidence": 0.5,
+                "coordinate_method": "fixture_coordinates",
+                "coordinate_status": "fixture",
+                "data_gap": "No live provider evidence.",
+                "event_id": "demo-alpha",
+                "fetched_at": "2026-06-16T00:00:00+00:00",
+                "freshness": "fixture",
+                "lat": 35.0,
+                "layer_ids": [
+                  "earthquakes"
+                ],
+                "lon": 139.0,
+                "marker_id": "demo:event:alpha",
+                "not_financial_advice": true,
+                "provider": "demo_fixture",
+                "region": "Demo Pacific",
+                "severity": "elevated",
+                "source": "fictional-demo",
+                "source_status": "fixture",
+                "source_url": "fixture",
+                "timestamp": "2026-06-16T00:00:00+00:00",
+                "title": "Fictional seismic watch"
+              },
+              "before": {
+                "caveat": "Fictional demo marker.",
+                "confidence": 0.5,
+                "coordinate_method": "fixture_coordinates",
+                "coordinate_status": "fixture",
+                "data_gap": "No live provider evidence.",
+                "event_id": "demo-alpha",
+                "fetched_at": "2026-06-16T00:00:00+00:00",
+                "freshness": "fixture",
+                "lat": 35.0,
+                "layer_ids": [
+                  "earthquakes"
+                ],
+                "lon": 139.0,
+                "marker_id": "demo:event:alpha",
+                "not_financial_advice": true,
+                "provider": "demo_fixture",
+                "region": "Demo Pacific",
+                "severity": "watch",
+                "source": "fictional-demo",
+                "source_status": "fixture",
+                "source_url": "fixture",
+                "timestamp": "2026-06-16T00:00:00+00:00",
+                "title": "Fictional seismic watch"
+              },
+              "changed_fields": [
+                "severity"
+              ],
+              "identity": "marker_id:demo:event:alpha"
+            }
+          ],
+          "kind": "events",
+          "refresh_only_count": 0,
+          "removed": [],
+          "summary": {
+            "added": 1,
+            "changed": 1,
+            "refreshed": 0,
+            "removed": 0,
+            "unchanged": 0
+          },
+          "unchanged_count": 0
+        },
+        "layers": {
+          "added": [],
+          "changed": [],
+          "kind": "layers",
+          "refresh_only_count": 0,
+          "removed": [],
+          "summary": {
+            "added": 0,
+            "changed": 0,
+            "refreshed": 0,
+            "removed": 0,
+            "unchanged": 1
+          },
+          "unchanged_count": 1
+        },
+        "news": {
+          "added": [],
+          "changed": [],
+          "kind": "news",
+          "refresh_only_count": 0,
+          "removed": [],
+          "summary": {
+            "added": 0,
+            "changed": 0,
+            "refreshed": 0,
+            "removed": 0,
+            "unchanged": 0
+          },
+          "unchanged_count": 0
+        },
+        "providers": {
+          "added": [],
+          "changed": [],
+          "kind": "providers",
+          "refresh_only_count": 0,
+          "removed": [],
+          "summary": {
+            "added": 0,
+            "changed": 0,
+            "refreshed": 0,
+            "removed": 0,
+            "unchanged": 1
+          },
+          "unchanged_count": 1
+        }
+      },
+      "source_preserved": true,
+      "summary": {
+        "added": 1,
+        "changed": 1,
+        "refreshed": 0,
+        "removed": 0,
+        "unchanged": 2
+      }
+    },
+    "historical_truth": "fictional-demo",
+    "privacy_scope": "deterministic-public-fixture",
+    "readiness": {
+      "capture_available": false,
+      "compare_available": true,
+      "replay_available": true,
+      "snapshot_count": 2
+    },
+    "snapshots": [
+      {
+        "captured_at": "2026-06-21T00:00:00+00:00",
+        "historical_truth": "fictional-demo",
+        "observed_at": "2026-06-21T00:00:00+00:00",
+        "runtime_mode": "fixture",
+        "snapshot_id": "mapsnap_00000000000000000002",
+        "source_status": "fixture"
+      },
+      {
+        "captured_at": "2026-06-20T00:00:00+00:00",
+        "historical_truth": "fictional-demo",
+        "observed_at": "2026-06-20T00:00:00+00:00",
+        "runtime_mode": "fixture",
+        "snapshot_id": "mapsnap_00000000000000000001",
+        "source_status": "fixture"
+      }
+    ],
+    "war_room_map_replay_version": "war_room_map_replay.v1"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "war_room_map_replay",
+  "source_status": [
+    {
+      "caveat": "Not observed history.",
+      "provider": "demo_fixture",
+      "source": "fictional-demo",
+      "source_status": "fixture"
+    }
+  ],
+  "summary": {
+    "active_snapshot_id": "mapsnap_00000000000000000002",
+    "comparison_snapshot_id": "mapsnap_00000000000000000001",
+    "diff_summary": {
+      "added": 1,
+      "changed": 1,
+      "refreshed": 0,
+      "removed": 0,
+      "unchanged": 2
+    },
+    "historical_truth": "fictional-demo",
+    "payload_mode": "fictional-deterministic-replay",
+    "privacy_scope": "deterministic-public-fixture",
+    "snapshot_count": 2
+  },
+  "unavailable": []
+}

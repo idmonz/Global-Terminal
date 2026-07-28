@@ -1,0 +1,351 @@
+{
+  "caveats": [
+    "Demo rows are deterministic and fictional; local rows are private to the local workstation.",
+    "Private note text, holdings, attachments, account data, and local paths are excluded from static fixtures and sanitized exports.",
+    "Research Memory is non-advisory and does not enable broker actions, cloud sync, external AI, or autonomous monitoring."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "caveat": "Research Memory is a local research archive. It does not provide investment advice, autonomous monitoring, broker actions, or cloud synchronization.",
+    "collection_id": "demo-research",
+    "export_preview": {
+      "excluded_fields": [
+        "private note body",
+        "holdings",
+        "account data",
+        "attachments",
+        "local paths"
+      ],
+      "item_count": 4,
+      "privacy_scope": "sanitized-metadata",
+      "source_count": 2
+    },
+    "filters": {
+      "memory_types": [
+        "event",
+        "note",
+        "report",
+        "snapshot",
+        "source"
+      ],
+      "surfaces": [
+        "inbox",
+        "notes",
+        "reports",
+        "sources",
+        "watchlists"
+      ],
+      "tags": [
+        "energy",
+        "geopolitics",
+        "macro",
+        "options",
+        "portfolio",
+        "rates",
+        "risk",
+        "volatility"
+      ]
+    },
+    "items": [
+      {
+        "collection_id": "demo-research",
+        "compatibility_key": "note:1y:cross-asset-v1",
+        "compatibility_model": "cross-asset-v1",
+        "compatibility_period": "1y",
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "linked_events_json": [],
+        "linked_reports_json": [],
+        "linked_symbols_json": [
+          "AAPL",
+          "TLT"
+        ],
+        "memory_id": "demo_macro_note",
+        "memory_type": "note",
+        "origin_href": "/?view=asset&symbol=AAPL&assetClass=equity&timeframe=1D&surface=overview",
+        "origin_view": "aapl-equity",
+        "privacy_scope": "fictional-demo",
+        "sanitized_summary": "Fictional note linking duration and equity sensitivity.",
+        "status": "active",
+        "tags_json": [
+          "macro",
+          "rates"
+        ],
+        "title": "Rate sensitivity review",
+        "updated_at": "2026-06-21T06:15:00+00:00"
+      },
+      {
+        "collection_id": "demo-research",
+        "compatibility_key": "snapshot:24h:map-event-v1",
+        "compatibility_model": "map-event-v1",
+        "compatibility_period": "24h",
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "linked_events_json": [
+          "demo_red_sea"
+        ],
+        "linked_reports_json": [],
+        "linked_symbols_json": [
+          "CL=F"
+        ],
+        "memory_id": "demo_map_snapshot",
+        "memory_type": "snapshot",
+        "origin_href": "/?view=war-room-map",
+        "origin_view": "war-map",
+        "privacy_scope": "fictional-demo",
+        "sanitized_summary": "Fictional snapshot retaining map source caveats.",
+        "status": "active",
+        "tags_json": [
+          "geopolitics",
+          "energy"
+        ],
+        "title": "Red Sea source check",
+        "updated_at": "2026-06-21T05:45:00+00:00"
+      },
+      {
+        "collection_id": "demo-research",
+        "compatibility_key": "snapshot:2026-07-17:black-scholes-v1",
+        "compatibility_model": "black-scholes-v1",
+        "compatibility_period": "2026-07-17",
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "linked_events_json": [],
+        "linked_reports_json": [],
+        "linked_symbols_json": [
+          "AAPL"
+        ],
+        "memory_id": "demo_options_snapshot",
+        "memory_type": "snapshot",
+        "origin_href": "/?view=options-quant&symbol=AAPL&surface=chain",
+        "origin_view": "aapl-options",
+        "privacy_scope": "fictional-demo",
+        "sanitized_summary": "Fictional options snapshot with expiry and model labels.",
+        "status": "active",
+        "tags_json": [
+          "options",
+          "volatility"
+        ],
+        "title": "AAPL volatility surface",
+        "updated_at": "2026-06-20T22:30:00+00:00"
+      },
+      {
+        "collection_id": "demo-research",
+        "compatibility_key": "report:1y:portfolio.v1",
+        "compatibility_model": "portfolio.v1",
+        "compatibility_period": "1y",
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "linked_events_json": [],
+        "linked_reports_json": [
+          "demo_report"
+        ],
+        "linked_symbols_json": [],
+        "memory_id": "demo_portfolio_report",
+        "memory_type": "report",
+        "origin_href": "/?view=portfolio-risk&portfolio=demo-core&surface=overview&period=1y&benchmark=SPY",
+        "origin_view": "demo-portfolio",
+        "privacy_scope": "fictional-demo",
+        "sanitized_summary": "Fictional holdings-free portfolio report metadata.",
+        "status": "reviewed",
+        "tags_json": [
+          "portfolio",
+          "risk"
+        ],
+        "title": "Demo portfolio risk review",
+        "updated_at": "2026-06-20T08:00:00+00:00"
+      }
+    ],
+    "mode": "demo",
+    "origin_registry": [
+      {
+        "href": "/?view=asset&symbol=AAPL&assetClass=equity&timeframe=1D&surface=overview",
+        "label": "AAPL Equity",
+        "origin_id": "aapl-equity"
+      },
+      {
+        "href": "/?view=asset&symbol=BTCUSDT&assetClass=crypto&timeframe=1D&surface=overview",
+        "label": "BTCUSDT Crypto",
+        "origin_id": "btcusdt-crypto"
+      },
+      {
+        "href": "/?view=war-room-map",
+        "label": "Global Risk Map",
+        "origin_id": "war-map"
+      },
+      {
+        "href": "/?view=market-map",
+        "label": "Market Map",
+        "origin_id": "market-map"
+      },
+      {
+        "href": "/?view=options-quant&symbol=AAPL&surface=chain",
+        "label": "AAPL Options",
+        "origin_id": "aapl-options"
+      },
+      {
+        "href": "/?view=portfolio-risk&portfolio=demo-core&surface=overview&period=1y&benchmark=SPY",
+        "label": "Demo Portfolio",
+        "origin_id": "demo-portfolio"
+      }
+    ],
+    "privacy": {
+      "external_ai_enabled": false,
+      "fixture_private_content_allowed": false,
+      "release_archive_private_content_allowed": false,
+      "scope": "fictional-demo",
+      "search_transport": "POST body only",
+      "url_private_content_allowed": false
+    },
+    "readiness": {
+      "cloud_sync": "unavailable",
+      "error": null,
+      "external_ai": "disabled",
+      "hosted_auth": "unavailable",
+      "local_persistence": false,
+      "store_status": "ready"
+    },
+    "reports": [
+      {
+        "collection_id": "demo-research",
+        "compatibility_key": "report:1y:portfolio.v1",
+        "compatibility_model": "portfolio.v1",
+        "compatibility_period": "1y",
+        "created_at": "2026-06-16T00:00:00+00:00",
+        "linked_events_json": [],
+        "linked_reports_json": [
+          "demo_report"
+        ],
+        "linked_symbols_json": [],
+        "memory_id": "demo_portfolio_report",
+        "memory_type": "report",
+        "origin_href": "/?view=portfolio-risk&portfolio=demo-core&surface=overview&period=1y&benchmark=SPY",
+        "origin_view": "demo-portfolio",
+        "privacy_scope": "fictional-demo",
+        "sanitized_summary": "Fictional holdings-free portfolio report metadata.",
+        "status": "reviewed",
+        "tags_json": [
+          "portfolio",
+          "risk"
+        ],
+        "title": "Demo portfolio risk review",
+        "updated_at": "2026-06-20T08:00:00+00:00"
+      }
+    ],
+    "research_memory_version": "research_memory.v1",
+    "source_history": [
+      {
+        "captured_at": "2026-06-21T06:15:00+00:00",
+        "caveat": "Fictional deterministic source-history row.",
+        "confidence": 0.42,
+        "data_gap": "No live provider call in fixture mode.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "delayed",
+        "memory_id": "demo_macro_note",
+        "provider": "Yahoo Finance",
+        "snapshot_id": "demo_source_yahoo",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/AAPL"
+      },
+      {
+        "captured_at": "2026-06-21T05:45:00+00:00",
+        "caveat": "Fictional source used only for deterministic UI development.",
+        "confidence": 0.4,
+        "data_gap": "No live vessel or sanctions feed.",
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "memory_id": "demo_map_snapshot",
+        "provider": "public-rss",
+        "snapshot_id": "demo_source_news",
+        "source_status": "fixture",
+        "source_url": "https://example.com/fictional-source"
+      }
+    ],
+    "summary": {
+      "item_count": 4,
+      "report_count": 1,
+      "source_count": 2,
+      "source_status": "fixture",
+      "store_status": "ready",
+      "watchlist_count": 3
+    },
+    "surface": "inbox",
+    "watchlists": [
+      {
+        "display_name": "Apple",
+        "item_id": "demo_watch_aapl",
+        "item_type": "equity",
+        "origin_href": "/?view=asset&symbol=AAPL&assetClass=equity&timeframe=1D&surface=overview",
+        "source": "fictional-demo",
+        "symbol": "AAPL",
+        "tags": [
+          "quality"
+        ],
+        "updated_at": "2026-06-21T06:00:00+00:00",
+        "watch_reason": "Fictional earnings-quality review"
+      },
+      {
+        "display_name": "Bitcoin",
+        "item_id": "demo_watch_btc",
+        "item_type": "crypto",
+        "origin_href": "/?view=asset&symbol=BTCUSDT&assetClass=crypto&timeframe=1D&surface=overview",
+        "source": "fictional-demo",
+        "symbol": "BTCUSDT",
+        "tags": [
+          "crypto"
+        ],
+        "updated_at": "2026-06-21T05:30:00+00:00",
+        "watch_reason": "Fictional derivatives monitoring"
+      },
+      {
+        "display_name": "Red Sea",
+        "item_id": "demo_watch_red_sea",
+        "item_type": "chokepoint",
+        "origin_href": "/?view=war-room-map",
+        "source": "fictional-demo",
+        "symbol": "",
+        "tags": [
+          "geopolitics"
+        ],
+        "updated_at": "2026-06-20T18:00:00+00:00",
+        "watch_reason": "Fictional shipping-risk context"
+      }
+    ],
+    "workspace": "research-memory"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "research_memory",
+  "source_status": [
+    {
+      "captured_at": "2026-06-21T06:15:00+00:00",
+      "caveat": "Fictional deterministic source-history row.",
+      "confidence": 0.42,
+      "data_gap": "No live provider call in fixture mode.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "delayed",
+      "memory_id": "demo_macro_note",
+      "provider": "Yahoo Finance",
+      "snapshot_id": "demo_source_yahoo",
+      "source_status": "fixture",
+      "source_url": "https://finance.yahoo.com/quote/AAPL"
+    },
+    {
+      "captured_at": "2026-06-21T05:45:00+00:00",
+      "caveat": "Fictional source used only for deterministic UI development.",
+      "confidence": 0.4,
+      "data_gap": "No live vessel or sanctions feed.",
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "freshness": "fixture",
+      "memory_id": "demo_map_snapshot",
+      "provider": "public-rss",
+      "snapshot_id": "demo_source_news",
+      "source_status": "fixture",
+      "source_url": "https://example.com/fictional-source"
+    }
+  ],
+  "summary": {
+    "item_count": 4,
+    "report_count": 1,
+    "source_count": 2,
+    "source_status": "fixture",
+    "store_status": "ready",
+    "watchlist_count": 3
+  },
+  "unavailable": []
+}

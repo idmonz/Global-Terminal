@@ -1,0 +1,31 @@
+ticker,company,sector,industry,market_cap
+MSFT,Microsoft,Information Technology,Software,3200000000000
+AAPL,Apple,Information Technology,Technology Hardware,2900000000000
+NVDA,NVIDIA,Information Technology,Semiconductors,2800000000000
+AMZN,Amazon,Consumer Discretionary,Broadline Retail,1900000000000
+META,Meta Platforms,Communication Services,Interactive Media,1300000000000
+GOOGL,Alphabet Class A,Communication Services,Interactive Media,2100000000000
+GOOG,Alphabet Class C,Communication Services,Interactive Media,2100000000000
+AVGO,Broadcom,Information Technology,Semiconductors,750000000000
+TSLA,Tesla,Consumer Discretionary,Automobiles,600000000000
+COST,Costco,Consumer Staples,Consumer Staples Retail,380000000000
+NFLX,Netflix,Communication Services,Entertainment,280000000000
+AMD,Advanced Micro Devices,Information Technology,Semiconductors,260000000000
+ADBE,Adobe,Information Technology,Application Software,240000000000
+PEP,PepsiCo,Consumer Staples,Beverages,240000000000
+CSCO,Cisco,Information Technology,Communications Equipment,190000000000
+TMUS,T-Mobile US,Communication Services,Wireless Telecom,210000000000
+QCOM,Qualcomm,Information Technology,Semiconductors,190000000000
+INTU,Intuit,Information Technology,Application Software,180000000000
+AMAT,Applied Materials,Information Technology,Semiconductor Equipment,170000000000
+TXN,Texas Instruments,Information Technology,Semiconductors,170000000000
+AMGN,Amgen,Health Care,Biotechnology,160000000000
+ISRG,Intuitive Surgical,Health Care,Health Care Equipment,150000000000
+BKNG,Booking Holdings,Consumer Discretionary,Travel Services,120000000000
+LRCX,Lam Research,Information Technology,Semiconductor Equipment,120000000000
+MU,Micron,Information Technology,Semiconductors,120000000000
+PANW,Palo Alto Networks,Information Technology,Security Software,110000000000
+ADP,Automatic Data Processing,Industrials,Human Resource Services,100000000000
+VRTX,Vertex,Health Care,Biotechnology,110000000000
+REGN,Regeneron,Health Care,Biotechnology,110000000000
+SBUX,Starbucks,Consumer Discretionary,Restaurants,90000000000

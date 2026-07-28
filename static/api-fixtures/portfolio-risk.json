@@ -1,0 +1,7034 @@
+{
+  "caveats": [
+    "Portfolio inputs are fictional demo rows or local-private research inputs; only symbols are sent to public market-data providers.",
+    "Missing prices and returns remain unavailable and are never normalized to zero.",
+    "Performance, risk, factor, attribution, and stress outputs are historical or assumption-bound research, not recommendations.",
+    "No broker connection, rebalance instruction, position sizing, trade approval, autonomous action, or execution pathway is provided."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": {
+    "allocation": {
+      "by_asset_class": [
+        {
+          "label": "crypto",
+          "market_value": 10985.764034,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.2748631179
+        },
+        {
+          "label": "stock",
+          "market_value": 9230.164255,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.230938123
+        },
+        {
+          "label": "ETF",
+          "market_value": 8665.154927,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.2168016255
+        },
+        {
+          "label": "cash",
+          "market_value": 4500.0,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.112589714
+        },
+        {
+          "label": "commodity",
+          "market_value": 3604.012581,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.0901721657
+        },
+        {
+          "label": "bond_proxy",
+          "market_value": 2983.031316,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.0746352539
+        }
+      ],
+      "by_currency": [
+        {
+          "label": "USD",
+          "market_value": 39968.127113,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 1.0
+        }
+      ],
+      "by_sector": [
+        {
+          "label": "Digital assets",
+          "market_value": 10985.764034,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.2748631179
+        },
+        {
+          "label": "Technology",
+          "market_value": 9230.164255,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.230938123
+        },
+        {
+          "label": "Broad equity",
+          "market_value": 8665.154927,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.2168016255
+        },
+        {
+          "label": "Cash",
+          "market_value": 4500.0,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.112589714
+        },
+        {
+          "label": "Precious metals",
+          "market_value": 3604.012581,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.0901721657
+        },
+        {
+          "label": "Rates",
+          "market_value": 2983.031316,
+          "not_financial_advice": true,
+          "units": "USD and decimal weight",
+          "weight": 0.0746352539
+        }
+      ],
+      "caveat": "Allocation uses known valuations only; missing holdings are excluded and coverage is shown.",
+      "known_value_total": 39968.127112937065,
+      "not_financial_advice": true,
+      "reconciled": true,
+      "weight_total": 0.9999999999999999
+    },
+    "attribution": {
+      "arithmetic_contribution_total": 0.22940545914462251,
+      "available": true,
+      "caveat": "Residual separates geometric compounding from additive arithmetic contribution.",
+      "data_gap": null,
+      "method": "daily arithmetic contribution with geometric residual",
+      "not_financial_advice": true,
+      "portfolio_total_return": 0.2577063860283908,
+      "reconciled": true,
+      "residual": 0.028300926883768285,
+      "return_contribution": [
+        {
+          "arithmetic_asset_return": 0.3869257963997319,
+          "not_financial_advice": true,
+          "return_contribution": 0.10635163078620115,
+          "symbol": "BTC-USD",
+          "units": "decimal arithmetic contribution",
+          "weight": 0.27486311787888545
+        },
+        {
+          "arithmetic_asset_return": 0.189031330575403,
+          "not_financial_advice": true,
+          "return_contribution": 0.04098229974384433,
+          "symbol": "SPY",
+          "units": "decimal arithmetic contribution",
+          "weight": 0.21680162552470023
+        },
+        {
+          "arithmetic_asset_return": 0.33734267068847534,
+          "not_financial_advice": true,
+          "return_contribution": 0.03856047352118968,
+          "symbol": "AAPL",
+          "units": "decimal arithmetic contribution",
+          "weight": 0.11430654011985038
+        },
+        {
+          "arithmetic_asset_return": 0.2526174009738845,
+          "not_financial_advice": true,
+          "return_contribution": 0.02946316733485322,
+          "symbol": "MSFT",
+          "units": "decimal arithmetic contribution",
+          "weight": 0.11663158286510558
+        },
+        {
+          "arithmetic_asset_return": 0.1628447562074009,
+          "not_financial_advice": true,
+          "return_contribution": 0.014684064341273615,
+          "symbol": "GLD",
+          "units": "decimal arithmetic contribution",
+          "weight": 0.09017216570714642
+        },
+        {
+          "arithmetic_asset_return": -0.008523808110745601,
+          "not_financial_advice": true,
+          "return_contribution": -0.0006361765827394745,
+          "symbol": "TLT",
+          "units": "decimal arithmetic contribution",
+          "weight": 0.07463525392335779
+        }
+      ],
+      "risk_contribution": [
+        {
+          "not_financial_advice": true,
+          "risk_contribution": 0.94049116787579,
+          "symbol": "BTC-USD",
+          "units": "share of portfolio volatility",
+          "weight": 0.30973623160480956
+        },
+        {
+          "not_financial_advice": true,
+          "risk_contribution": 0.060168489042940636,
+          "symbol": "SPY",
+          "units": "share of portfolio volatility",
+          "weight": 0.24430821790141743
+        },
+        {
+          "not_financial_advice": true,
+          "risk_contribution": 0.021717326400090733,
+          "symbol": "GLD",
+          "units": "share of portfolio volatility",
+          "weight": 0.1016127118738526
+        },
+        {
+          "not_financial_advice": true,
+          "risk_contribution": 0.010441260188350744,
+          "symbol": "TLT",
+          "units": "share of portfolio volatility",
+          "weight": 0.0841045625673038
+        },
+        {
+          "not_financial_advice": true,
+          "risk_contribution": 0.0031474248437888034,
+          "symbol": "MSFT",
+          "units": "share of portfolio volatility",
+          "weight": 0.13142915368754515
+        },
+        {
+          "not_financial_advice": true,
+          "risk_contribution": -0.035965668350960864,
+          "symbol": "AAPL",
+          "units": "share of portfolio volatility",
+          "weight": 0.1288091223650715
+        }
+      ],
+      "sample_count": 299,
+      "unexplained_share_pct": 10.981849274255257
+    },
+    "correlation": {
+      "assets": [
+        "AAPL",
+        "MSFT",
+        "SPY",
+        "TLT",
+        "GLD",
+        "BTC-USD"
+      ],
+      "available": true,
+      "caveat": "Correlation is historical, unstable, and not causation.",
+      "data_gap": null,
+      "matrix": [
+        [
+          0.9999999999999999,
+          -0.12581415330436505,
+          0.1220340423205975,
+          0.401997370640322,
+          0.10912584979005174,
+          -0.4059470691410973
+        ],
+        [
+          -0.12581415330436502,
+          1.0,
+          -0.014788182447601177,
+          -0.021481618273387258,
+          0.7695183427504211,
+          -0.1920072215301439
+        ],
+        [
+          0.1220340423205975,
+          -0.014788182447601175,
+          1.0,
+          -0.06970460162080504,
+          0.43637679460946394,
+          0.04186241474479763
+        ],
+        [
+          0.401997370640322,
+          -0.02148161827338726,
+          -0.06970460162080504,
+          1.0,
+          -0.16167213167635636,
+          0.07273748308841749
+        ],
+        [
+          0.10912584979005176,
+          0.7695183427504211,
+          0.43637679460946394,
+          -0.16167213167635638,
+          1.0,
+          -0.09997299961754641
+        ],
+        [
+          -0.4059470691410973,
+          -0.1920072215301439,
+          0.04186241474479762,
+          0.07273748308841749,
+          -0.09997299961754642,
+          1.0
+        ]
+      ],
+      "method": "pearson",
+      "minimum_observed_samples": 299,
+      "minimum_required_samples": 20,
+      "missing_data_policy": "pairwise complete observations",
+      "not_financial_advice": true,
+      "pairwise_sample_counts": [
+        [
+          299,
+          299,
+          299,
+          299,
+          299,
+          299
+        ],
+        [
+          299,
+          299,
+          299,
+          299,
+          299,
+          299
+        ],
+        [
+          299,
+          299,
+          299,
+          299,
+          299,
+          299
+        ],
+        [
+          299,
+          299,
+          299,
+          299,
+          299,
+          299
+        ],
+        [
+          299,
+          299,
+          299,
+          299,
+          299,
+          299
+        ],
+        [
+          299,
+          299,
+          299,
+          299,
+          299,
+          299
+        ]
+      ],
+      "units": "correlation coefficient"
+    },
+    "data_gaps": [
+      "Deterministic network-free research fixture."
+    ],
+    "disclosure": "Portfolio analytics are historical or assumption-bound research calculations only. They are not investment advice, trading recommendations, position sizing, rebalancing instructions, trade approvals, broker actions, autonomous actions, or execution instructions.",
+    "factors": {
+      "alpha_annualized": 0.051596947648303026,
+      "annualization": 252,
+      "available": true,
+      "caveat": "Proxy OLS exposures are descriptive, may be collinear, and do not establish causality.",
+      "data_gap": null,
+      "exposures": [
+        {
+          "annualized_proxy_contribution": 0.026928497755159014,
+          "beta": 0.16902423639232328,
+          "caveat": "Public asset proxy, not an institutional factor series.",
+          "factor": "market",
+          "not_financial_advice": true,
+          "provider": "phase5k.fixture",
+          "proxy_symbol": "SPY",
+          "source_url": "https://finance.yahoo.com/quote/SPY"
+        },
+        {
+          "annualized_proxy_contribution": -0.001696098704619318,
+          "beta": 0.23609571543435626,
+          "caveat": "Public asset proxy, not an institutional factor series.",
+          "factor": "duration",
+          "not_financial_advice": true,
+          "provider": "phase5k.fixture",
+          "proxy_symbol": "TLT",
+          "source_url": "https://finance.yahoo.com/quote/TLT"
+        },
+        {
+          "annualized_proxy_contribution": 0.0366122001491766,
+          "beta": 0.2667612213112258,
+          "caveat": "Public asset proxy, not an institutional factor series.",
+          "factor": "gold",
+          "not_financial_advice": true,
+          "provider": "phase5k.fixture",
+          "proxy_symbol": "GLD",
+          "source_url": "https://finance.yahoo.com/quote/GLD"
+        },
+        {
+          "annualized_proxy_contribution": 0.07990352239815948,
+          "beta": 0.2450241476854439,
+          "caveat": "Public asset proxy, not an institutional factor series.",
+          "factor": "crypto",
+          "not_financial_advice": true,
+          "provider": "phase5k.fixture",
+          "proxy_symbol": "BTC-USD",
+          "source_url": "https://finance.yahoo.com/quote/BTC-USD"
+        }
+      ],
+      "factor_source": "public asset-return proxies",
+      "frequency": "daily",
+      "model": "public_proxy_ols",
+      "not_financial_advice": true,
+      "r_squared": 0.9825776290741551,
+      "residual_annualized": -5.437761575678959e-13,
+      "residual_series": [
+        {
+          "date": "2025-04-22",
+          "residual_return": -7.964510672906367e-06
+        },
+        {
+          "date": "2025-04-23",
+          "residual_return": 1.8033471331424175e-06
+        },
+        {
+          "date": "2025-04-24",
+          "residual_return": 1.1182532280364955e-05
+        },
+        {
+          "date": "2025-04-25",
+          "residual_return": 2.011757280931891e-05
+        },
+        {
+          "date": "2025-04-28",
+          "residual_return": 2.8557601617780568e-05
+        },
+        {
+          "date": "2025-04-29",
+          "residual_return": 3.6456643313182704e-05
+        },
+        {
+          "date": "2025-04-30",
+          "residual_return": 4.377385907867559e-05
+        },
+        {
+          "date": "2025-05-01",
+          "residual_return": 5.047374831034955e-05
+        },
+        {
+          "date": "2025-05-02",
+          "residual_return": 5.6526306129217564e-05
+        },
+        {
+          "date": "2025-05-05",
+          "residual_return": 6.190713623033901e-05
+        },
+        {
+          "date": "2025-05-06",
+          "residual_return": 6.659751888560272e-05
+        },
+        {
+          "date": "2025-05-07",
+          "residual_return": 7.058443426615087e-05
+        },
+        {
+          "date": "2025-05-08",
+          "residual_return": 7.386054160025534e-05
+        },
+        {
+          "date": "2025-05-09",
+          "residual_return": 7.642411501753463e-05
+        },
+        {
+          "date": "2025-05-12",
+          "residual_return": 7.827893726079565e-05
+        },
+        {
+          "date": "2025-05-13",
+          "residual_return": 7.943415275790048e-05
+        },
+        {
+          "date": "2025-05-14",
+          "residual_return": 7.990408184675745e-05
+        },
+        {
+          "date": "2025-05-15",
+          "residual_return": 7.970799822763427e-05
+        },
+        {
+          "date": "2025-05-16",
+          "residual_return": 7.886987197332739e-05
+        },
+        {
+          "date": "2025-05-19",
+          "residual_return": 7.741808067358706e-05
+        },
+        {
+          "date": "2025-05-20",
+          "residual_return": 7.538509149917138e-05
+        },
+        {
+          "date": "2025-05-21",
+          "residual_return": 7.280711716503411e-05
+        },
+        {
+          "date": "2025-05-22",
+          "residual_return": 6.97237489353245e-05
+        },
+        {
+          "date": "2025-05-23",
+          "residual_return": 6.617756995008284e-05
+        },
+        {
+          "date": "2025-05-26",
+          "residual_return": 6.221375226247994e-05
+        },
+        {
+          "date": "2025-05-27",
+          "residual_return": 5.787964105549378e-05
+        },
+        {
+          "date": "2025-05-28",
+          "residual_return": 5.322432955975887e-05
+        },
+        {
+          "date": "2025-05-29",
+          "residual_return": 4.8298228214367005e-05
+        },
+        {
+          "date": "2025-05-30",
+          "residual_return": 4.3152631609003674e-05
+        },
+        {
+          "date": "2025-06-02",
+          "residual_return": 3.783928670771607e-05
+        },
+        {
+          "date": "2025-06-03",
+          "residual_return": 3.240996579479739e-05
+        },
+        {
+          "date": "2025-06-04",
+          "residual_return": 2.6916047490823758e-05
+        },
+        {
+          "date": "2025-06-05",
+          "residual_return": 2.1408109074116542e-05
+        },
+        {
+          "date": "2025-06-06",
+          "residual_return": 1.5935533196656114e-05
+        },
+        {
+          "date": "2025-06-09",
+          "residual_return": 1.0546131928554944e-05
+        },
+        {
+          "date": "2025-06-10",
+          "residual_return": 5.2857908696585004e-06
+        },
+        {
+          "date": "2025-06-11",
+          "residual_return": 1.9813586852338244e-07
+        },
+        {
+          "date": "2025-06-12",
+          "residual_return": -4.675775338394174e-06
+        },
+        {
+          "date": "2025-06-13",
+          "residual_return": -9.297734491237432e-06
+        },
+        {
+          "date": "2025-06-16",
+          "residual_return": -1.363263535615432e-05
+        },
+        {
+          "date": "2025-06-17",
+          "residual_return": -1.7648695900486803e-05
+        },
+        {
+          "date": "2025-06-18",
+          "residual_return": -2.1317648812903224e-05
+        },
+        {
+          "date": "2025-06-19",
+          "residual_return": -2.461489936690089e-05
+        },
+        {
+          "date": "2025-06-20",
+          "residual_return": -2.7519649909877697e-05
+        },
+        {
+          "date": "2025-06-23",
+          "residual_return": -3.0014990551307835e-05
+        },
+        {
+          "date": "2025-06-24",
+          "residual_return": -3.2087955904240995e-05
+        },
+        {
+          "date": "2025-06-25",
+          "residual_return": -3.372954802518781e-05
+        },
+        {
+          "date": "2025-06-26",
+          "residual_return": -3.493472597059194e-05
+        },
+        {
+          "date": "2025-06-27",
+          "residual_return": -3.5702362662335795e-05
+        },
+        {
+          "date": "2025-06-30",
+          "residual_return": -3.603517001581237e-05
+        },
+        {
+          "date": "2025-07-01",
+          "residual_return": -3.593959353497651e-05
+        },
+        {
+          "date": "2025-07-02",
+          "residual_return": -3.542567781263106e-05
+        },
+        {
+          "date": "2025-07-03",
+          "residual_return": -3.450690459864047e-05
+        },
+        {
+          "date": "2025-07-04",
+          "residual_return": -3.320000529987734e-05
+        },
+        {
+          "date": "2025-07-07",
+          "residual_return": -3.152474996073436e-05
+        },
+        {
+          "date": "2025-07-08",
+          "residual_return": -2.950371494126803e-05
+        },
+        {
+          "date": "2025-07-09",
+          "residual_return": -2.7162031648475136e-05
+        },
+        {
+          "date": "2025-07-10",
+          "residual_return": -2.4527118804693396e-05
+        },
+        {
+          "date": "2025-07-11",
+          "residual_return": -2.1628400828210023e-05
+        },
+        {
+          "date": "2025-07-14",
+          "residual_return": -1.849701498418915e-05
+        },
+        {
+          "date": "2025-07-15",
+          "residual_return": -1.516551001036438e-05
+        },
+        {
+          "date": "2025-07-16",
+          "residual_return": -1.1667538951132348e-05
+        },
+        {
+          "date": "2025-07-17",
+          "residual_return": -8.037548938382073e-06
+        },
+        {
+          "date": "2025-07-18",
+          "residual_return": -4.3104706359792895e-06
+        },
+        {
+          "date": "2025-07-21",
+          "residual_return": -5.214100228610047e-07
+        },
+        {
+          "date": "2025-07-22",
+          "residual_return": 3.294654876837477e-06
+        },
+        {
+          "date": "2025-07-23",
+          "residual_return": 7.103169794456113e-06
+        },
+        {
+          "date": "2025-07-24",
+          "residual_return": 1.0870290135278388e-05
+        },
+        {
+          "date": "2025-07-25",
+          "residual_return": 1.4563154726941752e-05
+        },
+        {
+          "date": "2025-07-28",
+          "residual_return": 1.81501452589329e-05
+        },
+        {
+          "date": "2025-07-29",
+          "residual_return": 2.1601129431882528e-05
+        },
+        {
+          "date": "2025-07-30",
+          "residual_return": 2.4887686016645313e-05
+        },
+        {
+          "date": "2025-07-31",
+          "residual_return": 2.798331021018098e-05
+        },
+        {
+          "date": "2025-08-01",
+          "residual_return": 3.0863597878435785e-05
+        },
+        {
+          "date": "2025-08-04",
+          "residual_return": 3.350640748810119e-05
+        },
+        {
+          "date": "2025-08-05",
+          "residual_return": 3.589199874579887e-05
+        },
+        {
+          "date": "2025-08-06",
+          "residual_return": 3.800314718949767e-05
+        },
+        {
+          "date": "2025-08-07",
+          "residual_return": 3.982523420332845e-05
+        },
+        {
+          "date": "2025-08-08",
+          "residual_return": 4.1346312155912494e-05
+        },
+        {
+          "date": "2025-08-11",
+          "residual_return": 4.255714459185556e-05
+        },
+        {
+          "date": "2025-08-12",
+          "residual_return": 4.3451221629582865e-05
+        },
+        {
+          "date": "2025-08-13",
+          "residual_return": 4.40247509419224e-05
+        },
+        {
+          "date": "2025-08-14",
+          "residual_return": 4.427662490748285e-05
+        },
+        {
+          "date": "2025-08-15",
+          "residual_return": 4.420836472987294e-05
+        },
+        {
+          "date": "2025-08-18",
+          "residual_return": 4.382404251411639e-05
+        },
+        {
+          "date": "2025-08-19",
+          "residual_return": 4.313018247535335e-05
+        },
+        {
+          "date": "2025-08-20",
+          "residual_return": 4.213564262599062e-05
+        },
+        {
+          "date": "2025-08-21",
+          "residual_return": 4.0851478440158536e-05
+        },
+        {
+          "date": "2025-08-22",
+          "residual_return": 3.929079013704443e-05
+        },
+        {
+          "date": "2025-08-25",
+          "residual_return": 3.7468555346069615e-05
+        },
+        {
+          "date": "2025-08-26",
+          "residual_return": 3.540144901968174e-05
+        },
+        {
+          "date": "2025-08-27",
+          "residual_return": 3.310765254936133e-05
+        },
+        {
+          "date": "2025-08-28",
+          "residual_return": 3.060665410219024e-05
+        },
+        {
+          "date": "2025-08-29",
+          "residual_return": 2.7919042245831292e-05
+        },
+        {
+          "date": "2025-09-01",
+          "residual_return": 2.5066294953539478e-05
+        },
+        {
+          "date": "2025-09-02",
+          "residual_return": 2.2070566090708337e-05
+        },
+        {
+          "date": "2025-09-03",
+          "residual_return": 1.8954471468114774e-05
+        },
+        {
+          "date": "2025-09-04",
+          "residual_return": 1.5740876517444057e-05
+        },
+        {
+          "date": "2025-09-05",
+          "residual_return": 1.2452687591003566e-05
+        },
+        {
+          "date": "2025-09-08",
+          "residual_return": 9.112648819506426e-06
+        },
+        {
+          "date": "2025-09-09",
+          "residual_return": 5.743146372763522e-06
+        },
+        {
+          "date": "2025-09-10",
+          "residual_return": 2.3660218663960474e-06
+        },
+        {
+          "date": "2025-09-11",
+          "residual_return": -9.976034625342606e-07
+        },
+        {
+          "date": "2025-09-12",
+          "residual_return": -4.327492321866855e-06
+        },
+        {
+          "date": "2025-09-15",
+          "residual_return": -7.6044413264473145e-06
+        },
+        {
+          "date": "2025-09-16",
+          "residual_return": -1.0810416170474858e-05
+        },
+        {
+          "date": "2025-09-17",
+          "residual_return": -1.392867098705061e-05
+        },
+        {
+          "date": "2025-09-18",
+          "residual_return": -1.6943851050644132e-05
+        },
+        {
+          "date": "2025-09-19",
+          "residual_return": -1.9842078153535297e-05
+        },
+        {
+          "date": "2025-09-22",
+          "residual_return": -2.2611018176715034e-05
+        },
+        {
+          "date": "2025-09-23",
+          "residual_return": -2.5239930561623343e-05
+        },
+        {
+          "date": "2025-09-24",
+          "residual_return": -2.7719699575447536e-05
+        },
+        {
+          "date": "2025-09-25",
+          "residual_return": -3.0042847453457487e-05
+        },
+        {
+          "date": "2025-09-26",
+          "residual_return": -3.22035296840062e-05
+        },
+        {
+          "date": "2025-09-29",
+          "residual_return": -3.4197512880683966e-05
+        },
+        {
+          "date": "2025-09-30",
+          "residual_return": -3.60221358631465e-05
+        },
+        {
+          "date": "2025-10-01",
+          "residual_return": -3.767625472988784e-05
+        },
+        {
+          "date": "2025-10-02",
+          "residual_return": -3.9160172864774034e-05
+        },
+        {
+          "date": "2025-10-03",
+          "residual_return": -4.047555696301368e-05
+        },
+        {
+          "date": "2025-10-06",
+          "residual_return": -4.1625340296106176e-05
+        },
+        {
+          "date": "2025-10-07",
+          "residual_return": -4.2613614553491694e-05
+        },
+        {
+          "date": "2025-10-08",
+          "residual_return": -4.344551170515419e-05
+        },
+        {
+          "date": "2025-10-09",
+          "residual_return": -4.412707741666274e-05
+        },
+        {
+          "date": "2025-10-10",
+          "residual_return": -4.4665137622440184e-05
+        },
+        {
+          "date": "2025-10-13",
+          "residual_return": -4.506715991924905e-05
+        },
+        {
+          "date": "2025-10-14",
+          "residual_return": -4.5341111479098696e-05
+        },
+        {
+          "date": "2025-10-15",
+          "residual_return": -4.54953152032474e-05
+        },
+        {
+          "date": "2025-10-16",
+          "residual_return": -4.553830584064439e-05
+        },
+        {
+          "date": "2025-10-17",
+          "residual_return": -4.5478687780215214e-05
+        },
+        {
+          "date": "2025-10-20",
+          "residual_return": -4.53249961937666e-05
+        },
+        {
+          "date": "2025-10-21",
+          "residual_return": -4.508556315625887e-05
+        },
+        {
+          "date": "2025-10-22",
+          "residual_return": -4.4768390304604977e-05
+        },
+        {
+          "date": "2025-10-23",
+          "residual_return": -4.438102951251073e-05
+        },
+        {
+          "date": "2025-10-24",
+          "residual_return": -4.3930472963772064e-05
+        },
+        {
+          "date": "2025-10-27",
+          "residual_return": -4.3423053891458036e-05
+        },
+        {
+          "date": "2025-10-28",
+          "residual_return": -4.2864359129483626e-05
+        },
+        {
+          "date": "2025-10-29",
+          "residual_return": -4.2259154483773216e-05
+        },
+        {
+          "date": "2025-10-30",
+          "residual_return": -4.161132378506104e-05
+        },
+        {
+          "date": "2025-10-31",
+          "residual_return": -4.092382232946234e-05
+        },
+        {
+          "date": "2025-11-03",
+          "residual_return": -4.0198645249645134e-05
+        },
+        {
+          "date": "2025-11-04",
+          "residual_return": -3.9436811190867414e-05
+        },
+        {
+          "date": "2025-11-05",
+          "residual_return": -3.863836149353142e-05
+        },
+        {
+          "date": "2025-11-06",
+          "residual_return": -3.780237490840681e-05
+        },
+        {
+          "date": "2025-11-07",
+          "residual_return": -3.692699769556468e-05
+        },
+        {
+          "date": "2025-11-10",
+          "residual_return": -3.600948878347294e-05
+        },
+        {
+          "date": "2025-11-11",
+          "residual_return": -3.504627949113288e-05
+        },
+        {
+          "date": "2025-11-12",
+          "residual_return": -3.403304715396036e-05
+        },
+        {
+          "date": "2025-11-13",
+          "residual_return": -3.296480182777336e-05
+        },
+        {
+          "date": "2025-11-14",
+          "residual_return": -3.183598509619496e-05
+        },
+        {
+          "date": "2025-11-17",
+          "residual_return": -3.0640579863118206e-05
+        },
+        {
+          "date": "2025-11-18",
+          "residual_return": -2.9372229878770265e-05
+        },
+        {
+          "date": "2025-11-19",
+          "residual_return": -2.8024367628060563e-05
+        },
+        {
+          "date": "2025-11-20",
+          "residual_return": -2.6590349104856298e-05
+        },
+        {
+          "date": "2025-11-21",
+          "residual_return": -2.506359390287401e-05
+        },
+        {
+          "date": "2025-11-24",
+          "residual_return": -2.343772897826248e-05
+        },
+        {
+          "date": "2025-11-25",
+          "residual_return": -2.1706734380596074e-05
+        },
+        {
+          "date": "2025-11-26",
+          "residual_return": -1.986508920474644e-05
+        },
+        {
+          "date": "2025-11-27",
+          "residual_return": -1.790791599492938e-05
+        },
+        {
+          "date": "2025-11-28",
+          "residual_return": -1.5831121821758415e-05
+        },
+        {
+          "date": "2025-12-01",
+          "residual_return": -1.3631534269852703e-05
+        },
+        {
+          "date": "2025-12-02",
+          "residual_return": -1.1307030599179446e-05
+        },
+        {
+          "date": "2025-12-03",
+          "residual_return": -8.856658396477648e-06
+        },
+        {
+          "date": "2025-12-04",
+          "residual_return": -6.280746094726149e-06
+        },
+        {
+          "date": "2025-12-05",
+          "residual_return": -3.5810018271097577e-06
+        },
+        {
+          "date": "2025-12-08",
+          "residual_return": -7.605991775660559e-07
+        },
+        {
+          "date": "2025-12-09",
+          "residual_return": 2.1757514901634854e-06
+        },
+        {
+          "date": "2025-12-10",
+          "residual_return": 5.221747314594562e-06
+        },
+        {
+          "date": "2025-12-11",
+          "residual_return": 8.36945387312039e-06
+        },
+        {
+          "date": "2025-12-12",
+          "residual_return": 1.1609283660452186e-05
+        },
+        {
+          "date": "2025-12-15",
+          "residual_return": 1.492999282879035e-05
+        },
+        {
+          "date": "2025-12-16",
+          "residual_return": 1.8318696729652972e-05
+        },
+        {
+          "date": "2025-12-17",
+          "residual_return": 2.1760904614894503e-05
+        },
+        {
+          "date": "2025-12-18",
+          "residual_return": 2.5240573662351396e-05
+        },
+        {
+          "date": "2025-12-19",
+          "residual_return": 2.874018229215953e-05
+        },
+        {
+          "date": "2025-12-22",
+          "residual_return": 3.224082254758463e-05
+        },
+        {
+          "date": "2025-12-23",
+          "residual_return": 3.572231110945609e-05
+        },
+        {
+          "date": "2025-12-24",
+          "residual_return": 3.916331831862357e-05
+        },
+        {
+          "date": "2025-12-25",
+          "residual_return": 4.2541514384357426e-05
+        },
+        {
+          "date": "2025-12-26",
+          "residual_return": 4.583373176912303e-05
+        },
+        {
+          "date": "2025-12-29",
+          "residual_return": 4.901614255419377e-05
+        },
+        {
+          "date": "2025-12-30",
+          "residual_return": 5.2064449419161196e-05
+        },
+        {
+          "date": "2025-12-31",
+          "residual_return": 5.495408870298524e-05
+        },
+        {
+          "date": "2026-01-01",
+          "residual_return": 5.7660443864130984e-05
+        },
+        {
+          "date": "2026-01-02",
+          "residual_return": 6.015906751685398e-05
+        },
+        {
+          "date": "2026-01-05",
+          "residual_return": 6.242591010258928e-05
+        },
+        {
+          "date": "2026-01-06",
+          "residual_return": 6.443755314166472e-05
+        },
+        {
+          "date": "2026-01-07",
+          "residual_return": 6.617144493245781e-05
+        },
+        {
+          "date": "2026-01-08",
+          "residual_return": 6.760613648390979e-05
+        },
+        {
+          "date": "2026-01-09",
+          "residual_return": 6.872151542705433e-05
+        },
+        {
+          "date": "2026-01-12",
+          "residual_return": 6.949903561473847e-05
+        },
+        {
+          "date": "2026-01-13",
+          "residual_return": 6.992194011374339e-05
+        },
+        {
+          "date": "2026-01-14",
+          "residual_return": 6.997547530509531e-05
+        },
+        {
+          "date": "2026-01-15",
+          "residual_return": 6.964709384108339e-05
+        },
+        {
+          "date": "2026-01-16",
+          "residual_return": 6.892664426470362e-05
+        },
+        {
+          "date": "2026-01-19",
+          "residual_return": 6.780654517429092e-05
+        },
+        {
+          "date": "2026-01-20",
+          "residual_return": 6.628194191076711e-05
+        },
+        {
+          "date": "2026-01-21",
+          "residual_return": 6.435084386613747e-05
+        },
+        {
+          "date": "2026-01-22",
+          "residual_return": 6.201424064785884e-05
+        },
+        {
+          "date": "2026-01-23",
+          "residual_return": 5.92761954889302e-05
+        },
+        {
+          "date": "2026-01-26",
+          "residual_return": 5.614391446699229e-05
+        },
+        {
+          "date": "2026-01-27",
+          "residual_return": 5.262779028562727e-05
+        },
+        {
+          "date": "2026-01-28",
+          "residual_return": 4.874141957408808e-05
+        },
+        {
+          "date": "2026-01-29",
+          "residual_return": 4.450159287859904e-05
+        },
+        {
+          "date": "2026-01-30",
+          "residual_return": 3.992825674578463e-05
+        },
+        {
+          "date": "2026-02-02",
+          "residual_return": 3.504444753687748e-05
+        },
+        {
+          "date": "2026-02-03",
+          "residual_return": 2.987619685590492e-05
+        },
+        {
+          "date": "2026-02-04",
+          "residual_return": 2.4452408723274737e-05
+        },
+        {
+          "date": "2026-02-05",
+          "residual_return": 1.8804708881444516e-05
+        },
+        {
+          "date": "2026-02-06",
+          "residual_return": 1.2967266872192327e-05
+        },
+        {
+          "date": "2026-02-09",
+          "residual_return": 6.976591777708985e-06
+        },
+        {
+          "date": "2026-02-10",
+          "residual_return": 8.713027670264554e-07
+        },
+        {
+          "date": "2026-02-11",
+          "residual_return": -5.30812416632033e-06
+        },
+        {
+          "date": "2026-02-12",
+          "residual_return": -1.151963165477209e-05
+        },
+        {
+          "date": "2026-02-13",
+          "residual_return": -1.7719876750047587e-05
+        },
+        {
+          "date": "2026-02-16",
+          "residual_return": -2.3864544997506936e-05
+        },
+        {
+          "date": "2026-02-17",
+          "residual_return": -2.9908680534566998e-05
+        },
+        {
+          "date": "2026-02-18",
+          "residual_return": -3.580702977092846e-05
+        },
+        {
+          "date": "2026-02-19",
+          "residual_return": -4.1514396042937034e-05
+        },
+        {
+          "date": "2026-02-20",
+          "residual_return": -4.6986002491896284e-05
+        },
+        {
+          "date": "2026-02-23",
+          "residual_return": -5.2177860288260265e-05
+        },
+        {
+          "date": "2026-02-24",
+          "residual_return": -5.70471392251896e-05
+        },
+        {
+          "date": "2026-02-25",
+          "residual_return": -6.15525376255479e-05
+        },
+        {
+          "date": "2026-02-26",
+          "residual_return": -6.565464845280367e-05
+        },
+        {
+          "date": "2026-02-27",
+          "residual_return": -6.931631849012103e-05
+        },
+        {
+          "date": "2026-03-02",
+          "residual_return": -7.250299745028427e-05
+        },
+        {
+          "date": "2026-03-03",
+          "residual_return": -7.518307390183359e-05
+        },
+        {
+          "date": "2026-03-04",
+          "residual_return": -7.732819495206902e-05
+        },
+        {
+          "date": "2026-03-05",
+          "residual_return": -7.891356670387714e-05
+        },
+        {
+          "date": "2026-03-06",
+          "residual_return": -7.991823260698413e-05
+        },
+        {
+          "date": "2026-03-09",
+          "residual_return": -8.032532695794874e-05
+        },
+        {
+          "date": "2026-03-10",
+          "residual_return": -8.012230095509848e-05
+        },
+        {
+          "date": "2026-03-11",
+          "residual_return": -7.930111889770743e-05
+        },
+        {
+          "date": "2026-03-12",
+          "residual_return": -7.785842231843786e-05
+        },
+        {
+          "date": "2026-03-13",
+          "residual_return": -7.579566006445785e-05
+        },
+        {
+          "date": "2026-03-16",
+          "residual_return": -7.31191825855363e-05
+        },
+        {
+          "date": "2026-03-17",
+          "residual_return": -6.984029895058423e-05
+        },
+        {
+          "date": "2026-03-18",
+          "residual_return": -6.597529539316684e-05
+        },
+        {
+          "date": "2026-03-19",
+          "residual_return": -6.154541447805318e-05
+        },
+        {
+          "date": "2026-03-20",
+          "residual_return": -5.657679428919843e-05
+        },
+        {
+          "date": "2026-03-23",
+          "residual_return": -5.110036734914825e-05
+        },
+        {
+          "date": "2026-03-24",
+          "residual_return": -4.5151719307652506e-05
+        },
+        {
+          "date": "2026-03-25",
+          "residual_return": -3.8770907759698176e-05
+        },
+        {
+          "date": "2026-03-26",
+          "residual_return": -3.200224188207979e-05
+        },
+        {
+          "date": "2026-03-27",
+          "residual_return": -2.4894023909361005e-05
+        },
+        {
+          "date": "2026-03-30",
+          "residual_return": -1.7498253788284998e-05
+        },
+        {
+          "date": "2026-03-31",
+          "residual_return": -9.870298675739454e-06
+        },
+        {
+          "date": "2026-04-01",
+          "residual_return": -2.0685292474625677e-06
+        },
+        {
+          "date": "2026-04-02",
+          "residual_return": 5.846074907847447e-06
+        },
+        {
+          "date": "2026-04-03",
+          "residual_return": 1.3810348259337877e-05
+        },
+        {
+          "date": "2026-04-06",
+          "residual_return": 2.175938784287944e-05
+        },
+        {
+          "date": "2026-04-07",
+          "residual_return": 2.962702423748941e-05
+        },
+        {
+          "date": "2026-04-08",
+          "residual_return": 3.734631170746372e-05
+        },
+        {
+          "date": "2026-04-09",
+          "residual_return": 4.4850034003312514e-05
+        },
+        {
+          "date": "2026-04-10",
+          "residual_return": 5.207122213452849e-05
+        },
+        {
+          "date": "2026-04-13",
+          "residual_return": 5.8943680273665735e-05
+        },
+        {
+          "date": "2026-04-14",
+          "residual_return": 6.540251582463192e-05
+        },
+        {
+          "date": "2026-04-15",
+          "residual_return": 7.138466959463578e-05
+        },
+        {
+          "date": "2026-04-16",
+          "residual_return": 7.682944194320072e-05
+        },
+        {
+          "date": "2026-04-17",
+          "residual_return": 8.167901074764429e-05
+        },
+        {
+          "date": "2026-04-20",
+          "residual_return": 8.587893702797795e-05
+        },
+        {
+          "date": "2026-04-21",
+          "residual_return": 8.93786541003238e-05
+        },
+        {
+          "date": "2026-04-22",
+          "residual_return": 9.213193619979528e-05
+        },
+        {
+          "date": "2026-04-23",
+          "residual_return": 9.409734260477356e-05
+        },
+        {
+          "date": "2026-04-24",
+          "residual_return": 9.523863343198025e-05
+        },
+        {
+          "date": "2026-04-27",
+          "residual_return": 9.552515342846476e-05
+        },
+        {
+          "date": "2026-04-28",
+          "residual_return": 9.493218028132919e-05
+        },
+        {
+          "date": "2026-04-29",
+          "residual_return": 9.344123418988264e-05
+        },
+        {
+          "date": "2026-04-30",
+          "residual_return": 9.104034569476635e-05
+        },
+        {
+          "date": "2026-05-01",
+          "residual_return": 8.772427903506021e-05
+        },
+        {
+          "date": "2026-05-04",
+          "residual_return": 8.349470860917994e-05
+        },
+        {
+          "date": "2026-05-05",
+          "residual_return": 7.836034643817196e-05
+        },
+        {
+          "date": "2026-05-06",
+          "residual_return": 7.233701887674284e-05
+        },
+        {
+          "date": "2026-05-07",
+          "residual_return": 6.544769117896318e-05
+        },
+        {
+          "date": "2026-05-08",
+          "residual_return": 5.772243890715982e-05
+        },
+        {
+          "date": "2026-05-11",
+          "residual_return": 4.9198365557873765e-05
+        },
+        {
+          "date": "2026-05-12",
+          "residual_return": 3.991946618763821e-05
+        },
+        {
+          "date": "2026-05-13",
+          "residual_return": 2.9936437218956074e-05
+        },
+        {
+          "date": "2026-05-14",
+          "residual_return": 1.9306433025539872e-05
+        },
+        {
+          "date": "2026-05-15",
+          "residual_return": 8.092770301508685e-06
+        },
+        {
+          "date": "2026-05-18",
+          "residual_return": -3.6354183691456304e-06
+        },
+        {
+          "date": "2026-05-19",
+          "residual_return": -1.5803579927663614e-05
+        },
+        {
+          "date": "2026-05-20",
+          "residual_return": -2.8332183028842352e-05
+        },
+        {
+          "date": "2026-05-21",
+          "residual_return": -4.113720441247556e-05
+        },
+        {
+          "date": "2026-05-22",
+          "residual_return": -5.413065650294391e-05
+        },
+        {
+          "date": "2026-05-25",
+          "residual_return": -6.722115293237869e-05
+        },
+        {
+          "date": "2026-05-26",
+          "residual_return": -8.031450835977328e-05
+        },
+        {
+          "date": "2026-05-27",
+          "residual_return": -9.331436865483295e-05
+        },
+        {
+          "date": "2026-05-28",
+          "residual_return": -0.0001061228672397203
+        },
+        {
+          "date": "2026-05-29",
+          "residual_return": -0.00011864130313443428
+        },
+        {
+          "date": "2026-06-01",
+          "residual_return": -0.00013077083603712006
+        },
+        {
+          "date": "2026-06-02",
+          "residual_return": -0.0001424131935853232
+        },
+        {
+          "date": "2026-06-03",
+          "residual_return": -0.00015347138579524847
+        },
+        {
+          "date": "2026-06-04",
+          "residual_return": -0.00016385042156681878
+        },
+        {
+          "date": "2026-06-05",
+          "residual_return": -0.0001734580220600347
+        },
+        {
+          "date": "2026-06-08",
+          "residual_return": -0.00018220532571775068
+        },
+        {
+          "date": "2026-06-09",
+          "residual_return": -0.00019000757970505594
+        },
+        {
+          "date": "2026-06-10",
+          "residual_return": -0.00019678481257829044
+        },
+        {
+          "date": "2026-06-11",
+          "residual_return": -0.00020246248307565764
+        },
+        {
+          "date": "2026-06-12",
+          "residual_return": -0.00020697210003778658
+        }
+      ],
+      "sample_count": 299,
+      "unexplained_share_pct": 1.7422370925844866
+    },
+    "holdings": [
+      {
+        "asset_class": "stock",
+        "cash_flag": false,
+        "caveat": "Deterministic fictional fixture price.",
+        "confidence": 0.35,
+        "cost_basis": 168.0,
+        "cost_value": 3024.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "history_available": true,
+        "holding_id": "holding-01",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 4568.61832535022,
+        "name": "Apple",
+        "not_financial_advice": true,
+        "price": 253.81212918612334,
+        "price_available": true,
+        "provider": "phase5k.fixture",
+        "quantity": 18.0,
+        "region": "United States",
+        "sector": "Technology",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/AAPL",
+        "symbol": "AAPL",
+        "unrealized_change": 1544.6183253502204,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.11430654011985038
+      },
+      {
+        "asset_class": "stock",
+        "cash_flag": false,
+        "caveat": "Deterministic fictional fixture price.",
+        "confidence": 0.35,
+        "cost_basis": 385.0,
+        "cost_value": 3465.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "history_available": true,
+        "holding_id": "holding-02",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 4661.5459293355925,
+        "name": "Microsoft",
+        "not_financial_advice": true,
+        "price": 517.9495477039547,
+        "price_available": true,
+        "provider": "phase5k.fixture",
+        "quantity": 9.0,
+        "region": "United States",
+        "sector": "Technology",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/MSFT",
+        "symbol": "MSFT",
+        "unrealized_change": 1196.5459293355925,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.11663158286510558
+      },
+      {
+        "asset_class": "ETF",
+        "cash_flag": false,
+        "caveat": "Deterministic fictional fixture price.",
+        "confidence": 0.35,
+        "cost_basis": 515.0,
+        "cost_value": 7210.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "history_available": true,
+        "holding_id": "holding-03",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 8665.1549272626,
+        "name": "S&P 500 ETF",
+        "not_financial_advice": true,
+        "price": 618.9396376616143,
+        "price_available": true,
+        "provider": "phase5k.fixture",
+        "quantity": 14.0,
+        "region": "United States",
+        "sector": "Broad equity",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/SPY",
+        "symbol": "SPY",
+        "unrealized_change": 1455.1549272625998,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.21680162552470023
+      },
+      {
+        "asset_class": "bond_proxy",
+        "cash_flag": false,
+        "caveat": "Deterministic fictional fixture price.",
+        "confidence": 0.35,
+        "cost_basis": 94.0,
+        "cost_value": 3008.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "history_available": true,
+        "holding_id": "holding-04",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 2983.031315915099,
+        "name": "Long Treasury ETF",
+        "not_financial_advice": true,
+        "price": 93.21972862234685,
+        "price_available": true,
+        "provider": "phase5k.fixture",
+        "quantity": 32.0,
+        "region": "United States",
+        "sector": "Rates",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/TLT",
+        "symbol": "TLT",
+        "unrealized_change": -24.968684084900815,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.07463525392335779
+      },
+      {
+        "asset_class": "commodity",
+        "cash_flag": false,
+        "caveat": "Deterministic fictional fixture price.",
+        "confidence": 0.35,
+        "cost_basis": 205.0,
+        "cost_value": 3075.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "history_available": true,
+        "holding_id": "holding-05",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 3604.012581032053,
+        "name": "Gold ETF",
+        "not_financial_advice": true,
+        "price": 240.26750540213686,
+        "price_available": true,
+        "provider": "phase5k.fixture",
+        "quantity": 15.0,
+        "region": "Global",
+        "sector": "Precious metals",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/GLD",
+        "symbol": "GLD",
+        "unrealized_change": 529.0125810320528,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.09017216570714642
+      },
+      {
+        "asset_class": "crypto",
+        "cash_flag": false,
+        "caveat": "Deterministic fictional fixture price.",
+        "confidence": 0.35,
+        "cost_basis": 61000.0,
+        "cost_value": 7320.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "fixture",
+        "history_available": true,
+        "holding_id": "holding-06",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 10985.764034041498,
+        "name": "Bitcoin",
+        "not_financial_advice": true,
+        "price": 91548.0336170125,
+        "price_available": true,
+        "provider": "phase5k.fixture",
+        "quantity": 0.12,
+        "region": "Global",
+        "sector": "Digital assets",
+        "source_status": "fixture",
+        "source_url": "https://finance.yahoo.com/quote/BTC-USD",
+        "symbol": "BTC-USD",
+        "unrealized_change": 3665.7640340414982,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.27486311787888545
+      },
+      {
+        "asset_class": "cash",
+        "cash_flag": true,
+        "caveat": "Cash is defined at one base-currency unit.",
+        "confidence": 1.0,
+        "cost_basis": 1.0,
+        "cost_value": 4500.0,
+        "currency": "USD",
+        "data_gap": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "freshness": "defined",
+        "history_available": true,
+        "holding_id": "holding-07",
+        "input_classification": "deterministic_fictional_demo",
+        "market_value": 4500.0,
+        "name": "USD Cash",
+        "not_financial_advice": true,
+        "price": 1.0,
+        "price_available": true,
+        "provider": "cash_definition",
+        "quantity": 4500.0,
+        "region": "Global",
+        "sector": "Cash",
+        "source_status": "defined",
+        "source_url": null,
+        "symbol": "CASH",
+        "unrealized_change": 0.0,
+        "valuation_timestamp": "2026-06-20T16:00:00+00:00",
+        "weight": 0.11258971398095408
+      }
+    ],
+    "performance": {
+      "annualization": 252,
+      "available": true,
+      "benchmark": "SPY",
+      "caveat": "Historical delayed public or deterministic fixture prices; past performance does not guarantee future results.",
+      "data_gap": null,
+      "drawdown_series": [
+        {
+          "date": "2025-04-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-04-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-04-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-04-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-04-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-04-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-04-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-05-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-06-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-07-31",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-08-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-09-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-10-31",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-11-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2025-12-31",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-01-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-02-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-03-31",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-16",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-17",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-23",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-24",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-04-30",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-06",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-07",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-12",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-13",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-14",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-15",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-18",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-19",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-20",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-21",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-22",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-25",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-26",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-27",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-28",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-05-29",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-01",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-02",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-03",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-04",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-05",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-08",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-09",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-10",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-11",
+          "drawdown": 0.0
+        },
+        {
+          "date": "2026-06-12",
+          "drawdown": 0.0
+        }
+      ],
+      "frequency": "daily",
+      "methods": {
+        "money_weighted": {
+          "available": false,
+          "reason": "Dated external cash flows are not supplied.",
+          "value": null
+        },
+        "simple": {
+          "available": true,
+          "units": "decimal return",
+          "value": 0.2577063860283908
+        },
+        "time_weighted": {
+          "available": true,
+          "reason": "No external cash flows are present, so linked daily returns equal the simple period return.",
+          "units": "decimal return",
+          "value": 0.2577063860283908
+        }
+      },
+      "metrics": {
+        "annualized_volatility": 0.006858092032627182,
+        "best_month": 0.02907780232252999,
+        "beta_vs_benchmark": 0.3320017975234323,
+        "cagr": 0.21318306122967967,
+        "calmar": null,
+        "cumulative_return": 0.2577063860283908,
+        "cvar_95": 0.0,
+        "information_ratio": 4.384066985666826,
+        "max_drawdown": 0.0,
+        "positive_month_ratio": 1.0,
+        "regression_alpha_estimate": 0.14045141416905127,
+        "sharpe": 28.192253519754654,
+        "sortino": null,
+        "tracking_error": 0.00776167283822819,
+        "transaction_cost_estimate": 0.0,
+        "turnover": 0.0,
+        "var_95": 0.0,
+        "win_rate": 1.0,
+        "worst_month": 0.005212131889186011
+      },
+      "missing_data_policy": "complete overlap; missing observations are never zero-filled",
+      "not_financial_advice": true,
+      "rolling_sharpe": [
+        {
+          "date": "2025-07-17",
+          "rolling_sharpe": 28.8282126783
+        },
+        {
+          "date": "2025-07-18",
+          "rolling_sharpe": 28.9629445964
+        },
+        {
+          "date": "2025-07-21",
+          "rolling_sharpe": 29.161004018
+        },
+        {
+          "date": "2025-07-22",
+          "rolling_sharpe": 29.4240240821
+        },
+        {
+          "date": "2025-07-23",
+          "rolling_sharpe": 29.7533712688
+        },
+        {
+          "date": "2025-07-24",
+          "rolling_sharpe": 30.1500603719
+        },
+        {
+          "date": "2025-07-25",
+          "rolling_sharpe": 30.6146193533
+        },
+        {
+          "date": "2025-07-28",
+          "rolling_sharpe": 31.146899167
+        },
+        {
+          "date": "2025-07-29",
+          "rolling_sharpe": 31.7458243002
+        },
+        {
+          "date": "2025-07-30",
+          "rolling_sharpe": 32.4090824354
+        },
+        {
+          "date": "2025-07-31",
+          "rolling_sharpe": 33.1327573068
+        },
+        {
+          "date": "2025-08-01",
+          "rolling_sharpe": 33.9109186523
+        },
+        {
+          "date": "2025-08-04",
+          "rolling_sharpe": 34.7351980844
+        },
+        {
+          "date": "2025-08-05",
+          "rolling_sharpe": 35.5943998632
+        },
+        {
+          "date": "2025-08-06",
+          "rolling_sharpe": 36.4742192369
+        },
+        {
+          "date": "2025-08-07",
+          "rolling_sharpe": 37.3571634705
+        },
+        {
+          "date": "2025-08-08",
+          "rolling_sharpe": 38.2227831936
+        },
+        {
+          "date": "2025-08-11",
+          "rolling_sharpe": 39.0483121577
+        },
+        {
+          "date": "2025-08-12",
+          "rolling_sharpe": 39.8097697793
+        },
+        {
+          "date": "2025-08-13",
+          "rolling_sharpe": 40.4834976935
+        },
+        {
+          "date": "2025-08-14",
+          "rolling_sharpe": 41.0479889733
+        },
+        {
+          "date": "2025-08-15",
+          "rolling_sharpe": 41.4857566719
+        },
+        {
+          "date": "2025-08-18",
+          "rolling_sharpe": 41.7849209239
+        },
+        {
+          "date": "2025-08-19",
+          "rolling_sharpe": 41.9402101068
+        },
+        {
+          "date": "2025-08-20",
+          "rolling_sharpe": 41.9531818592
+        },
+        {
+          "date": "2025-08-21",
+          "rolling_sharpe": 41.8316432421
+        },
+        {
+          "date": "2025-08-22",
+          "rolling_sharpe": 41.5884252341
+        },
+        {
+          "date": "2025-08-25",
+          "rolling_sharpe": 41.2397846387
+        },
+        {
+          "date": "2025-08-26",
+          "rolling_sharpe": 40.803735585
+        },
+        {
+          "date": "2025-08-27",
+          "rolling_sharpe": 40.2985616502
+        },
+        {
+          "date": "2025-08-28",
+          "rolling_sharpe": 39.7416634817
+        },
+        {
+          "date": "2025-08-29",
+          "rolling_sharpe": 39.1487955374
+        },
+        {
+          "date": "2025-09-01",
+          "rolling_sharpe": 38.5336668935
+        },
+        {
+          "date": "2025-09-02",
+          "rolling_sharpe": 37.9078353249
+        },
+        {
+          "date": "2025-09-03",
+          "rolling_sharpe": 37.2808080129
+        },
+        {
+          "date": "2025-09-04",
+          "rolling_sharpe": 36.6602669148
+        },
+        {
+          "date": "2025-09-05",
+          "rolling_sharpe": 36.052352132
+        },
+        {
+          "date": "2025-09-08",
+          "rolling_sharpe": 35.4619550405
+        },
+        {
+          "date": "2025-09-09",
+          "rolling_sharpe": 34.8929900393
+        },
+        {
+          "date": "2025-09-10",
+          "rolling_sharpe": 34.3486275395
+        },
+        {
+          "date": "2025-09-11",
+          "rolling_sharpe": 33.8314808556
+        },
+        {
+          "date": "2025-09-12",
+          "rolling_sharpe": 33.3437463375
+        },
+        {
+          "date": "2025-09-15",
+          "rolling_sharpe": 32.8873000787
+        },
+        {
+          "date": "2025-09-16",
+          "rolling_sharpe": 32.4637565261
+        },
+        {
+          "date": "2025-09-17",
+          "rolling_sharpe": 32.0744949181
+        },
+        {
+          "date": "2025-09-18",
+          "rolling_sharpe": 31.7206591491
+        },
+        {
+          "date": "2025-09-19",
+          "rolling_sharpe": 31.4031358112
+        },
+        {
+          "date": "2025-09-22",
+          "rolling_sharpe": 31.1225140775
+        },
+        {
+          "date": "2025-09-23",
+          "rolling_sharpe": 30.8790300409
+        },
+        {
+          "date": "2025-09-24",
+          "rolling_sharpe": 30.6724973066
+        },
+        {
+          "date": "2025-09-25",
+          "rolling_sharpe": 30.5022252713
+        },
+        {
+          "date": "2025-09-26",
+          "rolling_sharpe": 30.3669267851
+        },
+        {
+          "date": "2025-09-29",
+          "rolling_sharpe": 30.2646179859
+        },
+        {
+          "date": "2025-09-30",
+          "rolling_sharpe": 30.1925151702
+        },
+        {
+          "date": "2025-10-01",
+          "rolling_sharpe": 30.1469367305
+        },
+        {
+          "date": "2025-10-02",
+          "rolling_sharpe": 30.123222374
+        },
+        {
+          "date": "2025-10-03",
+          "rolling_sharpe": 30.1156866899
+        },
+        {
+          "date": "2025-10-06",
+          "rolling_sharpe": 30.1176288366
+        },
+        {
+          "date": "2025-10-07",
+          "rolling_sharpe": 30.1214232348
+        },
+        {
+          "date": "2025-10-08",
+          "rolling_sharpe": 30.1187156554
+        },
+        {
+          "date": "2025-10-09",
+          "rolling_sharpe": 30.1007426317
+        },
+        {
+          "date": "2025-10-10",
+          "rolling_sharpe": 30.0587778315
+        },
+        {
+          "date": "2025-10-13",
+          "rolling_sharpe": 29.9846867213
+        },
+        {
+          "date": "2025-10-14",
+          "rolling_sharpe": 29.8715433312
+        },
+        {
+          "date": "2025-10-15",
+          "rolling_sharpe": 29.7142366082
+        },
+        {
+          "date": "2025-10-16",
+          "rolling_sharpe": 29.5099776499
+        },
+        {
+          "date": "2025-10-17",
+          "rolling_sharpe": 29.258621474
+        },
+        {
+          "date": "2025-10-20",
+          "rolling_sharpe": 28.9627415806
+        },
+        {
+          "date": "2025-10-21",
+          "rolling_sharpe": 28.6274383145
+        },
+        {
+          "date": "2025-10-22",
+          "rolling_sharpe": 28.2599114197
+        },
+        {
+          "date": "2025-10-23",
+          "rolling_sharpe": 27.8688686222
+        },
+        {
+          "date": "2025-10-24",
+          "rolling_sharpe": 27.4638640628
+        },
+        {
+          "date": "2025-10-27",
+          "rolling_sharpe": 27.0546590861
+        },
+        {
+          "date": "2025-10-28",
+          "rolling_sharpe": 26.6506775134
+        },
+        {
+          "date": "2025-10-29",
+          "rolling_sharpe": 26.2605973546
+        },
+        {
+          "date": "2025-10-30",
+          "rolling_sharpe": 25.8920906357
+        },
+        {
+          "date": "2025-10-31",
+          "rolling_sharpe": 25.5516994525
+        },
+        {
+          "date": "2025-11-03",
+          "rolling_sharpe": 25.2448222382
+        },
+        {
+          "date": "2025-11-04",
+          "rolling_sharpe": 24.9757789735
+        },
+        {
+          "date": "2025-11-05",
+          "rolling_sharpe": 24.7479252614
+        },
+        {
+          "date": "2025-11-06",
+          "rolling_sharpe": 24.5637900422
+        },
+        {
+          "date": "2025-11-07",
+          "rolling_sharpe": 24.4252178872
+        },
+        {
+          "date": "2025-11-10",
+          "rolling_sharpe": 24.3335027566
+        },
+        {
+          "date": "2025-11-11",
+          "rolling_sharpe": 24.2895050099
+        },
+        {
+          "date": "2025-11-12",
+          "rolling_sharpe": 24.2937470717
+        },
+        {
+          "date": "2025-11-13",
+          "rolling_sharpe": 24.3464855306
+        },
+        {
+          "date": "2025-11-14",
+          "rolling_sharpe": 24.4477587994
+        },
+        {
+          "date": "2025-11-17",
+          "rolling_sharpe": 24.5974100493
+        },
+        {
+          "date": "2025-11-18",
+          "rolling_sharpe": 24.7950851882
+        },
+        {
+          "date": "2025-11-19",
+          "rolling_sharpe": 25.0402054145
+        },
+        {
+          "date": "2025-11-20",
+          "rolling_sharpe": 25.3319135224
+        },
+        {
+          "date": "2025-11-21",
+          "rolling_sharpe": 25.6689928834
+        },
+        {
+          "date": "2025-11-24",
+          "rolling_sharpe": 26.049758072
+        },
+        {
+          "date": "2025-11-25",
+          "rolling_sharpe": 26.47191673
+        },
+        {
+          "date": "2025-11-26",
+          "rolling_sharpe": 26.932403784
+        },
+        {
+          "date": "2025-11-27",
+          "rolling_sharpe": 27.4271919396
+        },
+        {
+          "date": "2025-11-28",
+          "rolling_sharpe": 27.9510868729
+        },
+        {
+          "date": "2025-12-01",
+          "rolling_sharpe": 28.4975220345
+        },
+        {
+          "date": "2025-12-02",
+          "rolling_sharpe": 29.058376485
+        },
+        {
+          "date": "2025-12-03",
+          "rolling_sharpe": 29.6238490768
+        },
+        {
+          "date": "2025-12-04",
+          "rolling_sharpe": 30.1824319474
+        },
+        {
+          "date": "2025-12-05",
+          "rolling_sharpe": 30.7210327035
+        },
+        {
+          "date": "2025-12-08",
+          "rolling_sharpe": 31.2252934842
+        },
+        {
+          "date": "2025-12-09",
+          "rolling_sharpe": 31.6801413758
+        },
+        {
+          "date": "2025-12-10",
+          "rolling_sharpe": 32.0705747311
+        },
+        {
+          "date": "2025-12-11",
+          "rolling_sharpe": 32.3826442959
+        },
+        {
+          "date": "2025-12-12",
+          "rolling_sharpe": 32.6045339551
+        },
+        {
+          "date": "2025-12-15",
+          "rolling_sharpe": 32.7275981201
+        },
+        {
+          "date": "2025-12-16",
+          "rolling_sharpe": 32.7471899059
+        },
+        {
+          "date": "2025-12-17",
+          "rolling_sharpe": 32.663131063
+        },
+        {
+          "date": "2025-12-18",
+          "rolling_sharpe": 32.4797333524
+        },
+        {
+          "date": "2025-12-19",
+          "rolling_sharpe": 32.2053673556
+        },
+        {
+          "date": "2025-12-22",
+          "rolling_sharpe": 31.8516622042
+        },
+        {
+          "date": "2025-12-23",
+          "rolling_sharpe": 31.432481507
+        },
+        {
+          "date": "2025-12-24",
+          "rolling_sharpe": 30.9628412306
+        },
+        {
+          "date": "2025-12-25",
+          "rolling_sharpe": 30.4579153881
+        },
+        {
+          "date": "2025-12-26",
+          "rolling_sharpe": 29.9322291018
+        },
+        {
+          "date": "2025-12-29",
+          "rolling_sharpe": 29.3990845348
+        },
+        {
+          "date": "2025-12-30",
+          "rolling_sharpe": 28.8702185411
+        },
+        {
+          "date": "2025-12-31",
+          "rolling_sharpe": 28.3556595739
+        },
+        {
+          "date": "2026-01-01",
+          "rolling_sharpe": 27.8637363735
+        },
+        {
+          "date": "2026-01-02",
+          "rolling_sharpe": 27.4011887986
+        },
+        {
+          "date": "2026-01-05",
+          "rolling_sharpe": 26.9733370007
+        },
+        {
+          "date": "2026-01-06",
+          "rolling_sharpe": 26.5842745292
+        },
+        {
+          "date": "2026-01-07",
+          "rolling_sharpe": 26.2370608047
+        },
+        {
+          "date": "2026-01-08",
+          "rolling_sharpe": 25.933896986
+        },
+        {
+          "date": "2026-01-09",
+          "rolling_sharpe": 25.6762758902
+        },
+        {
+          "date": "2026-01-12",
+          "rolling_sharpe": 25.4651013246
+        },
+        {
+          "date": "2026-01-13",
+          "rolling_sharpe": 25.3007752338
+        },
+        {
+          "date": "2026-01-14",
+          "rolling_sharpe": 25.1832529296
+        },
+        {
+          "date": "2026-01-15",
+          "rolling_sharpe": 25.1120677696
+        },
+        {
+          "date": "2026-01-16",
+          "rolling_sharpe": 25.0863273977
+        },
+        {
+          "date": "2026-01-19",
+          "rolling_sharpe": 25.1046843993
+        },
+        {
+          "date": "2026-01-20",
+          "rolling_sharpe": 25.1652852424
+        },
+        {
+          "date": "2026-01-21",
+          "rolling_sharpe": 25.2657029189
+        },
+        {
+          "date": "2026-01-22",
+          "rolling_sharpe": 25.4028609131
+        },
+        {
+          "date": "2026-01-23",
+          "rolling_sharpe": 25.5729590314
+        },
+        {
+          "date": "2026-01-26",
+          "rolling_sharpe": 25.771415026
+        },
+        {
+          "date": "2026-01-27",
+          "rolling_sharpe": 25.9928393044
+        },
+        {
+          "date": "2026-01-28",
+          "rolling_sharpe": 26.231062408
+        },
+        {
+          "date": "2026-01-29",
+          "rolling_sharpe": 26.4792350282
+        },
+        {
+          "date": "2026-01-30",
+          "rolling_sharpe": 26.7300165661
+        },
+        {
+          "date": "2026-02-02",
+          "rolling_sharpe": 26.975859372
+        },
+        {
+          "date": "2026-02-03",
+          "rolling_sharpe": 27.2093815235
+        },
+        {
+          "date": "2026-02-04",
+          "rolling_sharpe": 27.4238028077
+        },
+        {
+          "date": "2026-02-05",
+          "rolling_sharpe": 27.613400064
+        },
+        {
+          "date": "2026-02-06",
+          "rolling_sharpe": 27.773924505
+        },
+        {
+          "date": "2026-02-09",
+          "rolling_sharpe": 27.9029203823
+        },
+        {
+          "date": "2026-02-10",
+          "rolling_sharpe": 27.9998945271
+        },
+        {
+          "date": "2026-02-11",
+          "rolling_sharpe": 28.0663088634
+        },
+        {
+          "date": "2026-02-12",
+          "rolling_sharpe": 28.1053975686
+        },
+        {
+          "date": "2026-02-13",
+          "rolling_sharpe": 28.1218391449
+        },
+        {
+          "date": "2026-02-16",
+          "rolling_sharpe": 28.1213337487
+        },
+        {
+          "date": "2026-02-17",
+          "rolling_sharpe": 28.110143518
+        },
+        {
+          "date": "2026-02-18",
+          "rolling_sharpe": 28.0946485454
+        },
+        {
+          "date": "2026-02-19",
+          "rolling_sharpe": 28.0809573416
+        },
+        {
+          "date": "2026-02-20",
+          "rolling_sharpe": 28.0745933448
+        },
+        {
+          "date": "2026-02-23",
+          "rolling_sharpe": 28.0802629427
+        },
+        {
+          "date": "2026-02-24",
+          "rolling_sharpe": 28.1016985067
+        },
+        {
+          "date": "2026-02-25",
+          "rolling_sharpe": 28.1415631111
+        },
+        {
+          "date": "2026-02-26",
+          "rolling_sharpe": 28.2014014831
+        },
+        {
+          "date": "2026-02-27",
+          "rolling_sharpe": 28.2816231668
+        },
+        {
+          "date": "2026-03-02",
+          "rolling_sharpe": 28.3815075703
+        },
+        {
+          "date": "2026-03-03",
+          "rolling_sharpe": 28.4992253775
+        },
+        {
+          "date": "2026-03-04",
+          "rolling_sharpe": 28.6318758831
+        },
+        {
+          "date": "2026-03-05",
+          "rolling_sharpe": 28.7755445024
+        },
+        {
+          "date": "2026-03-06",
+          "rolling_sharpe": 28.9253884519
+        },
+        {
+          "date": "2026-03-09",
+          "rolling_sharpe": 29.0757608206
+        },
+        {
+          "date": "2026-03-10",
+          "rolling_sharpe": 29.2203833264
+        },
+        {
+          "date": "2026-03-11",
+          "rolling_sharpe": 29.3525753785
+        },
+        {
+          "date": "2026-03-12",
+          "rolling_sharpe": 29.465541278
+        },
+        {
+          "date": "2026-03-13",
+          "rolling_sharpe": 29.5527086376
+        },
+        {
+          "date": "2026-03-16",
+          "rolling_sharpe": 29.6081003685
+        },
+        {
+          "date": "2026-03-17",
+          "rolling_sharpe": 29.6267118066
+        },
+        {
+          "date": "2026-03-18",
+          "rolling_sharpe": 29.6048563913
+        },
+        {
+          "date": "2026-03-19",
+          "rolling_sharpe": 29.5404405287
+        },
+        {
+          "date": "2026-03-20",
+          "rolling_sharpe": 29.4331327579
+        },
+        {
+          "date": "2026-03-23",
+          "rolling_sharpe": 29.2844041877
+        },
+        {
+          "date": "2026-03-24",
+          "rolling_sharpe": 29.0974343379
+        },
+        {
+          "date": "2026-03-25",
+          "rolling_sharpe": 28.8768952031
+        },
+        {
+          "date": "2026-03-26",
+          "rolling_sharpe": 28.6286422548
+        },
+        {
+          "date": "2026-03-27",
+          "rolling_sharpe": 28.3593507719
+        },
+        {
+          "date": "2026-03-30",
+          "rolling_sharpe": 28.0761378712
+        },
+        {
+          "date": "2026-03-31",
+          "rolling_sharpe": 27.786205571
+        },
+        {
+          "date": "2026-04-01",
+          "rolling_sharpe": 27.4965304616
+        },
+        {
+          "date": "2026-04-02",
+          "rolling_sharpe": 27.213613946
+        },
+        {
+          "date": "2026-04-03",
+          "rolling_sharpe": 26.943296138
+        },
+        {
+          "date": "2026-04-06",
+          "rolling_sharpe": 26.690628026
+        },
+        {
+          "date": "2026-04-07",
+          "rolling_sharpe": 26.4597911335
+        },
+        {
+          "date": "2026-04-08",
+          "rolling_sharpe": 26.2540515258
+        },
+        {
+          "date": "2026-04-09",
+          "rolling_sharpe": 26.0757350974
+        },
+        {
+          "date": "2026-04-10",
+          "rolling_sharpe": 25.9262129507
+        },
+        {
+          "date": "2026-04-13",
+          "rolling_sharpe": 25.8058887832
+        },
+        {
+          "date": "2026-04-14",
+          "rolling_sharpe": 25.7141841124
+        },
+        {
+          "date": "2026-04-15",
+          "rolling_sharpe": 25.6495216691
+        },
+        {
+          "date": "2026-04-16",
+          "rolling_sharpe": 25.609312204
+        },
+        {
+          "date": "2026-04-17",
+          "rolling_sharpe": 25.5899550585
+        },
+        {
+          "date": "2026-04-20",
+          "rolling_sharpe": 25.5868676739
+        },
+        {
+          "date": "2026-04-21",
+          "rolling_sharpe": 25.5945629072
+        },
+        {
+          "date": "2026-04-22",
+          "rolling_sharpe": 25.6067942528
+        },
+        {
+          "date": "2026-04-23",
+          "rolling_sharpe": 25.6167861956
+        },
+        {
+          "date": "2026-04-24",
+          "rolling_sharpe": 25.6175583942
+        },
+        {
+          "date": "2026-04-27",
+          "rolling_sharpe": 25.6023376029
+        },
+        {
+          "date": "2026-04-28",
+          "rolling_sharpe": 25.5650314419
+        },
+        {
+          "date": "2026-04-29",
+          "rolling_sharpe": 25.5007171772
+        },
+        {
+          "date": "2026-04-30",
+          "rolling_sharpe": 25.4060826823
+        },
+        {
+          "date": "2026-05-01",
+          "rolling_sharpe": 25.2797523734
+        },
+        {
+          "date": "2026-05-04",
+          "rolling_sharpe": 25.1224424679
+        },
+        {
+          "date": "2026-05-05",
+          "rolling_sharpe": 24.9369167042
+        },
+        {
+          "date": "2026-05-06",
+          "rolling_sharpe": 24.7277491995
+        },
+        {
+          "date": "2026-05-07",
+          "rolling_sharpe": 24.5009352607
+        },
+        {
+          "date": "2026-05-08",
+          "rolling_sharpe": 24.2634140062
+        },
+        {
+          "date": "2026-05-11",
+          "rolling_sharpe": 24.0225733031
+        },
+        {
+          "date": "2026-05-12",
+          "rolling_sharpe": 23.7857984558
+        },
+        {
+          "date": "2026-05-13",
+          "rolling_sharpe": 23.5601066803
+        },
+        {
+          "date": "2026-05-14",
+          "rolling_sharpe": 23.3518867664
+        },
+        {
+          "date": "2026-05-15",
+          "rolling_sharpe": 23.1667434328
+        },
+        {
+          "date": "2026-05-18",
+          "rolling_sharpe": 23.009432046
+        },
+        {
+          "date": "2026-05-19",
+          "rolling_sharpe": 22.8838622321
+        },
+        {
+          "date": "2026-05-20",
+          "rolling_sharpe": 22.7931473095
+        },
+        {
+          "date": "2026-05-21",
+          "rolling_sharpe": 22.7396784915
+        },
+        {
+          "date": "2026-05-22",
+          "rolling_sharpe": 22.7252066162
+        },
+        {
+          "date": "2026-05-25",
+          "rolling_sharpe": 22.7509183657
+        },
+        {
+          "date": "2026-05-26",
+          "rolling_sharpe": 22.8174977115
+        },
+        {
+          "date": "2026-05-27",
+          "rolling_sharpe": 22.9251663064
+        },
+        {
+          "date": "2026-05-28",
+          "rolling_sharpe": 23.0736986923
+        },
+        {
+          "date": "2026-05-29",
+          "rolling_sharpe": 23.2624096645
+        },
+        {
+          "date": "2026-06-01",
+          "rolling_sharpe": 23.4901121916
+        },
+        {
+          "date": "2026-06-02",
+          "rolling_sharpe": 23.7550452622
+        },
+        {
+          "date": "2026-06-03",
+          "rolling_sharpe": 24.054772273
+        },
+        {
+          "date": "2026-06-04",
+          "rolling_sharpe": 24.3860525051
+        },
+        {
+          "date": "2026-06-05",
+          "rolling_sharpe": 24.7446912654
+        },
+        {
+          "date": "2026-06-08",
+          "rolling_sharpe": 25.1253787964
+        },
+        {
+          "date": "2026-06-09",
+          "rolling_sharpe": 25.5215343083
+        },
+        {
+          "date": "2026-06-10",
+          "rolling_sharpe": 25.925179342
+        },
+        {
+          "date": "2026-06-11",
+          "rolling_sharpe": 26.3268733189
+        },
+        {
+          "date": "2026-06-12",
+          "rolling_sharpe": 26.7157517395
+        }
+      ],
+      "rolling_volatility": [
+        {
+          "annualized_volatility": 0.0073068716,
+          "date": "2025-07-17"
+        },
+        {
+          "annualized_volatility": 0.007193502,
+          "date": "2025-07-18"
+        },
+        {
+          "annualized_volatility": 0.007065142,
+          "date": "2025-07-21"
+        },
+        {
+          "annualized_volatility": 0.0069229175,
+          "date": "2025-07-22"
+        },
+        {
+          "annualized_volatility": 0.0067681732,
+          "date": "2025-07-23"
+        },
+        {
+          "annualized_volatility": 0.0066024498,
+          "date": "2025-07-24"
+        },
+        {
+          "annualized_volatility": 0.0064274619,
+          "date": "2025-07-25"
+        },
+        {
+          "annualized_volatility": 0.0062450754,
+          "date": "2025-07-28"
+        },
+        {
+          "annualized_volatility": 0.0060572837,
+          "date": "2025-07-29"
+        },
+        {
+          "annualized_volatility": 0.0058661842,
+          "date": "2025-07-30"
+        },
+        {
+          "annualized_volatility": 0.0056739511,
+          "date": "2025-07-31"
+        },
+        {
+          "annualized_volatility": 0.0054828072,
+          "date": "2025-08-01"
+        },
+        {
+          "annualized_volatility": 0.0052949915,
+          "date": "2025-08-04"
+        },
+        {
+          "annualized_volatility": 0.0051127217,
+          "date": "2025-08-05"
+        },
+        {
+          "annualized_volatility": 0.0049381526,
+          "date": "2025-08-06"
+        },
+        {
+          "annualized_volatility": 0.004773328,
+          "date": "2025-08-07"
+        },
+        {
+          "annualized_volatility": 0.0046201272,
+          "date": "2025-08-08"
+        },
+        {
+          "annualized_volatility": 0.0044802085,
+          "date": "2025-08-11"
+        },
+        {
+          "annualized_volatility": 0.0043549517,
+          "date": "2025-08-12"
+        },
+        {
+          "annualized_volatility": 0.0042454055,
+          "date": "2025-08-13"
+        },
+        {
+          "annualized_volatility": 0.0041522449,
+          "date": "2025-08-14"
+        },
+        {
+          "annualized_volatility": 0.004075746,
+          "date": "2025-08-15"
+        },
+        {
+          "annualized_volatility": 0.0040157821,
+          "date": "2025-08-18"
+        },
+        {
+          "annualized_volatility": 0.0039718452,
+          "date": "2025-08-19"
+        },
+        {
+          "annualized_volatility": 0.0039430909,
+          "date": "2025-08-20"
+        },
+        {
+          "annualized_volatility": 0.0039284025,
+          "date": "2025-08-21"
+        },
+        {
+          "annualized_volatility": 0.003926467,
+          "date": "2025-08-22"
+        },
+        {
+          "annualized_volatility": 0.0039358533,
+          "date": "2025-08-25"
+        },
+        {
+          "annualized_volatility": 0.0039550865,
+          "date": "2025-08-26"
+        },
+        {
+          "annualized_volatility": 0.0039827099,
+          "date": "2025-08-27"
+        },
+        {
+          "annualized_volatility": 0.0040173332,
+          "date": "2025-08-28"
+        },
+        {
+          "annualized_volatility": 0.0040576642,
+          "date": "2025-08-29"
+        },
+        {
+          "annualized_volatility": 0.0041025266,
+          "date": "2025-09-01"
+        },
+        {
+          "annualized_volatility": 0.0041508646,
+          "date": "2025-09-02"
+        },
+        {
+          "annualized_volatility": 0.0042017385,
+          "date": "2025-09-03"
+        },
+        {
+          "annualized_volatility": 0.0042543135,
+          "date": "2025-09-04"
+        },
+        {
+          "annualized_volatility": 0.0043078448,
+          "date": "2025-09-05"
+        },
+        {
+          "annualized_volatility": 0.0043616615,
+          "date": "2025-09-08"
+        },
+        {
+          "annualized_volatility": 0.0044151513,
+          "date": "2025-09-09"
+        },
+        {
+          "annualized_volatility": 0.0044677467,
+          "date": "2025-09-10"
+        },
+        {
+          "annualized_volatility": 0.0045189148,
+          "date": "2025-09-11"
+        },
+        {
+          "annualized_volatility": 0.0045681512,
+          "date": "2025-09-12"
+        },
+        {
+          "annualized_volatility": 0.0046149774,
+          "date": "2025-09-15"
+        },
+        {
+          "annualized_volatility": 0.0046589425,
+          "date": "2025-09-16"
+        },
+        {
+          "annualized_volatility": 0.0046996292,
+          "date": "2025-09-17"
+        },
+        {
+          "annualized_volatility": 0.0047366632,
+          "date": "2025-09-18"
+        },
+        {
+          "annualized_volatility": 0.0047697256,
+          "date": "2025-09-19"
+        },
+        {
+          "annualized_volatility": 0.0047985679,
+          "date": "2025-09-22"
+        },
+        {
+          "annualized_volatility": 0.0048230289,
+          "date": "2025-09-23"
+        },
+        {
+          "annualized_volatility": 0.0048430522,
+          "date": "2025-09-24"
+        },
+        {
+          "annualized_volatility": 0.004858705,
+          "date": "2025-09-25"
+        },
+        {
+          "annualized_volatility": 0.0048701952,
+          "date": "2025-09-26"
+        },
+        {
+          "annualized_volatility": 0.0048778873,
+          "date": "2025-09-29"
+        },
+        {
+          "annualized_volatility": 0.004882316,
+          "date": "2025-09-30"
+        },
+        {
+          "annualized_volatility": 0.0048841952,
+          "date": "2025-10-01"
+        },
+        {
+          "annualized_volatility": 0.0048844223,
+          "date": "2025-10-02"
+        },
+        {
+          "annualized_volatility": 0.0048840751,
+          "date": "2025-10-03"
+        },
+        {
+          "annualized_volatility": 0.0048844006,
+          "date": "2025-10-06"
+        },
+        {
+          "annualized_volatility": 0.0048867937,
+          "date": "2025-10-07"
+        },
+        {
+          "annualized_volatility": 0.0048927641,
+          "date": "2025-10-08"
+        },
+        {
+          "annualized_volatility": 0.0049038924,
+          "date": "2025-10-09"
+        },
+        {
+          "annualized_volatility": 0.0049217738,
+          "date": "2025-10-10"
+        },
+        {
+          "annualized_volatility": 0.0049479522,
+          "date": "2025-10-13"
+        },
+        {
+          "annualized_volatility": 0.0049838482,
+          "date": "2025-10-14"
+        },
+        {
+          "annualized_volatility": 0.0050306853,
+          "date": "2025-10-15"
+        },
+        {
+          "annualized_volatility": 0.0050894203,
+          "date": "2025-10-16"
+        },
+        {
+          "annualized_volatility": 0.0051606843,
+          "date": "2025-10-17"
+        },
+        {
+          "annualized_volatility": 0.0052447403,
+          "date": "2025-10-20"
+        },
+        {
+          "annualized_volatility": 0.0053414598,
+          "date": "2025-10-21"
+        },
+        {
+          "annualized_volatility": 0.0054503222,
+          "date": "2025-10-22"
+        },
+        {
+          "annualized_volatility": 0.0055704331,
+          "date": "2025-10-23"
+        },
+        {
+          "annualized_volatility": 0.0057005609,
+          "date": "2025-10-24"
+        },
+        {
+          "annualized_volatility": 0.0058391856,
+          "date": "2025-10-27"
+        },
+        {
+          "annualized_volatility": 0.005984555,
+          "date": "2025-10-28"
+        },
+        {
+          "annualized_volatility": 0.0061347441,
+          "date": "2025-10-29"
+        },
+        {
+          "annualized_volatility": 0.0062877134,
+          "date": "2025-10-30"
+        },
+        {
+          "annualized_volatility": 0.0064413639,
+          "date": "2025-10-31"
+        },
+        {
+          "annualized_volatility": 0.0065935866,
+          "date": "2025-11-03"
+        },
+        {
+          "annualized_volatility": 0.0067423066,
+          "date": "2025-11-04"
+        },
+        {
+          "annualized_volatility": 0.0068855216,
+          "date": "2025-11-05"
+        },
+        {
+          "annualized_volatility": 0.0070213349,
+          "date": "2025-11-06"
+        },
+        {
+          "annualized_volatility": 0.0071479837,
+          "date": "2025-11-07"
+        },
+        {
+          "annualized_volatility": 0.0072638633,
+          "date": "2025-11-10"
+        },
+        {
+          "annualized_volatility": 0.0073675485,
+          "date": "2025-11-11"
+        },
+        {
+          "annualized_volatility": 0.0074578115,
+          "date": "2025-11-12"
+        },
+        {
+          "annualized_volatility": 0.0075336382,
+          "date": "2025-11-13"
+        },
+        {
+          "annualized_volatility": 0.0075942419,
+          "date": "2025-11-14"
+        },
+        {
+          "annualized_volatility": 0.0076390756,
+          "date": "2025-11-17"
+        },
+        {
+          "annualized_volatility": 0.0076678428,
+          "date": "2025-11-18"
+        },
+        {
+          "annualized_volatility": 0.0076805063,
+          "date": "2025-11-19"
+        },
+        {
+          "annualized_volatility": 0.0076772961,
+          "date": "2025-11-20"
+        },
+        {
+          "annualized_volatility": 0.0076587145,
+          "date": "2025-11-21"
+        },
+        {
+          "annualized_volatility": 0.0076255398,
+          "date": "2025-11-24"
+        },
+        {
+          "annualized_volatility": 0.0075788271,
+          "date": "2025-11-25"
+        },
+        {
+          "annualized_volatility": 0.0075199055,
+          "date": "2025-11-26"
+        },
+        {
+          "annualized_volatility": 0.0074503716,
+          "date": "2025-11-27"
+        },
+        {
+          "annualized_volatility": 0.0073720772,
+          "date": "2025-11-28"
+        },
+        {
+          "annualized_volatility": 0.00728711,
+          "date": "2025-12-01"
+        },
+        {
+          "annualized_volatility": 0.0071977663,
+          "date": "2025-12-02"
+        },
+        {
+          "annualized_volatility": 0.0071065133,
+          "date": "2025-12-03"
+        },
+        {
+          "annualized_volatility": 0.0070159392,
+          "date": "2025-12-04"
+        },
+        {
+          "annualized_volatility": 0.0069286909,
+          "date": "2025-12-05"
+        },
+        {
+          "annualized_volatility": 0.0068473977,
+          "date": "2025-12-08"
+        },
+        {
+          "annualized_volatility": 0.0067745835,
+          "date": "2025-12-09"
+        },
+        {
+          "annualized_volatility": 0.0067125691,
+          "date": "2025-12-10"
+        },
+        {
+          "annualized_volatility": 0.0066633717,
+          "date": "2025-12-11"
+        },
+        {
+          "annualized_volatility": 0.0066286076,
+          "date": "2025-12-12"
+        },
+        {
+          "annualized_volatility": 0.0066094081,
+          "date": "2025-12-15"
+        },
+        {
+          "annualized_volatility": 0.0066063571,
+          "date": "2025-12-16"
+        },
+        {
+          "annualized_volatility": 0.0066194577,
+          "date": "2025-12-17"
+        },
+        {
+          "annualized_volatility": 0.0066481331,
+          "date": "2025-12-18"
+        },
+        {
+          "annualized_volatility": 0.0066912598,
+          "date": "2025-12-19"
+        },
+        {
+          "annualized_volatility": 0.0067472314,
+          "date": "2025-12-22"
+        },
+        {
+          "annualized_volatility": 0.0068140442,
+          "date": "2025-12-23"
+        },
+        {
+          "annualized_volatility": 0.0068893954,
+          "date": "2025-12-24"
+        },
+        {
+          "annualized_volatility": 0.0069707859,
+          "date": "2025-12-25"
+        },
+        {
+          "annualized_volatility": 0.0070556193,
+          "date": "2025-12-26"
+        },
+        {
+          "annualized_volatility": 0.0071412925,
+          "date": "2025-12-29"
+        },
+        {
+          "annualized_volatility": 0.0072252729,
+          "date": "2025-12-30"
+        },
+        {
+          "annualized_volatility": 0.0073051632,
+          "date": "2025-12-31"
+        },
+        {
+          "annualized_volatility": 0.0073787527,
+          "date": "2026-01-01"
+        },
+        {
+          "annualized_volatility": 0.0074440567,
+          "date": "2026-01-02"
+        },
+        {
+          "annualized_volatility": 0.0074993451,
+          "date": "2026-01-05"
+        },
+        {
+          "annualized_volatility": 0.007543163,
+          "date": "2026-01-06"
+        },
+        {
+          "annualized_volatility": 0.0075743438,
+          "date": "2026-01-07"
+        },
+        {
+          "annualized_volatility": 0.007592017,
+          "date": "2026-01-08"
+        },
+        {
+          "annualized_volatility": 0.0075956112,
+          "date": "2026-01-09"
+        },
+        {
+          "annualized_volatility": 0.0075848536,
+          "date": "2026-01-12"
+        },
+        {
+          "annualized_volatility": 0.0075597662,
+          "date": "2026-01-13"
+        },
+        {
+          "annualized_volatility": 0.0075206589,
+          "date": "2026-01-14"
+        },
+        {
+          "annualized_volatility": 0.0074681205,
+          "date": "2026-01-15"
+        },
+        {
+          "annualized_volatility": 0.0074030064,
+          "date": "2026-01-16"
+        },
+        {
+          "annualized_volatility": 0.0073264231,
+          "date": "2026-01-19"
+        },
+        {
+          "annualized_volatility": 0.0072397096,
+          "date": "2026-01-20"
+        },
+        {
+          "annualized_volatility": 0.0071444148,
+          "date": "2026-01-21"
+        },
+        {
+          "annualized_volatility": 0.0070422698,
+          "date": "2026-01-22"
+        },
+        {
+          "annualized_volatility": 0.0069351555,
+          "date": "2026-01-23"
+        },
+        {
+          "annualized_volatility": 0.0068250635,
+          "date": "2026-01-26"
+        },
+        {
+          "annualized_volatility": 0.0067140516,
+          "date": "2026-01-27"
+        },
+        {
+          "annualized_volatility": 0.0066041918,
+          "date": "2026-01-28"
+        },
+        {
+          "annualized_volatility": 0.0064975124,
+          "date": "2026-01-29"
+        },
+        {
+          "annualized_volatility": 0.006395936,
+          "date": "2026-01-30"
+        },
+        {
+          "annualized_volatility": 0.0063012142,
+          "date": "2026-02-02"
+        },
+        {
+          "annualized_volatility": 0.0062148631,
+          "date": "2026-02-03"
+        },
+        {
+          "annualized_volatility": 0.006138104,
+          "date": "2026-02-04"
+        },
+        {
+          "annualized_volatility": 0.0060718137,
+          "date": "2026-02-05"
+        },
+        {
+          "annualized_volatility": 0.0060164899,
+          "date": "2026-02-06"
+        },
+        {
+          "annualized_volatility": 0.0059722343,
+          "date": "2026-02-09"
+        },
+        {
+          "annualized_volatility": 0.0059387574,
+          "date": "2026-02-10"
+        },
+        {
+          "annualized_volatility": 0.0059154047,
+          "date": "2026-02-11"
+        },
+        {
+          "annualized_volatility": 0.0059012017,
+          "date": "2026-02-12"
+        },
+        {
+          "annualized_volatility": 0.005894915,
+          "date": "2026-02-13"
+        },
+        {
+          "annualized_volatility": 0.0058951235,
+          "date": "2026-02-16"
+        },
+        {
+          "annualized_volatility": 0.0059002946,
+          "date": "2026-02-17"
+        },
+        {
+          "annualized_volatility": 0.0059088599,
+          "date": "2026-02-18"
+        },
+        {
+          "annualized_volatility": 0.0059192858,
+          "date": "2026-02-19"
+        },
+        {
+          "annualized_volatility": 0.005930136,
+          "date": "2026-02-20"
+        },
+        {
+          "annualized_volatility": 0.0059401249,
+          "date": "2026-02-23"
+        },
+        {
+          "annualized_volatility": 0.0059481598,
+          "date": "2026-02-24"
+        },
+        {
+          "annualized_volatility": 0.005953372,
+          "date": "2026-02-25"
+        },
+        {
+          "annualized_volatility": 0.0059551382,
+          "date": "2026-02-26"
+        },
+        {
+          "annualized_volatility": 0.0059530919,
+          "date": "2026-02-27"
+        },
+        {
+          "annualized_volatility": 0.0059471263,
+          "date": "2026-03-02"
+        },
+        {
+          "annualized_volatility": 0.0059373876,
+          "date": "2026-03-03"
+        },
+        {
+          "annualized_volatility": 0.005924262,
+          "date": "2026-03-04"
+        },
+        {
+          "annualized_volatility": 0.0059083538,
+          "date": "2026-03-05"
+        },
+        {
+          "annualized_volatility": 0.0058904566,
+          "date": "2026-03-06"
+        },
+        {
+          "annualized_volatility": 0.0058715174,
+          "date": "2026-03-09"
+        },
+        {
+          "annualized_volatility": 0.0058525944,
+          "date": "2026-03-10"
+        },
+        {
+          "annualized_volatility": 0.0058348085,
+          "date": "2026-03-11"
+        },
+        {
+          "annualized_volatility": 0.0058192907,
+          "date": "2026-03-12"
+        },
+        {
+          "annualized_volatility": 0.0058071265,
+          "date": "2026-03-13"
+        },
+        {
+          "annualized_volatility": 0.0057993009,
+          "date": "2026-03-16"
+        },
+        {
+          "annualized_volatility": 0.0057966451,
+          "date": "2026-03-17"
+        },
+        {
+          "annualized_volatility": 0.0057997904,
+          "date": "2026-03-18"
+        },
+        {
+          "annualized_volatility": 0.0058091307,
+          "date": "2026-03-19"
+        },
+        {
+          "annualized_volatility": 0.0058247976,
+          "date": "2026-03-20"
+        },
+        {
+          "annualized_volatility": 0.0058466496,
+          "date": "2026-03-23"
+        },
+        {
+          "annualized_volatility": 0.0058742757,
+          "date": "2026-03-24"
+        },
+        {
+          "annualized_volatility": 0.0059070143,
+          "date": "2026-03-25"
+        },
+        {
+          "annualized_volatility": 0.0059439845,
+          "date": "2026-03-26"
+        },
+        {
+          "annualized_volatility": 0.0059841279,
+          "date": "2026-03-27"
+        },
+        {
+          "annualized_volatility": 0.006026258,
+          "date": "2026-03-30"
+        },
+        {
+          "annualized_volatility": 0.0060691129,
+          "date": "2026-03-31"
+        },
+        {
+          "annualized_volatility": 0.0061114109,
+          "date": "2026-04-01"
+        },
+        {
+          "annualized_volatility": 0.0061519031,
+          "date": "2026-04-02"
+        },
+        {
+          "annualized_volatility": 0.0061894246,
+          "date": "2026-04-03"
+        },
+        {
+          "annualized_volatility": 0.0062229399,
+          "date": "2026-04-06"
+        },
+        {
+          "annualized_volatility": 0.0062515844,
+          "date": "2026-04-07"
+        },
+        {
+          "annualized_volatility": 0.0062746995,
+          "date": "2026-04-08"
+        },
+        {
+          "annualized_volatility": 0.0062918614,
+          "date": "2026-04-09"
+        },
+        {
+          "annualized_volatility": 0.0063029053,
+          "date": "2026-04-10"
+        },
+        {
+          "annualized_volatility": 0.0063079413,
+          "date": "2026-04-13"
+        },
+        {
+          "annualized_volatility": 0.0063073651,
+          "date": "2026-04-14"
+        },
+        {
+          "annualized_volatility": 0.0063018606,
+          "date": "2026-04-15"
+        },
+        {
+          "annualized_volatility": 0.0062923941,
+          "date": "2026-04-16"
+        },
+        {
+          "annualized_volatility": 0.0062801996,
+          "date": "2026-04-17"
+        },
+        {
+          "annualized_volatility": 0.0062667531,
+          "date": "2026-04-20"
+        },
+        {
+          "annualized_volatility": 0.0062537353,
+          "date": "2026-04-21"
+        },
+        {
+          "annualized_volatility": 0.0062429816,
+          "date": "2026-04-22"
+        },
+        {
+          "annualized_volatility": 0.0062364189,
+          "date": "2026-04-23"
+        },
+        {
+          "annualized_volatility": 0.0062359905,
+          "date": "2026-04-24"
+        },
+        {
+          "annualized_volatility": 0.0062435712,
+          "date": "2026-04-27"
+        },
+        {
+          "annualized_volatility": 0.0062608765,
+          "date": "2026-04-28"
+        },
+        {
+          "annualized_volatility": 0.0062893717,
+          "date": "2026-04-29"
+        },
+        {
+          "annualized_volatility": 0.0063301884,
+          "date": "2026-04-30"
+        },
+        {
+          "annualized_volatility": 0.0063840545,
+          "date": "2026-05-01"
+        },
+        {
+          "annualized_volatility": 0.0064512446,
+          "date": "2026-05-04"
+        },
+        {
+          "annualized_volatility": 0.0065315567,
+          "date": "2026-05-05"
+        },
+        {
+          "annualized_volatility": 0.0066243142,
+          "date": "2026-05-06"
+        },
+        {
+          "annualized_volatility": 0.0067283949,
+          "date": "2026-05-07"
+        },
+        {
+          "annualized_volatility": 0.0068422805,
+          "date": "2026-05-08"
+        },
+        {
+          "annualized_volatility": 0.0069641226,
+          "date": "2026-05-11"
+        },
+        {
+          "annualized_volatility": 0.0070918183,
+          "date": "2026-05-12"
+        },
+        {
+          "annualized_volatility": 0.007223089,
+          "date": "2026-05-13"
+        },
+        {
+          "annualized_volatility": 0.0073555585,
+          "date": "2026-05-14"
+        },
+        {
+          "annualized_volatility": 0.0074868252,
+          "date": "2026-05-15"
+        },
+        {
+          "annualized_volatility": 0.0076145285,
+          "date": "2026-05-18"
+        },
+        {
+          "annualized_volatility": 0.0077364062,
+          "date": "2026-05-19"
+        },
+        {
+          "annualized_volatility": 0.0078503443,
+          "date": "2026-05-20"
+        },
+        {
+          "annualized_volatility": 0.0079544198,
+          "date": "2026-05-21"
+        },
+        {
+          "annualized_volatility": 0.0080469357,
+          "date": "2026-05-22"
+        },
+        {
+          "annualized_volatility": 0.0081264515,
+          "date": "2026-05-25"
+        },
+        {
+          "annualized_volatility": 0.008191808,
+          "date": "2026-05-26"
+        },
+        {
+          "annualized_volatility": 0.0082421481,
+          "date": "2026-05-27"
+        },
+        {
+          "annualized_volatility": 0.0082769344,
+          "date": "2026-05-28"
+        },
+        {
+          "annualized_volatility": 0.0082959629,
+          "date": "2026-05-29"
+        },
+        {
+          "annualized_volatility": 0.0082993743,
+          "date": "2026-06-01"
+        },
+        {
+          "annualized_volatility": 0.0082876614,
+          "date": "2026-06-02"
+        },
+        {
+          "annualized_volatility": 0.0082616732,
+          "date": "2026-06-03"
+        },
+        {
+          "annualized_volatility": 0.0082226145,
+          "date": "2026-06-04"
+        },
+        {
+          "annualized_volatility": 0.0081720401,
+          "date": "2026-06-05"
+        },
+        {
+          "annualized_volatility": 0.0081118423,
+          "date": "2026-06-08"
+        },
+        {
+          "annualized_volatility": 0.008044229,
+          "date": "2026-06-09"
+        },
+        {
+          "annualized_volatility": 0.0079716925,
+          "date": "2026-06-10"
+        },
+        {
+          "annualized_volatility": 0.0078969638,
+          "date": "2026-06-11"
+        },
+        {
+          "annualized_volatility": 0.0078229528,
+          "date": "2026-06-12"
+        }
+      ],
+      "sample_count": 299,
+      "series": [
+        {
+          "benchmark_index": 100.075996,
+          "date": "2025-04-22",
+          "portfolio_index": 100.147055
+        },
+        {
+          "benchmark_index": 100.154505,
+          "date": "2025-04-23",
+          "portfolio_index": 100.297318
+        },
+        {
+          "benchmark_index": 100.235486,
+          "date": "2025-04-24",
+          "portfolio_index": 100.450225
+        },
+        {
+          "benchmark_index": 100.318894,
+          "date": "2025-04-25",
+          "portfolio_index": 100.605199
+        },
+        {
+          "benchmark_index": 100.404676,
+          "date": "2025-04-28",
+          "portfolio_index": 100.761654
+        },
+        {
+          "benchmark_index": 100.492777,
+          "date": "2025-04-29",
+          "portfolio_index": 100.919001
+        },
+        {
+          "benchmark_index": 100.583135,
+          "date": "2025-04-30",
+          "portfolio_index": 101.076651
+        },
+        {
+          "benchmark_index": 100.675682,
+          "date": "2025-05-01",
+          "portfolio_index": 101.234019
+        },
+        {
+          "benchmark_index": 100.770346,
+          "date": "2025-05-02",
+          "portfolio_index": 101.39053
+        },
+        {
+          "benchmark_index": 100.867052,
+          "date": "2025-05-05",
+          "portfolio_index": 101.545622
+        },
+        {
+          "benchmark_index": 100.965718,
+          "date": "2025-05-06",
+          "portfolio_index": 101.698752
+        },
+        {
+          "benchmark_index": 101.066258,
+          "date": "2025-05-07",
+          "portfolio_index": 101.849399
+        },
+        {
+          "benchmark_index": 101.168583,
+          "date": "2025-05-08",
+          "portfolio_index": 101.997068
+        },
+        {
+          "benchmark_index": 101.272598,
+          "date": "2025-05-09",
+          "portfolio_index": 102.141293
+        },
+        {
+          "benchmark_index": 101.378206,
+          "date": "2025-05-12",
+          "portfolio_index": 102.281644
+        },
+        {
+          "benchmark_index": 101.485305,
+          "date": "2025-05-13",
+          "portfolio_index": 102.417724
+        },
+        {
+          "benchmark_index": 101.59379,
+          "date": "2025-05-14",
+          "portfolio_index": 102.549179
+        },
+        {
+          "benchmark_index": 101.703552,
+          "date": "2025-05-15",
+          "portfolio_index": 102.675697
+        },
+        {
+          "benchmark_index": 101.814481,
+          "date": "2025-05-16",
+          "portfolio_index": 102.797008
+        },
+        {
+          "benchmark_index": 101.92646,
+          "date": "2025-05-19",
+          "portfolio_index": 102.91289
+        },
+        {
+          "benchmark_index": 102.039374,
+          "date": "2025-05-20",
+          "portfolio_index": 103.023169
+        },
+        {
+          "benchmark_index": 102.153104,
+          "date": "2025-05-21",
+          "portfolio_index": 103.127719
+        },
+        {
+          "benchmark_index": 102.267528,
+          "date": "2025-05-22",
+          "portfolio_index": 103.226463
+        },
+        {
+          "benchmark_index": 102.382522,
+          "date": "2025-05-23",
+          "portfolio_index": 103.319374
+        },
+        {
+          "benchmark_index": 102.497962,
+          "date": "2025-05-26",
+          "portfolio_index": 103.406473
+        },
+        {
+          "benchmark_index": 102.613723,
+          "date": "2025-05-27",
+          "portfolio_index": 103.48783
+        },
+        {
+          "benchmark_index": 102.729676,
+          "date": "2025-05-28",
+          "portfolio_index": 103.563562
+        },
+        {
+          "benchmark_index": 102.845695,
+          "date": "2025-05-29",
+          "portfolio_index": 103.63383
+        },
+        {
+          "benchmark_index": 102.961651,
+          "date": "2025-05-30",
+          "portfolio_index": 103.698841
+        },
+        {
+          "benchmark_index": 103.077416,
+          "date": "2025-06-02",
+          "portfolio_index": 103.758841
+        },
+        {
+          "benchmark_index": 103.192861,
+          "date": "2025-06-03",
+          "portfolio_index": 103.814114
+        },
+        {
+          "benchmark_index": 103.307859,
+          "date": "2025-06-04",
+          "portfolio_index": 103.864981
+        },
+        {
+          "benchmark_index": 103.422284,
+          "date": "2025-06-05",
+          "portfolio_index": 103.911793
+        },
+        {
+          "benchmark_index": 103.536008,
+          "date": "2025-06-06",
+          "portfolio_index": 103.95493
+        },
+        {
+          "benchmark_index": 103.648908,
+          "date": "2025-06-09",
+          "portfolio_index": 103.994798
+        },
+        {
+          "benchmark_index": 103.760861,
+          "date": "2025-06-10",
+          "portfolio_index": 104.031822
+        },
+        {
+          "benchmark_index": 103.871745,
+          "date": "2025-06-11",
+          "portfolio_index": 104.066444
+        },
+        {
+          "benchmark_index": 103.981442,
+          "date": "2025-06-12",
+          "portfolio_index": 104.099118
+        },
+        {
+          "benchmark_index": 104.089836,
+          "date": "2025-06-13",
+          "portfolio_index": 104.130306
+        },
+        {
+          "benchmark_index": 104.196813,
+          "date": "2025-06-16",
+          "portfolio_index": 104.160474
+        },
+        {
+          "benchmark_index": 104.302262,
+          "date": "2025-06-17",
+          "portfolio_index": 104.190089
+        },
+        {
+          "benchmark_index": 104.406077,
+          "date": "2025-06-18",
+          "portfolio_index": 104.219611
+        },
+        {
+          "benchmark_index": 104.508155,
+          "date": "2025-06-19",
+          "portfolio_index": 104.249494
+        },
+        {
+          "benchmark_index": 104.608395,
+          "date": "2025-06-20",
+          "portfolio_index": 104.280175
+        },
+        {
+          "benchmark_index": 104.706703,
+          "date": "2025-06-23",
+          "portfolio_index": 104.31208
+        },
+        {
+          "benchmark_index": 104.802986,
+          "date": "2025-06-24",
+          "portfolio_index": 104.345612
+        },
+        {
+          "benchmark_index": 104.89716,
+          "date": "2025-06-25",
+          "portfolio_index": 104.38115
+        },
+        {
+          "benchmark_index": 104.989141,
+          "date": "2025-06-26",
+          "portfolio_index": 104.419047
+        },
+        {
+          "benchmark_index": 105.078854,
+          "date": "2025-06-27",
+          "portfolio_index": 104.459628
+        },
+        {
+          "benchmark_index": 105.166227,
+          "date": "2025-06-30",
+          "portfolio_index": 104.503183
+        },
+        {
+          "benchmark_index": 105.251195,
+          "date": "2025-07-01",
+          "portfolio_index": 104.549971
+        },
+        {
+          "benchmark_index": 105.333695,
+          "date": "2025-07-02",
+          "portfolio_index": 104.600212
+        },
+        {
+          "benchmark_index": 105.413675,
+          "date": "2025-07-03",
+          "portfolio_index": 104.654088
+        },
+        {
+          "benchmark_index": 105.491085,
+          "date": "2025-07-04",
+          "portfolio_index": 104.711744
+        },
+        {
+          "benchmark_index": 105.565883,
+          "date": "2025-07-07",
+          "portfolio_index": 104.773283
+        },
+        {
+          "benchmark_index": 105.638032,
+          "date": "2025-07-08",
+          "portfolio_index": 104.838765
+        },
+        {
+          "benchmark_index": 105.707501,
+          "date": "2025-07-09",
+          "portfolio_index": 104.908212
+        },
+        {
+          "benchmark_index": 105.774267,
+          "date": "2025-07-10",
+          "portfolio_index": 104.981605
+        },
+        {
+          "benchmark_index": 105.838312,
+          "date": "2025-07-11",
+          "portfolio_index": 105.05888
+        },
+        {
+          "benchmark_index": 105.899624,
+          "date": "2025-07-14",
+          "portfolio_index": 105.139938
+        },
+        {
+          "benchmark_index": 105.9582,
+          "date": "2025-07-15",
+          "portfolio_index": 105.224637
+        },
+        {
+          "benchmark_index": 106.014041,
+          "date": "2025-07-16",
+          "portfolio_index": 105.312802
+        },
+        {
+          "benchmark_index": 106.067154,
+          "date": "2025-07-17",
+          "portfolio_index": 105.404217
+        },
+        {
+          "benchmark_index": 106.117556,
+          "date": "2025-07-18",
+          "portfolio_index": 105.498637
+        },
+        {
+          "benchmark_index": 106.165267,
+          "date": "2025-07-21",
+          "portfolio_index": 105.595783
+        },
+        {
+          "benchmark_index": 106.210315,
+          "date": "2025-07-22",
+          "portfolio_index": 105.69535
+        },
+        {
+          "benchmark_index": 106.252734,
+          "date": "2025-07-23",
+          "portfolio_index": 105.797003
+        },
+        {
+          "benchmark_index": 106.292564,
+          "date": "2025-07-24",
+          "portfolio_index": 105.90039
+        },
+        {
+          "benchmark_index": 106.329852,
+          "date": "2025-07-25",
+          "portfolio_index": 106.005135
+        },
+        {
+          "benchmark_index": 106.36465,
+          "date": "2025-07-28",
+          "portfolio_index": 106.110848
+        },
+        {
+          "benchmark_index": 106.397016,
+          "date": "2025-07-29",
+          "portfolio_index": 106.217129
+        },
+        {
+          "benchmark_index": 106.427016,
+          "date": "2025-07-30",
+          "portfolio_index": 106.323566
+        },
+        {
+          "benchmark_index": 106.454718,
+          "date": "2025-07-31",
+          "portfolio_index": 106.429747
+        },
+        {
+          "benchmark_index": 106.480198,
+          "date": "2025-08-01",
+          "portfolio_index": 106.535255
+        },
+        {
+          "benchmark_index": 106.503536,
+          "date": "2025-08-04",
+          "portfolio_index": 106.63968
+        },
+        {
+          "benchmark_index": 106.524819,
+          "date": "2025-08-05",
+          "portfolio_index": 106.742619
+        },
+        {
+          "benchmark_index": 106.544137,
+          "date": "2025-08-06",
+          "portfolio_index": 106.843679
+        },
+        {
+          "benchmark_index": 106.561584,
+          "date": "2025-08-07",
+          "portfolio_index": 106.942484
+        },
+        {
+          "benchmark_index": 106.577261,
+          "date": "2025-08-08",
+          "portfolio_index": 107.038676
+        },
+        {
+          "benchmark_index": 106.591272,
+          "date": "2025-08-11",
+          "portfolio_index": 107.131922
+        },
+        {
+          "benchmark_index": 106.603723,
+          "date": "2025-08-12",
+          "portfolio_index": 107.221911
+        },
+        {
+          "benchmark_index": 106.614727,
+          "date": "2025-08-13",
+          "portfolio_index": 107.308364
+        },
+        {
+          "benchmark_index": 106.624398,
+          "date": "2025-08-14",
+          "portfolio_index": 107.391035
+        },
+        {
+          "benchmark_index": 106.632855,
+          "date": "2025-08-15",
+          "portfolio_index": 107.46971
+        },
+        {
+          "benchmark_index": 106.640217,
+          "date": "2025-08-18",
+          "portfolio_index": 107.544214
+        },
+        {
+          "benchmark_index": 106.646608,
+          "date": "2025-08-19",
+          "portfolio_index": 107.614409
+        },
+        {
+          "benchmark_index": 106.652154,
+          "date": "2025-08-20",
+          "portfolio_index": 107.680201
+        },
+        {
+          "benchmark_index": 106.656982,
+          "date": "2025-08-21",
+          "portfolio_index": 107.741534
+        },
+        {
+          "benchmark_index": 106.661222,
+          "date": "2025-08-22",
+          "portfolio_index": 107.798398
+        },
+        {
+          "benchmark_index": 106.665004,
+          "date": "2025-08-25",
+          "portfolio_index": 107.850824
+        },
+        {
+          "benchmark_index": 106.668459,
+          "date": "2025-08-26",
+          "portfolio_index": 107.898888
+        },
+        {
+          "benchmark_index": 106.67172,
+          "date": "2025-08-27",
+          "portfolio_index": 107.942706
+        },
+        {
+          "benchmark_index": 106.674921,
+          "date": "2025-08-28",
+          "portfolio_index": 107.98244
+        },
+        {
+          "benchmark_index": 106.678193,
+          "date": "2025-08-29",
+          "portfolio_index": 108.01829
+        },
+        {
+          "benchmark_index": 106.68167,
+          "date": "2025-09-01",
+          "portfolio_index": 108.050497
+        },
+        {
+          "benchmark_index": 106.685484,
+          "date": "2025-09-02",
+          "portfolio_index": 108.079338
+        },
+        {
+          "benchmark_index": 106.689767,
+          "date": "2025-09-03",
+          "portfolio_index": 108.105128
+        },
+        {
+          "benchmark_index": 106.694649,
+          "date": "2025-09-04",
+          "portfolio_index": 108.128211
+        },
+        {
+          "benchmark_index": 106.70026,
+          "date": "2025-09-05",
+          "portfolio_index": 108.148965
+        },
+        {
+          "benchmark_index": 106.706728,
+          "date": "2025-09-08",
+          "portfolio_index": 108.167791
+        },
+        {
+          "benchmark_index": 106.714178,
+          "date": "2025-09-09",
+          "portfolio_index": 108.185116
+        },
+        {
+          "benchmark_index": 106.722734,
+          "date": "2025-09-10",
+          "portfolio_index": 108.201385
+        },
+        {
+          "benchmark_index": 106.732517,
+          "date": "2025-09-11",
+          "portfolio_index": 108.21706
+        },
+        {
+          "benchmark_index": 106.743646,
+          "date": "2025-09-12",
+          "portfolio_index": 108.232616
+        },
+        {
+          "benchmark_index": 106.756236,
+          "date": "2025-09-15",
+          "portfolio_index": 108.248533
+        },
+        {
+          "benchmark_index": 106.770399,
+          "date": "2025-09-16",
+          "portfolio_index": 108.265299
+        },
+        {
+          "benchmark_index": 106.786244,
+          "date": "2025-09-17",
+          "portfolio_index": 108.283398
+        },
+        {
+          "benchmark_index": 106.803878,
+          "date": "2025-09-18",
+          "portfolio_index": 108.303314
+        },
+        {
+          "benchmark_index": 106.823399,
+          "date": "2025-09-19",
+          "portfolio_index": 108.325518
+        },
+        {
+          "benchmark_index": 106.844908,
+          "date": "2025-09-22",
+          "portfolio_index": 108.350472
+        },
+        {
+          "benchmark_index": 106.868495,
+          "date": "2025-09-23",
+          "portfolio_index": 108.378622
+        },
+        {
+          "benchmark_index": 106.894249,
+          "date": "2025-09-24",
+          "portfolio_index": 108.410393
+        },
+        {
+          "benchmark_index": 106.922254,
+          "date": "2025-09-25",
+          "portfolio_index": 108.446186
+        },
+        {
+          "benchmark_index": 106.952589,
+          "date": "2025-09-26",
+          "portfolio_index": 108.486377
+        },
+        {
+          "benchmark_index": 106.985328,
+          "date": "2025-09-29",
+          "portfolio_index": 108.531309
+        },
+        {
+          "benchmark_index": 107.020539,
+          "date": "2025-09-30",
+          "portfolio_index": 108.581296
+        },
+        {
+          "benchmark_index": 107.058285,
+          "date": "2025-10-01",
+          "portfolio_index": 108.636613
+        },
+        {
+          "benchmark_index": 107.098625,
+          "date": "2025-10-02",
+          "portfolio_index": 108.697497
+        },
+        {
+          "benchmark_index": 107.14161,
+          "date": "2025-10-03",
+          "portfolio_index": 108.764148
+        },
+        {
+          "benchmark_index": 107.187286,
+          "date": "2025-10-06",
+          "portfolio_index": 108.83672
+        },
+        {
+          "benchmark_index": 107.235696,
+          "date": "2025-10-07",
+          "portfolio_index": 108.915326
+        },
+        {
+          "benchmark_index": 107.286873,
+          "date": "2025-10-08",
+          "portfolio_index": 109.000033
+        },
+        {
+          "benchmark_index": 107.340846,
+          "date": "2025-10-09",
+          "portfolio_index": 109.090863
+        },
+        {
+          "benchmark_index": 107.397638,
+          "date": "2025-10-10",
+          "portfolio_index": 109.187792
+        },
+        {
+          "benchmark_index": 107.457266,
+          "date": "2025-10-13",
+          "portfolio_index": 109.29075
+        },
+        {
+          "benchmark_index": 107.519741,
+          "date": "2025-10-14",
+          "portfolio_index": 109.39962
+        },
+        {
+          "benchmark_index": 107.585066,
+          "date": "2025-10-15",
+          "portfolio_index": 109.51424
+        },
+        {
+          "benchmark_index": 107.653242,
+          "date": "2025-10-16",
+          "portfolio_index": 109.634405
+        },
+        {
+          "benchmark_index": 107.724258,
+          "date": "2025-10-17",
+          "portfolio_index": 109.759866
+        },
+        {
+          "benchmark_index": 107.798103,
+          "date": "2025-10-20",
+          "portfolio_index": 109.890332
+        },
+        {
+          "benchmark_index": 107.874755,
+          "date": "2025-10-21",
+          "portfolio_index": 110.025473
+        },
+        {
+          "benchmark_index": 107.954188,
+          "date": "2025-10-22",
+          "portfolio_index": 110.164921
+        },
+        {
+          "benchmark_index": 108.03637,
+          "date": "2025-10-23",
+          "portfolio_index": 110.308274
+        },
+        {
+          "benchmark_index": 108.121264,
+          "date": "2025-10-24",
+          "portfolio_index": 110.455099
+        },
+        {
+          "benchmark_index": 108.208823,
+          "date": "2025-10-27",
+          "portfolio_index": 110.604933
+        },
+        {
+          "benchmark_index": 108.299,
+          "date": "2025-10-28",
+          "portfolio_index": 110.757288
+        },
+        {
+          "benchmark_index": 108.391736,
+          "date": "2025-10-29",
+          "portfolio_index": 110.911655
+        },
+        {
+          "benchmark_index": 108.486972,
+          "date": "2025-10-30",
+          "portfolio_index": 111.067507
+        },
+        {
+          "benchmark_index": 108.584641,
+          "date": "2025-10-31",
+          "portfolio_index": 111.224304
+        },
+        {
+          "benchmark_index": 108.684668,
+          "date": "2025-11-03",
+          "portfolio_index": 111.381497
+        },
+        {
+          "benchmark_index": 108.786978,
+          "date": "2025-11-04",
+          "portfolio_index": 111.538531
+        },
+        {
+          "benchmark_index": 108.891486,
+          "date": "2025-11-05",
+          "portfolio_index": 111.69485
+        },
+        {
+          "benchmark_index": 108.998106,
+          "date": "2025-11-06",
+          "portfolio_index": 111.849904
+        },
+        {
+          "benchmark_index": 109.106744,
+          "date": "2025-11-07",
+          "portfolio_index": 112.00315
+        },
+        {
+          "benchmark_index": 109.217303,
+          "date": "2025-11-10",
+          "portfolio_index": 112.154057
+        },
+        {
+          "benchmark_index": 109.329681,
+          "date": "2025-11-11",
+          "portfolio_index": 112.302114
+        },
+        {
+          "benchmark_index": 109.443773,
+          "date": "2025-11-12",
+          "portfolio_index": 112.446829
+        },
+        {
+          "benchmark_index": 109.559469,
+          "date": "2025-11-13",
+          "portfolio_index": 112.587737
+        },
+        {
+          "benchmark_index": 109.676654,
+          "date": "2025-11-14",
+          "portfolio_index": 112.724403
+        },
+        {
+          "benchmark_index": 109.795212,
+          "date": "2025-11-17",
+          "portfolio_index": 112.856424
+        },
+        {
+          "benchmark_index": 109.915022,
+          "date": "2025-11-18",
+          "portfolio_index": 112.983435
+        },
+        {
+          "benchmark_index": 110.035961,
+          "date": "2025-11-19",
+          "portfolio_index": 113.105112
+        },
+        {
+          "benchmark_index": 110.157902,
+          "date": "2025-11-20",
+          "portfolio_index": 113.221171
+        },
+        {
+          "benchmark_index": 110.280716,
+          "date": "2025-11-21",
+          "portfolio_index": 113.331377
+        },
+        {
+          "benchmark_index": 110.404272,
+          "date": "2025-11-24",
+          "portfolio_index": 113.435541
+        },
+        {
+          "benchmark_index": 110.528438,
+          "date": "2025-11-25",
+          "portfolio_index": 113.533521
+        },
+        {
+          "benchmark_index": 110.653077,
+          "date": "2025-11-26",
+          "portfolio_index": 113.625229
+        },
+        {
+          "benchmark_index": 110.778055,
+          "date": "2025-11-27",
+          "portfolio_index": 113.710627
+        },
+        {
+          "benchmark_index": 110.903234,
+          "date": "2025-11-28",
+          "portfolio_index": 113.789726
+        },
+        {
+          "benchmark_index": 111.028476,
+          "date": "2025-12-01",
+          "portfolio_index": 113.862594
+        },
+        {
+          "benchmark_index": 111.153643,
+          "date": "2025-12-02",
+          "portfolio_index": 113.929344
+        },
+        {
+          "benchmark_index": 111.278596,
+          "date": "2025-12-03",
+          "portfolio_index": 113.990143
+        },
+        {
+          "benchmark_index": 111.403197,
+          "date": "2025-12-04",
+          "portfolio_index": 114.045204
+        },
+        {
+          "benchmark_index": 111.527308,
+          "date": "2025-12-05",
+          "portfolio_index": 114.094787
+        },
+        {
+          "benchmark_index": 111.650792,
+          "date": "2025-12-08",
+          "portfolio_index": 114.139199
+        },
+        {
+          "benchmark_index": 111.773514,
+          "date": "2025-12-09",
+          "portfolio_index": 114.178784
+        },
+        {
+          "benchmark_index": 111.895338,
+          "date": "2025-12-10",
+          "portfolio_index": 114.213927
+        },
+        {
+          "benchmark_index": 112.016133,
+          "date": "2025-12-11",
+          "portfolio_index": 114.245048
+        },
+        {
+          "benchmark_index": 112.135767,
+          "date": "2025-12-12",
+          "portfolio_index": 114.272597
+        },
+        {
+          "benchmark_index": 112.254113,
+          "date": "2025-12-15",
+          "portfolio_index": 114.297055
+        },
+        {
+          "benchmark_index": 112.371046,
+          "date": "2025-12-16",
+          "portfolio_index": 114.318921
+        },
+        {
+          "benchmark_index": 112.486443,
+          "date": "2025-12-17",
+          "portfolio_index": 114.338717
+        },
+        {
+          "benchmark_index": 112.600185,
+          "date": "2025-12-18",
+          "portfolio_index": 114.356978
+        },
+        {
+          "benchmark_index": 112.712156,
+          "date": "2025-12-19",
+          "portfolio_index": 114.374249
+        },
+        {
+          "benchmark_index": 112.822246,
+          "date": "2025-12-22",
+          "portfolio_index": 114.39108
+        },
+        {
+          "benchmark_index": 112.930347,
+          "date": "2025-12-23",
+          "portfolio_index": 114.408023
+        },
+        {
+          "benchmark_index": 113.036357,
+          "date": "2025-12-24",
+          "portfolio_index": 114.425623
+        },
+        {
+          "benchmark_index": 113.140176,
+          "date": "2025-12-25",
+          "portfolio_index": 114.444419
+        },
+        {
+          "benchmark_index": 113.241713,
+          "date": "2025-12-26",
+          "portfolio_index": 114.464936
+        },
+        {
+          "benchmark_index": 113.340879,
+          "date": "2025-12-29",
+          "portfolio_index": 114.487682
+        },
+        {
+          "benchmark_index": 113.437592,
+          "date": "2025-12-30",
+          "portfolio_index": 114.513142
+        },
+        {
+          "benchmark_index": 113.531775,
+          "date": "2025-12-31",
+          "portfolio_index": 114.541776
+        },
+        {
+          "benchmark_index": 113.623357,
+          "date": "2026-01-01",
+          "portfolio_index": 114.574016
+        },
+        {
+          "benchmark_index": 113.712273,
+          "date": "2026-01-02",
+          "portfolio_index": 114.61026
+        },
+        {
+          "benchmark_index": 113.798465,
+          "date": "2026-01-05",
+          "portfolio_index": 114.650869
+        },
+        {
+          "benchmark_index": 113.881881,
+          "date": "2026-01-06",
+          "portfolio_index": 114.696166
+        },
+        {
+          "benchmark_index": 113.962474,
+          "date": "2026-01-07",
+          "portfolio_index": 114.746434
+        },
+        {
+          "benchmark_index": 114.040205,
+          "date": "2026-01-08",
+          "portfolio_index": 114.801909
+        },
+        {
+          "benchmark_index": 114.115043,
+          "date": "2026-01-09",
+          "portfolio_index": 114.862783
+        },
+        {
+          "benchmark_index": 114.186961,
+          "date": "2026-01-12",
+          "portfolio_index": 114.929201
+        },
+        {
+          "benchmark_index": 114.255941,
+          "date": "2026-01-13",
+          "portfolio_index": 115.001259
+        },
+        {
+          "benchmark_index": 114.321971,
+          "date": "2026-01-14",
+          "portfolio_index": 115.079003
+        },
+        {
+          "benchmark_index": 114.385047,
+          "date": "2026-01-15",
+          "portfolio_index": 115.162432
+        },
+        {
+          "benchmark_index": 114.44517,
+          "date": "2026-01-16",
+          "portfolio_index": 115.251493
+        },
+        {
+          "benchmark_index": 114.50235,
+          "date": "2026-01-19",
+          "portfolio_index": 115.346085
+        },
+        {
+          "benchmark_index": 114.556604,
+          "date": "2026-01-20",
+          "portfolio_index": 115.446057
+        },
+        {
+          "benchmark_index": 114.607954,
+          "date": "2026-01-21",
+          "portfolio_index": 115.551213
+        },
+        {
+          "benchmark_index": 114.656432,
+          "date": "2026-01-22",
+          "portfolio_index": 115.66131
+        },
+        {
+          "benchmark_index": 114.702074,
+          "date": "2026-01-23",
+          "portfolio_index": 115.776061
+        },
+        {
+          "benchmark_index": 114.744923,
+          "date": "2026-01-26",
+          "portfolio_index": 115.895139
+        },
+        {
+          "benchmark_index": 114.785031,
+          "date": "2026-01-27",
+          "portfolio_index": 116.018176
+        },
+        {
+          "benchmark_index": 114.822454,
+          "date": "2026-01-28",
+          "portfolio_index": 116.14477
+        },
+        {
+          "benchmark_index": 114.857256,
+          "date": "2026-01-29",
+          "portfolio_index": 116.274485
+        },
+        {
+          "benchmark_index": 114.889507,
+          "date": "2026-01-30",
+          "portfolio_index": 116.406858
+        },
+        {
+          "benchmark_index": 114.919282,
+          "date": "2026-02-02",
+          "portfolio_index": 116.541399
+        },
+        {
+          "benchmark_index": 114.946662,
+          "date": "2026-02-03",
+          "portfolio_index": 116.677598
+        },
+        {
+          "benchmark_index": 114.971736,
+          "date": "2026-02-04",
+          "portfolio_index": 116.814926
+        },
+        {
+          "benchmark_index": 114.994596,
+          "date": "2026-02-05",
+          "portfolio_index": 116.952846
+        },
+        {
+          "benchmark_index": 115.015339,
+          "date": "2026-02-06",
+          "portfolio_index": 117.090809
+        },
+        {
+          "benchmark_index": 115.034069,
+          "date": "2026-02-09",
+          "portfolio_index": 117.228266
+        },
+        {
+          "benchmark_index": 115.050894,
+          "date": "2026-02-10",
+          "portfolio_index": 117.364668
+        },
+        {
+          "benchmark_index": 115.065926,
+          "date": "2026-02-11",
+          "portfolio_index": 117.499474
+        },
+        {
+          "benchmark_index": 115.079282,
+          "date": "2026-02-12",
+          "portfolio_index": 117.632154
+        },
+        {
+          "benchmark_index": 115.091081,
+          "date": "2026-02-13",
+          "portfolio_index": 117.762194
+        },
+        {
+          "benchmark_index": 115.101448,
+          "date": "2026-02-16",
+          "portfolio_index": 117.889102
+        },
+        {
+          "benchmark_index": 115.110511,
+          "date": "2026-02-17",
+          "portfolio_index": 118.01241
+        },
+        {
+          "benchmark_index": 115.118399,
+          "date": "2026-02-18",
+          "portfolio_index": 118.131682
+        },
+        {
+          "benchmark_index": 115.125246,
+          "date": "2026-02-19",
+          "portfolio_index": 118.246514
+        },
+        {
+          "benchmark_index": 115.131189,
+          "date": "2026-02-20",
+          "portfolio_index": 118.356542
+        },
+        {
+          "benchmark_index": 115.136364,
+          "date": "2026-02-23",
+          "portfolio_index": 118.46144
+        },
+        {
+          "benchmark_index": 115.14091,
+          "date": "2026-02-24",
+          "portfolio_index": 118.56093
+        },
+        {
+          "benchmark_index": 115.144971,
+          "date": "2026-02-25",
+          "portfolio_index": 118.65478
+        },
+        {
+          "benchmark_index": 115.148686,
+          "date": "2026-02-26",
+          "portfolio_index": 118.742807
+        },
+        {
+          "benchmark_index": 115.152199,
+          "date": "2026-02-27",
+          "portfolio_index": 118.824882
+        },
+        {
+          "benchmark_index": 115.155655,
+          "date": "2026-03-02",
+          "portfolio_index": 118.900928
+        },
+        {
+          "benchmark_index": 115.159195,
+          "date": "2026-03-03",
+          "portfolio_index": 118.970921
+        },
+        {
+          "benchmark_index": 115.162964,
+          "date": "2026-03-04",
+          "portfolio_index": 119.034894
+        },
+        {
+          "benchmark_index": 115.167105,
+          "date": "2026-03-05",
+          "portfolio_index": 119.092934
+        },
+        {
+          "benchmark_index": 115.171759,
+          "date": "2026-03-06",
+          "portfolio_index": 119.145183
+        },
+        {
+          "benchmark_index": 115.177068,
+          "date": "2026-03-09",
+          "portfolio_index": 119.191836
+        },
+        {
+          "benchmark_index": 115.183171,
+          "date": "2026-03-10",
+          "portfolio_index": 119.23314
+        },
+        {
+          "benchmark_index": 115.190206,
+          "date": "2026-03-11",
+          "portfolio_index": 119.269393
+        },
+        {
+          "benchmark_index": 115.198308,
+          "date": "2026-03-12",
+          "portfolio_index": 119.300939
+        },
+        {
+          "benchmark_index": 115.207611,
+          "date": "2026-03-13",
+          "portfolio_index": 119.32817
+        },
+        {
+          "benchmark_index": 115.218246,
+          "date": "2026-03-16",
+          "portfolio_index": 119.351517
+        },
+        {
+          "benchmark_index": 115.23034,
+          "date": "2026-03-17",
+          "portfolio_index": 119.371452
+        },
+        {
+          "benchmark_index": 115.244018,
+          "date": "2026-03-18",
+          "portfolio_index": 119.388478
+        },
+        {
+          "benchmark_index": 115.259401,
+          "date": "2026-03-19",
+          "portfolio_index": 119.403132
+        },
+        {
+          "benchmark_index": 115.276606,
+          "date": "2026-03-20",
+          "portfolio_index": 119.415974
+        },
+        {
+          "benchmark_index": 115.295746,
+          "date": "2026-03-23",
+          "portfolio_index": 119.427586
+        },
+        {
+          "benchmark_index": 115.316931,
+          "date": "2026-03-24",
+          "portfolio_index": 119.438566
+        },
+        {
+          "benchmark_index": 115.340266,
+          "date": "2026-03-25",
+          "portfolio_index": 119.449524
+        },
+        {
+          "benchmark_index": 115.36585,
+          "date": "2026-03-26",
+          "portfolio_index": 119.461075
+        },
+        {
+          "benchmark_index": 115.393779,
+          "date": "2026-03-27",
+          "portfolio_index": 119.473837
+        },
+        {
+          "benchmark_index": 115.424142,
+          "date": "2026-03-30",
+          "portfolio_index": 119.488421
+        },
+        {
+          "benchmark_index": 115.457024,
+          "date": "2026-03-31",
+          "portfolio_index": 119.505431
+        },
+        {
+          "benchmark_index": 115.492506,
+          "date": "2026-04-01",
+          "portfolio_index": 119.525458
+        },
+        {
+          "benchmark_index": 115.530659,
+          "date": "2026-04-02",
+          "portfolio_index": 119.549071
+        },
+        {
+          "benchmark_index": 115.571554,
+          "date": "2026-04-03",
+          "portfolio_index": 119.576816
+        },
+        {
+          "benchmark_index": 115.61525,
+          "date": "2026-04-06",
+          "portfolio_index": 119.609214
+        },
+        {
+          "benchmark_index": 115.661806,
+          "date": "2026-04-07",
+          "portfolio_index": 119.646749
+        },
+        {
+          "benchmark_index": 115.711269,
+          "date": "2026-04-08",
+          "portfolio_index": 119.689872
+        },
+        {
+          "benchmark_index": 115.763685,
+          "date": "2026-04-09",
+          "portfolio_index": 119.738992
+        },
+        {
+          "benchmark_index": 115.81909,
+          "date": "2026-04-10",
+          "portfolio_index": 119.794475
+        },
+        {
+          "benchmark_index": 115.877515,
+          "date": "2026-04-13",
+          "portfolio_index": 119.85664
+        },
+        {
+          "benchmark_index": 115.938984,
+          "date": "2026-04-14",
+          "portfolio_index": 119.925755
+        },
+        {
+          "benchmark_index": 116.003516,
+          "date": "2026-04-15",
+          "portfolio_index": 120.002039
+        },
+        {
+          "benchmark_index": 116.07112,
+          "date": "2026-04-16",
+          "portfolio_index": 120.085655
+        },
+        {
+          "benchmark_index": 116.141803,
+          "date": "2026-04-17",
+          "portfolio_index": 120.17671
+        },
+        {
+          "benchmark_index": 116.215561,
+          "date": "2026-04-20",
+          "portfolio_index": 120.275255
+        },
+        {
+          "benchmark_index": 116.292386,
+          "date": "2026-04-21",
+          "portfolio_index": 120.381285
+        },
+        {
+          "benchmark_index": 116.372263,
+          "date": "2026-04-22",
+          "portfolio_index": 120.494733
+        },
+        {
+          "benchmark_index": 116.455169,
+          "date": "2026-04-23",
+          "portfolio_index": 120.615479
+        },
+        {
+          "benchmark_index": 116.541075,
+          "date": "2026-04-24",
+          "portfolio_index": 120.743342
+        },
+        {
+          "benchmark_index": 116.629948,
+          "date": "2026-04-27",
+          "portfolio_index": 120.878085
+        },
+        {
+          "benchmark_index": 116.721744,
+          "date": "2026-04-28",
+          "portfolio_index": 121.019417
+        },
+        {
+          "benchmark_index": 116.816416,
+          "date": "2026-04-29",
+          "portfolio_index": 121.166994
+        },
+        {
+          "benchmark_index": 116.91391,
+          "date": "2026-04-30",
+          "portfolio_index": 121.32042
+        },
+        {
+          "benchmark_index": 117.014164,
+          "date": "2026-05-01",
+          "portfolio_index": 121.47925
+        },
+        {
+          "benchmark_index": 117.117112,
+          "date": "2026-05-04",
+          "portfolio_index": 121.642994
+        },
+        {
+          "benchmark_index": 117.222682,
+          "date": "2026-05-05",
+          "portfolio_index": 121.811121
+        },
+        {
+          "benchmark_index": 117.330795,
+          "date": "2026-05-06",
+          "portfolio_index": 121.98306
+        },
+        {
+          "benchmark_index": 117.441366,
+          "date": "2026-05-07",
+          "portfolio_index": 122.158207
+        },
+        {
+          "benchmark_index": 117.554307,
+          "date": "2026-05-08",
+          "portfolio_index": 122.335927
+        },
+        {
+          "benchmark_index": 117.669521,
+          "date": "2026-05-11",
+          "portfolio_index": 122.515562
+        },
+        {
+          "benchmark_index": 117.786908,
+          "date": "2026-05-12",
+          "portfolio_index": 122.696431
+        },
+        {
+          "benchmark_index": 117.906363,
+          "date": "2026-05-13",
+          "portfolio_index": 122.877842
+        },
+        {
+          "benchmark_index": 118.027777,
+          "date": "2026-05-14",
+          "portfolio_index": 123.059089
+        },
+        {
+          "benchmark_index": 118.151034,
+          "date": "2026-05-15",
+          "portfolio_index": 123.239465
+        },
+        {
+          "benchmark_index": 118.276016,
+          "date": "2026-05-18",
+          "portfolio_index": 123.418264
+        },
+        {
+          "benchmark_index": 118.402599,
+          "date": "2026-05-19",
+          "portfolio_index": 123.594788
+        },
+        {
+          "benchmark_index": 118.530658,
+          "date": "2026-05-20",
+          "portfolio_index": 123.768351
+        },
+        {
+          "benchmark_index": 118.660061,
+          "date": "2026-05-21",
+          "portfolio_index": 123.938286
+        },
+        {
+          "benchmark_index": 118.790675,
+          "date": "2026-05-22",
+          "portfolio_index": 124.103953
+        },
+        {
+          "benchmark_index": 118.922364,
+          "date": "2026-05-25",
+          "portfolio_index": 124.264737
+        },
+        {
+          "benchmark_index": 119.054987,
+          "date": "2026-05-26",
+          "portfolio_index": 124.420063
+        },
+        {
+          "benchmark_index": 119.188405,
+          "date": "2026-05-27",
+          "portfolio_index": 124.569394
+        },
+        {
+          "benchmark_index": 119.322472,
+          "date": "2026-05-28",
+          "portfolio_index": 124.712237
+        },
+        {
+          "benchmark_index": 119.457043,
+          "date": "2026-05-29",
+          "portfolio_index": 124.848151
+        },
+        {
+          "benchmark_index": 119.591972,
+          "date": "2026-06-01",
+          "portfolio_index": 124.976745
+        },
+        {
+          "benchmark_index": 119.72711,
+          "date": "2026-06-02",
+          "portfolio_index": 125.097688
+        },
+        {
+          "benchmark_index": 119.862308,
+          "date": "2026-06-03",
+          "portfolio_index": 125.210708
+        },
+        {
+          "benchmark_index": 119.997417,
+          "date": "2026-06-04",
+          "portfolio_index": 125.315593
+        },
+        {
+          "benchmark_index": 120.132287,
+          "date": "2026-06-05",
+          "portfolio_index": 125.4122
+        },
+        {
+          "benchmark_index": 120.266769,
+          "date": "2026-06-08",
+          "portfolio_index": 125.500449
+        },
+        {
+          "benchmark_index": 120.400715,
+          "date": "2026-06-09",
+          "portfolio_index": 125.580329
+        },
+        {
+          "benchmark_index": 120.533976,
+          "date": "2026-06-10",
+          "portfolio_index": 125.651894
+        },
+        {
+          "benchmark_index": 120.666406,
+          "date": "2026-06-11",
+          "portfolio_index": 125.715268
+        },
+        {
+          "benchmark_index": 120.79786,
+          "date": "2026-06-12",
+          "portfolio_index": 125.770639
+        }
+      ],
+      "window": {
+        "end": "2026-06-12",
+        "start": "2025-04-22"
+      }
+    },
+    "portfolio": {
+      "base_currency": "USD",
+      "benchmark": "SPY",
+      "display_name": "Core Multi-Asset Research Demo",
+      "external_cash_flows_supplied": false,
+      "input_classification": "deterministic_fictional_demo",
+      "not_financial_advice": true,
+      "period": "1y",
+      "portfolio_id": "demo-core"
+    },
+    "portfolio_risk_version": "portfolio_risk.v1",
+    "privacy": {
+      "classification": "deterministic_fictional_demo",
+      "cost_basis_in_url": false,
+      "external_ai_transmission": false,
+      "local_private_storage_path_exposed": false,
+      "quantities_in_url": false,
+      "release_safe": true,
+      "static_fixture_contains_real_holdings": false,
+      "symbols_only_provider_requests": true,
+      "telemetry_transmission": false
+    },
+    "readiness": {
+      "attribution_ready": true,
+      "broker_execution_added": false,
+      "cash_return_defined_as_zero": true,
+      "correlation_ready": true,
+      "factor_ready": true,
+      "live_portfolio_claimed": false,
+      "missing_returns_as_zero": false,
+      "non_advisory": true,
+      "performance_ready": true,
+      "rebalance_instructions_added": false,
+      "recommended_weights_added": false,
+      "risk_ready": true,
+      "stress_ready": true,
+      "valuation_ready": true
+    },
+    "rejected_holdings": [],
+    "research_snapshot": {
+      "available": true,
+      "caveat": "The existing research guard pipeline validates a holdings-free source snapshot. Durable local research memory is Phase 5L.",
+      "cost_basis_in_snapshot": false,
+      "generated_at": "2026-06-16T00:00:00+00:00",
+      "guard_summary": {
+        "counts": {
+          "passed": 1,
+          "skipped_no_data": 12
+        },
+        "guard_count": 13,
+        "requires_review": true,
+        "review_count": 12
+      },
+      "guards": [
+        {
+          "evidence": {},
+          "guard": "data_quality_guard",
+          "message": "No data quality snapshot supplied.",
+          "severity": "elevated",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "sample_length_guard",
+          "message": "No sample length supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "missing_data_guard",
+          "message": "No missing-data metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "proxy_dependence_guard",
+          "message": "No proxy-dependence metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "source_freshness_guard",
+          "message": "No source freshness metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "overfit_guard",
+          "message": "Backtest/OOS comparison metadata is missing.",
+          "severity": "elevated",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "lookahead_bias_guard",
+          "message": "No lookahead-bias audit flag supplied.",
+          "severity": "elevated",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "survivorship_bias_guard",
+          "message": "No survivorship-bias audit flag supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "turnover_guard",
+          "message": "No turnover metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "drawdown_guard",
+          "message": "No drawdown metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "concentration_guard",
+          "message": "No concentration metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "leverage_guard",
+          "message": "No leverage metadata supplied.",
+          "severity": "watch",
+          "status": "skipped_no_data"
+        },
+        {
+          "evidence": {},
+          "guard": "no_recommendation_language_guard",
+          "message": "No actionable trading phrase detected.",
+          "severity": "info",
+          "status": "passed"
+        }
+      ],
+      "persistence": "not_persisted_in_phase_5k",
+      "private_holdings_in_public_report": false,
+      "quantities_in_snapshot": false,
+      "report_type": "portfolio_risk_snapshot",
+      "safe_context": {
+        "benchmark": "SPY",
+        "data_gap_count": 1,
+        "history_coverage_pct": 100.0,
+        "not_financial_advice": true,
+        "performance_sample_count": 299,
+        "period": "1y",
+        "portfolio_id": "demo-core",
+        "report_type": "portfolio_risk_snapshot",
+        "research_only": true,
+        "source_status": "fixture",
+        "valuation_coverage_pct": 100.0
+      }
+    },
+    "risk": {
+      "annualization": 252,
+      "available": true,
+      "caveat": "Historical estimates are sample-dependent and are not loss forecasts.",
+      "data_gap": null,
+      "frequency": "daily",
+      "lookback": {
+        "end": "2026-06-12",
+        "start": "2025-04-22"
+      },
+      "metrics": {
+        "annualized_volatility": 0.006858092032627182,
+        "beta_vs_benchmark": 0.3320017975234323,
+        "downside_volatility": 0.0,
+        "historical_cvar_95_daily": 0.0,
+        "historical_var_95_daily": 0.0,
+        "largest_position_weight": 0.27486311787888545,
+        "max_drawdown": 0.0,
+        "sharpe_zero_cash_rate": 28.192253519754654,
+        "sortino_zero_cash_rate": null
+      },
+      "missing_data_policy": "complete overlap",
+      "not_financial_advice": true,
+      "sample_count": 299,
+      "units": {
+        "beta_sharpe_sortino": "ratio",
+        "returns_and_drawdown": "decimal",
+        "var_cvar": "daily decimal loss magnitude",
+        "volatility": "annualized decimal"
+      }
+    },
+    "source_register": [
+      {
+        "cached": false,
+        "caveat": "Only public symbols are sent to the market-data provider; quantities, costs, names and notes are not transmitted.",
+        "coverage": "6/6 histories",
+        "data_gap": "Deterministic network-free research fixture.",
+        "error": null,
+        "fetched_at": "2026-06-16T00:00:00+00:00",
+        "not_financial_advice": true,
+        "provider": "phase5k.fixture",
+        "row_count": 6,
+        "source": "deterministic fictional portfolio history",
+        "source_status": "fixture",
+        "source_url": "https://example.test/phase-5k/portfolio-risk",
+        "status": "fixture",
+        "warning": "Deterministic network-free research fixture."
+      }
+    ],
+    "stress_tests": [
+      {
+        "assumed_shocks": null,
+        "caveat": "Observed portfolio replay within the selected source window; not a forecast.",
+        "data_gap": null,
+        "estimated_portfolio_impact": 0.00048454959101240647,
+        "not_financial_advice": true,
+        "sample_count": 299,
+        "scenario": "Worst observed 5-session window",
+        "scenario_type": "historical_replay",
+        "window": {
+          "end": "2026-03-27",
+          "sessions": 5,
+          "start": "2026-03-23"
+        }
+      },
+      {
+        "assumed_shocks": null,
+        "caveat": "Observed portfolio replay within the selected source window; not a forecast.",
+        "data_gap": null,
+        "estimated_portfolio_impact": 0.003468911142186837,
+        "not_financial_advice": true,
+        "sample_count": 299,
+        "scenario": "Worst observed 20-session window",
+        "scenario_type": "historical_replay",
+        "window": {
+          "end": "2026-04-07",
+          "sessions": 20,
+          "start": "2026-03-11"
+        }
+      },
+      {
+        "assumed_shocks": {
+          "crypto": -0.18,
+          "default": -0.05,
+          "equity": -0.12,
+          "oil": -0.06,
+          "oil_equity": -0.08,
+          "rates": 0.03
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.11178573330651495,
+        "largest_contributors": [
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.04947536121819938,
+            "shock": -0.18,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.026016195062964025,
+            "shock": -0.12,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "MSFT",
+            "bucket": "equity",
+            "impact": -0.01399578994381267,
+            "shock": -0.12,
+            "weight": 0.11663158286510558
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "Equity selloff stress",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      },
+      {
+        "assumed_shocks": {
+          "crypto": -0.08,
+          "default": -0.03,
+          "equity": -0.05,
+          "rates": -0.1,
+          "usd": 0.04
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.056348170533486744,
+        "largest_contributors": [
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.021989049430310836,
+            "shock": -0.08,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.010840081276235012,
+            "shock": -0.05,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "TLT",
+            "bucket": "rates",
+            "impact": -0.00746352539233578,
+            "shock": -0.1,
+            "weight": 0.07463525392335779
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "Rate spike stress",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      },
+      {
+        "assumed_shocks": {
+          "default": -0.02,
+          "equity": -0.04,
+          "oil": 0.18,
+          "oil_equity": 0.1,
+          "rates": -0.02
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.028506444004716972,
+        "largest_contributors": [
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.00867206502098801,
+            "shock": -0.04,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.005497262357577709,
+            "shock": -0.02,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "MSFT",
+            "bucket": "equity",
+            "impact": -0.004665263314604223,
+            "shock": -0.04,
+            "weight": 0.11663158286510558
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "Oil shock stress",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      },
+      {
+        "assumed_shocks": {
+          "crypto": -0.12,
+          "default": -0.04,
+          "equity": -0.06,
+          "oil": -0.08,
+          "usd": 0.08
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.06824369915540872,
+        "largest_contributors": [
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.03298357414546625,
+            "shock": -0.12,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.013008097531482013,
+            "shock": -0.06,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "MSFT",
+            "bucket": "equity",
+            "impact": -0.006997894971906335,
+            "shock": -0.06,
+            "weight": 0.11663158286510558
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "USD spike stress",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      },
+      {
+        "assumed_shocks": {
+          "crypto": -0.3,
+          "default": -0.02,
+          "equity": -0.03
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.10008899786863687,
+        "largest_contributors": [
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.08245893536366564,
+            "shock": -0.3,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.006504048765741006,
+            "shock": -0.03,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "MSFT",
+            "bucket": "equity",
+            "impact": -0.0034989474859531675,
+            "shock": -0.03,
+            "weight": 0.11663158286510558
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "Crypto deleveraging stress",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      },
+      {
+        "assumed_shocks": {
+          "crypto": -0.16,
+          "default": -0.05,
+          "equity": -0.1,
+          "rates": 0.02,
+          "volatility": 0.35
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.09627658520383478,
+        "largest_contributors": [
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.04397809886062167,
+            "shock": -0.16,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.021680162552470024,
+            "shock": -0.1,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "MSFT",
+            "bucket": "equity",
+            "impact": -0.011663158286510558,
+            "shock": -0.1,
+            "weight": 0.11663158286510558
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "Volatility shock stress",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      },
+      {
+        "assumed_shocks": {
+          "default": -0.05
+        },
+        "caveat": "Scenario estimate; shocks are simplified and do not model path dependency.",
+        "data_gap": "No live covariance shock transmission model in free mode.",
+        "estimated_portfolio_impact": -0.04437051430095229,
+        "largest_contributors": [
+          {
+            "asset": "BTC-USD",
+            "bucket": "crypto",
+            "impact": -0.013743155893944273,
+            "shock": -0.05,
+            "weight": 0.27486311787888545
+          },
+          {
+            "asset": "SPY",
+            "bucket": "equity",
+            "impact": -0.010840081276235012,
+            "shock": -0.05,
+            "weight": 0.21680162552470023
+          },
+          {
+            "asset": "MSFT",
+            "bucket": "equity",
+            "impact": -0.005831579143255279,
+            "shock": -0.05,
+            "weight": 0.11663158286510558
+          }
+        ],
+        "not_financial_advice": true,
+        "sample_count": null,
+        "scenario": "Custom stress condition",
+        "scenario_type": "deterministic_hypothetical",
+        "window": null
+      }
+    ],
+    "summary": {
+      "as_of": "2026-06-20T16:00:00+00:00",
+      "base_currency": "USD",
+      "history_coverage_pct": 100.0,
+      "history_holding_count": 6,
+      "holding_count": 7,
+      "missing_symbols": [],
+      "not_financial_advice": true,
+      "performance_sample_count": 299,
+      "portfolio_id": "demo-core",
+      "priced_holding_count": 7,
+      "source_status": "fixture",
+      "total_market_value": 39968.127112937065,
+      "valuation_coverage_pct": 100.0
+    },
+    "workspace": "portfolio-risk"
+  },
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "portfolio_risk",
+  "source_status": [
+    {
+      "cached": false,
+      "caveat": "Only public symbols are sent to the market-data provider; quantities, costs, names and notes are not transmitted.",
+      "coverage": "6/6 histories",
+      "data_gap": "Deterministic network-free research fixture.",
+      "error": null,
+      "fetched_at": "2026-06-16T00:00:00+00:00",
+      "not_financial_advice": true,
+      "provider": "phase5k.fixture",
+      "row_count": 6,
+      "source": "deterministic fictional portfolio history",
+      "source_status": "fixture",
+      "source_url": "https://example.test/phase-5k/portfolio-risk",
+      "status": "fixture",
+      "warning": "Deterministic network-free research fixture."
+    }
+  ],
+  "summary": {
+    "as_of": "2026-06-20T16:00:00+00:00",
+    "base_currency": "USD",
+    "history_coverage_pct": 100.0,
+    "history_holding_count": 6,
+    "holding_count": 7,
+    "missing_symbols": [],
+    "not_financial_advice": true,
+    "performance_sample_count": 299,
+    "portfolio_id": "demo-core",
+    "priced_holding_count": 7,
+    "source_status": "fixture",
+    "total_market_value": 39968.127112937065,
+    "valuation_coverage_pct": 100.0
+  },
+  "unavailable": []
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Terminal Next Goal"
+  short_description: "Select and write the next evidence-based goal."
+  default_prompt: "Write the next Global Terminal goal from scorecard, tests, visuals, and unresolved product gaps."

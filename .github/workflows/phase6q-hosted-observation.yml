@@ -1,0 +1,38 @@
+name: Phase 6Q hosted observation
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: phase6q-hosted-observation
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    environment: phase6q-pilot
+    steps:
+      - name: Check out exact default-branch revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install bounded runtime dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Execute one atomic due claim
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          GLOBAL_TERMINAL_HOSTED_SCHEDULER_LEASE_SECONDS: "120"
+        run: python scripts/run_phase6q_hosted_scheduler.py

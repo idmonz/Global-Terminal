@@ -1,0 +1,239 @@
+{
+  "caveats": [
+    "AI provider payload exposes configuration status only; secret values are never included.",
+    "Gemini Google Search grounding remains opt-in because it may create billable tool usage.",
+    "Rule-based fallback is always available and requires no paid API key."
+  ],
+  "contract_version": "phase_2b.v1",
+  "data": [
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "ANTHROPIC_API_KEY",
+      "is_free_mode": false,
+      "is_local": false,
+      "model": "claude-3-5-haiku-latest",
+      "provider": "anthropic",
+      "source_status": "missing-key",
+      "warning": "Missing optional ANTHROPIC_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "GEMINI_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "source_status": "missing-key",
+      "warning": "Missing optional GEMINI_API_KEY or GOOGLE_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "GROQ_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "source_status": "missing-key",
+      "warning": "Missing optional GROQ_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "OPENROUTER_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "openrouter/auto",
+      "provider": "openrouter",
+      "source_status": "missing-key",
+      "warning": "Missing optional OPENROUTER_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "OLLAMA_BASE_URL",
+      "is_free_mode": true,
+      "is_local": true,
+      "model": "llama3.1",
+      "provider": "ollama",
+      "source_status": "missing-key",
+      "warning": "Missing optional OLLAMA_BASE_URL."
+    },
+    {
+      "available": true,
+      "base_url_configured": false,
+      "configured": true,
+      "env_var": null,
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "deterministic-neutral-fallback",
+      "provider": "rule_based",
+      "source_status": "available",
+      "warning": "Offline deterministic fallback."
+    }
+  ],
+  "errors": [],
+  "generated_at": "2026-06-16T00:00:00+00:00",
+  "payload_type": "ai_provider_status",
+  "source_status": [
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "ANTHROPIC_API_KEY",
+      "is_free_mode": false,
+      "is_local": false,
+      "model": "claude-3-5-haiku-latest",
+      "provider": "anthropic",
+      "source_status": "missing-key",
+      "warning": "Missing optional ANTHROPIC_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "GEMINI_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "source_status": "missing-key",
+      "warning": "Missing optional GEMINI_API_KEY or GOOGLE_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "GROQ_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "source_status": "missing-key",
+      "warning": "Missing optional GROQ_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "OPENROUTER_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "openrouter/auto",
+      "provider": "openrouter",
+      "source_status": "missing-key",
+      "warning": "Missing optional OPENROUTER_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "OLLAMA_BASE_URL",
+      "is_free_mode": true,
+      "is_local": true,
+      "model": "llama3.1",
+      "provider": "ollama",
+      "source_status": "missing-key",
+      "warning": "Missing optional OLLAMA_BASE_URL."
+    },
+    {
+      "available": true,
+      "base_url_configured": false,
+      "configured": true,
+      "env_var": null,
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "deterministic-neutral-fallback",
+      "provider": "rule_based",
+      "source_status": "available",
+      "warning": "Offline deterministic fallback."
+    }
+  ],
+  "summary": {
+    "available_count": 1,
+    "free_first_order": [
+      "gemini",
+      "groq",
+      "ollama",
+      "openrouter",
+      "anthropic",
+      "rule_based"
+    ],
+    "gemini_google_search_grounding_enabled": false,
+    "openai_api_key_required": false,
+    "provider_count": 6,
+    "selected_available": true,
+    "selected_free_mode": true,
+    "selected_model": "deterministic-neutral-fallback",
+    "selected_provider": "rule_based"
+  },
+  "unavailable": [
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "ANTHROPIC_API_KEY",
+      "is_free_mode": false,
+      "is_local": false,
+      "model": "claude-3-5-haiku-latest",
+      "provider": "anthropic",
+      "source_status": "missing-key",
+      "warning": "Missing optional ANTHROPIC_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "GEMINI_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "gemini-3.1-flash-lite",
+      "provider": "gemini",
+      "source_status": "missing-key",
+      "warning": "Missing optional GEMINI_API_KEY or GOOGLE_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "GROQ_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "source_status": "missing-key",
+      "warning": "Missing optional GROQ_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "OPENROUTER_API_KEY",
+      "is_free_mode": true,
+      "is_local": false,
+      "model": "openrouter/auto",
+      "provider": "openrouter",
+      "source_status": "missing-key",
+      "warning": "Missing optional OPENROUTER_API_KEY."
+    },
+    {
+      "available": false,
+      "base_url_configured": false,
+      "configured": false,
+      "env_var": "OLLAMA_BASE_URL",
+      "is_free_mode": true,
+      "is_local": true,
+      "model": "llama3.1",
+      "provider": "ollama",
+      "source_status": "missing-key",
+      "warning": "Missing optional OLLAMA_BASE_URL."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Global Terminal Product Parity"
+  short_description: "Deliver one benchmark-driven vertical product slice."
+  default_prompt: "Implement the selected Global Terminal parity slice from existing engines through verified web UX."
