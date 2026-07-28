@@ -3,4 +3,4 @@
 #   pip install -r requirements-openbb.txt
 #
 # OpenBB is not required for base app launch.
-openbb>=4.0
+openbb>=4.7.2
