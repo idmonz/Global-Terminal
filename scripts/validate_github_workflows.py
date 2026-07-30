@@ -133,7 +133,15 @@ def validate_workflows(root: Path = ROOT) -> dict[str, Any]:
     scheduler_secrets = set(SECRET_PATTERN.findall(scheduler))
     if scheduler_secrets != ALLOWED_SCHEDULER_SECRETS:
         errors.append("scheduler-secret-contract-invalid")
-    for marker in ("timeout-minutes: 4", "environment: phase6q-pilot", "persist-credentials: false"):
+    for marker in (
+        "timeout-minutes: 4",
+        "environment: phase6q-pilot",
+        "persist-credentials: false",
+        "vars.GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED == 'true'",
+        "inputs.confirm_run == true",
+        "type: boolean",
+        "default: false",
+    ):
         if marker not in scheduler:
             errors.append(f"scheduler-hardening-marker-missing:{marker}")
 

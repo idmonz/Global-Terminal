@@ -3,11 +3,30 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { LatLng, LatLngBounds, LayerGroup, Map as LeafletMap, Marker as LeafletMarker } from "leaflet";
+import { ChevronDown } from "lucide-react";
+import Supercluster from "supercluster";
+import type { Feature, Point } from "geojson";
 import { canonicalAssetHref, sanitizeWarMapSearchParams } from "@/lib/product-routes";
 
 type Row = Record<string, unknown>;
 type LeafletModule = typeof import("leaflet");
 type MapState = "loading" | "ready" | "empty" | "fallback" | "error";
+type BasemapState = "loading" | "ready" | "degraded" | "fallback";
+
+const MAP_REGION_PRESETS = [
+  { id: "global", label: "Global", lat: 22, lon: 18, zoom: 2 },
+  { id: "americas", label: "Americas", lat: 18, lon: -88, zoom: 3 },
+  { id: "europe", label: "Europe", lat: 52, lon: 15, zoom: 4 },
+  { id: "mena", label: "MENA", lat: 27, lon: 42, zoom: 4 },
+  { id: "asia", label: "Asia", lat: 30, lon: 105, zoom: 3 },
+  { id: "pacific", label: "Pacific", lat: 7, lon: 165, zoom: 3 },
+] as const;
+
+const PUBLIC_BASEMAP = {
+  id: "osm-standard-best-effort",
+  url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+};
 
 interface LeafletWarMapProps {
   markers: Row[];
@@ -45,20 +64,30 @@ export function LeafletWarMap({
   const mapRef = useRef<LeafletMap | null>(null);
   const markerLayerRef = useRef<LayerGroup | null>(null);
   const markerRefs = useRef<Map<string, LeafletMarker>>(new Map());
+  const basemapReadyRef = useRef(false);
+  const basemapErrorCountRef = useRef(0);
+  const renderedMarkerCountRef = useRef(0);
+  const initialViewAppliedRef = useRef(false);
   const forceFallback = searchParams.get("mapMode") === "fallback";
   const [leaflet, setLeaflet] = useState<LeafletModule | null>(null);
   const [rendererState, setMapState] = useState<MapState>("loading");
+  const [basemapState, setBasemapState] = useState<BasemapState>("loading");
   const [rendererMarkerCount, setRenderedMarkerCount] = useState(0);
+  const [mapZoom, setMapZoom] = useState(() => boundedZoom(searchParams.get("zoom")) ?? 2);
   const [layerOverride, setLayerOverride] = useState<string[] | null>(null);
   const [timelineOverride, setTimelineOverride] = useState("");
   const [compareOverride, setCompareOverride] = useState("");
   const [selectedMarkerOverride, setSelectedMarkerOverride] = useState("");
+  const [regionOverride, setRegionOverride] = useState("");
+  const [layersExpanded, setLayersExpanded] = useState(false);
   const requestedLayerIds = useMemo(() => layersFromUrl(searchParams.get("layers"), layers), [layers, searchParams]);
   const activeLayerIds = layerOverride ?? requestedLayerIds;
   const activeTimelineId = snapshotReplay ? "all" : timelineOverride || searchParams.get("timeline") || text(timelineFilters[0]?.filter_id, "all");
   const selectedMarkerId = selectedMarkerOverride || searchParams.get(snapshotReplay ? "selected" : "event") || defaultSelectedMarkerId || text(markers[0]?.marker_id, "");
   const compareWindowId = compareOverride || searchParams.get("compare") || "off";
-  const mapState: MapState = forceFallback ? "fallback" : rendererState;
+  const activeMapRegionId = regionOverride || searchParams.get("mapRegion") || "global";
+  const fallbackActive = forceFallback || rendererState === "fallback";
+  const mapState: MapState = fallbackActive ? "fallback" : rendererState;
 
   const activeTimeline = useMemo(
     () => timelineFilters.find((filter) => text(filter.filter_id, "all") === activeTimelineId) ?? timelineFilters[0],
@@ -69,8 +98,12 @@ export function LeafletWarMap({
     () => filterMarkers(markers, activeLayerIds, activeTimeline),
     [markers, activeLayerIds, activeTimeline],
   );
-  const displayMarkers = useMemo(() => clusterMarkers(visibleMarkers), [visibleMarkers]);
-  const renderedMarkerCount = forceFallback ? visibleMarkers.length : rendererMarkerCount;
+  const displayMarkers = useMemo(() => clusterMarkers(visibleMarkers, mapZoom), [mapZoom, visibleMarkers]);
+  const renderedMarkerCount = fallbackActive ? visibleMarkers.length : rendererMarkerCount;
+  const priorityLayerRows = useMemo(
+    () => priorityLayers(layers, activeLayerIds).slice(0, 14),
+    [activeLayerIds, layers],
+  );
 
   const selectedMarker = useMemo(
     () => visibleMarkers.find((marker) => text(marker.marker_id, "") === selectedMarkerId) ?? visibleMarkers[0] ?? markers[0],
@@ -122,7 +155,7 @@ export function LeafletWarMap({
   }, [activeLayerIds, activeTimelineId, compareWindowId, searchParams, selectedMarkerId, snapshotReplay]);
 
   useEffect(() => {
-    if (forceFallback) {
+    if (fallbackActive) {
       return;
     }
 
@@ -142,28 +175,50 @@ export function LeafletWarMap({
     return () => {
       cancelled = true;
     };
-  }, [forceFallback, visibleMarkers.length]);
+  }, [fallbackActive, visibleMarkers.length]);
 
   useEffect(() => {
-    if (forceFallback || !leaflet || !mapNodeRef.current || mapRef.current) {
+    if (fallbackActive || !leaflet || !mapNodeRef.current || mapRef.current) {
       return;
     }
 
     try {
+      const initialView = mapViewFromSearchParams(new URLSearchParams(window.location.search));
       const map = leaflet.map(mapNodeRef.current, {
         attributionControl: true,
         keyboard: true,
         scrollWheelZoom: "center",
         worldCopyJump: true,
-      }).setView([22, 18], 2);
+      }).setView([initialView.lat, initialView.lon], initialView.zoom);
 
-      leaflet.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      const tileLayer = leaflet.tileLayer(PUBLIC_BASEMAP.url, {
+        attribution: PUBLIC_BASEMAP.attribution,
         maxZoom: 10,
         minZoom: 2,
-      }).addTo(map);
+      });
+      tileLayer.on("tileload", () => {
+        basemapReadyRef.current = true;
+        setBasemapState("ready");
+        if (renderedMarkerCountRef.current > 0) setMapState("ready");
+      });
+      tileLayer.on("tileerror", () => {
+        basemapErrorCountRef.current += 1;
+        if (!basemapReadyRef.current && basemapErrorCountRef.current >= 4) {
+          setBasemapState("fallback");
+          setMapState("fallback");
+        } else if (!basemapReadyRef.current) {
+          setBasemapState("degraded");
+        }
+      });
+      tileLayer.addTo(map);
 
       leaflet.control.scale({ imperial: false }).addTo(map);
+      const syncViewport = () => syncMapViewportUrl(map, snapshotReplay);
+      map.on("zoomend", () => {
+        setMapZoom(map.getZoom());
+        syncViewport();
+      });
+      map.on("moveend", syncViewport);
       mapRef.current = map;
     } catch {
       queueMicrotask(() => setMapState("error"));
@@ -175,12 +230,16 @@ export function LeafletWarMap({
       mapRef.current = null;
       markerLayerRef.current = null;
       refs.clear();
+      basemapReadyRef.current = false;
+      basemapErrorCountRef.current = 0;
+      renderedMarkerCountRef.current = 0;
+      initialViewAppliedRef.current = false;
     };
-  }, [forceFallback, leaflet]);
+  }, [fallbackActive, leaflet, snapshotReplay]);
 
   useEffect(() => {
     const map = mapRef.current;
-    if (forceFallback || !map || !leaflet) {
+    if (fallbackActive || !map || !leaflet) {
       return;
     }
 
@@ -214,7 +273,14 @@ export function LeafletWarMap({
       });
 
       leafletMarker.bindPopup(markerPopupHtml(marker), { maxWidth: 340 });
-      leafletMarker.on("click", () => selectMarker(representativeId));
+      leafletMarker.on("click", () => {
+        const expansionZoom = number(marker.cluster_expansion_zoom);
+        if (clusterCount > 1 && expansionZoom !== null) {
+          map.flyTo([lat, lon], Math.min(expansionZoom, 10), { duration: 0.35 });
+          return;
+        }
+        selectMarker(representativeId);
+      });
       leafletMarker.addTo(group);
       markerRefs.current.set(representativeId, leafletMarker);
       rendered += 1;
@@ -223,15 +289,23 @@ export function LeafletWarMap({
     group.addTo(map);
     markerLayerRef.current = group;
     setRenderedMarkerCount(rendered);
-    setMapState(rendered > 0 ? "ready" : "empty");
+    renderedMarkerCountRef.current = rendered;
+    setMapState(rendered === 0 ? "empty" : basemapReadyRef.current ? "ready" : "loading");
 
-    const bounds = markerBounds(visibleMarkers, leaflet);
-    if (bounds) {
-      map.fitBounds(bounds, { padding: [42, 42], maxZoom: 5 });
+    if (!initialViewAppliedRef.current) {
+      const params = new URLSearchParams(window.location.search);
+      const explicitViewport = hasExplicitViewport(params);
+      const requestedRegion = text(params.get("region"), "").toLowerCase();
+      const regionMarkers = requestedRegion
+        ? visibleMarkers.filter((marker) => `${text(marker.region, "")} ${text(marker.title, "")}`.toLowerCase().includes(requestedRegion))
+        : [];
+      const bounds = markerBounds(regionMarkers.length ? regionMarkers : visibleMarkers, leaflet);
+      if (!explicitViewport && bounds) map.fitBounds(bounds, { padding: [42, 42], maxZoom: regionMarkers.length ? 6 : 5 });
+      initialViewAppliedRef.current = true;
     }
   // Map interaction state stays in the URL without re-running source providers.
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [displayMarkers, forceFallback, leaflet, visibleMarkers]);
+  }, [displayMarkers, fallbackActive, leaflet, visibleMarkers]);
 
   function selectMarker(markerId: string) {
     setSelectedMarkerOverride(markerId);
@@ -276,11 +350,35 @@ export function LeafletWarMap({
     replaceClientMapUrl(params);
   }
 
+  function setMapRegion(regionId: string) {
+    const preset = MAP_REGION_PRESETS.find((row) => row.id === regionId) ?? MAP_REGION_PRESETS[0];
+    setRegionOverride(preset.id);
+    mapRef.current?.flyTo([preset.lat, preset.lon], preset.zoom, { duration: 0.4 });
+    const params = clientMapSearchParams(snapshotReplay);
+    params.set("mapRegion", preset.id);
+    params.set("lat", preset.lat.toFixed(3));
+    params.set("lon", preset.lon.toFixed(3));
+    params.set("zoom", String(preset.zoom));
+    replaceClientMapUrl(params);
+  }
+
+  function fitVisibleEvents() {
+    if (!mapRef.current || !leaflet) return;
+    const bounds = markerBounds(visibleMarkers, leaflet);
+    if (bounds) mapRef.current.fitBounds(bounds, { padding: [42, 42], maxZoom: 6 });
+    setRegionOverride("events");
+    const params = clientMapSearchParams(snapshotReplay);
+    params.set("mapRegion", "events");
+    replaceClientMapUrl(params);
+  }
+
   return (
     <div
       className="leaflet-war-workspace global-map-stage"
       data-renderer="leaflet-war-map"
       data-map-state={mapState}
+      data-basemap-state={basemapState}
+      data-basemap-provider={PUBLIC_BASEMAP.id}
       data-map-marker-count={String(renderedMarkerCount)}
       data-map-event-count={String(visibleMarkers.length)}
     >
@@ -313,7 +411,20 @@ export function LeafletWarMap({
           </select>
         </label>
         </> : null}
-        <span className={`global-map-state ${mapState}`}>{mapState}</span>
+        <div className="global-map-region-controls" aria-label="Map region presets">
+          {MAP_REGION_PRESETS.map((preset) => (
+            <button
+              className={activeMapRegionId === preset.id ? "active" : ""}
+              type="button"
+              key={preset.id}
+              onClick={() => setMapRegion(preset.id)}
+            >
+              {preset.label}
+            </button>
+          ))}
+          <button className={activeMapRegionId === "events" ? "active" : ""} type="button" onClick={fitVisibleEvents}>Fit events</button>
+        </div>
+        <span className={`global-map-state ${mapState}`} title={`Basemap ${basemapState}`}>{mapState} / {basemapState}</span>
       </div>
 
       <div className="global-map-canvas-grid">
@@ -349,7 +460,7 @@ export function LeafletWarMap({
             })}
           </div>
 
-          {forceFallback ? (
+          {fallbackActive ? (
             <FallbackMap markers={visibleMarkers} onSelect={focusMarker} />
           ) : (
             <div ref={mapNodeRef} className="leaflet-map-stage global-leaflet-canvas" aria-label="Interactive global risk map" />
@@ -364,12 +475,21 @@ export function LeafletWarMap({
             </div>
           ) : null}
 
-          <div className="global-map-layer-overlay" aria-label="Map layers">
+          <div className={`global-map-layer-overlay${layersExpanded ? " expanded" : ""}`} aria-label="Map layers">
             <div className="global-map-overlay-heading">
               <strong>Layers</strong>
               <span>{activeLayerIds.length} on</span>
+              <button
+                type="button"
+                className="global-map-layer-toggle"
+                aria-label={layersExpanded ? "Collapse map layers" : "Expand map layers"}
+                aria-expanded={layersExpanded}
+                onClick={() => setLayersExpanded((value) => !value)}
+              >
+                <ChevronDown size={14} aria-hidden="true" />
+              </button>
             </div>
-            {layers.slice(0, 12).map((layer) => {
+            {priorityLayerRows.map((layer) => {
               const layerId = text(layer.layer_id, text(layer.label, "layer"));
               const disabled = text(layer.availability, "") === "unavailable";
               const checked = activeLayerIds.includes(layerId);
@@ -628,37 +748,105 @@ function focusMarkersForContexts(markers: Row[], contexts: Row[]): Row[] {
     .slice(0, 5);
 }
 
-function clusterMarkers(markers: Row[]): Row[] {
-  if (markers.length <= 60) return markers;
-
-  const gridDegrees = markers.length > 140 ? 8 : 5;
-  const buckets = new Map<string, Row[]>();
-  for (const marker of markers) {
+function clusterMarkers(markers: Row[], zoom: number): Row[] {
+  type PointProperties = { marker: Row; severityScore: number };
+  type AggregateProperties = { maxSeverityScore: number };
+  const points: Array<Feature<Point, PointProperties>> = markers.flatMap((marker) => {
     const lat = number(marker.lat);
     const lon = number(marker.lon);
-    if (lat === null || lon === null) continue;
-    const key = `${Math.floor(lat / gridDegrees)}:${Math.floor(lon / gridDegrees)}`;
-    buckets.set(key, [...(buckets.get(key) ?? []), marker]);
-  }
+    if (lat === null || lon === null) return [];
+    return [{
+      type: "Feature" as const,
+      geometry: { type: "Point" as const, coordinates: [lon, lat] },
+      properties: { marker, severityScore: number(marker.severity_score) ?? 0 },
+    }];
+  });
+  if (points.length < 2) return markers;
 
-  return [...buckets.entries()].map(([key, rows]) => {
-    if (rows.length === 1) return rows[0];
-    const representative = rows
-      .slice()
+  const index = new Supercluster<PointProperties, AggregateProperties>({
+    radius: 48,
+    maxZoom: 9,
+    minPoints: 2,
+    map: (properties) => ({ maxSeverityScore: properties.severityScore }),
+    reduce: (accumulated, properties) => {
+      accumulated.maxSeverityScore = Math.max(accumulated.maxSeverityScore, properties.maxSeverityScore);
+    },
+  }).load(points);
+  const features = index.getClusters([-180, -85, 180, 85], Math.max(0, Math.min(10, Math.round(zoom))));
+
+  return features.map((feature) => {
+    if ("marker" in feature.properties) {
+      return feature.properties.marker;
+    }
+    const clusterProperties = feature.properties as AggregateProperties & {
+      cluster: true;
+      cluster_id: number;
+      point_count: number;
+    };
+    const clusterId = clusterProperties.cluster_id;
+    const leaves = index.getLeaves(clusterId, Infinity);
+    const representative = leaves
+      .map((leaf) => leaf.properties.marker)
       .sort((left, right) => (number(right.severity_score) ?? 0) - (number(left.severity_score) ?? 0))[0];
-    const lat = rows.reduce((sum, row) => sum + (number(row.lat) ?? 0), 0) / rows.length;
-    const lon = rows.reduce((sum, row) => sum + (number(row.lon) ?? 0), 0) / rows.length;
+    const [lon, lat] = feature.geometry.coordinates;
     return {
       ...representative,
-      marker_id: `cluster:${key}`,
-      cluster_count: rows.length,
+      marker_id: `cluster:${clusterId}`,
+      cluster_count: clusterProperties.point_count,
       cluster_representative_id: text(representative.marker_id, ""),
+      cluster_expansion_zoom: index.getClusterExpansionZoom(clusterId),
       lat,
       lon,
-      title: `${rows.length} events in this area`,
-      summary: "Select the cluster to inspect its highest-severity event; use the event stream for every member.",
+      title: `${clusterProperties.point_count} events in this area`,
+      summary: "Select to zoom into the cluster; the event stream retains every source row.",
     };
   });
+}
+
+function priorityLayers(layers: Row[], activeLayerIds: string[]): Row[] {
+  const active = new Set(activeLayerIds);
+  return layers.slice().sort((left, right) => {
+    const leftId = text(left.layer_id, text(left.label, ""));
+    const rightId = text(right.layer_id, text(right.label, ""));
+    const activeDelta = Number(active.has(rightId)) - Number(active.has(leftId));
+    if (activeDelta) return activeDelta;
+    const visibleDelta = (number(right.visible_marker_count) ?? number(right.row_count) ?? 0) - (number(left.visible_marker_count) ?? number(left.row_count) ?? 0);
+    if (visibleDelta) return visibleDelta;
+    const unavailableDelta = Number(text(left.availability, "") === "unavailable") - Number(text(right.availability, "") === "unavailable");
+    if (unavailableDelta) return unavailableDelta;
+    return text(left.label, leftId).localeCompare(text(right.label, rightId));
+  });
+}
+
+function boundedZoom(value: unknown): number | null {
+  const parsed = number(value);
+  return parsed === null || parsed < 2 || parsed > 10 ? null : parsed;
+}
+
+function mapViewFromSearchParams(params: URLSearchParams): { lat: number; lon: number; zoom: number } {
+  const lat = number(params.get("lat"));
+  const lon = number(params.get("lon"));
+  const zoom = boundedZoom(params.get("zoom"));
+  if (lat !== null && lon !== null && zoom !== null && lat >= -85 && lat <= 85 && lon >= -180 && lon <= 180) {
+    return { lat, lon, zoom };
+  }
+  const regionId = params.get("mapRegion") ?? "global";
+  const preset = MAP_REGION_PRESETS.find((row) => row.id === regionId) ?? MAP_REGION_PRESETS[0];
+  return { lat: preset.lat, lon: preset.lon, zoom: preset.zoom };
+}
+
+function hasExplicitViewport(params: URLSearchParams): boolean {
+  const view = mapViewFromSearchParams(params);
+  return params.has("lat") && params.has("lon") && params.has("zoom") && view.zoom >= 2;
+}
+
+function syncMapViewportUrl(map: LeafletMap, snapshotReplay: boolean) {
+  const center = map.getCenter();
+  const params = clientMapSearchParams(snapshotReplay);
+  params.set("lat", center.lat.toFixed(3));
+  params.set("lon", center.lng.toFixed(3));
+  params.set("zoom", map.getZoom().toFixed(2));
+  replaceClientMapUrl(params);
 }
 
 function markerBounds(markers: Row[], L: LeafletModule): LatLngBounds | null {

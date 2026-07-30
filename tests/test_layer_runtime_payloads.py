@@ -88,3 +88,25 @@ def test_layer_runtime_payload_marks_partial_news_rate_limit():
     assert conflicts["row_count"] == 1
     assert conflicts["availability"] == "limited"
     assert conflicts["source_status"] == "rate-limited"
+
+
+def test_layer_runtime_payload_separates_usgs_and_eonet_natural_layers():
+    now = datetime.now(timezone.utc).isoformat()
+    runtime = {
+        "natural": [
+            _row(provider="usgs_earthquake", layer_ids=["earthquakes"], fetched_at=now),
+            _row(provider="nasa_eonet", layer_ids=["fires"], fetched_at=now),
+            _row(provider="nasa_eonet", layer_ids=["storms_weather_alerts"], fetched_at=now),
+        ]
+    }
+    statuses = [
+        ok_result([], source="USGS", provider="usgs_earthquake", coverage="1 row"),
+        ok_result([], source="NASA EONET", provider="nasa_eonet", coverage="2 rows"),
+    ]
+
+    payload = build_layer_runtime_payload(runtime, statuses)
+
+    assert _layer(payload, "earthquakes")["row_count"] == 1
+    assert _layer(payload, "fires")["row_count"] == 1
+    assert _layer(payload, "storms_weather_alerts")["row_count"] == 1
+    assert _layer(payload, "fires")["source_status"] == "live/fresh"

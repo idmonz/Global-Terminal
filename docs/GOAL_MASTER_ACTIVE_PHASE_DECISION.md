@@ -1,46 +1,48 @@
 # Goal Master Active Phase Decision
 
-Updated: 2026-07-15
+Updated: 2026-07-30
 
 ## Active Plan
 
-**Phase 6O: Watchlist Alert Rules And Scheduled In-App Monitoring.**
+**Phase 6Q: Hosted Observation Scheduler And Alert Operations Pilot.**
 
-## Why Phase 6N Is Closed
+Exactly one active execution plan remains at
+`docs/exec-plans/active/PHASE_6Q.md`. Do not select Phase 6R or archive Phase 6Q
+until one real hosted source-backed schedule run, replay/overlap suppression,
+failure/LKG, kill/recovery, Account A/B isolation, cleanup, job history, and
+independent redacted evidence all pass.
 
-The source-backed run, quota/session policy, stable idempotency, cancellation,
-source clocks, atomic persistence, partial/LKG recovery, Attention integration,
-zero-call triage, local performance, API security, and controlled live/cache/
-offline evidence all pass. The approved-machine handoff then produced 23
-personally inspected screenshots and a passing independent verifier across
-desktop, 390px, recovery, account isolation, conflict/offline, drilldown-return,
-focus, live-region, overflow, and request telemetry.
+## Completed Foundation
 
-The full 1,038-test suite, fixtures, smoke, agent harness, Next test/lint/build,
-npm audit, runtime smoke, Phase 6N benchmark, 28-archive audit, and secret-clean
-1,749-entry release also pass. Phase 6N is therefore complete for its scoped
-local-first contract; benchmark parity is not claimed.
+Phase 6N completed the bounded source-backed observation run and Attention
+handoff. Phase 6O completed tenant-safe in-app alert rules, stored-observation
+evaluation, trigger history, and a bounded local worker. Phase 6P completed the
+hosted account-continuity repository and real two-repository recovery proof.
 
-## Why Phase 6O Is Next
+Phase 6Q has completed its local control plane, additive Supabase migrations,
+actual-Postgres conformance, password-authenticated hosted A/B RLS, API/UI
+surface, local performance, 24-capture scheduler visual matrix, external audit,
+release audit, Git publication, and a passing default-branch Quality Gate.
 
-The user can explicitly refresh a saved Watchlist and review material changes,
-but must still remember to run it. Existing `lib/alert_*`, watchlist alert UI,
-scheduler, preview API, and tests are fragmented and are not exposed as one
-commercial web Alert Manager.
+The World Map v2 continuation is also complete inside Phase 6Q. It adds NASA
+EONET, preserves a bounded 283-event EONET/USGS/static surface, clusters by zoom,
+supports regional and shareable viewport state, collapses layers on mobile, and
+falls back honestly when OSM tiles fail. Its five screenshots and independent
+verifier pass. This improves product depth but does not close Phase 6Q.
 
-Phase 6O must consolidate those assets into one bounded journey: create a
-transparent rule, opt into a schedule, evaluate only from valid due
-observations, persist/deduplicate an in-app trigger, manage lifecycle state,
-and navigate to exact source evidence and back. It must remain useful locally
-without pretending that hosted scheduling is deployed.
+## Exact Open Gate
 
-## Independent Hosted Gate
+The GitHub scheduler workflow exists and scheduled attempts reached hosted
+runners, but they failed before a due claim because pilot environment secrets
+were absent. The repository is public and `main` is unprotected. The workflow
+now fails closed unless repository variable
+`GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED=true`; manual dispatch also
+requires `confirm_run=true`.
 
-The Phase 6N Supabase observation migration is deployed, migration history is
-aligned, and schema/permission/anonymous-denial plus real password-auth Account
-A/B conformance pass. The Phase 6O hosted schedule path remains unavailable
-until its own persistence migration/A-B matrix and a backup/outage recovery
-drill pass. This does not reopen scoped Phase 6N completion. Remaining hosted
-operations evidence is carried into the active phase with explicit truth.
+Keep the variable false, database operator gate off, and global kill switch
+armed until the owner decides repository privacy/protection, configures the
+protected `phase6q-pilot` environment, and attends the bounded pilot. A skipped
+job, workflow file, fixture, local process, or HTTP 200 is not hosted monitoring
+proof.
 
-The durable master goal remains active.
+The durable master goal remains active and benchmark parity is not claimed.

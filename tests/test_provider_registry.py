@@ -19,3 +19,5 @@ def test_provider_registry_schema_and_domains(monkeypatch):
     assert provider_capability_matrix().shape[0] == len(registry)
     assert provider_requires_key("coinglass")
     assert provider_env_status("coinglass")["status"] == "missing optional key"
+    assert provider_requires_key("nasa_eonet") is False
+    assert provider_env_status("nasa_eonet")["status"] == "configured"

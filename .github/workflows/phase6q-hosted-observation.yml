@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
+    inputs:
+      confirm_run:
+        description: "Run one bounded hosted scheduler claim"
+        required: true
+        type: boolean
+        default: false
 
 concurrency:
   group: phase6q-hosted-observation
@@ -14,6 +20,11 @@ permissions:
 
 jobs:
   run-once:
+    if: >-
+      ${{
+        vars.GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED == 'true' &&
+        (github.event_name == 'schedule' || inputs.confirm_run == true)
+      }}
     runs-on: ubuntu-latest
     timeout-minutes: 4
     environment: phase6q-pilot

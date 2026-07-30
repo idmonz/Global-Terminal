@@ -356,6 +356,10 @@ def test_phase6q_migration_and_workflow_keep_service_boundary_and_safe_defaults(
     assert "from public, anon, authenticated" in migration
     assert "global_terminal_apply_scheduler_account_document" in migration
     assert 'cron: "17 * * * *"' in workflow
+    assert "vars.GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED == 'true'" in workflow
+    assert "inputs.confirm_run == true" in workflow
+    assert "type: boolean" in workflow
+    assert "default: false" in workflow
     assert "cancel-in-progress: false" in workflow
     assert "timeout-minutes: 4" in workflow
     assert "permissions:\n  contents: read" in workflow

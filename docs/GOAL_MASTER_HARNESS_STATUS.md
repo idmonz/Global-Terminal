@@ -1,6 +1,6 @@
 # Goal Master Harness Status
 
-Updated: 2026-07-27
+Updated: 2026-07-30
 
 ## Initial State
 
@@ -268,3 +268,27 @@ candidate. Local/product evidence passes; the deployed hosted completion gate
 does not. Phase 6Q stays active until the owner handoff produces fresh,
 redacted, independently validated job/source/A-B/replay/failure/recovery/cleanup
 evidence.
+
+## 2026-07-30 Continuation
+
+The previous absent-Git/CI statement is superseded. The public GitHub remote,
+authenticated CLI, deployed workflows, and passing default-branch Quality Gate
+now exist. Run `30525750549` passed Python, web, and PowerShell jobs. The
+repository remains public and `main` remains unprotected; these are unresolved
+owner security decisions, not hidden readiness claims.
+
+Hosted scheduler attempts reached GitHub-hosted runners but failed before any
+due claim because the `phase6q-pilot` secrets were absent. The workflow now has
+a fail-closed job-level repository-variable gate and a boolean manual-dispatch
+confirmation. Missing configuration therefore skips runner work instead of
+installing the full environment and failing hourly. The workflow validator and
+negative tests make this gate non-optional.
+
+The product-parity workflow was also applied to World Map v2. Official NASA
+Worldview/EONET, World Monitor, MapLibre, and OSM policy references were
+reviewed under the clean-room skill. Focused TDD, live provider smoke,
+production build, five-capture desktop/Asia/mobile/fallback QA, direct
+screenshot inspection, and an independent summary verifier all pass. The
+observed map surface contains 283 events and 275 source-backed coordinates. The
+map remains score 4 because satellite/time animation, verified geopolitical
+layer breadth, and production tile operations are still absent.

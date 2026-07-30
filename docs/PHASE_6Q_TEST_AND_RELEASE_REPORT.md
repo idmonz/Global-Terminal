@@ -1,6 +1,6 @@
 # Phase 6Q Test And Release Report
 
-Updated: 2026-07-27
+Updated: 2026-07-30
 
 ## Verdict
 
@@ -124,3 +124,36 @@ fresh redacted evidence with `scripts/verify_phase6q_hosted_evidence.py`.
 
 Until that evidence passes, do not archive Phase 6Q, enable recurring provider
 work, claim hosted reliability, or advance the benchmark score to 5.
+
+## 2026-07-30 World Map V2 Continuation
+
+The historical 2026-07-27 figures above remain the original Phase 6Q release
+gate. The current continuation was re-run after the World Map v2 and scheduler
+operator-gate changes:
+
+- full Python suite: 1,143 tests across 486 files passed in 413.3 seconds;
+- focused map/provider/API suite: 48 passed;
+- focused scheduler/workflow/map suite: 33 passed;
+- `python -m compileall -q lib backend scripts`: passed;
+- web fixture/runtime tests, lint, Next.js production build, and npm audit:
+  passed with zero vulnerabilities;
+- `phase6q.world-map.v2.visual.v1`: five independently verified captures,
+  283 bounded events, 275 source-backed coordinates, zero unexpected browser
+  errors, no horizontal overflow, and an explicit tile-failure fallback;
+- repeated external audit: 28 archives, 51,305 files, 39,622 text candidates,
+  10,596,233 lines, 249,590 symbols, zero read errors, and zero ZIP fingerprint
+  changes;
+- Git publication audit: 1,845 candidate files, 141,456,990 bytes, 25
+  configured values, zero exact secret hits, zero forbidden paths, and zero
+  unreviewed token hits;
+- release security audit: 24 configured values, zero exact hits, and zero
+  forbidden entries.
+
+The inspected release candidate is
+`dist/global_market_terminal_20260730T094447Z.zip`: 57,610,245 bytes, 1,856
+archive entries including the manifest, SHA-256
+`26FA79ADEDF0796FE7F3F8DC1C3F99D33F0FBC12C7AB6B1D071E69EFC2E7D565`.
+
+These gates improve the local and distributable product evidence. They do not
+replace the missing successful deployed scheduler run, so Phase 6Q remains
+active and `hosted_scheduler_verified` remains `false`.

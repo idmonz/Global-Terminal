@@ -140,6 +140,31 @@
       "tier": "official"
     },
     {
+      "cadence_seconds": 600,
+      "category": "natural",
+      "caveat": "NASA EONET aggregates upstream event sources; preserve attribution and verify original-source terms and revisions.",
+      "credibility": "official-aggregator",
+      "default_enabled": true,
+      "feed_id": "nasa.eonet_open_events",
+      "label": "NASA EONET Open Natural Events",
+      "provider": "nasa_eonet",
+      "region": "Global",
+      "requires_key": false,
+      "source_risk": "upstream-source-dependent",
+      "source_type": "geojson_api",
+      "source_url": "https://eonet.gsfc.nasa.gov/api/v3/events/geojson",
+      "tags": [
+        "wildfire",
+        "storm",
+        "ice",
+        "flood",
+        "volcano",
+        "natural",
+        "nasa"
+      ],
+      "tier": "official_aggregator"
+    },
+    {
       "cadence_seconds": 120,
       "category": "crypto",
       "caveat": "Keyless CoinGecko requests are rate-limited and can be delayed.",
@@ -287,14 +312,15 @@
       "shipping_ais",
       "shipping_energy"
     ],
-    "default_enabled_count": 9,
-    "feed_count": 12,
+    "default_enabled_count": 10,
+    "feed_count": 13,
     "providers": [
       "aisstream",
       "binance_futures",
       "coingecko_public",
       "gdelt",
       "local",
+      "nasa_eonet",
       "opensanctions",
       "opensky",
       "rss",

@@ -1,6 +1,6 @@
 # Visual Version Registry
 
-Updated: 2026-07-27
+Updated: 2026-07-30
 
 ## Completion Rule
 
@@ -28,6 +28,7 @@ trail and exact regeneration command.
 | Phase 6O | Alert rule creation/lifecycle, stored-observation evaluation, trigger history, worker failure/recovery, A/B isolation, conflict, and exact evidence return | `powershell -ExecutionPolicy Bypass -File scripts/run_phase6o_visual_handoff.ps1` | `review_workspace/phase6o_visual/summary.json`, 18 personally inspected screenshots, independent verifier pass, and `docs/PHASE_6O_VISUAL_QA_REPORT.md` |
 | Phase 6P | Hosted sign-in surface, account continuity, restore, conflict, offline, export/import/delete controls, and 390px recovery truth | `powershell -ExecutionPolicy Bypass -File scripts/run_phase6p_visual_handoff.ps1` | `review_workspace/phase6p_visual/summary.json`, 6 personally inspected screenshots, independent verifier pass, and `docs/PHASE_6P_VISUAL_QA_REPORT.md` |
 | Phase 6Q | Hosted schedule consent/control, due/run/source/quota/LKG truth, controlled failure/recovery/kill/cleanup, Account A/B, session expiry, mobile, and prior-surface regressions | `powershell -ExecutionPolicy Bypass -File scripts/run_phase6q_visual_handoff.ps1` | `review_workspace/phase6q_visual/summary.json`, 24 personally inspected screenshots, independent verifier pass, and `docs/PHASE_6Q_VISUAL_QA_REPORT.md` |
+| Phase 6Q World Map v2 | Source-backed NASA EONET/USGS density, Supercluster zoom behavior, regional URL state, mobile layer disclosure, and tile-failure fallback | `powershell -ExecutionPolicy Bypass -File scripts/run_phase6q_world_map_v2_visual.ps1` | `review_workspace/phase6q_world_map_v2_visual/summary.json`, 5 personally inspected screenshots, independent verifier pass, and `docs/PHASE_6Q_WORLD_MAP_V2_REPORT.md` |
 
 ## Phase 6L Required Captures
 
@@ -104,3 +105,15 @@ The CI/supply-chain continuation recaptured the same 24-image set at
 regression captures were directly inspected again. No visible product code
 changed; the rerun confirms the deployment-file hardening introduced no layout,
 navigation, focus, mobile, or provider-call regression.
+
+## Phase 6Q World Map V2 Accepted Evidence
+
+The production handoff wrote `phase6q.world-map.v2.visual.v1` and five
+screenshots. The verifier accepted 283 live-if-available events, 275
+source-backed coordinates, 53 global rendered clusters, seven region controls,
+shareable viewport state, loaded desktop/mobile OSM tiles, a 390px collapsed
+layer drawer, and the deliberate tile-failure fallback. All captures have zero
+page overflow, duplicate IDs, or unlabeled controls. The desktop, Asia, mobile,
+mobile-tall, and fallback images were personally inspected. This map evidence
+does not promote the still-unverified hosted scheduler or claim a commercial
+tile SLA.

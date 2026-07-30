@@ -230,6 +230,14 @@ export function sanitizeWarMapSearchParams(input: URLSearchParams): URLSearchPar
   if (["all", "critical", "high", "elevated", "watch", "low"].includes(severity)) output.set("severity", severity);
   const region = input.get("region") ?? "";
   if (/^[A-Za-z0-9 _/-]{1,48}$/.test(region)) output.set("region", region);
+  const mapRegion = input.get("mapRegion") ?? "";
+  if (["global", "americas", "europe", "mena", "asia", "pacific", "events"].includes(mapRegion)) output.set("mapRegion", mapRegion);
+  const lat = Number(input.get("lat"));
+  const lon = Number(input.get("lon"));
+  const zoom = Number(input.get("zoom"));
+  if (Number.isFinite(lat) && lat >= -85 && lat <= 85) output.set("lat", lat.toFixed(3));
+  if (Number.isFinite(lon) && lon >= -180 && lon <= 180) output.set("lon", lon.toFixed(3));
+  if (Number.isFinite(zoom) && zoom >= 2 && zoom <= 10) output.set("zoom", zoom.toFixed(2));
   if (input.get("mapMode") === "fallback") output.set("mapMode", "fallback");
   return output;
 }

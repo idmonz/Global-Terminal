@@ -180,6 +180,7 @@ def build_internal_endpoint_catalog() -> dict[str, EndpointCapability]:
         ("news.world", "World News", ["title"], ["country", "domain"], ["geopolitical_news"], ["news.world"], [], False, True),
         ("osint.events", "OSINT Events", ["title", "severity"], ["lat", "lon", "country"], ["event_stream"], ["osint.events"], [], True, True),
         ("natural.earthquakes", "Earthquakes", ["title", "severity"], ["lat", "lon", "magnitude"], ["usgs_earthquake"], [], [], False, False),
+        ("natural.eonet_events", "Natural Events", ["event_id", "title", "severity"], ["lat", "lon", "category_ids", "source_url"], ["nasa_eonet"], [], [], False, False),
         ("osint.source_freshness", "Source Freshness", ["source", "status"], ["age_minutes"], ["source_freshness"], ["osint.source_freshness"], [], True, True),
     ]
     for endpoint, label, required, optional, native, openbb, keys, estimated, proxy in news_specs:

@@ -1,6 +1,6 @@
 # Phase 6Q CI And Supply-Chain Report
 
-Updated: 2026-07-27
+Updated: 2026-07-30
 
 ## Result
 
@@ -57,3 +57,34 @@ first commit or remote, and GitHub CLI is unavailable. Therefore the quality
 workflow, scheduler workflow, protected environment, Account A/B Phase 6Q
 handoff, and job history remain undeployed or unverified and
 `hosted_scheduler_verified=false`.
+
+## 2026-07-30 Deployed Continuation
+
+The historical deployment gap above has narrowed. The public GitHub repository,
+both workflows, authenticated CLI, and a passing default-branch Quality Gate
+now exist. The exact local continuation passes 1,143 Python tests plus web
+test/lint/build/audit, workflow validation, source-release inspection, and Git
+publication security scanning.
+
+The hosted observation workflow has seven reviewed full-SHA action uses across
+the two workflows. Its scheduled job is now fail-closed at job admission:
+
+- repository variable
+  `GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED` must equal `true`;
+- manual dispatch additionally requires Boolean `confirm_run=true`;
+- when the repository variable is absent or false, the job is skipped before a
+  runner receives secrets or performs provider work;
+- the global kill switch remains armed and recurring execution is not claimed.
+
+Earlier deployed scheduled attempts failed before claiming work because the
+`phase6q-pilot` environment did not expose the required credentials. Those
+failures are retained as honest evidence, not promoted to scheduler
+verification. The repository is still public and `main` remains unprotected.
+Changing visibility, branch protection, protected-environment policy, or the
+operator variable remains an explicit owner security decision.
+
+Current workflow validation reports two workflows, seven action uses, three
+reviewed actions, zero quality-gate secret references, four allowlisted
+scheduler secret names, zero provider calls, and zero errors. Phase 6Q remains
+active until one bounded deployed run and its replay/failure/recovery/cleanup
+evidence pass the hosted verifier.

@@ -1,6 +1,6 @@
 # Goal Master Product Parity Status
 
-Updated: 2026-07-28
+Updated: 2026-07-30
 
 ## Phase 6Q Evidence
 
@@ -18,10 +18,15 @@ Updated: 2026-07-28
 - `phase6q.visual.v1` passes 24 screenshots with 168px desktop navigation,
   390px no-overflow mobile, visible focus/live regions, zero duplicate IDs,
   zero unlabeled controls, and six prior-surface regressions;
+- `phase6q.world-map.v2.visual.v1` adds five inspected map captures. One live
+  run preserved 175 NASA EONET, 100 USGS, and 8 static/proxy rows; 283 events
+  became 53 global clusters, 275 coordinates were source-backed, regional and
+  viewport state remained shareable, mobile layers collapsed cleanly, and tile
+  failure produced the explicit fallback;
 - the 28-archive audit remains unchanged at 51,305 files, 10,596,233 lines,
   249,590 symbols, zero read errors, and 18/6/3/1 license classification;
-- two minimum-permission workflows now contain six reviewed full-SHA action
-  uses, and the secret-free quality gate covers harness, compile, smoke, 1,121
+- two minimum-permission workflows now contain seven reviewed full-SHA action
+  uses, and the secret-free quality gate covers harness, compile, smoke, 1,143
   Python tests, fixtures, source release inspection, web test/lint/build, and
   high-severity npm audit; the validator's negative tests reject mutable tags,
   write permissions, `pull_request_target`, unknown actions, missing timeouts,
@@ -31,7 +36,12 @@ Updated: 2026-07-28
   actual local PostgreSQL, and the deployment preflight now recognizes the
   remote schema. Password-authenticated Phase 6Q Account A/B RLS now passes
   with zero cross-tenant rows, exact cleanup/restoration, and zero provider
-  calls; the deployed default-branch worker remains unproven. Therefore the operator gate is off,
+  calls; the deployed default-branch worker remains unproven. The repository
+  and workflows now exist and the default-branch Quality Gate passes, but the
+  repository is public, `main` is unprotected, and scheduled worker attempts
+  failed before a claim because pilot secrets were absent. A fail-closed
+  repository-variable plus manual-confirmation gate now prevents execution by
+  default. Therefore the operator gate is off,
   global kill is armed, `hosted_scheduler_verified=false`, and no recurring
   monitoring claim exists.
 
@@ -611,11 +621,13 @@ Earlier phase completion language described schemas, fixtures, and checkpoint su
 ## Active Phase
 
 Phase 6Q is active. Its contract, migration, worker, product surface, local
-actual-Postgres conformance, visual matrix, performance gate, and deployment
-preflight exist, but the selected GitHub Actions runner is not committed,
-deployed, or observed. The remote Phase 6Q schema and anonymous denial now pass;
-password-authenticated Phase 6Q A/B conformance now passes, while real deployed
-job evidence does not.
+actual-Postgres conformance, visual matrix, performance gate, deployment
+preflight, Git repository, workflows, and passing default-branch Quality Gate
+exist. The scheduler workflow is deployed and has reached hosted runners, but
+no attempt passed the credential gate or claimed due work. The remote Phase 6Q
+schema, anonymous denial, and password-authenticated A/B conformance pass while
+real successful deployed job evidence does not. World Map v2 materially raises
+live map usefulness but does not close the scheduler or benchmark-parity gate.
 The durable master goal remains active and benchmark parity is not claimed;
 external notifications and autonomous actions remain unavailable.
 

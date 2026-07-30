@@ -47,3 +47,14 @@ def test_sanctions_and_optional_tracking_are_registry_only_or_missing_key():
 
     assert ais and ais["requires_key"] is True
     assert flight and flight["requires_key"] is True
+
+
+def test_nasa_eonet_is_a_default_keyless_natural_event_feed():
+    eonet = get_feed_definition("nasa.eonet_open_events")
+
+    assert eonet is not None
+    assert eonet["provider"] == "nasa_eonet"
+    assert eonet["default_enabled"] is True
+    assert eonet["requires_key"] is False
+    assert eonet["source_type"] == "geojson_api"
+    assert "upstream" in eonet["caveat"].lower()

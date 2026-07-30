@@ -1,6 +1,6 @@
 # Global Terminal Canonical Roadmap
 
-Updated: 2026-07-27
+Updated: 2026-07-30
 
 ## Ultimate Goal
 
@@ -83,8 +83,11 @@ snapshot/diff persistence, partial/LKG continuity, and a fully inspected
 desktop/390px recovery/account/drilldown matrix. Phase 6O adds a transparent
 tenant-safe Alert Manager, stored-observation evaluation, trigger history,
 bounded opt-in local worker, and its own visual/performance/RLS evidence.
-Hosted product repositories and automatically scheduled monitoring are still
-not claimed.
+Hosted product repositories are verified through Phase 6P continuity, while
+successful automatically scheduled monitoring is still not claimed. The
+2026-07-30 World Map v2 continuation adds NASA EONET, preserves the full
+bounded EONET/USGS event surface, clusters 283 observed events, adds regional
+shareable state and mobile disclosure, and proves tile-failure fallback.
 
 ## Current Verdict
 
@@ -440,8 +443,9 @@ Observed implementation:
 ### Phase 6Q: Hosted Observation Scheduler And Alert Operations Pilot
 
 Status: local implementation and conformance completed; Account A/B hosted RLS
-passed on 2026-07-28; real
-hosted deployment evidence remains blocked, disabled, and unverified.
+passed on 2026-07-28; the GitHub workflows are deployed and default-branch
+Quality Gate passes, but the successful hosted scheduler pilot remains blocked,
+disabled, and unverified.
 
 - choose one free-first hosted runner after an explicit deployment/security
   preflight; do not build multiple unused cloud paths;
@@ -466,7 +470,7 @@ Observed implementation:
   paused/killed state, timezone/DST due windows, atomic claim, expiring lease,
   heartbeat, bounded attempt, deterministic idempotency, source/quota clocks,
   LKG, audit, and cleanup;
-- the selected private GitHub Actions worker restores the Phase 6P account
+- the selected GitHub Actions worker restores the Phase 6P account
   document into a temporary repository and reuses the Phase 6N observation and
   Phase 6O alert engines; no second evaluator or browser service key exists;
 - the additive migration passes local Supabase lint and real PostgreSQL
@@ -503,10 +507,20 @@ Observed implementation:
   workflow;
 - all 28 external ZIP fingerprints remain unchanged under the clean-room
   matrix: 51,305 files, 10,596,233 lines, 249,590 symbols, zero read errors;
-- deployment is not ready: no Git commit/private remote/GitHub authentication,
-  deployed default-branch quality/scheduler workflow, protected environment-
-  secret evidence, or real job history exists. Do not close Phase 6Q or set the
-  hosted verification flag until the deployed owner handoff passes.
+- the public GitHub repository, authenticated CLI, workflows, and passing
+  default-branch Quality Gate now exist. `main` is unprotected. Scheduled
+  worker attempts reached GitHub runners but failed before a claim because the
+  pilot secrets were absent. A repository-variable operator gate plus explicit
+  manual confirmation now skips worker execution by default;
+- protected environment-secret evidence, a successful source-backed scheduled
+  run, overlap/failure/recovery job history, and cleanup proof remain absent.
+  Do not close Phase 6Q or set the hosted verification flag until the deployed
+  owner handoff passes;
+- a parallel product-depth continuation adds keyless NASA EONET, 283-event
+  bounded map input, Supercluster rendering, regional URL state, OSM tile
+  fallback, and mobile layer disclosure. Five inspected screenshots pass, but
+  satellite/time animation, verified AIS/flight/sanctions, and production tile
+  operations remain open.
 
 ### Phase 5F: Audit And Reconciliation
 

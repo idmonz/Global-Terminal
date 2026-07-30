@@ -29,7 +29,7 @@ without an actual hosted invocation and persisted tenant-qualified result.
 
 # Context
 
-Verified continuation baseline as of 2026-07-28. Do not redo the completed
+Verified continuation baseline as of 2026-07-30. Do not redo the completed
 local implementation:
 
 - Phase 6N observation A/B hosted RLS passes all identity, parent-integrity,
@@ -58,7 +58,7 @@ local implementation:
 - `scripts/validate_github_workflows.py` rejects mutable or unknown actions,
   write permissions, `pull_request_target`, missing job timeouts, quality-CI
   secret use, and pin-registry drift. It currently passes with two workflows,
-  six action uses, three reviewed actions, zero quality secrets, and four
+  seven action uses, three reviewed actions, zero quality secrets, and four
   allowlisted scheduler secret names.
 - The worker restores the Phase 6P account bundle and directly reuses Phase 6N
   observation plus Phase 6O alert evaluation; do not port either engine.
@@ -69,10 +69,17 @@ local implementation:
   24-screenshot `phase6q.visual.v1`, and 200-sample performance evidence pass.
   Initial HTML is 49,002B; scheduler read/compose p95 is 11.412ms; npm audit is
   zero; controlled visual/page paths make zero provider calls.
-- The final local continuation suite contains 1,121 tests across 483 files and
-  passes in 445.8 seconds. The 24-capture visual set was regenerated and the
+- The final local continuation suite contains 1,143 tests across 486 files and
+  passes in 413.3 seconds. The 24-capture visual set was regenerated and the
   desktop safe default, 390px tall mobile, and Watchlist regression were
   directly inspected again.
+- The World Map v2 continuation is complete and must not be rewritten: keyless
+  NASA EONET plus USGS produced 283 bounded events and 275 source-backed
+  coordinates in one live run; Supercluster, regional/shareable viewport state,
+  mobile layer disclosure, tile-failure fallback, five inspected screenshots,
+  and an independent verifier pass. Worldview/WorldMonitor parity remains false
+  because satellite/time animation, verified geopolitical breadth, and a
+  production basemap SLA are absent.
 - The all-28 audit is unchanged: 51,305 files, 10,596,233 lines, 249,590
   symbols, zero read errors, zero ZIP fingerprint changes, and the existing
   18/6/3/1 license matrix.
@@ -83,11 +90,14 @@ local implementation:
   Account A/B harness proves zero cross-tenant schedule/run/audit rows, forge
   denial, optimistic conflict, immutable audit, deleted-schedule replacement,
   exact document restoration, unchanged operator controls, and zero provider
-  calls. Remaining blockers are no Git commit/private remote/GitHub
-  authentication, no deployed default-branch quality or scheduler workflow,
-  no protected environment-secret evidence, and no real job history. GitHub
-  CLI 2.96.0 is installed; local provider keys exist; local service secret is
-  absent; safe scheduler defaults pass.
+  calls. The public GitHub remote, authenticated CLI, deployed workflows, and a
+  passing default-branch Quality Gate now exist. The repository remains public
+  and `main` is unprotected. Recent scheduled worker jobs failed before a claim
+  because pilot secrets were absent. The workflow now skips by default unless
+  repository variable `GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED=true`;
+  manual dispatch also requires `confirm_run=true`. Remaining blockers are the
+  privacy/protection decision, protected environment-secret evidence, and a
+  successful source-backed hosted job/replay/failure/recovery/cleanup history.
 - The deleted-schedule lifecycle bottleneck is fixed by two additive
   migrations: one non-deleted schedule is allowed per account while a deleted
   schedule no longer blocks replacement. Actual local PostgreSQL proves
@@ -98,7 +108,7 @@ local implementation:
   provider calls. `scripts/verify_phase6q_hosted_rls_summary.py` independently
   accepts the fresh redacted result.
 - `scripts/audit_git_publish.py` now scans the complete Git candidate set before
-  publication. Its current redacted pass covers 1,834 files, 138,413,688 bytes,
+  publication. Its current redacted pass covers 1,845 files, 141,456,990 bytes,
   25 configured values, forbidden paths, and token patterns with zero exact
   secret, forbidden-path, or unreviewed token hits; quality CI runs the same
   gate without receiving `.env`.
@@ -108,16 +118,17 @@ local implementation:
 - Read `docs/PHASE_6Q_HOSTED_DEPLOYMENT_HANDOFF.md` and continue from the exact
   blockers. Do not set `hosted_scheduler_verified=true`, archive Phase 6Q, or
   select Phase 6R before the deployed owner handoff passes.
-- Require the committed default-branch `Quality gate` to pass before releasing
-  the protected `phase6q-pilot` environment to the scheduler workflow. A local
-  validator pass is not deployed CI evidence.
+- Re-require the committed default-branch `Quality gate` to pass for the exact
+  pilot commit before releasing the protected `phase6q-pilot` environment. The
+  earlier green run proves its own SHA only.
 
 # Read First
 
 1. Read the durable goal attachment, root `AGENTS.md`,
    `apps/web/AGENTS.md`, `docs/PLANS.md`, `docs/SECURITY.md`,
    `docs/ROADMAP.md`, parity status, benchmark scorecard, visual registry,
-   Phase 6N/6O/6P reports, and `docs/exec-plans/active/PHASE_6Q.md`.
+   Phase 6N/6O/6P reports, `docs/PHASE_6Q_WORLD_MAP_V2_REPORT.md`, and
+   `docs/exec-plans/active/PHASE_6Q.md`.
 2. Load and follow all six repository skills. Use preflight before edits,
    product-parity for the vertical journey, clean-room for references,
    frontend visual QA for visible changes, release-gate before closure, and

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import math
 from datetime import datetime, timezone
 from typing import Any, Iterable
 
@@ -72,7 +73,7 @@ def _now_iso() -> str:
 
 
 def _list(value: Any) -> list[str]:
-    if value is None:
+    if _is_missing_value(value):
         return []
     if isinstance(value, str):
         return [part.strip() for part in value.split(",") if part.strip()]
@@ -81,8 +82,18 @@ def _list(value: Any) -> list[str]:
     return [str(value)]
 
 
+def _is_missing_value(value: Any) -> bool:
+    if value is None:
+        return True
+    if isinstance(value, float) and math.isnan(value):
+        return True
+    if isinstance(value, str) and not value.strip():
+        return True
+    return False
+
+
 def _event_id(item: dict[str, Any]) -> str:
-    if item.get("event_id"):
+    if not _is_missing_value(item.get("event_id")):
         return str(item["event_id"])
     seed = "|".join(str(item.get(key, "")) for key in ["timestamp", "title", "source", "region", "domain"])
     return hashlib.sha1(seed.encode("utf-8")).hexdigest()[:16]
@@ -156,6 +167,9 @@ def normalize_event(item: dict[str, Any]) -> dict[str, Any]:
         "approximate_location": approximate_location,
         "related_assets": _list(item.get("related_assets") or item.get("asset_tags")),
         "related_tickers": _list(item.get("related_tickers") or item.get("tickers")),
+        "layer_ids": _list(item.get("layer_ids")),
+        "category_ids": _list(item.get("category_ids")),
+        "category_titles": _list(item.get("category_titles")),
         "source": str(item.get("source") or "public/proxy"),
         "provider": str(item.get("provider") or item.get("source_provider") or "heuristic"),
         "credibility": credibility,
@@ -165,10 +179,14 @@ def normalize_event(item: dict[str, Any]) -> dict[str, Any]:
         "freshness_status": freshness,
         "source_status": str(item.get("source_status") or freshness),
         "coordinate_method": coordinate_method,
+        "coordinate_status": None if _is_missing_value(item.get("coordinate_status")) else item.get("coordinate_status"),
         "is_estimated": is_estimated,
         "data_gap": "; ".join(dict.fromkeys(data_gap_items)),
         "caveat": str(item.get("caveat") or ""),
         "url": item.get("url") or item.get("link") or "",
+        "eonet_url": "" if _is_missing_value(item.get("eonet_url")) else item.get("eonet_url"),
+        "upstream_source_urls": _list(item.get("upstream_source_urls")),
+        "upstream_source_ids": _list(item.get("upstream_source_ids")),
     }
     if not event["related_tickers"] and event["related_assets"]:
         event["related_tickers"] = event["related_assets"]

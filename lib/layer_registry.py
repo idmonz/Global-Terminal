@@ -103,8 +103,12 @@ def build_layer_registry() -> list[dict[str, Any]]:
         _layer("power_outages_proxy", "Power Outages Proxy", "infrastructure", "zap", "public news classification", "heuristic", is_available=True, is_estimated=True, caveat="Headline-derived outage proxy only."),
         _layer("internet_outages_proxy", "Internet Outages Proxy", "infrastructure", "wifi-off", "public news classification", "heuristic", is_available=True, is_estimated=True, caveat="Headline-derived outage proxy only."),
         _layer("earthquakes", "Earthquakes", "natural", "activity", "USGS public earthquake feed", "usgs_earthquake", is_available=True, is_estimated=False, requires_key=None, caveat="USGS public feed is queried through the runtime cache; outages surface as unavailable/stale status."),
-        _layer("fires", "Fires", "natural", "flame", "optional fire feed", "optional", is_available=False, is_optional=True, caveat="No active wildfire provider is currently wired into runtime."),
-        _layer("storms_weather_alerts", "Storms / Weather Alerts", "natural", "cloud-lightning", "optional weather feed", "optional", is_available=False, is_optional=True, caveat="No weather alert provider is currently wired into runtime."),
+        _layer("fires", "Wildfires", "natural", "flame", "NASA EONET open-event GeoJSON", "nasa_eonet", is_available=True, caveat="EONET aggregates upstream wildfire sources; verify the event and original source for revisions and scope."),
+        _layer("storms_weather_alerts", "Severe Storms", "natural", "cloud-lightning", "NASA EONET open-event GeoJSON", "nasa_eonet", is_available=True, caveat="EONET storm tracks are event context, not a forecast cone or local weather warning."),
+        _layer("sea_lake_ice", "Sea / Lake Ice", "natural", "snowflake", "NASA EONET open-event GeoJSON", "nasa_eonet", is_available=True, caveat="Latest EONET track point is shown; no area footprint or climate attribution is inferred."),
+        _layer("floods", "Floods", "natural", "waves", "NASA EONET open-event GeoJSON", "nasa_eonet", is_available=True, caveat="EONET aggregates upstream flood reports; boundaries and impact estimates are not provided here."),
+        _layer("volcanoes", "Volcanoes", "natural", "mountain", "NASA EONET open-event GeoJSON", "nasa_eonet", is_available=True, caveat="EONET event metadata can revise; inspect the upstream observatory source."),
+        _layer("natural_events", "Other Natural Events", "natural", "radar", "NASA EONET open-event GeoJSON", "nasa_eonet", is_available=True, caveat="Fallback category for EONET event types without a dedicated product layer."),
         _layer("climate_anomalies_proxy", "Climate Anomalies Proxy", "natural", "thermometer", "optional climate feed", "optional", is_available=False, is_optional=True, caveat="No climate anomaly provider is bundled."),
         _layer("major_indices", "Major Indices", "market", "line-chart", "yfinance delayed/public data", "yfinance", is_available=True, is_estimated=False, caveat="Availability depends on yfinance connectivity and symbol support."),
         _layer("fx", "FX", "market", "circle-dollar-sign", "yfinance delayed/public data", "yfinance", is_available=True, is_estimated=False, caveat="FX tickers may vary by provider convention."),
@@ -131,7 +135,7 @@ def get_default_layers() -> list[str]:
     return [
         layer["layer_id"]
         for layer in build_layer_registry()
-        if layer["is_available"] and layer["layer_id"] in {"conflicts", "chokepoints", "earthquakes", "major_indices", "crypto", "oi_funding_stress", "volatility"}
+        if layer["is_available"] and layer["layer_id"] in {"conflicts", "chokepoints", "earthquakes", "fires", "storms_weather_alerts", "sea_lake_ice", "floods", "volcanoes", "natural_events", "major_indices", "crypto", "oi_funding_stress", "volatility"}
     ]
 
 
@@ -191,10 +195,30 @@ def _latest_fetched_at(rows: list[dict[str, Any]], statuses: list[Any]) -> str |
     return max(values) if values else None
 
 
+def _records_layer_ids(row: dict[str, Any]) -> set[str]:
+    value = row.get("layer_ids")
+    if isinstance(value, list):
+        layer_ids = {str(item) for item in value if str(item).strip()}
+    elif isinstance(value, str):
+        layer_ids = {item.strip() for item in value.split(",") if item.strip()}
+    else:
+        layer_ids = set()
+    provider = str(row.get("provider") or "").lower()
+    if not layer_ids and provider in {"usgs_earthquake", "usgs_earthquakes"}:
+        layer_ids.add("earthquakes")
+    if not layer_ids and provider == "nasa_eonet":
+        layer_ids.add("natural_events")
+    return layer_ids
+
+
 def _rows_for_layer(layer_id: str, runtime_feeds: dict[str, Any] | None) -> list[dict[str, Any]]:
     runtime = runtime_feeds or {}
-    if layer_id == "earthquakes":
-        return _records(runtime.get("natural"))
+    if layer_id in {"earthquakes", "fires", "storms_weather_alerts", "sea_lake_ice", "floods", "volcanoes", "natural_events"}:
+        return [
+            row
+            for row in _records(runtime.get("natural"))
+            if layer_id in _records_layer_ids(row)
+        ]
     if layer_id in {"crypto", "oi_funding_stress", "liquidation_pressure_estimate"}:
         return _records(runtime.get("crypto"))
     if layer_id == "flight_tracking_unavailable":
@@ -218,6 +242,8 @@ def _statuses_for_layer(layer: dict[str, Any], statuses: list[Any]) -> list[Any]
         providers = {"live_feeds", "rss", "gdelt"}
     elif layer_id == "earthquakes":
         providers = {"usgs_earthquake", "usgs_earthquakes"}
+    elif layer_id in {"fires", "storms_weather_alerts", "sea_lake_ice", "floods", "volcanoes", "natural_events"}:
+        providers = {"nasa_eonet"}
     elif layer_id in {"crypto", "oi_funding_stress", "liquidation_pressure_estimate"}:
         providers = {"coingecko_public", "binance_futures", "binance", "coingecko"}
     elif layer_id == "flight_tracking_unavailable":

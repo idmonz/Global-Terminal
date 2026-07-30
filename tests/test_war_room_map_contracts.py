@@ -201,7 +201,7 @@ def test_missing_key_and_unavailable_layers_never_become_live_claims():
 def test_timeline_filters_and_compare_windows_are_schema_ready_without_persistence():
     contract = build_war_room_map_contract(events=[_event_row()], layer_runtime=_layer_payload())
 
-    assert {row["filter_id"] for row in contract["timeline_filters"]} >= {"24h", "7d", "all"}
+    assert {row["filter_id"] for row in contract["timeline_filters"]} >= {"1h", "24h", "48h", "7d", "all"}
     assert all(row["source_status"] == "schema-ready/offline-state" for row in contract["timeline_filters"])
     saved = next(row for row in contract["compare_windows"] if row["window_id"] == "saved_compare_session")
     assert saved["available"] is False
@@ -210,6 +210,92 @@ def test_timeline_filters_and_compare_windows_are_schema_ready_without_persisten
     assert contract["readiness"]["auth_added"] is False
     assert contract["readiness"]["billing_added"] is False
     assert contract["readiness"]["graph_database_dependency_added"] is False
+
+
+def test_natural_event_markers_keep_provider_specific_layers_and_coordinates():
+    layer_payload = {
+        "layers": [
+            {
+                "layer_id": "earthquakes",
+                "label": "Earthquakes",
+                "domain": "natural",
+                "source": "USGS",
+                "provider": "usgs_earthquake",
+                "availability": "available",
+                "row_count": 1,
+                "requires_key": None,
+                "source_status": "live/fresh",
+                "freshness_status": "live/fresh",
+                "latest_fetched_at": "2026-07-30T00:00:00+00:00",
+                "caveat": "USGS source row.",
+                "recommended_action": "Inspect source.",
+            },
+            {
+                "layer_id": "fires",
+                "label": "Wildfires",
+                "domain": "natural",
+                "source": "NASA EONET",
+                "provider": "nasa_eonet",
+                "availability": "available",
+                "row_count": 1,
+                "requires_key": None,
+                "source_status": "live/fresh",
+                "freshness_status": "live/fresh",
+                "latest_fetched_at": "2026-07-30T00:00:00+00:00",
+                "caveat": "EONET aggregation row.",
+                "recommended_action": "Inspect EONET and upstream source.",
+            },
+        ]
+    }
+    events = [
+        _event_row(
+            event_id="EONET_FIRE",
+            title="Current wildfire",
+            domain="natural",
+            provider="nasa_eonet",
+            coordinate_method="nasa_eonet_geojson_point",
+            layer_ids=["fires"],
+            source_status="live/fresh",
+        ),
+        _event_row(
+            event_id="USGS_QUAKE",
+            title="M 5.4 earthquake",
+            domain="natural",
+            provider="usgs_earthquake",
+            coordinate_method="usgs_geojson",
+            layer_ids=["earthquakes"],
+            source_status="live/fresh",
+        ),
+    ]
+
+    contract = build_war_room_map_contract(events=events, layer_runtime=layer_payload)
+    markers = {row["event_id"]: row for row in contract["markers"]}
+
+    assert markers["EONET_FIRE"]["layer_ids"] == ["fires"]
+    assert markers["EONET_FIRE"]["coordinate_status"] == "source-backed"
+    assert markers["USGS_QUAKE"]["layer_ids"] == ["earthquakes"]
+
+
+def test_default_map_bound_keeps_a_clusterable_multi_provider_event_surface():
+    events = [
+        _event_row(
+            event_id=f"evt-{index}",
+            title=f"Natural event {index}",
+            domain="natural",
+            provider="nasa_eonet" if index % 2 else "usgs_earthquake",
+            layer_ids=["fires" if index % 2 else "earthquakes"],
+            lat=-60 + (index % 120),
+            lon=-170 + (index * 3) % 340,
+            coordinate_method="nasa_eonet_geojson_point" if index % 2 else "usgs_geojson",
+            source_status="live/fresh",
+        )
+        for index in range(180)
+    ]
+
+    contract = build_war_room_map_contract(events=events, layer_runtime={"layers": []})
+
+    assert contract["summary"]["marker_count"] == 180
+
 
 
 def test_war_room_map_api_payload_is_phase2b_json_safe_and_non_advisory():
@@ -287,3 +373,41 @@ def test_source_coordinates_can_add_a_transparent_broad_region_when_provider_reg
     assert marker["region"] == "Oceania"
     assert marker["region_method"] == "coordinate-derived-broad-region"
     assert marker["coordinate_status"] == "source-backed"
+
+
+def test_nan_provider_region_is_treated_as_missing_and_derived_from_coordinates():
+    contract = build_war_room_map_contract(
+        events=[
+            _event_row(
+                event_id="evt-empty-region",
+                domain="natural",
+                region=float("nan"),
+                lat=44.0,
+                lon=-120.5,
+                coordinate_method="nasa_eonet_geojson_point",
+                source_status="live/fresh",
+            )
+        ],
+        layer_runtime=_layer_payload(),
+    )
+
+    marker = contract["markers"][0]
+    assert marker["region"] == "Americas"
+    assert marker["region_method"] == "coordinate-derived-broad-region"
+
+
+def test_backend_map_requests_the_full_clusterable_event_bound(monkeypatch):
+    observed: dict[str, int] = {}
+
+    def fake_war_room_payload(*, include_runtime=False, max_events=100):
+        observed["max_events"] = max_events
+        return {"data": {"events": [], "layer_runtime_status": {"layers": []}}}
+
+    monkeypatch.setattr(backend_app, "get_war_room_payload", fake_war_room_payload)
+    monkeypatch.setattr(backend_app, "get_provider_health_payload", lambda: {"data": []})
+    monkeypatch.setattr(backend_app, "get_event_asset_graph_payload", lambda **_: {"data": {}})
+
+    payload = backend_app.get_war_room_map_payload(include_runtime=True)
+
+    assert observed["max_events"] == 400
+    assert payload["payload_type"] == "war_room_map"

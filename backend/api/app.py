@@ -788,8 +788,8 @@ def get_news_payload(*, include_runtime: bool = False, query: str = "geopolitica
     return build_api_news_dashboard_payload(rows, [status])
 
 
-def get_war_room_payload(*, include_runtime: bool = False) -> dict[str, Any]:
-    return build_api_war_room_payload(include_default_runtime=include_runtime)
+def get_war_room_payload(*, include_runtime: bool = False, max_events: int = 100) -> dict[str, Any]:
+    return build_api_war_room_payload(include_default_runtime=include_runtime, max_events=max_events)
 
 
 def get_ai_providers_payload(*, preferred: str = "auto") -> dict[str, Any]:
@@ -820,7 +820,7 @@ def get_command_workspace_payload(*, include_runtime: bool = False) -> dict[str,
 
 
 def get_war_room_map_payload(*, include_runtime: bool = False) -> dict[str, Any]:
-    war_room_payload = get_war_room_payload(include_runtime=include_runtime)
+    war_room_payload = get_war_room_payload(include_runtime=include_runtime, max_events=400)
     provider_payload = get_provider_health_payload()
     event_graph_payload = get_event_asset_graph_payload(include_runtime=include_runtime)
     war_room_data = war_room_payload.get("data") or {}

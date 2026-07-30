@@ -1,12 +1,12 @@
 # Release Package Report
 
-- created_at_utc: 2026-07-30T08:10:31.305258+00:00
-- zip_path: `dist/global_market_terminal_20260730T081023Z.zip`
-- selected_file_count_before_manifest: 1848
+- created_at_utc: 2026-07-30T09:44:53.484133+00:00
+- zip_path: `dist/global_market_terminal_20260730T094447Z.zip`
+- selected_file_count_before_manifest: 1855
 - manifest_entry_count: 1
-- expected_zip_entry_count_after_manifest: 1849
-- actual_zip_entry_count_after_manifest: 1849
-- legacy_file_count_alias: 1848
+- expected_zip_entry_count_after_manifest: 1856
+- actual_zip_entry_count_after_manifest: 1856
+- legacy_file_count_alias: 1855
 - external_excluded: true
 - data_cache_excluded: true
 - secrets_excluded: true

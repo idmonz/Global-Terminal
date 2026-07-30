@@ -1805,24 +1805,72 @@
       },
       {
         "availability": "unavailable",
-        "caveat": "No active wildfire provider is currently wired into runtime.",
+        "caveat": "EONET aggregates upstream wildfire sources; verify the event and original source for revisions and scope.",
         "domain": "natural",
-        "label": "Fires",
+        "label": "Wildfires",
         "latest_fetched_at": null,
         "layer_id": "fires",
-        "provider": "optional",
+        "provider": "nasa_eonet",
         "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
         "row_count": 0,
         "source_status": "unavailable"
       },
       {
         "availability": "unavailable",
-        "caveat": "No weather alert provider is currently wired into runtime.",
+        "caveat": "EONET storm tracks are event context, not a forecast cone or local weather warning.",
         "domain": "natural",
-        "label": "Storms / Weather Alerts",
+        "label": "Severe Storms",
         "latest_fetched_at": null,
         "layer_id": "storms_weather_alerts",
-        "provider": "optional",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "row_count": 0,
+        "source_status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "Latest EONET track point is shown; no area footprint or climate attribution is inferred.",
+        "domain": "natural",
+        "label": "Sea / Lake Ice",
+        "latest_fetched_at": null,
+        "layer_id": "sea_lake_ice",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "row_count": 0,
+        "source_status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "EONET aggregates upstream flood reports; boundaries and impact estimates are not provided here.",
+        "domain": "natural",
+        "label": "Floods",
+        "latest_fetched_at": null,
+        "layer_id": "floods",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "row_count": 0,
+        "source_status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "EONET event metadata can revise; inspect the upstream observatory source.",
+        "domain": "natural",
+        "label": "Volcanoes",
+        "latest_fetched_at": null,
+        "layer_id": "volcanoes",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "row_count": 0,
+        "source_status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "Fallback category for EONET event types without a dedicated product layer.",
+        "domain": "natural",
+        "label": "Other Natural Events",
+        "latest_fetched_at": null,
+        "layer_id": "natural_events",
+        "provider": "nasa_eonet",
         "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
         "row_count": 0,
         "source_status": "unavailable"
@@ -2214,7 +2262,7 @@
       "live_source_count": 0,
       "map_news_event_contract_only": true,
       "proxy_source_count": 28,
-      "unavailable_source_count": 27
+      "unavailable_source_count": 31
     },
     "related_news": [
       {
@@ -2753,23 +2801,67 @@
         "source_url": ""
       },
       {
-        "caveat": "No active wildfire provider is currently wired into runtime.",
+        "caveat": "EONET aggregates upstream wildfire sources; verify the event and original source for revisions and scope.",
         "confidence": null,
         "data_gap": "",
         "fetched_at": null,
         "freshness": "unavailable",
-        "provider": "optional",
+        "provider": "nasa_eonet",
         "source": "layers",
         "source_status": "unavailable",
         "source_url": ""
       },
       {
-        "caveat": "No weather alert provider is currently wired into runtime.",
+        "caveat": "EONET storm tracks are event context, not a forecast cone or local weather warning.",
         "confidence": null,
         "data_gap": "",
         "fetched_at": null,
         "freshness": "unavailable",
-        "provider": "optional",
+        "provider": "nasa_eonet",
+        "source": "layers",
+        "source_status": "unavailable",
+        "source_url": ""
+      },
+      {
+        "caveat": "Latest EONET track point is shown; no area footprint or climate attribution is inferred.",
+        "confidence": null,
+        "data_gap": "",
+        "fetched_at": null,
+        "freshness": "unavailable",
+        "provider": "nasa_eonet",
+        "source": "layers",
+        "source_status": "unavailable",
+        "source_url": ""
+      },
+      {
+        "caveat": "EONET aggregates upstream flood reports; boundaries and impact estimates are not provided here.",
+        "confidence": null,
+        "data_gap": "",
+        "fetched_at": null,
+        "freshness": "unavailable",
+        "provider": "nasa_eonet",
+        "source": "layers",
+        "source_status": "unavailable",
+        "source_url": ""
+      },
+      {
+        "caveat": "EONET event metadata can revise; inspect the upstream observatory source.",
+        "confidence": null,
+        "data_gap": "",
+        "fetched_at": null,
+        "freshness": "unavailable",
+        "provider": "nasa_eonet",
+        "source": "layers",
+        "source_status": "unavailable",
+        "source_url": ""
+      },
+      {
+        "caveat": "Fallback category for EONET event types without a dedicated product layer.",
+        "confidence": null,
+        "data_gap": "",
+        "fetched_at": null,
+        "freshness": "unavailable",
+        "provider": "nasa_eonet",
         "source": "layers",
         "source_status": "unavailable",
         "source_url": ""
@@ -3013,17 +3105,27 @@
       "event_link_count": 19,
       "generated_at": "2026-06-16T00:00:00+00:00",
       "heatmap_context_count": 6,
-      "layer_count": 34,
+      "layer_count": 38,
       "marker_count": 2,
       "non_advisory": true,
       "provider_count": 2,
       "related_news_count": 1,
       "selected_marker_id": "marker:fdc6095c511e6b33",
       "source_status": "fixture/proxy",
-      "unavailable_source_count": 27,
+      "unavailable_source_count": 31,
       "workspace": "map-news-event-fusion"
     },
     "timeline_windows": [
+      {
+        "available": true,
+        "caveat": "Timeline filters are deterministic local UI state; no user-specific persistence is implied.",
+        "filter_id": "1h",
+        "label": "Last 1h",
+        "marker_count": 2,
+        "reference_time": "2026-06-16T00:00:00+00:00",
+        "source_status": "schema-ready/offline-state",
+        "window_hours": 1
+      },
       {
         "available": true,
         "caveat": "Timeline filters are deterministic local UI state; no user-specific persistence is implied.",
@@ -3043,6 +3145,16 @@
         "reference_time": "2026-06-16T00:00:00+00:00",
         "source_status": "schema-ready/offline-state",
         "window_hours": 24
+      },
+      {
+        "available": true,
+        "caveat": "Timeline filters are deterministic local UI state; no user-specific persistence is implied.",
+        "filter_id": "48h",
+        "label": "Last 48h",
+        "marker_count": 2,
+        "reference_time": "2026-06-16T00:00:00+00:00",
+        "source_status": "schema-ready/offline-state",
+        "window_hours": 48
       },
       {
         "available": true,
@@ -3181,22 +3293,62 @@
       },
       {
         "availability": "unavailable",
-        "caveat": "No active wildfire provider is currently wired into runtime.",
+        "caveat": "EONET aggregates upstream wildfire sources; verify the event and original source for revisions and scope.",
         "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
         "layer_id": "fires",
-        "provider": "optional",
+        "provider": "nasa_eonet",
         "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
-        "source": "optional fire feed",
+        "source": "NASA EONET open-event GeoJSON",
         "status": "unavailable"
       },
       {
         "availability": "unavailable",
-        "caveat": "No weather alert provider is currently wired into runtime.",
+        "caveat": "EONET storm tracks are event context, not a forecast cone or local weather warning.",
         "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
         "layer_id": "storms_weather_alerts",
-        "provider": "optional",
+        "provider": "nasa_eonet",
         "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
-        "source": "optional weather feed",
+        "source": "NASA EONET open-event GeoJSON",
+        "status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "Latest EONET track point is shown; no area footprint or climate attribution is inferred.",
+        "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+        "layer_id": "sea_lake_ice",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "source": "NASA EONET open-event GeoJSON",
+        "status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "EONET aggregates upstream flood reports; boundaries and impact estimates are not provided here.",
+        "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+        "layer_id": "floods",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "source": "NASA EONET open-event GeoJSON",
+        "status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "EONET event metadata can revise; inspect the upstream observatory source.",
+        "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+        "layer_id": "volcanoes",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "source": "NASA EONET open-event GeoJSON",
+        "status": "unavailable"
+      },
+      {
+        "availability": "unavailable",
+        "caveat": "Fallback category for EONET event types without a dedicated product layer.",
+        "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+        "layer_id": "natural_events",
+        "provider": "nasa_eonet",
+        "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+        "source": "NASA EONET open-event GeoJSON",
         "status": "unavailable"
       },
       {
@@ -3838,23 +3990,67 @@
       "source_url": ""
     },
     {
-      "caveat": "No active wildfire provider is currently wired into runtime.",
+      "caveat": "EONET aggregates upstream wildfire sources; verify the event and original source for revisions and scope.",
       "confidence": null,
       "data_gap": "",
       "fetched_at": null,
       "freshness": "unavailable",
-      "provider": "optional",
+      "provider": "nasa_eonet",
       "source": "layers",
       "source_status": "unavailable",
       "source_url": ""
     },
     {
-      "caveat": "No weather alert provider is currently wired into runtime.",
+      "caveat": "EONET storm tracks are event context, not a forecast cone or local weather warning.",
       "confidence": null,
       "data_gap": "",
       "fetched_at": null,
       "freshness": "unavailable",
-      "provider": "optional",
+      "provider": "nasa_eonet",
+      "source": "layers",
+      "source_status": "unavailable",
+      "source_url": ""
+    },
+    {
+      "caveat": "Latest EONET track point is shown; no area footprint or climate attribution is inferred.",
+      "confidence": null,
+      "data_gap": "",
+      "fetched_at": null,
+      "freshness": "unavailable",
+      "provider": "nasa_eonet",
+      "source": "layers",
+      "source_status": "unavailable",
+      "source_url": ""
+    },
+    {
+      "caveat": "EONET aggregates upstream flood reports; boundaries and impact estimates are not provided here.",
+      "confidence": null,
+      "data_gap": "",
+      "fetched_at": null,
+      "freshness": "unavailable",
+      "provider": "nasa_eonet",
+      "source": "layers",
+      "source_status": "unavailable",
+      "source_url": ""
+    },
+    {
+      "caveat": "EONET event metadata can revise; inspect the upstream observatory source.",
+      "confidence": null,
+      "data_gap": "",
+      "fetched_at": null,
+      "freshness": "unavailable",
+      "provider": "nasa_eonet",
+      "source": "layers",
+      "source_status": "unavailable",
+      "source_url": ""
+    },
+    {
+      "caveat": "Fallback category for EONET event types without a dedicated product layer.",
+      "confidence": null,
+      "data_gap": "",
+      "fetched_at": null,
+      "freshness": "unavailable",
+      "provider": "nasa_eonet",
       "source": "layers",
       "source_status": "unavailable",
       "source_url": ""
@@ -4098,7 +4294,7 @@
     "event_link_count": 19,
     "generated_at": "2026-06-16T00:00:00+00:00",
     "heatmap_context_count": 6,
-    "layer_count": 34,
+    "layer_count": 38,
     "marker_count": 2,
     "non_advisory": true,
     "payload_mode": "map-news-event-clean-room",
@@ -4106,7 +4302,7 @@
     "related_news_count": 1,
     "selected_marker_id": "marker:fdc6095c511e6b33",
     "source_status": "fixture/proxy",
-    "unavailable_source_count": 27,
+    "unavailable_source_count": 31,
     "workspace": "map-news-event-fusion"
   },
   "unavailable": [
@@ -4182,22 +4378,62 @@
     },
     {
       "availability": "unavailable",
-      "caveat": "No active wildfire provider is currently wired into runtime.",
+      "caveat": "EONET aggregates upstream wildfire sources; verify the event and original source for revisions and scope.",
       "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
       "layer_id": "fires",
-      "provider": "optional",
+      "provider": "nasa_eonet",
       "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
-      "source": "optional fire feed",
+      "source": "NASA EONET open-event GeoJSON",
       "status": "unavailable"
     },
     {
       "availability": "unavailable",
-      "caveat": "No weather alert provider is currently wired into runtime.",
+      "caveat": "EONET storm tracks are event context, not a forecast cone or local weather warning.",
       "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
       "layer_id": "storms_weather_alerts",
-      "provider": "optional",
+      "provider": "nasa_eonet",
       "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
-      "source": "optional weather feed",
+      "source": "NASA EONET open-event GeoJSON",
+      "status": "unavailable"
+    },
+    {
+      "availability": "unavailable",
+      "caveat": "Latest EONET track point is shown; no area footprint or climate attribution is inferred.",
+      "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+      "layer_id": "sea_lake_ice",
+      "provider": "nasa_eonet",
+      "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+      "source": "NASA EONET open-event GeoJSON",
+      "status": "unavailable"
+    },
+    {
+      "availability": "unavailable",
+      "caveat": "EONET aggregates upstream flood reports; boundaries and impact estimates are not provided here.",
+      "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+      "layer_id": "floods",
+      "provider": "nasa_eonet",
+      "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+      "source": "NASA EONET open-event GeoJSON",
+      "status": "unavailable"
+    },
+    {
+      "availability": "unavailable",
+      "caveat": "EONET event metadata can revise; inspect the upstream observatory source.",
+      "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+      "layer_id": "volcanoes",
+      "provider": "nasa_eonet",
+      "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+      "source": "NASA EONET open-event GeoJSON",
+      "status": "unavailable"
+    },
+    {
+      "availability": "unavailable",
+      "caveat": "Fallback category for EONET event types without a dedicated product layer.",
+      "data_gap": "Provider evidence is missing or unavailable; keep the layer disabled.",
+      "layer_id": "natural_events",
+      "provider": "nasa_eonet",
+      "recommended_action": "Keep the surface disabled or show an explicit unavailable state.",
+      "source": "NASA EONET open-event GeoJSON",
       "status": "unavailable"
     },
     {

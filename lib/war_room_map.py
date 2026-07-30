@@ -186,6 +186,8 @@ def _coordinate_quality(row: dict[str, Any]) -> tuple[str, str]:
         "opensky_state_vector",
         "nws_geometry",
         "nasa_firms_coordinates",
+        "nasa_eonet_geojson_point",
+        "nasa_eonet_track_latest_point",
     } and not row.get("approximate_location"):
         return method, "source-backed"
     if "fixture" in method:
@@ -231,7 +233,7 @@ def _broad_region(lat: float, lon: float) -> str:
 
 def _region_with_method(row: dict[str, Any], lat: float, lon: float) -> tuple[str, str]:
     region = str(row.get("region") or "").strip()
-    if region and region.lower() not in {"global", "unknown", "none"}:
+    if region and region.lower() not in {"global", "unknown", "none", "nan", "nat", "<na>"}:
         return region, "provider-reported"
     derived = _broad_region(lat, lon)
     if derived != "Global":
@@ -290,10 +292,20 @@ def _layer_ids_for_event(row: dict[str, Any], layers: list[dict[str, Any]]) -> l
     domain = str(row.get("domain") or "").lower()
     text = " ".join(str(row.get(key) or "") for key in ["title", "summary", "source", "region"]).lower()
     layer_ids: set[str] = set()
+    explicit_layer_ids = row.get("layer_ids")
+    if isinstance(explicit_layer_ids, list):
+        layer_ids.update(str(item) for item in explicit_layer_ids if str(item).strip())
+    elif isinstance(explicit_layer_ids, str):
+        layer_ids.update(item.strip() for item in explicit_layer_ids.split(",") if item.strip())
     if domain in {"chokepoints", "shipping", "energy"} or any(token in text for token in ["hormuz", "suez", "red sea", "bab el-mandeb", "vessel", "tanker"]):
         layer_ids.add("chokepoints")
-    if domain == "natural" or any(token in text for token in ["earthquake", "usgs", "storm", "wildfire"]):
+    if (
+        (domain == "natural" and str(row.get("provider") or "").lower() in {"usgs_earthquake", "usgs_earthquakes"})
+        or any(token in text for token in ["earthquake", "usgs", "seismic"])
+    ):
         layer_ids.add("earthquakes")
+    if domain == "natural" and not layer_ids:
+        layer_ids.add("natural_events")
     if domain == "flight" or any(token in text for token in ["opensky", "aircraft state", "flight tracking"]):
         layer_ids.add("flight_tracking_unavailable")
     if domain == "crypto" or any(token in text for token in ["crypto", "bitcoin", "binance", "coingecko"]):
@@ -397,8 +409,10 @@ def _timeline_filters(markers: list[dict[str, Any]]) -> list[dict[str, Any]]:
     timestamps = [item for item in timestamps if item is not None]
     reference_time = max(timestamps) if timestamps else datetime.now(timezone.utc)
     windows = [
+        ("1h", "Last 1h", 1),
         ("6h", "Last 6h", 6),
         ("24h", "Last 24h", 24),
+        ("48h", "Last 48h", 48),
         ("7d", "Last 7d", 24 * 7),
         ("30d", "Last 30d", 24 * 30),
         ("all", "All fixture/runtime rows", None),
@@ -645,7 +659,7 @@ def build_war_room_map_contract(
     layer_runtime: dict[str, Any] | None = None,
     provider_rows: Any = None,
     event_graph: dict[str, Any] | None = None,
-    max_markers: int = 80,
+    max_markers: int = 400,
 ) -> dict[str, Any]:
     """Build a map-first War Room contract from existing source/status payloads."""
     if state is None and events is None and layer_runtime is None:

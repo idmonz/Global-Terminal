@@ -1,6 +1,6 @@
 # Phase 6Q Execution Plan
 
-Updated: 2026-07-28
+Updated: 2026-07-30
 Status: implementation in progress; hosted deployment remains disabled
 
 ## Objective
@@ -144,19 +144,51 @@ does not prove a GitHub workflow was deployed or executed.
 - [x] Add a user-JWT-only, cleanup-safe Account A/B hosted RLS harness.
 - [x] Run that harness with Account A/B SecureString passwords and retain its
   redacted pass summary.
-- [ ] Create the reviewed private Git commit/origin and deploy a passing
-  default-branch quality workflow.
+- [x] Create the reviewed Git commit/origin and deploy a passing default-branch
+  quality workflow.
+- [ ] Decide repository privacy and protect `main` before placing pilot secrets
+  in GitHub. The current repository is public and `main` is unprotected.
 - [ ] Configure the protected `phase6q-pilot` environment, run the bounded
   worker pilot/replay/failure/recovery/cleanup sequence, and pass the hosted
   evidence verifier.
 
-The local hardening continuation passes its Python, web test/lint/build/audit,
-actual-Postgres, and fresh 24-capture visual regression gates. The validator
-accepts six pinned action uses across two workflows, three reviewed action
+The local hardening continuation passes 1,143 Python tests, web
+test/lint/build/audit, actual-Postgres, and fresh 24-capture visual regression
+gates. The validator accepts seven pinned action uses across two workflows,
+three reviewed action
 identities, zero quality-gate secret references, and the four allowlisted
 scheduler secret names. Full archive and license audits remain unchanged. The
-remote schema and anonymous-denial gates now pass. Git commit, remote, GitHub
-authentication, deployed quality/scheduler workflows, protected environment
-secrets, and hosted job evidence remain absent. Password-authenticated Phase 6Q
-A/B RLS evidence now passes independently; GitHub CLI is installed but not yet
-authenticated.
+remote schema and anonymous-denial gates now pass. The repository, GitHub
+authentication, and deployed workflows now exist, and default-branch Quality
+Gate run `30525750549` passed all Python, web, and PowerShell jobs. The
+repository remains public, `main` remains unprotected, pilot environment-secret
+evidence remains absent, and the scheduled worker has no successful job
+evidence. Password-authenticated Phase 6Q A/B RLS evidence passes independently.
+
+## World Map Product-Depth Continuation
+
+- [x] Add keyless NASA EONET through the existing runtime cache and preserve
+  EONET plus upstream-source provenance.
+- [x] Repair pandas `NaN` event identity/region leakage and preserve all USGS
+  plus EONET event rows across the map boundary.
+- [x] Raise the map-specific bounded API input from 100 to 400 events while
+  keeping the general War Room payload at 100.
+- [x] Add Supercluster zoom behavior, regional presets, shareable viewport URL
+  state, tile health/fallback, and a mobile-first collapsible layer drawer.
+- [x] Capture and personally inspect five production screenshots. The verified
+  live run contained 283 events, 275 source-backed coordinates, and 53 global
+  clusters with zero overflow, duplicate IDs, unlabeled controls, or unexpected
+  live-surface browser errors.
+
+This continuation raises visible map usefulness without changing the Phase 6Q
+completion gate. Worldview/WorldMonitor parity remains false, and the hosted
+scheduler remains disabled/unverified.
+
+## Current Hosted Bottleneck
+
+The scheduler workflow is deployed and its scheduled trigger has run, but
+recent jobs failed before a claim because `phase6q-pilot` secrets are absent.
+The workflow now fails closed at job dispatch unless the non-secret repository
+variable `GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED` equals `true`;
+manual dispatch additionally requires `confirm_run=true`. Do not set that gate
+until repository privacy/protection and environment-secret review are complete.

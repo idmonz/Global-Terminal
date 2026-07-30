@@ -47,6 +47,19 @@ def test_phase6q_workflow_validator_rejects_mutable_action_and_quality_secret(tm
     assert "quality-gate-secret-use-forbidden" in result["errors"]
 
 
+def test_phase6q_workflow_validator_rejects_scheduler_without_operator_gate(tmp_path: Path):
+    shutil.copytree(ROOT / ".github", tmp_path / ".github")
+    scheduler = tmp_path / ".github/workflows/phase6q-hosted-observation.yml"
+    body = scheduler.read_text(encoding="utf-8")
+    body = body.replace("vars.GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED == 'true'", "true", 1)
+    scheduler.write_text(body, encoding="utf-8")
+
+    result = validate_workflows(tmp_path)
+
+    assert result["ok"] is False
+    assert "scheduler-hardening-marker-missing:vars.GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED == 'true'" in result["errors"]
+
+
 def test_phase6q_workflow_validator_rejects_privilege_unknown_action_and_missing_timeout(tmp_path: Path):
     shutil.copytree(ROOT / ".github", tmp_path / ".github")
     quality = tmp_path / ".github/workflows/quality-gate.yml"

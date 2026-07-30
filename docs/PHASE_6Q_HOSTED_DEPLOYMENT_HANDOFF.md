@@ -1,6 +1,6 @@
 # Phase 6Q Hosted Deployment Handoff
 
-Updated: 2026-07-28
+Updated: 2026-07-30
 
 ## Current Truth
 
@@ -20,6 +20,15 @@ RLS harness passes with zero cross-tenant rows and zero provider calls. The
 independent verifier accepts the fresh redacted summary. Deployed worker proof
 remains outstanding.
 
+The GitHub remote and both workflows now exist. Default-branch Quality Gate run
+`30525750549` passed, but the repository is public and `main` is unprotected.
+Scheduled worker attempts failed before a claim because the pilot environment
+secrets were absent. The workflow now skips all worker execution unless the
+non-secret repository variable
+`GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED=true`; manual dispatch also
+requires `confirm_run=true`. This is fail-closed deployment evidence, not a
+successful hosted observation.
+
 ## Safety Defaults
 
 - `global_terminal_hosted_scheduler_control.operator_enabled=false`
@@ -30,6 +39,8 @@ remains outstanding.
 - no provider request from page reads, schedule edits, or triage
 - no service credential in browser code, `NEXT_PUBLIC_*`, URLs, fixtures,
   screenshots, reports, or release archives
+- no GitHub worker job unless the repository operator variable is explicitly
+  enabled; manual dispatch also requires a boolean confirmation
 
 ## Step 1: Run The Read-Only Preflight
 
@@ -127,12 +138,17 @@ a separate key for this worker so it can be revoked independently.
 Official reference:
 https://supabase.com/docs/guides/getting-started/api-keys
 
-## Step 4: Publish A Private GitHub Repository Safely
+## Step 4: Make The Existing Repository Private And Protect Main
 
-The repository currently needs a real commit and private remote before the
-workflow can exist on the default branch. `.gitignore` excludes `.env`, external
-archives, local Supabase state, screenshots, databases, Node/Python caches, and
-release artifacts. Review the staged file list before committing:
+The source is already committed to `https://github.com/idmonz/Global-Terminal`
+and Quality Gate passes. The repository is currently **public** and `main` is
+unprotected. Do not add pilot secrets while that remains true. Change visibility
+only after reviewing collaborators, forks, Actions history, releases, and any
+already published material; changing visibility does not erase prior exposure.
+
+`.gitignore` excludes `.env`, external archives, local Supabase state,
+screenshots, databases, Node/Python caches, and release artifacts. Continue to
+review every staged set before pushing:
 
 ```powershell
 git status --short
@@ -142,10 +158,11 @@ git status --short
 ```
 
 Do not continue if `.env`, `external (2)`, `review_workspace`, `dist`, a database,
-or `supabase/.temp` is staged. Create a **private** repository, commit the reviewed
-source, and push the default branch. GitHub's `schedule` event only runs a
-workflow present on the default branch and can be delayed or dropped during high
-load, so product truth remains at-least-once/idempotent rather than exactly-once.
+or `supabase/.temp` is staged. Make the existing repository private instead of
+deleting history unless a separate incident review proves secret exposure. Add
+branch protection or a ruleset requiring the `Quality gate` before merge.
+GitHub's `schedule` event can be delayed or dropped during high load, so product
+truth remains at-least-once/idempotent rather than exactly-once.
 
 Before enabling the scheduler, require the `Quality gate` workflow to pass on
 the default branch. It runs the Python, web, fixture, release, and dependency
@@ -168,6 +185,11 @@ Create the environment `phase6q-pilot`. Add these environment secrets:
 - `ALPHAVANTAGE_API_KEY`
 - `FINNHUB_API_KEY`
 
+Also add the non-secret **repository Actions variable**
+`GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED` with value `false`. Keep it
+false until Step 6. This must be a repository variable because the job-level
+gate is evaluated before environment-level variables become available.
+
 Use an environment reviewer where the account plan supports it. GitHub does not
 release environment secrets to the job until required approval completes. Never
 put secret values in workflow YAML or repository variables.
@@ -178,21 +200,28 @@ https://docs.github.com/en/actions/reference/security/secure-use
 
 ## Step 6: Manual Pilot Before Recurrence
 
-1. Keep the database operator gate off and kill switch on.
-2. Dispatch `Phase 6Q hosted observation` manually. It must return `disabled`
-   or `killed`, claim no work, and spend zero provider calls.
+1. Keep the database operator gate off, kill switch on, and repository variable
+   `GLOBAL_TERMINAL_HOSTED_SCHEDULER_OPERATOR_ENABLED=false`; a scheduled run
+   must be skipped before runner work.
+2. After environment secrets are configured, set the repository variable to
+   `true` only for an attended manual dispatch with `confirm_run=true`. With the
+   database gate still off and kill still armed, it must return disabled/killed,
+   claim no due work, and spend zero provider calls. Return the variable to
+   `false`.
 3. Create one Account A schedule in disabled state, then explicitly consent in
    the Alert Manager.
-4. In a short owner-attended window, set `operator_enabled=true` and
-   `global_kill_switch=false` using the privileged operator channel.
-5. Dispatch once. Observe one due claim, one source-backed snapshot, one alert
+4. In a short owner-attended window, set the repository variable to `true`, set
+   database `operator_enabled=true`, and set `global_kill_switch=false` using
+   the privileged operator channel.
+5. Dispatch with `confirm_run=true`. Observe one due claim, one source-backed snapshot, one alert
    evaluation/trigger, and the GitHub job history.
 6. Dispatch the same window again. It must produce no duplicate effect and no
    additional provider call.
 7. Exercise the controlled provider-failure, expired-lease recovery, and kill
    paths, then return the global kill switch to `true`.
 8. Delete temporary schedule/run rows through bounded cleanup while retaining
-   immutable audit evidence.
+   immutable audit evidence. Return the repository variable to `false` before
+   leaving the attended window.
 
 Do not leave an operator-attended pilot enabled just to obtain a green badge.
 

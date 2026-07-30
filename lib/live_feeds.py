@@ -331,6 +331,57 @@ def fetch_usgs_earthquakes(*, requester=None) -> tuple[pd.DataFrame, object]:
     return enriched, status
 
 
+def fetch_nasa_eonet_events(
+    *,
+    requester=None,
+    days: int = 30,
+    limit: int = 200,
+) -> tuple[pd.DataFrame, object]:
+    from .eonet_provider import build_eonet_events_url, normalize_eonet_geojson
+
+    url = build_eonet_events_url(days=days, status="open")
+    if requester is not None:
+        data = requester(url)
+        status = ok_result(data, source=url, provider="nasa_eonet", coverage="requester response")
+    else:
+        data, status = fetch_json_with_cache(
+            f"nasa:eonet:open:{min(max(int(days), 1), 365)}",
+            url,
+            provider="nasa_eonet",
+            source="NASA EONET v3 GeoJSON",
+            headers=_public_headers(),
+            ttl_seconds=600,
+            timeout=15,
+        )
+    if not status.ok:
+        return pd.DataFrame(), status
+    fetched_at = status.fetched_at.isoformat() if getattr(status, "fetched_at", None) else _now_iso()
+    rows = normalize_eonet_geojson(data, fetched_at=fetched_at, limit=limit)
+    frame = pd.DataFrame(rows)
+    if frame.empty:
+        return frame, error_result(
+            source=url,
+            provider="nasa_eonet",
+            error="No coordinate-backed NASA EONET events returned.",
+            data=frame,
+        )
+    enriched = _attach_provenance(
+        frame,
+        status,
+        provider="nasa_eonet",
+        source_url=url,
+        confidence=0.9,
+        coordinate_method="nasa_eonet_geojson_point",
+        caveat=(
+            "NASA EONET aggregates natural-event metadata from upstream sources; "
+            "verify revisions and original-source terms."
+        ),
+    )
+    status.data = enriched
+    status.coverage = f"{len(enriched)} deduplicated NASA EONET events"
+    return enriched, status
+
+
 def fetch_eia_latest_if_key(*, requester=None) -> tuple[Any, object]:
     if not get_env_var("EIA_API_KEY"):
         return None, error_result(source="EIA_API_KEY", provider="eia", error="Missing optional environment variable: EIA_API_KEY", warning="EIA latest data unavailable without key.", is_paid_required=True)
@@ -487,11 +538,12 @@ def build_keyless_runtime_feeds(
     query: str = "geopolitical risk OR oil OR earthquake OR crypto",
     include_news: bool = True,
     include_earthquakes: bool = True,
+    include_nasa_eonet: bool = True,
     include_crypto: bool = True,
     include_flights: bool = False,
 ) -> dict[str, Any]:
     news = pd.DataFrame()
-    natural = pd.DataFrame()
+    natural_frames: list[pd.DataFrame] = []
     crypto = pd.DataFrame()
     flight = pd.DataFrame()
     statuses: list[DataResult] = []
@@ -499,8 +551,16 @@ def build_keyless_runtime_feeds(
         news, news_status = fetch_live_news_feed(query=query)
         statuses.append(news_status)
     if include_earthquakes:
-        natural, natural_status = fetch_usgs_earthquakes()
+        earthquakes, natural_status = fetch_usgs_earthquakes()
         statuses.append(natural_status)
+        if not earthquakes.empty:
+            natural_frames.append(earthquakes)
+    if include_nasa_eonet:
+        eonet, eonet_status = fetch_nasa_eonet_events()
+        statuses.append(eonet_status)
+        if not eonet.empty:
+            natural_frames.append(eonet)
+    natural = pd.concat(natural_frames, ignore_index=True) if natural_frames else pd.DataFrame()
     if include_crypto:
         crypto, crypto_status = fetch_crypto_market_live()
         statuses.append(crypto_status)
