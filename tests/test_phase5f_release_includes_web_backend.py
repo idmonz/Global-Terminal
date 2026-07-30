@@ -7,7 +7,9 @@ from scripts import build_release_zip
 
 REQUIRED_PRODUCT_FILES = {
     ".github/action-pins.json",
+    ".github/CODEOWNERS",
     ".github/dependabot.yml",
+    ".github/SECURITY.md",
     ".github/workflows/phase6q-hosted-observation.yml",
     ".github/workflows/quality-gate.yml",
     "requirements-api.txt",

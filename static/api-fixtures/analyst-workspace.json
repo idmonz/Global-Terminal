@@ -61,7 +61,7 @@
     ],
     "identity": {
       "asset_class": "equity",
-      "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+      "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
       "compatibility": "exact",
       "currency": "USD",
       "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
@@ -342,7 +342,7 @@
     },
     "source_register": [
       {
-        "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+        "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
         "confidence": null,
         "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
         "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -387,7 +387,7 @@
   "payload_type": "analyst_workspace",
   "source_status": [
     {
-      "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+      "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
       "confidence": null,
       "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
       "fetched_at": "2026-06-16T00:00:00+00:00",

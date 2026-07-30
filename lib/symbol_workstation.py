@@ -185,37 +185,46 @@ def normalize_search_query(value: str) -> str:
 
 
 def _equity_identities() -> list[SymbolIdentity]:
-    source = STATIC_DIR / "index_constituents" / "sp500.csv"
-    rows: list[SymbolIdentity] = []
-    if not source.exists():
-        return rows
-    with source.open("r", encoding="utf-8", newline="") as handle:
-        for item in csv.DictReader(handle):
-            symbol = normalize_symbol_input(item.get("ticker") or "")
-            if not symbol:
-                continue
-            market_cap = _clean_number(item.get("market_cap"))
-            aliases = {symbol, symbol.replace("-", "."), symbol.replace(".", "-")}
-            rows.append(
-                SymbolIdentity(
+    sources = (
+        STATIC_DIR / "index_constituents" / "sp500.csv",
+        STATIC_DIR / "index_constituents" / "nasdaq100.csv",
+        STATIC_DIR / "index_constituents" / "research_watchlist.csv",
+    )
+    rows: dict[str, SymbolIdentity] = {}
+    for source in sources:
+        if not source.exists():
+            continue
+        with source.open("r", encoding="utf-8", newline="") as handle:
+            for item in csv.DictReader(handle):
+                symbol = normalize_symbol_input(item.get("ticker") or "")
+                if not symbol or symbol in rows:
+                    continue
+                market_cap = _clean_number(item.get("market_cap"))
+                aliases = {symbol, symbol.replace("-", "."), symbol.replace(".", "-")}
+                rows[symbol] = SymbolIdentity(
                     symbol=symbol,
                     name=str(item.get("company") or symbol),
                     asset_class="equity",
-                    exchange="US listed",
-                    currency="USD",
-                    region="United States",
+                    exchange=str(item.get("exchange") or "US listed"),
+                    currency=str(item.get("currency") or "USD"),
+                    region=str(item.get("region") or "United States"),
                     provider_symbol=symbol,
                     aliases=tuple(sorted(aliases)),
                     registry_provider="phase5i.local_equity_registry",
-                    registry_source="static/index_constituents/sp500.csv",
+                    registry_source=source.relative_to(STATIC_DIR.parent).as_posix(),
                     sector=str(item.get("sector") or "Unclassified"),
                     industry=str(item.get("industry") or "Unclassified"),
                     market_cap=market_cap,
-                    caveat="Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
-                    data_gap="Authoritative current exchange and index membership require a separately licensed security master.",
+                    caveat=(
+                        "Reviewed local taxonomy used for bounded discovery; "
+                        "index membership, listing status, and market cap are not claimed current."
+                    ),
+                    data_gap=(
+                        "Authoritative current exchange and index membership require "
+                        "a separately licensed security master."
+                    ),
                 )
-            )
-    return rows
+    return list(rows.values())
 
 
 def _etf_identities() -> list[SymbolIdentity]:

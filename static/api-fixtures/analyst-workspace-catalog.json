@@ -71,7 +71,7 @@
           ],
           "identity": {
             "asset_class": "equity",
-            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "compatibility": "exact",
             "currency": "USD",
             "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
@@ -352,7 +352,7 @@
           },
           "source_register": [
             {
-              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
               "confidence": null,
               "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
               "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -397,7 +397,7 @@
         "payload_type": "analyst_workspace",
         "source_status": [
           {
-            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "confidence": null,
             "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
             "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -500,7 +500,7 @@
           ],
           "identity": {
             "asset_class": "equity",
-            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "compatibility": "exact",
             "currency": "USD",
             "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
@@ -781,7 +781,7 @@
           },
           "source_register": [
             {
-              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
               "confidence": null,
               "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
               "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -826,7 +826,7 @@
         "payload_type": "analyst_workspace",
         "source_status": [
           {
-            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "confidence": null,
             "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
             "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -929,7 +929,7 @@
           ],
           "identity": {
             "asset_class": "equity",
-            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "compatibility": "exact",
             "currency": "USD",
             "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
@@ -1210,7 +1210,7 @@
           },
           "source_register": [
             {
-              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
               "confidence": null,
               "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
               "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -1255,7 +1255,7 @@
         "payload_type": "analyst_workspace",
         "source_status": [
           {
-            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership and market cap are not claimed current.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "confidence": null,
             "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
             "fetched_at": "2026-06-16T00:00:00+00:00",
@@ -1358,15 +1358,15 @@
           ],
           "identity": {
             "asset_class": "equity",
-            "caveat": "Official listing identity is reconciled through the materialized Market Map snapshot.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "compatibility": "exact",
             "currency": "USD",
-            "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
-            "exchange": "NASDAQ Global Select",
-            "industry": "Unclassified",
-            "name": "Tesla, Inc.",
+            "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
+            "exchange": "US listed",
+            "industry": "Automobiles",
+            "name": "Tesla",
             "sector": "Consumer Discretionary",
-            "source_status": "official/current-day",
+            "source_status": "static/proxy",
             "symbol": "TSLA"
           },
           "layouts": {
@@ -1639,34 +1639,14 @@
           },
           "source_register": [
             {
-              "caveat": "Official listing identity is reconciled through the materialized Market Map snapshot.",
+              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
               "confidence": null,
-              "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
+              "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
               "fetched_at": "2026-06-16T00:00:00+00:00",
-              "provider": "nasdaq_trader",
-              "source": "materialized Market Map identity",
-              "source_status": "official/current-day",
+              "provider": "phase5i.local_equity_registry",
+              "source": "static/index_constituents/nasdaq100.csv",
+              "source_status": "static/proxy",
               "source_url": null
-            },
-            {
-              "caveat": "Provider classification is separate from official listing identity and is not claimed as GICS.",
-              "confidence": null,
-              "data_gap": null,
-              "fetched_at": "2026-06-16T00:00:00+00:00",
-              "provider": "yahoo-screener",
-              "source": "Market Map classification",
-              "source_status": "provider-classification",
-              "source_url": null
-            },
-            {
-              "caveat": "Materialized same-symbol quote context is independent from the on-demand OHLCV history.",
-              "confidence": null,
-              "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
-              "fetched_at": "2026-06-16T00:00:00+00:00",
-              "provider": "yahoo-screener",
-              "source": "TSLA delayed Market Map observation",
-              "source_status": "stale",
-              "source_url": "https://finance.yahoo.com/quote/TSLA"
             },
             {
               "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",
@@ -1704,34 +1684,14 @@
         "payload_type": "analyst_workspace",
         "source_status": [
           {
-            "caveat": "Official listing identity is reconciled through the materialized Market Map snapshot.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "confidence": null,
-            "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
+            "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
             "fetched_at": "2026-06-16T00:00:00+00:00",
-            "provider": "nasdaq_trader",
-            "source": "materialized Market Map identity",
-            "source_status": "official/current-day",
+            "provider": "phase5i.local_equity_registry",
+            "source": "static/index_constituents/nasdaq100.csv",
+            "source_status": "static/proxy",
             "source_url": null
-          },
-          {
-            "caveat": "Provider classification is separate from official listing identity and is not claimed as GICS.",
-            "confidence": null,
-            "data_gap": null,
-            "fetched_at": "2026-06-16T00:00:00+00:00",
-            "provider": "yahoo-screener",
-            "source": "Market Map classification",
-            "source_status": "provider-classification",
-            "source_url": null
-          },
-          {
-            "caveat": "Materialized same-symbol quote context is independent from the on-demand OHLCV history.",
-            "confidence": null,
-            "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
-            "fetched_at": "2026-06-16T00:00:00+00:00",
-            "provider": "yahoo-screener",
-            "source": "TSLA delayed Market Map observation",
-            "source_status": "stale",
-            "source_url": "https://finance.yahoo.com/quote/TSLA"
           },
           {
             "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",
@@ -1827,15 +1787,15 @@
           ],
           "identity": {
             "asset_class": "equity",
-            "caveat": "Official listing identity is reconciled through the materialized Market Map snapshot.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "compatibility": "exact",
             "currency": "USD",
-            "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
+            "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
             "exchange": "NYSE",
-            "industry": "Unclassified",
+            "industry": "Pharmaceuticals",
             "name": "Johnson & Johnson",
             "sector": "Health Care",
-            "source_status": "official/current-day",
+            "source_status": "static/proxy",
             "symbol": "JNJ"
           },
           "layouts": {
@@ -2108,34 +2068,14 @@
           },
           "source_register": [
             {
-              "caveat": "Official listing identity is reconciled through the materialized Market Map snapshot.",
+              "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
               "confidence": null,
-              "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
+              "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
               "fetched_at": "2026-06-16T00:00:00+00:00",
-              "provider": "nasdaq_trader",
-              "source": "materialized Market Map identity",
-              "source_status": "official/current-day",
+              "provider": "phase5i.local_equity_registry",
+              "source": "static/index_constituents/research_watchlist.csv",
+              "source_status": "static/proxy",
               "source_url": null
-            },
-            {
-              "caveat": "Provider classification is separate from official listing identity and is not claimed as GICS.",
-              "confidence": null,
-              "data_gap": null,
-              "fetched_at": "2026-06-16T00:00:00+00:00",
-              "provider": "yahoo-screener",
-              "source": "Market Map classification",
-              "source_status": "provider-classification",
-              "source_url": null
-            },
-            {
-              "caveat": "Materialized same-symbol quote context is independent from the on-demand OHLCV history.",
-              "confidence": null,
-              "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
-              "fetched_at": "2026-06-16T00:00:00+00:00",
-              "provider": "yahoo-screener",
-              "source": "JNJ delayed Market Map observation",
-              "source_status": "stale",
-              "source_url": "https://finance.yahoo.com/quote/JNJ"
             },
             {
               "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",
@@ -2173,34 +2113,14 @@
         "payload_type": "analyst_workspace",
         "source_status": [
           {
-            "caveat": "Official listing identity is reconciled through the materialized Market Map snapshot.",
+            "caveat": "Reviewed local taxonomy used for bounded discovery; index membership, listing status, and market cap are not claimed current.",
             "confidence": null,
-            "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
+            "data_gap": "Authoritative current exchange and index membership require a separately licensed security master.",
             "fetched_at": "2026-06-16T00:00:00+00:00",
-            "provider": "nasdaq_trader",
-            "source": "materialized Market Map identity",
-            "source_status": "official/current-day",
+            "provider": "phase5i.local_equity_registry",
+            "source": "static/index_constituents/research_watchlist.csv",
+            "source_status": "static/proxy",
             "source_url": null
-          },
-          {
-            "caveat": "Provider classification is separate from official listing identity and is not claimed as GICS.",
-            "confidence": null,
-            "data_gap": null,
-            "fetched_at": "2026-06-16T00:00:00+00:00",
-            "provider": "yahoo-screener",
-            "source": "Market Map classification",
-            "source_status": "provider-classification",
-            "source_url": null
-          },
-          {
-            "caveat": "Materialized same-symbol quote context is independent from the on-demand OHLCV history.",
-            "confidence": null,
-            "data_gap": "Historical momentum, volatility and drawdown factors are unavailable for this broad-only observation.",
-            "fetched_at": "2026-06-16T00:00:00+00:00",
-            "provider": "yahoo-screener",
-            "source": "JNJ delayed Market Map observation",
-            "source_status": "stale",
-            "source_url": "https://finance.yahoo.com/quote/JNJ"
           },
           {
             "caveat": "Deterministic symbol-seeded fixture; values are synthetic and not market observations.",

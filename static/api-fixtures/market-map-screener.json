@@ -6132,7 +6132,7 @@
         "taxonomy_source_status": "fixture",
         "trailing_pe": 25.15,
         "volume_zscore": null,
-        "workstation_supported": false
+        "workstation_supported": true
       },
       {
         "above_20dma": false,
@@ -7196,7 +7196,7 @@
         "taxonomy_source_status": "fixture",
         "trailing_pe": 14.35,
         "volume_zscore": null,
-        "workstation_supported": false
+        "workstation_supported": true
       },
       {
         "above_20dma": true,
@@ -14114,7 +14114,7 @@
         "taxonomy_source_status": "fixture",
         "trailing_pe": 25.15,
         "volume_zscore": null,
-        "workstation_supported": false
+        "workstation_supported": true
       },
       {
         "above_20dma": false,
@@ -15178,7 +15178,7 @@
         "taxonomy_source_status": "fixture",
         "trailing_pe": 14.35,
         "volume_zscore": null,
-        "workstation_supported": false
+        "workstation_supported": true
       },
       {
         "above_20dma": true,
@@ -16854,7 +16854,7 @@
         "taxonomy_source_status": "fixture",
         "trailing_pe": 14.35,
         "volume_zscore": null,
-        "workstation_supported": false
+        "workstation_supported": true
       },
       {
         "above_20dma": true,
@@ -24302,7 +24302,7 @@
         "taxonomy_source_status": "fixture",
         "trailing_pe": 25.15,
         "volume_zscore": null,
-        "workstation_supported": false
+        "workstation_supported": true
       }
     ],
     "readiness": {

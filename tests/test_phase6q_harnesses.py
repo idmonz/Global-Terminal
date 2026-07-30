@@ -142,6 +142,11 @@ def test_phase6q_owner_handoff_documents_new_supabase_key_and_default_branch_bou
         "workflow_hardening_valid",
         "hosted_rls_verified",
         "quality_workflow_deployed",
+        "quality_workflow_passed",
+        "github_repository_private",
+        "github_default_branch_main",
+        "github_main_branch_protected",
+        "local_remote_synced",
         "supply_chain_policy_committed",
     ):
         assert marker in preflight

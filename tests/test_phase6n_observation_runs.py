@@ -145,7 +145,10 @@ def test_phase6n_plan_is_stable_bounded_and_session_honest():
     assert first["provider_budget"]["planned_calls_by_operation"]["alpha-vantage:overview"] == 0
 
 
-def test_phase6n_plan_respects_quota_and_rejects_client_identity():
+def test_phase6n_plan_respects_quota_and_rejects_client_identity(monkeypatch):
+    monkeypatch.setenv("ALPHAVANTAGE_API_KEY", "test-alpha-vantage-key")
+    monkeypatch.setenv("FINNHUB_API_KEY", "test-finnhub-key")
+
     from lib.watchlist_observation_runs import build_observation_run_plan, validate_observation_request
     from lib.identity_tenancy import local_test_context
 

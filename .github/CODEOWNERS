@@ -1,0 +1,7 @@
+# Security-sensitive product and deployment boundaries require owner review.
+* @idmonz
+/.github/ @idmonz
+/backend/ @idmonz
+/lib/ @idmonz
+/scripts/ @idmonz
+/supabase/migrations/ @idmonz

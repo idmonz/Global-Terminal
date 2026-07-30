@@ -36,10 +36,12 @@ def _isolated_runtime_cache(tmp_path, monkeypatch):
 
 
 def _identities() -> list[dict]:
-    return [
-        resolve_symbol(symbol, asset_class="equity")
+    identities = [
+        resolve_symbol(symbol, asset_class="equity", include_materialized=False)
         for symbol in ("AAPL", "TSLA", "JNJ", "TTE", "TMUS")
     ]
+    assert all(isinstance(identity, dict) for identity in identities)
+    return [dict(identity) for identity in identities if identity is not None]
 
 
 def _history(seed: float) -> list[dict]:

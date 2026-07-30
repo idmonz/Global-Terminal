@@ -82,3 +82,32 @@ jobs:
         run: npm run build
       - name: Audit high-severity dependency risk
         run: npm audit --audit-level=high
+
+  powershell-syntax:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out reviewed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Parse every owner handoff script
+        shell: powershell
+        run: |
+          $failures = @()
+          Get-ChildItem -LiteralPath scripts -Filter *.ps1 -File | ForEach-Object {
+            $tokens = $null
+            $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile(
+              $_.FullName,
+              [ref]$tokens,
+              [ref]$errors
+            ) | Out-Null
+            if ($errors.Count -gt 0) {
+              $failures += $errors | ForEach-Object { "$($_.Extent.File): $($_.Message)" }
+            }
+          }
+          if ($failures.Count -gt 0) {
+            $failures | ForEach-Object { Write-Error $_ }
+            exit 1
+          }

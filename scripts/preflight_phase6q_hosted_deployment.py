@@ -29,7 +29,9 @@ HOSTED_RLS_SUMMARY_PATH = "review_workspace/phase6q_hosted_rls_summary.json"
 SUPPLY_CHAIN_PATHS = {
     QUALITY_WORKFLOW_PATH,
     ".github/action-pins.json",
+    ".github/CODEOWNERS",
     ".github/dependabot.yml",
+    ".github/SECURITY.md",
 }
 REQUIRED_GITHUB_SECRETS = {
     "SUPABASE_URL",
@@ -133,11 +135,21 @@ def build_preflight(
     git_available = shutil.which("git") is not None
     commit_present = False
     remote_present = False
+    local_remote_synced = False
     workflow_committed = False
     supply_chain_policy_committed = False
     if git_available:
-        commit_present = _run(["git", "rev-parse", "--verify", "HEAD"], cwd=root, timeout=10)[0] == 0
+        head_code, local_head = _run(["git", "rev-parse", "--verify", "HEAD"], cwd=root, timeout=10)
+        commit_present = head_code == 0
         remote_present = _run(["git", "remote", "get-url", "origin"], cwd=root, timeout=10)[0] == 0
+        upstream_code, upstream_head = _run(["git", "rev-parse", "@{upstream}"], cwd=root, timeout=10)
+        local_remote_synced = (
+            commit_present
+            and remote_present
+            and upstream_code == 0
+            and bool(local_head.strip())
+            and local_head.strip() == upstream_head.strip()
+        )
         workflow_committed = _run(["git", "ls-files", "--error-unmatch", WORKFLOW_PATH], cwd=root, timeout=10)[0] == 0
         supply_chain_policy_committed = all(
             _run(["git", "ls-files", "--error-unmatch", path], cwd=root, timeout=10)[0] == 0
@@ -159,8 +171,12 @@ def build_preflight(
 
     gh_available = shutil.which("gh") is not None
     github_authenticated = False
+    github_repository_private = False
+    github_default_branch_main = False
+    github_main_branch_protected = False
     workflow_deployed = False
     quality_workflow_deployed = False
+    quality_workflow_passed = False
     github_secrets_verified = False
     github_probe_status = "not-requested"
     if probe_github:
@@ -171,6 +187,38 @@ def build_preflight(
         else:
             github_authenticated = _run(["gh", "auth", "status"], cwd=root, timeout=20)[0] == 0
             if github_authenticated:
+                repo_code, repo_output = _run(
+                    ["gh", "repo", "view", "--json", "nameWithOwner,isPrivate,defaultBranchRef"],
+                    cwd=root,
+                    timeout=30,
+                )
+                try:
+                    repository = json.loads(repo_output) if repo_code == 0 else {}
+                except ValueError:
+                    repository = {}
+                github_repository_private = repository.get("isPrivate") is True
+                default_branch = repository.get("defaultBranchRef")
+                github_default_branch_main = (
+                    isinstance(default_branch, dict)
+                    and default_branch.get("name") == "main"
+                )
+                repository_name = str(repository.get("nameWithOwner") or "").strip()
+                if repository_name and github_default_branch_main:
+                    protection_code, protection_output = _run(
+                        [
+                            "gh",
+                            "api",
+                            f"repos/{repository_name}/branches/main",
+                            "--jq",
+                            ".protected",
+                        ],
+                        cwd=root,
+                        timeout=30,
+                    )
+                    github_main_branch_protected = (
+                        protection_code == 0
+                        and protection_output.strip().lower() == "true"
+                    )
                 workflow_code, workflow_output = _run(
                     ["gh", "workflow", "view", "phase6q-hosted-observation.yml", "--json", "state,path"],
                     cwd=root,
@@ -193,6 +241,34 @@ def build_preflight(
                 quality_workflow_deployed = (
                     quality_workflow.get("state") == "active"
                     and quality_workflow.get("path") == QUALITY_WORKFLOW_PATH
+                )
+                run_code, run_output = _run(
+                    [
+                        "gh",
+                        "run",
+                        "list",
+                        "--workflow",
+                        "quality-gate.yml",
+                        "--branch",
+                        "main",
+                        "--limit",
+                        "20",
+                        "--json",
+                        "status,conclusion,headSha",
+                    ],
+                    cwd=root,
+                    timeout=30,
+                )
+                try:
+                    quality_runs = json.loads(run_output) if run_code == 0 else []
+                except ValueError:
+                    quality_runs = []
+                quality_workflow_passed = any(
+                    isinstance(row, dict)
+                    and row.get("status") == "completed"
+                    and row.get("conclusion") == "success"
+                    and str(row.get("headSha") or "").strip() == local_head.strip()
+                    for row in quality_runs
                 )
                 secret_code, secret_output = _run(
                     ["gh", "secret", "list", "--env", "phase6q-pilot", "--json", "name"],
@@ -225,11 +301,16 @@ def build_preflight(
         "hosted_rls_verified": hosted_rls_verified,
         "git_commit_present": commit_present,
         "git_remote_present": remote_present,
+        "local_remote_synced": local_remote_synced,
         "workflow_committed": workflow_committed,
         "supply_chain_policy_committed": supply_chain_policy_committed,
         "github_authenticated": github_authenticated,
+        "github_repository_private": github_repository_private,
+        "github_default_branch_main": github_default_branch_main,
+        "github_main_branch_protected": github_main_branch_protected,
         "workflow_deployed": workflow_deployed,
         "quality_workflow_deployed": quality_workflow_deployed,
+        "quality_workflow_passed": quality_workflow_passed,
         "github_environment_secrets_verified": github_secrets_verified,
         "local_service_secret_configured": local_secret_configured,
         "local_provider_keys_configured": local_provider_keys_configured,
@@ -244,11 +325,16 @@ def build_preflight(
         "hosted_rls_verified",
         "git_commit_present",
         "git_remote_present",
+        "local_remote_synced",
         "workflow_committed",
         "supply_chain_policy_committed",
         "github_authenticated",
+        "github_repository_private",
+        "github_default_branch_main",
+        "github_main_branch_protected",
         "workflow_deployed",
         "quality_workflow_deployed",
+        "quality_workflow_passed",
         "github_environment_secrets_verified",
         "safe_local_gate",
     )

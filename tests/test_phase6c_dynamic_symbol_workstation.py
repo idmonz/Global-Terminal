@@ -164,7 +164,7 @@ def test_materialized_identity_activates_exact_dynamic_symbol(tmp_path):
     assert '"symbol": "AAPL"' not in json.dumps(contract)
 
 
-def test_runtime_directory_adds_materialized_identities_without_duplicate_static_rows(tmp_path):
+def test_runtime_directory_merges_materialized_identities_without_duplicate_static_rows(tmp_path):
     _materialize(tmp_path)
 
     static = workstation_module.symbol_identities(include_materialized=False)
@@ -174,9 +174,14 @@ def test_runtime_directory_adds_materialized_identities_without_duplicate_static
     )
     symbols = [row["symbol"] for row in runtime]
 
-    assert len(runtime) > len(static)
+    assert len(runtime) >= len(static)
     assert symbols.count("TSLA") == 1
     assert symbols.count("JNJ") == 1
+    by_symbol = {row["symbol"]: row for row in runtime}
+    assert by_symbol["TSLA"]["identity_origin"] == "materialized-market-snapshot"
+    assert by_symbol["JNJ"]["identity_origin"] == "materialized-market-snapshot"
+    assert by_symbol["TSLA"]["local_registry_evidence"]["source"]
+    assert by_symbol["JNJ"]["local_registry_evidence"]["source"]
     assert workstation_module.search_symbols(
         "Tesla",
         asset_class="equity",

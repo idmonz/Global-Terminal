@@ -12,6 +12,8 @@ PIN_REGISTRY = ".github/action-pins.json"
 QUALITY_WORKFLOW = ".github/workflows/quality-gate.yml"
 SCHEDULER_WORKFLOW = ".github/workflows/phase6q-hosted-observation.yml"
 DEPENDABOT_POLICY = ".github/dependabot.yml"
+CODEOWNERS_POLICY = ".github/CODEOWNERS"
+SECURITY_POLICY = ".github/SECURITY.md"
 USES_PATTERN = re.compile(r"^\s*-?\s*uses:\s*([^@\s]+)@([^\s#]+)(?:\s*#\s*([^\s]+))?\s*$", re.MULTILINE)
 SECRET_PATTERN = re.compile(r"\$\{\{\s*secrets\.([A-Z0-9_]+)\s*\}\}")
 FULL_SHA_PATTERN = re.compile(r"^[0-9a-f]{40}$")
@@ -139,8 +141,27 @@ def validate_workflows(root: Path = ROOT) -> dict[str, Any]:
     for ecosystem, directory in (("github-actions", "/"), ("npm", "/apps/web"), ("pip", "/")):
         if f'package-ecosystem: "{ecosystem}"' not in dependabot or f'directory: "{directory}"' not in dependabot:
             errors.append(f"dependabot-policy-missing:{ecosystem}")
-    if dependabot.count('interval: "weekly"') != 3 or "open-pull-requests-limit:" not in dependabot:
+    if (
+        dependabot.count('interval: "weekly"') != 3
+        or dependabot.count("open-pull-requests-limit: 2") != 3
+        or dependabot.count("groups:") != 3
+        or dependabot.count('update-types: ["minor", "patch"]') < 3
+    ):
         errors.append("dependabot-bounds-invalid")
+
+    codeowners = _read(root / CODEOWNERS_POLICY)
+    if "* @idmonz" not in codeowners or "/.github/ @idmonz" not in codeowners:
+        errors.append("codeowners-policy-invalid")
+
+    security = _read(root / SECURITY_POLICY)
+    normalized_security = " ".join(security.split())
+    for marker in (
+        "Private vulnerability reporting",
+        "Do not open a public issue",
+        "Supported Versions",
+    ):
+        if marker not in normalized_security:
+            errors.append(f"security-policy-marker-missing:{marker}")
 
     errors = sorted(set(errors))
     return {

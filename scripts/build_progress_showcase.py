@@ -131,6 +131,8 @@ def screenshot_tags(bundle: str, name: str) -> list[str]:
 
 def collect_screenshots() -> list[dict[str, object]]:
     rows: list[dict[str, object]] = []
+    if not REVIEW_ROOT.is_dir():
+        return rows
     capture_dirs = sorted(
         (
             path

@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import json
 import shutil
+from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
 
+import scripts.preflight_phase6q_hosted_deployment as deployment_preflight
 from scripts.preflight_phase6q_hosted_deployment import build_preflight
 from scripts.validate_github_workflows import validate_workflows
 from scripts.verify_phase6q_remote_anonymous_denial import verify_remote_anonymous_denial
@@ -18,7 +20,7 @@ def test_phase6q_github_workflows_are_pinned_bounded_and_secret_separated():
 
     assert result["ok"] is True, result["errors"]
     assert result["workflow_count"] == 2
-    assert result["action_use_count"] == 6
+    assert result["action_use_count"] == 7
     assert result["reviewed_action_count"] == 3
     assert result["quality_gate_secret_count"] == 0
     assert result["scheduler_secret_name_count"] == 4
@@ -97,6 +99,101 @@ def test_phase6q_preflight_promotes_local_workflow_hardening_without_promoting_h
     assert result["hosted_scheduler_verified"] is False
     assert result["provider_call_count"] == 0
     assert result["remote_mutation"] is False
+
+
+def test_phase6q_preflight_requires_private_synced_main_and_current_quality_run(tmp_path: Path, monkeypatch):
+    shutil.copytree(ROOT / ".github", tmp_path / ".github")
+    migrations = tmp_path / "supabase/migrations"
+    migrations.mkdir(parents=True)
+    for version in deployment_preflight.MIGRATION_VERSIONS:
+        (migrations / f"{version}_test.sql").write_text("select 1;\n", encoding="utf-8")
+    linked = tmp_path / "supabase/.temp"
+    linked.mkdir(parents=True)
+    (linked / "project-ref").write_text("redacted\n", encoding="utf-8")
+    review = tmp_path / "review_workspace"
+    review.mkdir()
+    (review / "phase6q_hosted_rls_summary.json").write_text(
+        json.dumps(
+            {
+                "evidence_version": "phase6q.hosted-rls.v1",
+                "captured_at": datetime.now(timezone.utc).isoformat(),
+                "passed": True,
+                "remote_schema_verified": True,
+                "account_identities_distinct": True,
+                "tenant_scopes_distinct": True,
+                "cross_tenant_schedule_rows_visible": 0,
+                "cross_tenant_run_rows_visible": 0,
+                "cross_tenant_audit_rows_visible": 0,
+                "optimistic_conflict_verified": True,
+                "immutable_audit_verified": True,
+                "deleted_schedule_replacement_verified": True,
+                "original_account_document_restored": True,
+                "operator_gate_changed": False,
+                "hosted_worker_invoked": False,
+                "hosted_scheduler_verified": False,
+                "provider_call_count": 0,
+                "identifiers_redacted": True,
+                "secrets_printed": False,
+            }
+        ),
+        encoding="utf-8",
+    )
+    (tmp_path / ".env").write_text(
+        "ALPHAVANTAGE_API_KEY=alpha_test_value\n"
+        "FINNHUB_API_KEY=finnhub_test_value\n"
+        "GLOBAL_TERMINAL_HOSTED_SCHEDULER_ENABLED=false\n"
+        "GLOBAL_TERMINAL_HOSTED_SCHEDULER_KILL_SWITCH=true\n"
+        "GLOBAL_TERMINAL_HOSTED_SCHEDULER_VERIFIED=false\n",
+        encoding="utf-8",
+    )
+
+    def fake_run(command: list[str], *, cwd: Path, timeout: int = 45):
+        del cwd, timeout
+        if command[:3] == ["git", "rev-parse", "--verify"]:
+            return 0, "current-head\n"
+        if command[:2] == ["git", "remote"]:
+            return 0, "redacted-origin\n"
+        if command[:2] == ["git", "rev-parse"]:
+            return 0, "current-head\n"
+        if command[:2] == ["git", "ls-files"]:
+            return 0, "tracked\n"
+        if command[:3] == ["supabase", "migration", "list"]:
+            rows = "\n".join(f"`{version}` | `{version}` | `{version}`" for version in deployment_preflight.MIGRATION_VERSIONS)
+            return 0, rows
+        if command[:3] == ["gh", "auth", "status"]:
+            return 0, "authenticated\n"
+        if command[:3] == ["gh", "repo", "view"]:
+            return 0, json.dumps(
+                {
+                    "nameWithOwner": "example/global-terminal",
+                    "isPrivate": True,
+                    "defaultBranchRef": {"name": "main"},
+                }
+            )
+        if command[:2] == ["gh", "api"]:
+            return 0, "true\n"
+        if command[:3] == ["gh", "workflow", "view"]:
+            path = deployment_preflight.WORKFLOW_PATH if "phase6q-hosted-observation.yml" in command else deployment_preflight.QUALITY_WORKFLOW_PATH
+            return 0, json.dumps({"state": "active", "path": path})
+        if command[:3] == ["gh", "run", "list"]:
+            return 0, json.dumps([{"status": "completed", "conclusion": "success", "headSha": "current-head"}])
+        if command[:3] == ["gh", "secret", "list"]:
+            return 0, json.dumps([{"name": name} for name in deployment_preflight.REQUIRED_GITHUB_SECRETS])
+        raise AssertionError(f"unexpected command: {command}")
+
+    monkeypatch.setattr(deployment_preflight.shutil, "which", lambda name: f"/bin/{name}")
+    monkeypatch.setattr(deployment_preflight, "_run", fake_run)
+
+    result = build_preflight(tmp_path, probe_linked=True, probe_github=True)
+
+    assert result["deployment_ready"] is True
+    assert result["blockers"] == []
+    assert result["checks"]["local_remote_synced"] is True
+    assert result["checks"]["github_repository_private"] is True
+    assert result["checks"]["github_default_branch_main"] is True
+    assert result["checks"]["github_main_branch_protected"] is True
+    assert result["checks"]["quality_workflow_passed"] is True
+    assert result["hosted_scheduler_verified"] is False
 
 
 class _AnonymousProbeSession:

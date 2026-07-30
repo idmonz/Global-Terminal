@@ -2,9 +2,12 @@ from __future__ import annotations
 
 import re
 import json
+import shutil
 import subprocess
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+
+import pytest
 
 from scripts.preflight_phase6q_hosted_deployment import _migration_is_remote, build_preflight
 from scripts.verify_phase6q_hosted_rls_summary import validate_phase6q_hosted_rls_summary
@@ -92,6 +95,9 @@ def test_phase6q_hosted_rls_handoff_is_secret_safe_bounded_and_cleanup_first():
 
 
 def test_phase6q_hosted_rls_handoff_parses_in_windows_powershell():
+    executable = shutil.which("powershell") or shutil.which("pwsh")
+    if executable is None:
+        pytest.skip("PowerShell parsing is covered by the owner-run Windows handoff.")
     command = (
         "$errors=$null; "
         "[System.Management.Automation.Language.Parser]::ParseFile("
@@ -100,7 +106,7 @@ def test_phase6q_hosted_rls_handoff_parses_in_windows_powershell():
         "if ($errors.Count -gt 0) { $errors | ForEach-Object { $_.Message }; exit 1 }"
     )
     completed = subprocess.run(
-        ["powershell", "-NoProfile", "-Command", command],
+        [executable, "-NoProfile", "-Command", command],
         cwd=ROOT,
         capture_output=True,
         text=True,

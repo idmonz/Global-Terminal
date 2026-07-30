@@ -34,7 +34,7 @@
           "factors": [
             "severity:high+50",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 67
@@ -231,7 +231,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:993h+0"
+            "recency:1064h+0"
           ],
           "score": 50
         },
@@ -294,7 +294,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:591h+0",
+            "recency:662h+0",
             "source-url-missing-3"
           ],
           "score": 47
@@ -361,7 +361,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:993h+0",
+            "recency:1064h+0",
             "source-url-missing-3"
           ],
           "score": 47
@@ -428,7 +428,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:993h+0",
+            "recency:1064h+0",
             "source-url-missing-3"
           ],
           "score": 47
@@ -495,7 +495,7 @@
           "factors": [
             "severity:info+10",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 27
@@ -562,7 +562,7 @@
           "factors": [
             "severity:info+10",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 27
@@ -629,7 +629,7 @@
           "factors": [
             "severity:info+10",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 27
@@ -847,7 +847,7 @@
           "factors": [
             "severity:high+50",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 67
@@ -1044,7 +1044,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:993h+0"
+            "recency:1064h+0"
           ],
           "score": 50
         },
@@ -1107,7 +1107,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:591h+0",
+            "recency:662h+0",
             "source-url-missing-3"
           ],
           "score": 47
@@ -1174,7 +1174,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:993h+0",
+            "recency:1064h+0",
             "source-url-missing-3"
           ],
           "score": 47
@@ -1241,7 +1241,7 @@
           "factors": [
             "severity:material+30",
             "review:new+20",
-            "recency:993h+0",
+            "recency:1064h+0",
             "source-url-missing-3"
           ],
           "score": 47
@@ -1308,7 +1308,7 @@
           "factors": [
             "severity:info+10",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 27
@@ -1375,7 +1375,7 @@
           "factors": [
             "severity:info+10",
             "review:new+20",
-            "recency:824h+0",
+            "recency:895h+0",
             "source-url-missing-3"
           ],
           "score": 27
